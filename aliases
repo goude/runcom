@@ -16,6 +16,8 @@ alias g='git'
 alias gs='git status'
 alias higr='history | grep -i'
 alias ho='homeshick'
+alias hocd='homeshick cd'
+
 alias pu='pushd'
 alias ta='tmux attach || tmux new'
 alias v='vim'

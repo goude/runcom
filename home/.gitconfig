@@ -1,0 +1,15 @@
+[user]
+name = Daniel Goude
+email = daniel@goude.se
+
+[hub]
+protocol = https
+
+[diff]
+tool = vimdiff
+
+[difftool]
+prompt = false
+
+[alias]
+d = difftool

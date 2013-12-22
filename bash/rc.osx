@@ -1,0 +1,16 @@
+export LANG='en_US.UTF-8'
+
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias python='/opt/local/bin/python2.7'
+alias o='open .'
+alias ls='ls -G'
+alias update_machine='sudo nice port selfupdate && sudo nice port upgrade outdated'
+
+# Auto additions
+export PATH=/usr/local/heroku/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Display message of the minute, center according to number of columns 
+~/git/hub/motm/motm.py | fmt -c -w `tput cols`

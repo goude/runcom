@@ -1,0 +1,29 @@
+alias hi='history'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias ..='cd ..'
+
+alias l='ls -lAh'
+alias ll='ls -l'
+alias la='ls -A'
+alias lsa='ls -lAh'
+
+alias df='df -h'
+
+alias v='vim'
+alias c='cd'
+alias g='git'
+alias gs='git status'
+
+alias pu='pushd'
+
+alias goto-dotfiles='cd $HOME/.homesick/repos/dotfiles/home/.rc-files'
+alias goto-vimfiles='cd $HOME/.homesick/repos/vimfiles/home/.vim'
+alias serve-directory='python -m SimpleHTTPServer'
+
+alias ta='tmux attach || tmux new'
+
+alias cpProgress="rsync --progress -ravz"
+
+alias geeknote="python $HOME/.homesick/repos/geeknote/geeknote.py"

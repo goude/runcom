@@ -1,0 +1,2 @@
+# linux stuff here
+alias update_machine='sudo apt-get update && sudo apt-get upgrade'

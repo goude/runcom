@@ -8,7 +8,7 @@ export PYTHONSTARTUP=$HOME/.pystartup
 export PATH=$PATH:$HOME/bin
 
 if [ -f ~/.localenv ]; then
-    . ~/.localenv
+    source ~/.localenv
 fi
 
 # homeshick - git dotfile synchronizer
@@ -65,11 +65,11 @@ if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
 fi
 
 if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
-    eval `dircolors ~/.dir_colors`
+    eval `dircolors $HOME/.dir_colors`
 fi
 
 if [[ -e ~/.ssh/ssh_auth_sock ]] then
-    export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 fi
 
 homeshick --quiet refresh

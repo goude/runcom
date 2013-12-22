@@ -2,7 +2,7 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
-function show_top_history {
+function history_high_score {
     history|awk '{print $2}'|awk 'BEGIN {FS="|"} {print $1}'|sort|uniq -c|sort 
 }
 

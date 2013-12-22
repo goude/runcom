@@ -15,6 +15,7 @@ alias c='cd'
 alias g='git'
 alias gs='git status'
 alias higr='history | grep -i'
+alias hihi='history_high_score'
 alias ho='homeshick'
 alias hocd='homeshick cd'
 

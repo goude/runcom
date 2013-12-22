@@ -57,8 +57,8 @@ if [[ $system == 'Cygwin' ]]; then
     source $rcfiles/zsh/rc.cygwin.zsh
 fi
 
-# load common aliases
 source $rcfiles/aliases
+source $rcfiles/functions
 
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh

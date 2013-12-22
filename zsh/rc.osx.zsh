@@ -16,4 +16,3 @@ if [[ -z "$LANG" ]]; then
 fi
 
 source /opt/boxen/env.sh
-export PATH="$HOME/.cabal/bin:$PATH"

@@ -18,8 +18,6 @@ alias gs='git status'
 
 alias pu='pushd'
 
-alias goto-dotfiles='cd $HOME/.homesick/repos/dotfiles/home/.rc-files'
-alias goto-vimfiles='cd $HOME/.homesick/repos/vimfiles/home/.vim'
 alias serve-directory='python -m SimpleHTTPServer'
 
 alias ta='tmux attach || tmux new'

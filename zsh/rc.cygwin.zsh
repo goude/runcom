@@ -1,2 +1,2 @@
-. $HOME/.rc-files/mintty/sol.dark
+. $HOME/.homesick/repos/runcom/mintty/sol.dark
 

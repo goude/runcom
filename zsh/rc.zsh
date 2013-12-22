@@ -1,5 +1,5 @@
 #!/bin/zsh
-rcfiles=$(dirname $(dirname $_))
+rcfiles=$HOME/.homesick/repos/runcom
 
 system=`$rcfiles/system`
 
@@ -11,11 +11,16 @@ if [ -f ~/.localenv ]; then
     . ~/.localenv
 fi
 
-if [[ -e ~/.oh-my-zsh/oh-my-zsh.sh ]] then
+# homeshick - git dotfile synchronizer
+source $HOME/.homesick/repos/homeshick/homeshick.sh
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+
+omz_dir=$HOME/.homesick/repos/oh-my-zsh
+if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     DISABLE_AUTO_TITLE="true"
     COMPLETION_WAITING_DOTS="true"
 
-    export ZSH=$HOME/.oh-my-zsh
+    export ZSH=$omz_dir
     export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
     if [[ -z "$ZSH_THEME" ]] then
@@ -33,35 +38,30 @@ if [[ -e ~/.oh-my-zsh/oh-my-zsh.sh ]] then
         plugins+=(terminalapp osx brew bower node npm)
     fi
 
-    . ~/.oh-my-zsh/oh-my-zsh.sh
+    source $omz_dir/oh-my-zsh.sh
     unsetopt correct_all
 fi
+unset omz_dir
 
 # Global zsh key bindings
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-search-backward
 
 if [[ $system == 'Linux' ]]; then
-    . $rcfiles/zsh/rc.linux.zsh
+    source $rcfiles/zsh/rc.linux.zsh
 fi
 if [[ $system == 'OSX' ]]; then
-    . $rcfiles/zsh/rc.osx.zsh
+    source $rcfiles/zsh/rc.osx.zsh
 fi
 if [[ $system == 'Cygwin' ]]; then
-    . $rcfiles/zsh/rc.cygwin.zsh
+    source $rcfiles/zsh/rc.cygwin.zsh
 fi
 
 # load common aliases
-. $rcfiles/aliases
-
-# homeshick - git dotfile synchronizer
-source $HOME/.homesick/repos/homeshick/homeshick.sh
-
-# activate homeshick zsh completion
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+source $rcfiles/aliases
 
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
-    . $HOME/.homesick/repos/yaprox/yaprox.sh
+    source $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
 
 if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
@@ -71,22 +71,6 @@ fi
 if [[ -e ~/.ssh/ssh_auth_sock ]] then
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
-
-compile-zshrc () {
-    rcfiles=$(dirname `readlink "$HOME/.zshrc"`)
-    if [[ -z $rcfiles ]]; then
-        echo "Cannot determine rcfiles location" >&2
-        return
-    fi
-    if [[ -n $1 && $1 == "clean" ]]; then
-        find $rcfiles -name '*.zwc' -delete
-        echo 'All *.zwc files removed'
-        return
-    fi;
-    for file in `find $rcfiles -name '*.zsh' -type f -print`; do
-        zcompile $file
-    done
-}
 
 homeshick --quiet refresh
 

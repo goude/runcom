@@ -3,8 +3,8 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias ..='cd ..'
 
-alias l='ls -lAh'
-alias ll='ls -l'
+alias l='ls -A'
+alias ll='ls -lAh'
 alias la='ls -A'
 alias lsa='ls -lAh'
 

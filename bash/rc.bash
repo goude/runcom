@@ -1,5 +1,6 @@
 #!/bin/bash
-rcfiles=$(dirname ${BASH_ARGV[0]%/*})
+#rcfiles=$(dirname ${BASH_ARGV[0]%/*})
+rcfiles=$HOME/.homesick/repos/runcom
 
 system=`$rcfiles/system`
 
@@ -8,7 +9,7 @@ if [ -f ~/.localenv ]; then
 fi
 
 . $rcfiles/bash/colors
-. $rcfiles/bash/functions
+. $rcfiles/functions
 
 if [ "$system" == 'Linux' ]; then
     . $rcfiles/bash/rc.linux
@@ -34,8 +35,6 @@ if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors
 fi
 
 export EDITOR='vim'
-
-command_exists fortune && fortune -a
 
 unset rcfiles
 unset system

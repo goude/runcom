@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<root>
+	<item>
+    <name>Shifts to Parentheses</name>
+    <appendix>Shifts, when pressed alone, type parentheses.  When used with other keys they're normal shifts.</appendix>
+
+    <identifier>private.shifts_to_parens</identifier>
+
+    <!-- This is the basic mapping. -->
+    <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_R</autogen>
+
+    <!--
+        Remap the "rolls" of () and )( because it's too easy to hit one
+        before finishing the other, and there's no other reason to be
+        pressing both shift keys at once anyway
+    -->
+    <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+
+    <!--
+        Remap Rshift+Space to ') ', because when typing an end paren and
+        then a space I tend to hit space before I let go of rshift.
+    -->
+    <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
+</item>
+
+  <!--
+    Adapted from the built-in "Simultaneous Vi Mode" option:
+    https://github.com/tekezo/KeyRemap4MacBook/blob/6aa99ba/src/core/server/Resources/include/checkbox/simultaneouskeypresses_vi_mode.xml#L4
+  -->
+  <item>
+    <name>(S)uper (D)uper Mode</name>
+    <item>
+      <name>What's (S)uper (D)uper Mode?</name>
+      <identifier vk_config="true">notsave.com.jasonrudolph.simultaneouskeypresses_vimode</identifier>
+      <autogen>__ShowStatusMessage__ (S)uper (D)uper Mode</autogen>
+
+      <appendix>To activate, push S and D keys simultaneously and hold them down.</appendix>
+      <appendix>Now you're in (S)uper (D)uper mode. It's like a secret keyboard _inside_ your keyboard. (Whoa.)</appendix>
+      <appendix>It's optimized for keeping you on the home row, or very close to it.</appendix>
+      <appendix>---</appendix>
+      <appendix>Now you can:</appendix>
+      <appendix>- Use H/J/K/L for Left/Down/Up/Right</appendix>
+      <appendix>- Use F for Command</appendix>
+      <appendix>- Use A for Option (AKA Alt)</appendix>
+      <appendix>- Use Space for Shift</appendix>
+      <appendix>- Use M to copy</appendix>
+      <appendix>- Use , to paste</appendix>
+      <appendix>- Use MM to copy current line</appendix>
+      <appendix>- Use A+J/K for Page Down/Up</appendix>
+      <appendix>- Use I/O to move left/right between tabs</appendix>
+      <appendix>- Use U/P to go to the first/last tab (in most apps)</appendix>
+      <appendix>- Use A+H/L to move to previous/next word in all apps (including iTerm 2)</appendix>
+
+      <autogen>__KeyToKey__ KeyCode::A, KeyCode::OPTION_L</autogen>
+
+      <block>
+        <only>TERMINAL</only>
+        <autogen>
+          --KeyToKey--
+          {{VI_H}}, VK_OPTION | ModifierFlag::NONE,
+          KeyCode::ESCAPE,
+          KeyCode::B
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          {{VI_L}}, VK_OPTION | ModifierFlag::NONE,
+          KeyCode::ESCAPE,
+          KeyCode::F
+        </autogen>
+      </block>
+
+      <autogen>
+        __KeyToKey__
+        {{VI_J}}, VK_OPTION | ModifierFlag::NONE,
+        KeyCode::PAGEDOWN
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        {{VI_K}}, VK_OPTION | ModifierFlag::NONE,
+        KeyCode::PAGEUP
+      </autogen>
+
+      <autogen>__KeyToKey__ {{VI_H}}, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ {{VI_J}}, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ {{VI_K}}, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ {{VI_L}}, KeyCode::CURSOR_RIGHT</autogen>
+
+      <autogen>__KeyToKey__ KeyCode::F, KeyCode::COMMAND_L</autogen>
+
+      <autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::SHIFT_L</autogen>
+
+      <block>
+        <lastpressedphysicalkey_only>KeyCode::M</lastpressedphysicalkey_only>
+        <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::200</elapsedtimesincelastpressed_lessthan>
+        <autogen>
+          __KeyToKey__
+          KeyCode::M,
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+          KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L,
+          KeyCode::C, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+      <autogen>
+        __KeyToKey__
+        KeyCode::M,
+        KeyCode::C, ModifierFlag::COMMAND_L
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMA,
+        KeyCode::V, ModifierFlag::COMMAND_L
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::I,
+        KeyCode::BRACKET_LEFT,  ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::O,
+        KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::U,
+        KeyCode::KEY_1, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::P,
+        KeyCode::KEY_9, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Simultaneous Key Presses [S+D] turns on "(S)uper (D)uper mode"</name>
+      <identifier>remap.com_jasonrudolph_simultaneouskeypresses_vimode_sd</identifier>
+      <autogen>
+        __SimultaneousKeyPresses__
+        KeyCode::D, KeyCode::S,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_com_jasonrudolph_simultaneouskeypresses_vimode
+      </autogen>
+    </item>
+  </item>
+
+<item>
+    <name>Use the correct shift keys.</name>
+    <identifier>private.correct_shift_keys</identifier>
+
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+
+    <autogen>--KeyToKey-- KeyCode::Y,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::U,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::I,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::O,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::P,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::H,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::J,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::K,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::L,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::N,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::M,         ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA,     ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT,       ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE,     ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+</item>
+
+</root>

@@ -13,3 +13,9 @@ prompt = false
 
 [alias]
 d = difftool
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[core]
+excludesfile = /opt/boxen/config/git/gitignore

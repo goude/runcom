@@ -7,10 +7,6 @@ export EDITOR=vim
 export PYTHONSTARTUP=$HOME/.pystartup
 export PATH=$PATH:$HOME/bin
 
-if [ -f ~/.localenv ]; then
-    source ~/.localenv
-fi
-
 # homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
@@ -72,7 +68,11 @@ if [[ -e ~/.ssh/ssh_auth_sock ]] then
     export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 fi
 
-homeshick --quiet refresh
+if [ -f ~/.localenv ]; then
+    source ~/.localenv
+fi
+
+#homeshick --quiet refresh
 
 unset rcfiles
 unset system

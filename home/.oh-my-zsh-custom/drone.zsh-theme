@@ -24,4 +24,5 @@ function drone_status {
     [ -f $drone_cmd ] && $drone_cmd
 }
 
-RPROMPT='$(drone_status)%{$reset_color%}'
+RPROMPT+='$(drone_status)%{$reset_color%}'
+#RPROMPT+='$(battery_level_gauge)'

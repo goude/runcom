@@ -24,7 +24,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
         export ZSH_THEME="drone"
     fi
 
-    plugins+=(git vi-mode history dircycle dirpersist)
+    plugins+=(git vi-mode history dircycle dirpersist battery)
 
     if [[ $system == 'Linux' ]]; then
         plugins+=()

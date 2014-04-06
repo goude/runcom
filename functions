@@ -12,7 +12,6 @@ function reload_bashrc {
 }
 
 function cs () {
-    clear
     # only change directory if a directory is specified
     [ -n "${1}" ] && cd $1
     # filesystem stats

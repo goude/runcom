@@ -8,12 +8,11 @@ echo "Cloning homeshick repos..."
 homeshick clone https://github.com/robbyrussell/oh-my-zsh
 homeshick clone https://github.com/goude/runcom.git
 homeshick clone https://github.com/goude/yaprox.git
-homeshick clone https://github.com/goude/vim-files.git
 homeshick clone https://github.com/spf13/spf13-vim.git
 
 homeshick --force link
 
 echo "Setting up Vim..."
-source $REPOS/vim-files/install.sh
+source $REPOS/runcom/install-vim.sh
 
 echo "Done."

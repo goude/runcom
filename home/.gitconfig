@@ -19,6 +19,8 @@ ui = auto
 
 [credential]
 ;helper = /opt/boxen/bin/boxen-git-credential
+helper = /opt/boxen/bin/boxen-git-credential
 
 [core]
 ;excludesfile = /opt/boxen/config/git/gitignore
+excludesfile = /opt/boxen/config/git/gitignore

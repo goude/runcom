@@ -1,0 +1,18 @@
+" Hide indent guides
+let g:indent_guides_enable_on_vim_startup = 0
+
+" Quickly edit/reload the vimrc file
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>et :e $HOME/.tmux.conf<CR>
+map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
+
+" Reduce finger movement for Esc
+inoremap jk <Esc>
+
+" Switch between buffers
+map <left> :bp<CR>
+map <right> :bn<CR>
+
+" Use very magic regexps by default
+nnoremap / /\v
+cnoremap %s/ %s/\v

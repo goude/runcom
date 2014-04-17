@@ -16,3 +16,8 @@ map <right> :bn<CR>
 " Use very magic regexps by default
 nnoremap / /\v
 cnoremap %s/ %s/\v
+
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+

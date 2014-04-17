@@ -20,6 +20,10 @@
 " }
 
 " spf13 options {
+    " Make Airline look better (needs font to be installed and set in terminal
+    " emulator)
+    " https://github.com/Lokaltog/powerline-fonts
+       let g:airline_powerline_fonts=1
 
     " Prevent automatically changing to open file directory
     "   let g:spf13_no_autochdir = 1

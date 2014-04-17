@@ -27,4 +27,4 @@ alias ack='ack-grep'
 
 alias serve-directory='python -m SimpleHTTPServer'
 alias cpProgress="rsync --progress -ravz"
-alias geeknote="python $HOME/.homesick/repos/geeknote/geeknote.py"
+alias geeknote="python $HOME/.homesick/repos/geeknote/geeknote/geeknote.py"

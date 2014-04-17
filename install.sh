@@ -13,6 +13,7 @@ homeshick clone https://github.com/spf13/spf13-vim.git
 homeshick --force link
 
 echo "Setting up Vim..."
-source $REPOS/runcom/install-vim.sh
+git clone --recursive 'https://github.com/gmarik/vundle.git' $HOME/.vim/bundle/vundle
+vim +BundleInstall! +BundleClean +q
 
 echo "Done."

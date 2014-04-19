@@ -2,7 +2,7 @@
 let g:indent_guides_enable_on_vim_startup = 0
 
 " Quickly edit/reload the vimrc file
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :e ~/.vimrc.local<CR>
 nnoremap <silent> <leader>et :e $HOME/.tmux.conf<CR>
 map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
@@ -21,3 +21,4 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]

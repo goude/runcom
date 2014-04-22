@@ -1,3 +1,5 @@
+export PATH=$PATH:/opt/node/bin
+
 alias ls='ls -h --color=auto'
 
 alias rm='rm -I'

@@ -73,6 +73,8 @@ if [ -f ~/.localenv ]; then
 fi
 
 #homeshick --quiet refresh
+# Disable Ctrl-Z
+set -o ignoreeof
 
 unset rcfiles
 unset system

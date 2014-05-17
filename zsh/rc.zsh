@@ -13,6 +13,7 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
 omz_dir=$HOME/.homesick/repos/oh-my-zsh
 if [[ -e $omz_dir/oh-my-zsh.sh ]] then
+    DISABLE_AUTO_UPDATE="true"
     DISABLE_AUTO_TITLE="true"
     COMPLETION_WAITING_DOTS="true"
 

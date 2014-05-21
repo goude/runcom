@@ -1,4 +1,5 @@
 #!/bin/zsh
+homeshick_repos=$HOME/.homesick/repos
 rcfiles=$HOME/.homesick/repos/runcom
 
 system=`$rcfiles/system`
@@ -26,6 +27,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     fi
 
     plugins+=(git vi-mode history dircycle dirpersist battery)
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
     if [[ $system == 'Linux' ]]; then
         plugins+=()
@@ -35,10 +37,16 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
         plugins+=(terminalapp osx brew bower node npm)
     fi
 
+    # Must be last plugin
+    plugins+=(zsh-syntax-highlighting)
+
     source $omz_dir/oh-my-zsh.sh
     unsetopt correct_all
 fi
 unset omz_dir
+
+# Tweak this value if necessary
+export KEYTIMEOUT=20
 
 # Global zsh key bindings
 bindkey -M viins 'jk' vi-cmd-mode
@@ -46,8 +54,9 @@ bindkey "^?" backward-delete-char
 bindkey "^W" backward-kill-word
 bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
 bindkey "^U" kill-line
-
 bindkey '^R' history-incremental-search-backward
+
+#setopt MENUCOMPLETE
 
 if [[ $system == 'Linux' ]]; then
     source $rcfiles/zsh/rc.linux.zsh
@@ -62,6 +71,13 @@ fi
 source $rcfiles/aliases
 source $rcfiles/functions
 
+# Vim's text-objects-ish for zsh
+if [[ -f $HOME/.homesick/repos/opp.zsh/opp.zsh ]]; then
+    source $HOME/.homesick/repos/opp.zsh/opp.zsh
+    source $HOME/.homesick/repos/opp.zsh/opp/*.zsh
+fi
+
+# Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
@@ -79,8 +95,10 @@ if [ -f ~/.localenv ]; then
 fi
 
 #homeshick --quiet refresh
+
 # Disable Ctrl-Z
 set -o ignoreeof
 
 unset rcfiles
 unset system
+unset homeshick_repos

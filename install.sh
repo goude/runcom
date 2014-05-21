@@ -9,6 +9,7 @@ homeshick clone https://github.com/robbyrussell/oh-my-zsh
 homeshick clone https://github.com/goude/runcom.git
 homeshick clone https://github.com/goude/yaprox.git
 homeshick clone https://github.com/spf13/spf13-vim.git
+homeshick clone https://github.com/hchbaw/opp.zsh.git
 
 homeshick --force link
 

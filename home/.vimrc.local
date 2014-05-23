@@ -10,8 +10,12 @@ map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVI
 inoremap jk <Esc>
 
 " Switch between buffers
-map <left> :bp<CR>
-map <right> :bn<CR>
+map <up> :bp<CR>
+map <down> :bn<CR>
+
+" Save with Ctrl-s
+map <C-s> :w<cr>
+imap <C-s> <ESC>:w<cr>a
 
 " Use very magic regexps by default
 nnoremap / /\v

@@ -99,6 +99,12 @@ fi
 # Disable Ctrl-Z
 set -o ignoreeof
 
+# Turn off Ctrl-s XOFF
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
+
 unset rcfiles
 unset system
 unset homeshick_repos

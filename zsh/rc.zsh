@@ -96,6 +96,9 @@ fi
 
 #homeshick --quiet refresh
 
+# Share history
+setopt -o sharehistory
+
 # Disable Ctrl-Z
 set -o ignoreeof
 

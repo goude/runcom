@@ -1,0 +1,4 @@
+# http://stackoverflow.com/questions/537522/standard-python-interpreter-has-a-vi-command-mode
+
+# enable vi-like editing
+bind -v

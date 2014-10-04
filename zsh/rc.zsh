@@ -4,9 +4,11 @@ rcfiles=$HOME/.homesick/repos/runcom
 
 system=`$rcfiles/system`
 
-export EDITOR=vim
-export PYTHONSTARTUP=$HOME/.pystartup
+# common environment variables
 export PATH=$PATH:$HOME/bin
+export PYTHONSTARTUP=$HOME/.pystartup
+export WORKON_HOME=$HOME/.virtualenvs
+export EDITOR=vim
 
 # homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh
@@ -81,6 +83,10 @@ fi
 if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   PATH=$PATH:$HOME/.homesick/repos/tmuxifier/bin
   eval "$(tmuxifier init -)"
+fi
+
+if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
 # Proxy helper

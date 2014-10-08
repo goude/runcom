@@ -33,3 +33,6 @@ let g:syntastic_html_tidy_ignore_errors = [
     \"proprietary attribute \"role\"",
     \"proprietary attribute \"hidden\"",
 \]
+
+let g:fortune_vimtips_auto_display=0
+

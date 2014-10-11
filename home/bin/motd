@@ -1,3 +1,3 @@
 #!/bin/bash
 # non-indexed non-secret gist
-curl https://gist.githubusercontent.com/goude/c9253570e943aa42aba5/raw/f60f736a24fe7d9b7107025b38d7132faa293ec6/gistfile1.txt
+curl https://gist.githubusercontent.com/goude/c9253570e943aa42aba5/raw/gistfile1.txt

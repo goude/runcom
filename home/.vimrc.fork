@@ -21,9 +21,12 @@ imap <C-s> <ESC>:w<cr>
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
+" Tab settings
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+
+set nospell
 
 let g:syntastic_html_tidy_ignore_errors = [
     \" proprietary attribute \"ng-",

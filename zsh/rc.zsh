@@ -77,6 +77,12 @@ if [[ -f $HOME/.homesick/repos/opp.zsh/opp.zsh ]]; then
     source $HOME/.homesick/repos/opp.zsh/opp/*.zsh
 fi
 
+# Tmux improver
+if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
+  PATH=$PATH:$HOME/.homesick/repos/tmuxifier/bin
+  eval "$(tmuxifier init -)"
+fi
+
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh

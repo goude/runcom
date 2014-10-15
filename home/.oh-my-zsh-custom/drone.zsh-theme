@@ -6,8 +6,13 @@ function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
 }
 
+function git_user {
+    #[ -f ~/.gitconfig ] && grep '@' ~/.gitconfig | cut -d " " -f 3 -
+    [ -f ~/.gitconfig ] && git config --get user.email
+}
+
 PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{$fg[magenta]%}%n%{$reset_color%} on %{$fg[yellow]%}$(box_name)%{$reset_color%} as %{$fg[blue]%}$(git_user)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)%(?,,%{${fg_bold[white]}%}[%?]%{$reset_color%} )%(1j.%j.)$ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"

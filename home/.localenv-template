@@ -1,0 +1,5 @@
+# Use local proxy
+#yaprox -q localhost:3128
+
+# Increase cygwin zsh speed
+#function git_prompt_info() {}

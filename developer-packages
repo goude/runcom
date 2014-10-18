@@ -4,5 +4,16 @@ vim
 zsh
 curl
 
+htop
+pv
+
+exuberant-ctags
+silversearcher-ag
+
 figlet
 toilet
+
+python-virtualenv
+virtualenvwrapper
+
+nodejs

@@ -90,11 +90,11 @@ if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
 fi
 
 # Node/npm
-NPM_PACKAGES="$HOME/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
-unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+#jNPM_PACKAGES="$HOME/.npm-packages"
+#PATH="$NPM_PACKAGES/bin:$PATH"
+#unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
+#MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+#export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then

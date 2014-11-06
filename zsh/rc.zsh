@@ -115,6 +115,11 @@ fi
 
 #homeshick --quiet refresh
 
+# -o - allow long option names
+
+# Allow octothorpe-prefixed comments
+setopt -o interactivecomments
+
 # Share history
 setopt -o sharehistory
 

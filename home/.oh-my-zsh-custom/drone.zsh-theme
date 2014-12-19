@@ -13,7 +13,7 @@ function git_user {
 
 PROMPT='
 %{$fg[magenta]%}%n%{$reset_color%} on %{$fg[yellow]%}$(box_name)%{$reset_color%} as %{$fg[blue]%}$(git_user)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
-%(?,,%{${fg_bold[white]}%}[%?]%{$reset_color%} )%(1j.%j.)$ '
+%(?,,%{${fg_bold[white]}%}[%?]%{$reset_color%} )%(1j.%j.)λ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"

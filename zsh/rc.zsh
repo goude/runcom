@@ -36,7 +36,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     fi
 
     if [[ $system == 'OSX' ]]; then
-        plugins+=(terminalapp osx brew bower node npm)
+        plugins+=(terminalapp osx brew bower node npm rbenv)
     fi
 
     # Must be last plugin

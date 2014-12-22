@@ -22,9 +22,7 @@ nnoremap / /\v
 cnoremap %s/ %s/\v
 
 " Tab settings
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 
 set nospell
 

@@ -28,7 +28,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
         export ZSH_THEME="drone"
     fi
 
-    plugins+=(git vi-mode history dircycle dirpersist battery)
+    plugins+=(git vi-mode history dircycle dirpersist)
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
     if [[ $system == 'Linux' ]]; then
@@ -81,6 +81,7 @@ fi
 
 # Tmux improver
 if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
+  export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
   PATH=$PATH:$HOME/.homesick/repos/tmuxifier/bin
   eval "$(tmuxifier init -)"
 fi

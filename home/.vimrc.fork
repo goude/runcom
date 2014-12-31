@@ -21,10 +21,14 @@ imap <C-s> <ESC>:w<cr>
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
+set nospell
+
 " Tab settings
 autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
-set nospell
+" Increase html indenting
+let g:html_indent_inctags = "html,body,head,tbody"
 
 let g:syntastic_html_tidy_ignore_errors = [
     \" proprietary attribute \"ng-",

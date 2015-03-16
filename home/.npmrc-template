@@ -1,5 +1,5 @@
 #prefix = ~/.npm-packages
-#prefix = ~/.node
+prefix = ~/.node
 
 #proxy = "http://localhost:3128"
 #https-proxy = "http://localhost:3128"

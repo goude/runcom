@@ -1,11 +1,10 @@
 #!/bin/zsh
 homeshick_repos=$HOME/.homesick/repos
 rcfiles=$HOME/.homesick/repos/runcom
-
 system=`$rcfiles/system`
 
 # common environment variables
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.node/bin:$HOME/bin
 export PYTHONSTARTUP=$HOME/.pystartup
 export WORKON_HOME=$HOME/.virtualenvs
 export EDITOR=vim
@@ -14,6 +13,7 @@ export EDITOR=vim
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
+# oh-my-zsh configuration
 omz_dir=$HOME/.homesick/repos/oh-my-zsh
 if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     DISABLE_AUTO_UPDATE="true"
@@ -24,11 +24,12 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
     if [[ -z "$ZSH_THEME" ]] then
-        #export ZSH_THEME="rgm"
         export ZSH_THEME="drone"
     fi
 
     plugins+=(git vi-mode history dircycle dirpersist)
+    plugins+=(bower node npm rbenv)
+
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
     if [[ $system == 'Linux' ]]; then
@@ -36,7 +37,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     fi
 
     if [[ $system == 'OSX' ]]; then
-        plugins+=(terminalapp osx brew bower node npm rbenv)
+        plugins+=(terminalapp osx brew)
     fi
 
     # Must be last plugin
@@ -57,8 +58,6 @@ bindkey "^W" backward-kill-word
 bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
 bindkey "^U" kill-line
 bindkey '^R' history-incremental-search-backward
-
-#setopt MENUCOMPLETE
 
 if [[ $system == 'Linux' ]]; then
     source $rcfiles/zsh/rc.linux.zsh
@@ -90,13 +89,6 @@ if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
-# Node/npm
-#jNPM_PACKAGES="$HOME/.npm-packages"
-#PATH="$NPM_PACKAGES/bin:$PATH"
-#unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
-#MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-#export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh
@@ -114,8 +106,6 @@ if [ -f ~/.localenv ]; then
     source ~/.localenv
 fi
 
-#homeshick --quiet refresh
-
 # -o - allow long option names
 
 # Allow octothorpe-prefixed comments
@@ -132,6 +122,9 @@ stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
+
+# Remove duplicates from environment vars
+typeset -U PATH # remove duplicates
 
 unset rcfiles
 unset system

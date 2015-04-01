@@ -1,7 +1,10 @@
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias ..='cd ..'
+
+#alias ..='cd ..'
+#alias ...='cd .. && cd ..'
+#alias ....='cd .. && cd .. & cd ..'
 
 alias l='ls -A'
 alias ll='ls -lAh'
@@ -13,9 +16,11 @@ alias df='df -h'
 alias c='cd'
 alias g='git'
 alias gs='git status'
+
 alias hi='history'
 alias higr='history | grep -i'
 alias hihi='history_high_score'
+
 alias ho='homeshick'
 alias hocd='homeshick cd'
 

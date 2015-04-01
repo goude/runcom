@@ -27,7 +27,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
         export ZSH_THEME="drone"
     fi
 
-    plugins+=(git vi-mode history dircycle dirpersist)
+    plugins+=(git tmux vi-mode history dircycle dirpersist)
     plugins+=(bower node npm rbenv)
 
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

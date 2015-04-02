@@ -13,8 +13,6 @@ alias lsa='ls -lAh'
 
 alias df='df -h'
 
-alias c='cd'
-alias g='git'
 alias gs='git status'
 
 alias hi='history'
@@ -26,9 +24,14 @@ alias hocd='homeshick cd'
 
 alias pu='pushd'
 alias ta='tmux attach || tmux new'
+
+alias c='cd'
+alias g='git'
+alias s='ssh'
 alias v='vim'
 
 alias ack='ack-grep'
+
 
 alias serve-directory='python -m SimpleHTTPServer'
 alias cpProgress="rsync --progress -ravz"

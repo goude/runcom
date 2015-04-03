@@ -11,6 +11,7 @@ homeshick clone https://github.com/goude/yaprox.git
 homeshick clone https://github.com/spf13/spf13-vim.git
 homeshick clone https://github.com/hchbaw/opp.zsh.git
 homeshick clone https://github.com/jimeh/tmuxifier.git
+git clone --depth=1 https://github.com/Bash-it/bash-it.git $REPOS/bash-it
 
 homeshick --force link
 

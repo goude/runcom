@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+homeshick_repos=$HOME/.homesick/repos
+rcfiles=$HOME/.homesick/repos/runcom
+system=`$rcfiles/system`
+
+# common environment variables
+export PATH=$PATH:$HOME/.node/bin:$HOME/bin
+export PYTHONSTARTUP=$HOME/.pystartup
+export WORKON_HOME=$HOME/.virtualenvs
+export EDITOR=vim
+
+# homeshick - git dotfile synchronizer
+source $HOME/.homesick/repos/homeshick/homeshick.sh
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+

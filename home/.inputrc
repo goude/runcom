@@ -29,3 +29,9 @@ set show-all-if-ambiguous off
 set editing-mode vi
 set keymap vi
 set convert-meta on
+
+# Fix Ctrl-L not clearing screen in Bash
+set keymap vi-insert
+$if Bash
+"\C-l": "\e\C-la"
+$endif

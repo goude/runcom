@@ -1,2 +1,2 @@
 #!/bin/bash
-. $HOME/.homesick/repos/runcom/bash/rc.bash
+. $HOME/.homesick/repos/runcom/rc.bash

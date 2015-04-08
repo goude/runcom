@@ -60,13 +60,34 @@ bindkey "^U" kill-line
 bindkey '^R' history-incremental-search-backward
 
 if [[ $system == 'Linux' ]]; then
-    source $rcfiles/zsh/rc.linux.zsh
+    alias ls='ls -h --color=auto'
+    alias rm='rm -I'
+    alias grep='grep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    #export TERM="xterm-256color"
+    #export JAVA_HOME=/opt/java/jre1.7.0/
+    #export PATH=/opt/node/bin:$PATH
 fi
 if [[ $system == 'OSX' ]]; then
-    source $rcfiles/zsh/rc.osx.zsh
+    export CLICOLOR=1
+    export LSCOLORS="gxfxcxdxbxegedabagacad"
+    #export HOMEBREW_BUILD_FROM_SOURCE=1
+
+    #bindkey "^[[3~" delete-char
+
+    if [[ -x /usr/local/bin/gls ]]; then
+        alias ls='/usr/local/bin/gls -h --color=auto'
+    else
+        alias ls='ls -hG'
+    fi
+
+    if [[ -z "$LANG" ]]; then
+        export LANG='en_US.UTF-8'
+    fi
 fi
 if [[ $system == 'Cygwin' ]]; then
-    source $rcfiles/zsh/rc.cygwin.zsh
+    source $HOME/.homesick/repos/runcom/mintty/sol.dark
 fi
 
 source $rcfiles/aliases

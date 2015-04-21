@@ -47,6 +47,11 @@ bindkey "^H" backward-delete-char      # Control-h also deletes the previous cha
 bindkey "^U" kill-line
 bindkey '^R' history-incremental-search-backward
 
+# Fix esc behavior a la http://superuser.com/questions/516474/escape-not-idempotent-in-zshs-vi-emulation
+noop () { }
+zle -N noop
+bindkey -M vicmd '\e' noop
+
 # Vim's text-objects-ish for zsh
 if [[ -f $HOME/.homesick/repos/opp.zsh/opp.zsh ]]; then
     source $HOME/.homesick/repos/opp.zsh/opp.zsh

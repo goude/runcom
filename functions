@@ -1,17 +1,14 @@
+#!/usr/bin/bash
+
 command_exists () {
     type "$1" &> /dev/null ;
 }
 
-function history_high_score {
+history_high_score () {
     history|awk '{print $2}'|awk 'BEGIN {FS="|"} {print $1}'|sort|uniq -c|sort 
 }
 
-function reload_bashrc {
-    clear
-    source ~/.bashrc
-}
-
-function cs () {
+cs () {
     # only change directory if a directory is specified
     [ -n "${1}" ] && cd $1
     # filesystem stats
@@ -37,18 +34,17 @@ function cs () {
     fi
 }
 
+# Pull all git repos one level below current directory
+pullall () {
+    find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \; ;
+}
+
 # Deduplicate path variables
-get_var () { eval "echo \$$1" }
-set_var () { eval "$1=\"$2\"" }
+get_var () { eval "echo \$$1" ; }
+set_var () { eval "$1=\"$2\"" ; }
 dedup_pathvar () {
     pathvar_name="$1"
     pathvar_value="$(get_var $pathvar_name)"
     deduped_path="$(echo -n $pathvar_value | perl -e 'print join(":",grep { not $seen{$_}++ } split(/:/, scalar <>))')"
     set_var $pathvar_name "$deduped_path"
 }
-
-# Pull all git repos one level below current directory
-function pullall () {
-    find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;
-}
-

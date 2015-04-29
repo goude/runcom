@@ -1,3 +1,6 @@
+" Unbundle certain plugins
+UnBundle "spf13/vim-preview"
+
 " Hide indent guides
 let g:indent_guides_enable_on_vim_startup = 0
 
@@ -43,6 +46,8 @@ let g:syntastic_html_tidy_ignore_errors = [
 \]
 
 let g:fortune_vimtips_auto_display=0
+
+let g:instant_markdown_autostart=0
 
 " Set font on Windows/portable gvim
 if WINDOWS()

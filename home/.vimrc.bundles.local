@@ -4,4 +4,5 @@ Bundle "editorconfig/editorconfig-vim"
 Bundle "vim-scripts/Vim-R-plugin"
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-speeddating"
+Bundle "suan/vim-instant-markdown"
 

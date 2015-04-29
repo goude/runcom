@@ -17,6 +17,9 @@ map <down> :bn<CR>
 map <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>
 
+" C-j removes previous character and inserts a newline (in test, needs tweaking)
+nnoremap <NL> belxi<CR><ESC>
+
 " Use very magic regexps by default
 nnoremap / /\v
 cnoremap %s/ %s/\v

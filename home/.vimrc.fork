@@ -1,9 +1,14 @@
+" Preamble {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
+"
+" }
+
+" Unbundling {
 " Unbundle certain plugins
 UnBundle "spf13/vim-preview"
+" }
 
-" Hide indent guides
-let g:indent_guides_enable_on_vim_startup = 0
-
+" Personalized mappings {
 " Quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev :e ~/.vimrc.fork<CR>
 nnoremap <silent> <leader>et :e $HOME/.tmux.conf<CR>
@@ -27,14 +32,25 @@ nnoremap <NL> belxi<CR><ESC>
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
+" }
+
+" Vim settings {
+
+" Turn off spellcheck by default; it's annoying
 set nospell
 
 " Tab settings
 autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
+" }
+
+" Global and plugin settings {
 
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"
+
+" Hide indent guides
+let g:indent_guides_enable_on_vim_startup = 0
 
 let g:syntastic_html_tidy_ignore_errors = [
     \" proprietary attribute \"ng-",
@@ -45,16 +61,28 @@ let g:syntastic_html_tidy_ignore_errors = [
     \"proprietary attribute \"hidden\"",
 \]
 
-let g:fortune_vimtips_auto_display=0
-
 let g:instant_markdown_autostart=0
+
+" UltiSnips settings
+"let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
+"let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+"let g:UltiSnipsExpandTrigger       = '<c-l>'
+"let g:UltiSnipsJumpForwardTrigger  = '<A-d>'
+"let g:UltiSnipsJumpBackwardTrigger = '<A-a>'
+" }
+
+" System settings {
 
 " Set font on Windows/portable gvim
 if WINDOWS()
     set guifont=Ubuntu_Mono_derivative_Powerlin:h12
 endif
 
-" Proper solarized setup on Ubuntu
-set background=dark
-let g:solarized_termcolors=16
-colorscheme solarized
+if LINUX()
+    " Proper solarized setup on Ubuntu
+    "set background=dark
+    "let g:solarized_termcolors=16
+    "colorscheme solarized
+endif
+
+" }

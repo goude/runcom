@@ -1,9 +1,14 @@
-Bundle "myusuf3/numbers.vim"
-Bundle "hobbestigrou/vimtips-fortune"
-Bundle "editorconfig/editorconfig-vim"
-Bundle "vim-scripts/Vim-R-plugin"
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-speeddating"
+Bundle "myusuf3/numbers.vim"
+
+Bundle "vim-scripts/Vim-R-plugin"
+
 Bundle "suan/vim-instant-markdown"
 Bundle "neilagabriel/vim-geeknote"
 
+" TODO: explore other options for snippets
+" Bundle "SirVer/ultisnips"
+" Bundle "JazzCore/neocomplcache-ultisnips"
+
+" Bundle "editorconfig/editorconfig-vim"

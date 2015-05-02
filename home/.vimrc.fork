@@ -66,7 +66,7 @@ let g:instant_markdown_autostart=0
 " UltiSnips settings
 "let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
 "let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
-"let g:UltiSnipsExpandTrigger       = '<c-l>'
+let g:UltiSnipsExpandTrigger       = '<c-j>'
 "let g:UltiSnipsJumpForwardTrigger  = '<A-d>'
 "let g:UltiSnipsJumpBackwardTrigger = '<A-a>'
 " }

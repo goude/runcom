@@ -5,7 +5,7 @@ Bundle "myusuf3/numbers.vim"
 Bundle "vim-scripts/Vim-R-plugin"
 
 Bundle "suan/vim-instant-markdown"
-Bundle "neilagabriel/vim-geeknote"
+"Bundle "neilagabriel/vim-geeknote"
 
 " TODO: explore other options for snippets
 " Bundle "SirVer/ultisnips"

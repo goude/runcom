@@ -64,7 +64,7 @@ let g:syntastic_html_tidy_ignore_errors = [
 let g:instant_markdown_autostart=0
 
 " UltiSnips settings
-"let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
+let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
 "let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 let g:UltiSnipsExpandTrigger       = '<c-j>'
 "let g:UltiSnipsJumpForwardTrigger  = '<A-d>'

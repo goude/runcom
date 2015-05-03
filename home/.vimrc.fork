@@ -5,7 +5,7 @@
 
 " Unbundling {
 " Unbundle certain plugins
-"UnBundle "spf13/vim-preview"
+UnBundle "spf13/vim-preview"
 " }
 
 " Personalized mappings {
@@ -18,8 +18,8 @@ map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVI
 inoremap jk <Esc>
 
 " Switch between buffers
-map <up> :bp<CR>
-map <down> :bn<CR>
+"map <up> :bp<CR>
+"map <down> :bn<CR>
 
 " Save with Ctrl-s
 map <C-s> :w<cr>

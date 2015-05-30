@@ -7,8 +7,8 @@ system=`$rcfiles/system`
 export PYTHONSTARTUP=$HOME/.pystartup
 export WORKON_HOME=$HOME/.virtualenvs
 export GOPATH=$HOME/go
+export DSCT_ROOT=$HOME/dsct
 export PATH=$PATH:$HOME/.node/bin:$GOPATH/bin:$HOME/bin
-
 export EDITOR=vim
 
 # homeshick - git dotfile synchronizer

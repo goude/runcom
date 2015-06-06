@@ -36,3 +36,5 @@ alias serve-directory='python -m SimpleHTTPServer'
 alias cpProgress="rsync --progress -ravz"
 
 alias dsct=$DSCT_ROOT/bin/dsct
+
+alias rt=runcom-test

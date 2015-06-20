@@ -8,11 +8,11 @@ echo "Cloning homeshick repos..."
 
 homeshick_repos=(
     "robbyrussell/oh-my-zsh"
-    "goude/runcom.git"
-    "goude/yaprox.git"
-    "spf13/spf13-vim.git"
-    "hchbaw/opp.zsh.git"
-    "jimeh/tmuxifier.git"
+    "goude/runcom"
+    "goude/yaprox"
+    "spf13/spf13-vim"
+    "hchbaw/opp.zsh"
+    "jimeh/tmuxifier"
 )
 
 for i in "${homeshick_repos[@]}"

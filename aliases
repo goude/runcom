@@ -38,3 +38,5 @@ alias cpProgress="rsync --progress -ravz"
 alias dsct=$DSCT_ROOT/bin/dsct
 
 alias rt=runcom-test
+
+alias emacs=emacs -nw

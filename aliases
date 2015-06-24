@@ -39,4 +39,4 @@ alias dsct=$DSCT_ROOT/bin/dsct
 
 alias rt=runcom-test
 
-alias emacs=emacs -nw
+alias emacs='emacs -nw'

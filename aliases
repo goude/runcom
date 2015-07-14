@@ -2,10 +2,6 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-#alias ..='cd ..'
-#alias ...='cd .. && cd ..'
-#alias ....='cd .. && cd .. & cd ..'
-
 alias l='ls -A'
 alias ll='ls -lAh'
 alias la='ls -A'
@@ -33,8 +29,6 @@ alias ack='ack-grep'
 
 alias serve-directory='python -m SimpleHTTPServer'
 alias cpProgress="rsync --progress -ravz"
-
-alias dsct=$DSCT_ROOT/bin/dsct
 
 alias rt=runcom-test
 

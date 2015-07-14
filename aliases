@@ -23,7 +23,6 @@ alias ho='homeshick'
 alias hocd='homeshick cd'
 
 alias pu='pushd'
-alias ta='tmux attach || tmux new'
 
 alias c='cd'
 alias g='git'

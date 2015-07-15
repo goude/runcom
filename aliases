@@ -10,6 +10,7 @@ alias lsa='ls -lAh'
 alias df='df -h'
 
 alias gs='git status'
+alias gca='git commit -a'
 
 alias hi='history'
 alias higr='history | grep -i'

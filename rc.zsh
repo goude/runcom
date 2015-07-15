@@ -6,7 +6,7 @@ omz_dir=$HOME/.homesick/repos/oh-my-zsh
 if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     DISABLE_AUTO_UPDATE="true"
     DISABLE_AUTO_TITLE="true"
-    COMPLETION_WAITING_DOTS="true"
+    COMPLETION_WAITING_DOTS="false"
 
     export ZSH=$omz_dir
     export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
@@ -16,7 +16,7 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
     fi
 
     plugins+=(git tmux vi-mode history dircycle dirpersist)
-    plugins+=(bower node npm rbenv)
+    plugins+=(bower node npm rbenv catimg git-extras jsontools lwd pip web-search wd)
 
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 

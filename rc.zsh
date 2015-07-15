@@ -2,39 +2,46 @@
 source $HOME/.homesick/repos/runcom/rc.common
 
 # oh-my-zsh configuration
-omz_dir=$HOME/.homesick/repos/oh-my-zsh
-if [[ -e $omz_dir/oh-my-zsh.sh ]] then
-    DISABLE_AUTO_UPDATE="true"
-    DISABLE_AUTO_TITLE="true"
-    COMPLETION_WAITING_DOTS="false"
+#omz_dir=$HOME/.homesick/repos/oh-my-zsh
+#if [[ -e $omz_dir/oh-my-zsh.sh ]] then
+    #DISABLE_AUTO_UPDATE="true"
+    #DISABLE_AUTO_TITLE="true"
+    #COMPLETION_WAITING_DOTS="false"
 
-    export ZSH=$omz_dir
-    export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+    #export ZSH=$omz_dir
+    #export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-    if [[ -z "$ZSH_THEME" ]] then
-        export ZSH_THEME="drone"
-    fi
+    #if [[ -z "$ZSH_THEME" ]] then
+        #export ZSH_THEME="drone"
+    #fi
 
-    plugins+=(git tmux vi-mode history dircycle dirpersist)
-    plugins+=(bower node npm rbenv catimg git-extras jsontools lwd pip web-search wd)
+    #plugins+=(git tmux vi-mode history dircycle dirpersist)
+    #plugins+=(bower node npm rbenv catimg git-extras jsontools lwd pip web-search wd)
 
-    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+    #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-    if [[ $system == 'Linux' ]]; then
-        plugins+=()
-    fi
+    #if [[ $system == 'Linux' ]]; then
+        #plugins+=()
+    #fi
 
-    if [[ $system == 'OSX' ]]; then
-        plugins+=(terminalapp osx brew)
-    fi
+    #if [[ $system == 'OSX' ]]; then
+        #plugins+=(terminalapp osx brew)
+    #fi
 
-    # Must be last plugin
-    plugins+=(zsh-syntax-highlighting)
+    ## Must be last plugin
+    #plugins+=(zsh-syntax-highlighting)
 
-    source $omz_dir/oh-my-zsh.sh
-    unsetopt correct_all
+    #source $omz_dir/oh-my-zsh.sh
+    #unsetopt correct_all
+#fi
+#unset omz_dir
+
+# prezto
+prezto_dir=$HOME/.homesick/repos/prezto
+if [[ -e $prezto_dir/init.zsh ]] then
+    source $prezto_dir/init.zsh
 fi
-unset omz_dir
+unset prezto_dir
 
 # Tweak this value if necessary
 export KEYTIMEOUT=20

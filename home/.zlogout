@@ -1,2 +1,1 @@
-# Store dirs stack
-#dirpersiststore
+../../prezto/runcoms/zlogout

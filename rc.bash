@@ -2,11 +2,11 @@
 source $HOME/.homesick/repos/runcom/rc.common
 
 # Bash-it configuration
-export BASH_IT=$HOME/.homesick/repos/bash-it
-export BASH_IT_THEME='demula'
+#export BASH_IT=$HOME/.homesick/repos/bash-it
+#export BASH_IT_THEME='demula'
 
 # Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
+#export SCM_CHECK=true
 
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/xvzf/vcprompt
@@ -19,6 +19,6 @@ export SCM_CHECK=true
 #export TODO="t"
 
 # Load Bash It
-source $BASH_IT/bash_it.sh
+#source $BASH_IT/bash_it.sh
 
 source $HOME/.homesick/repos/runcom/rc.common-post

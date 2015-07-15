@@ -7,7 +7,8 @@ source $REPOS/homeshick/homeshick.sh
 echo "Cloning homeshick repos..."
 
 homeshick_repos=(
-    "robbyrussell/oh-my-zsh"
+    #"robbyrussell/oh-my-zsh"
+    "goude/prezto"
     "goude/runcom"
     "goude/yaprox"
     "spf13/spf13-vim"
@@ -25,7 +26,7 @@ do
     #fi
 done
 
-git clone --depth=1 https://github.com/Bash-it/bash-it.git $REPOS/bash-it
+#git clone --depth=1 https://github.com/Bash-it/bash-it.git $REPOS/bash-it
 
 echo "Silently and forcefully linking homeshick..."
 homeshick --force --batch --quiet link

@@ -11,6 +11,7 @@ alias df='df -h'
 
 alias gs='git status'
 alias gca='git commit -a'
+alias gp='git push'
 
 alias hi='history'
 alias higr='history | grep -i'

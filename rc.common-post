@@ -67,10 +67,11 @@ if [[ -e ~/.ssh/ssh_auth_sock ]]; then
 fi
 
 # Turn off Ctrl-s XOFF
-stty ixany
-stty ixoff -ixon
-stty stop undef
-stty start undef
+# Commented out pending further investigation (x key stopped working)
+#stty ixany
+#stty ixoff -ixon
+#stty stop undef
+#stty start undef
 
 # Remove duplicates from environment vars
 #typeset -U PATH # remove duplicates

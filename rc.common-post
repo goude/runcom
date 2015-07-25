@@ -26,9 +26,9 @@ if [[ $system == 'OSX' ]]; then
     fi
 
     #if [[ -z "$LANG" ]]; then
-        export LANG=en_US.UTF-8
-        export LC_CTYPE=en_US.UTF-8
-        export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LC_CTYPE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
     #fi
 fi
 
@@ -47,6 +47,7 @@ if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   eval "$(tmuxifier init -)"
 fi
 
+# Wrapper for virtualenv
 if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 elif [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
@@ -58,10 +59,12 @@ if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
 
+# Directory colors
 if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
     eval `dircolors $HOME/.dir_colors`
 fi
 
+# SSH_AUTH_SOCK
 if [[ -e ~/.ssh/ssh_auth_sock ]]; then
     export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 fi
@@ -81,6 +84,7 @@ unset rcfiles
 unset system
 unset homeshick_repos
 
+# Source local settings
 if [ -f ~/.localenv ]; then
     source ~/.localenv
 fi

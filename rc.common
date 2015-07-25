@@ -3,12 +3,13 @@ homeshick_repos=$HOME/.homesick/repos
 rcfiles=$HOME/.homesick/repos/runcom
 system=`$rcfiles/system`
 
-# common environment variables
+export EDITOR=vim
+
 export PYTHONSTARTUP=$HOME/.pystartup
 export WORKON_HOME=$HOME/.virtualenvs
 export GOPATH=$HOME/go
+
 export PATH=$PATH:$HOME/.node/bin:$GOPATH/bin:$HOME/bin
-export EDITOR=vim
 
 # homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+python ~/.homesick/repos/runcom/heartbeat/heartbeat.py
+

@@ -14,9 +14,8 @@ alias gca='git commit -a'
 alias gp='git push'
 alias ga='git add'
 
-alias hi='history'
-alias higr='history | grep -i'
-alias hihi='history_high_score'
+alias hi='history 0'
+alias higr='history 0 | grep -i'
 
 alias ho='homeshick'
 alias hocd='homeshick cd'

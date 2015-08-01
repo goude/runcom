@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# pv -qL 10 will also do the job, if you have it installed.
 while IFS= read -r line; do
     length="${#line}"
     bol=1

@@ -40,6 +40,9 @@ fi
 source $rcfiles/aliases
 source $rcfiles/functions
 
+# Unset aliases
+unalias grc
+
 # Tmux improver
 if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"

@@ -10,10 +10,10 @@
   (mapcar
    (lambda (package)
      (if (package-installed-p package)
-     nil
+	 nil
        (if (y-or-n-p (format "Package %s is missing. Install it?" package))
-       (package-install package)
-     package)))
+	   (package-install package)
+	 package)))
    packages))
 
 (or (file-exists-p package-user-dir)
@@ -25,25 +25,77 @@
  'evil
  'helm
  'linum-relative
-)
+ 'solarized-theme
+ 'ace-jump-mode
+ 'key-chord
+ )
 
 (require 'evil)
 (evil-mode t)
 
 (require 'linum-relative)
 
-(load-theme 'tango-dark)
+;;(load-theme 'tango-dark)
+(load-theme 'solarized-dark)
 
 (tool-bar-mode -1)
-
-(global-linum-mode t)
 
 (add-to-list 'default-frame-alist '(height . 40))
 (add-to-list 'default-frame-alist '(width . 120))
 
+(global-linum-mode t)
+
+(display-time)
+
+(setq next-line-add-newlines nil)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq inhibit-splash-screen t)
+;;(switch-to-buffer "**")
+
+(require 'cl)
+(defun font-candidate (&rest fonts)
+  "Return existing font which first match."
+  (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+
+;; Emacs23 style font setting.
+(set-face-attribute 'default nil :font (font-candidate '"Menlo-15:weight=normal" "Consolas-10:weight=normal" "DejaVu Sans Mono-10:weight=normal"))
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
+
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+
+;; Remap org-mode meta keys for convenience
+(mapcar (lambda (state)
+	  (evil-declare-key state org-mode-map
+	    (kbd "M-l") 'org-metaright
+	    (kbd "M-h") 'org-metaleft
+	    (kbd "M-k") 'org-metaup
+	    (kbd "M-j") 'org-metadown
+	    (kbd "M-L") 'org-shiftmetaright
+	    (kbd "M-H") 'org-shiftmetaleft
+	    (kbd "M-K") 'org-shiftmetaup
+	    (kbd "M-J") 'org-shiftmetadown))
+	'(normal insert))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Menlo")))))
+ )
+

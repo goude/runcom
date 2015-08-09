@@ -33,10 +33,10 @@
 (require 'evil)
 (evil-mode t)
 
-(require 'linum-relative)
+(require 'ido)
+(ido-mode t)
 
-;;(load-theme 'tango-dark)
-(load-theme 'solarized-dark)
+(require 'linum-relative)
 
 (tool-bar-mode -1)
 
@@ -60,7 +60,7 @@
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 ;; Emacs23 style font setting.
-(set-face-attribute 'default nil :font (font-candidate '"Menlo-15:weight=normal" "Consolas-10:weight=normal" "DejaVu Sans Mono-10:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Menlo-15:weight=normal" "Consolas-15:weight=normal" "Ubuntu Mono-15:weight=normal"))
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
@@ -99,3 +99,5 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;(load-theme 'tango-dark)
+(load-theme 'solarized-dark)

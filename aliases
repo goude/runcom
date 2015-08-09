@@ -34,6 +34,6 @@ alias cpProgress="rsync --progress -ravz"
 
 alias rt=runcom-test
 
-alias emacs='emacs -nw'
+# alias emacs='emacs -nw'
 
 alias ta='tmux attach || tmux new'

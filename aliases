@@ -17,6 +17,9 @@ alias ga='git add'
 alias hi='history 0'
 alias higr='history 0 | grep -i'
 
+alias t='tmux'
+alias ta='tmux attach || tmux new'
+
 alias ho='homeshick'
 alias hocd='homeshick cd'
 
@@ -36,4 +39,3 @@ alias rt=runcom-test
 
 # alias emacs='emacs -nw'
 
-alias ta='tmux attach || tmux new'

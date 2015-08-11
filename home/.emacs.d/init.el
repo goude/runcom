@@ -1,3 +1,8 @@
+(setq url-proxy-services
+      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+        ("http" . "localhost:3128")
+        ("https" . "localhost:3128")))
+
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -61,7 +66,7 @@
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 ;; Emacs23 style font setting.
-(set-face-attribute 'default nil :font (font-candidate '"Menlo-15:weight=normal" "Consolas-15:weight=normal" "Ubuntu Mono-15:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Ubuntu Mono derivative Powerline Regular-12:weight=normal" "Ubuntu Mono-12:weight=normal" "Menlo-12:weight=normal" "Consolas-12:weight=normal"))
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
@@ -86,10 +91,18 @@
 	'(normal insert))
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;;(load-theme 'tango-dark)

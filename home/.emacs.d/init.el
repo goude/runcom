@@ -1,7 +1,10 @@
-(setq url-proxy-services
-      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-        ("http" . "localhost:3128")
-        ("https" . "localhost:3128")))
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
+;(setq url-proxy-services
+      ;'(("no_proxy" . "^\\(localhost\\|10.*\\)")
+        ;("http" . "localhost:3128")
+        ;("https" . "localhost:3128")))
 
 (require 'package)
 
@@ -15,10 +18,10 @@
   (mapcar
    (lambda (package)
      (if (package-installed-p package)
-	 nil
+     nil
        (if (y-or-n-p (format "Package %s is missing. Install it?" package))
-	   (package-install package)
-	 package)))
+       (package-install package)
+     package)))
    packages))
 
 (or (file-exists-p package-user-dir)
@@ -79,16 +82,32 @@
 
 ;; Remap org-mode meta keys for convenience
 (mapcar (lambda (state)
-	  (evil-declare-key state org-mode-map
-	    (kbd "M-l") 'org-metaright
-	    (kbd "M-h") 'org-metaleft
-	    (kbd "M-k") 'org-metaup
-	    (kbd "M-j") 'org-metadown
-	    (kbd "M-L") 'org-shiftmetaright
-	    (kbd "M-H") 'org-shiftmetaleft
-	    (kbd "M-K") 'org-shiftmetaup
-	    (kbd "M-J") 'org-shiftmetadown))
-	'(normal insert))
+      (evil-declare-key state org-mode-map
+        (kbd "M-l") 'org-metaright
+        (kbd "M-h") 'org-metaleft
+        (kbd "M-k") 'org-metaup
+        (kbd "M-j") 'org-metadown
+        (kbd "M-L") 'org-shiftmetaright
+        (kbd "M-H") 'org-shiftmetaleft
+        (kbd "M-K") 'org-shiftmetaup
+        (kbd "M-J") 'org-shiftmetadown))
+    '(normal insert))
+
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p --backup-directory))
+  (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t               ; auto-save every buffer that visits a file
+      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+      )
 
 ;;(load-theme 'tango-dark)
 (load-theme 'solarized-dark)

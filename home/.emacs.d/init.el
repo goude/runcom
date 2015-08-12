@@ -1,6 +1,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;(load "~/.emacs.d/modeline.el")
+
 ;(setq url-proxy-services
       ;'(("no_proxy" . "^\\(localhost\\|10.*\\)")
         ;("http" . "localhost:3128")
@@ -33,9 +35,11 @@
  'evil
  'helm
  'linum-relative
- 'solarized-theme
  'ace-jump-mode
  'key-chord
+ 'solarized-theme
+ 'zenburn-theme
+ 'monokai-theme
  )
 
 (require 'evil)
@@ -69,7 +73,7 @@
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 ;; Emacs23 style font setting.
-(set-face-attribute 'default nil :font (font-candidate '"Ubuntu Mono derivative Powerline Regular-12:weight=normal" "Ubuntu Mono-12:weight=normal" "Menlo-12:weight=normal" "Consolas-12:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Ubuntu Mono derivative Powerline-20:weight=normal"))
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
@@ -110,4 +114,4 @@
       )
 
 ;;(load-theme 'tango-dark)
-(load-theme 'solarized-dark)
+(load-theme 'monokai)

@@ -33,7 +33,7 @@ if [[ $system == 'OSX' ]]; then
 fi
 
 if [[ $system == 'Cygwin' ]]; then
-    source $HOME/.homesick/repos/runcom/mintty/sol.dark
+    #source $HOME/.homesick/repos/runcom/mintty/sol.dark
 fi
 
 # Aliases & functions

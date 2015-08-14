@@ -52,8 +52,8 @@ if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
 fi
 
 # Directory colors
-if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
-    eval `dircolors $HOME/.dir_colors`
+if [[ -f ~/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
+    eval `dircolors $HOME/.dircolors`
 fi
 
 # SSH_AUTH_SOCK

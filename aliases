@@ -30,12 +30,7 @@ alias g='git'
 alias s='ssh'
 alias v='vim'
 
-alias ack='ack-grep'
-
 alias serve-directory='python -m SimpleHTTPServer'
 alias cpProgress="rsync --progress -ravz"
 
 alias rt=runcom-test
-
-# alias emacs='emacs -nw'
-

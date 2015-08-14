@@ -33,24 +33,113 @@
 
 (ensure-package-installed
  'evil
+ 'evil-leader
  'helm
+ 'helm-ag
+
+ 'markdown-mode+
+ 'latex-preview-pane
+
+ 'smart-mode-line
+
+ 'nyan-mode
+ 'xkcd
+
+ 'flx-ido
+
+ 'jedi
+ 'js2-mode
+ 'haskell-mode
+ 'go-mode
+
+ 'rainbow-mode
+ 'visual-regexp-steroids
+
+ 'magit
+
+ 'evil-nerd-commenter
+ 'smartparens
+
+ 'auto-complete
+
+ 'flycheck
+
  'linum-relative
+
  'ace-jump-mode
+ 'ace-window
+ 'ace-link
+
  'key-chord
+
+; 'icicles
+ 'dired+
+
+ 'projectile
+
  'solarized-theme
- 'zenburn-theme
  'monokai-theme
+
  )
+
+(global-evil-leader-mode)
+
+;; Emacs key bindings
+(global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+(global-set-key (kbd "C-c l") 'evilnc-quick-comment-or-uncomment-to-the-line)
+(global-set-key (kbd "C-c c") 'evilnc-copy-and-comment-lines)
+(global-set-key (kbd "C-c p") 'evilnc-comment-or-uncomment-paragraphs)
+
+;; Vim key bindings
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-key
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line
+  ;"\\" 'evilnc-comment-operator ; if you prefer backslash key
+)
 
 (require 'evil)
 (evil-mode t)
 
+(evil-leader/set-key
+  "e" 'find-file
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer)
+
 (require 'ido)
 (ido-mode t)
 
+(require 'smartparens-config)
+
 (require 'linum-relative)
 
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
+(ac-config-default)
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
+
 (tool-bar-mode -1)
+
+;;
+(projectile-global-mode)
+;(icy-mode 1)
+;;
 
 (add-to-list 'default-frame-alist '(height . 40))
 (add-to-list 'default-frame-alist '(width . 120))

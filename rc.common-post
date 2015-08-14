@@ -7,17 +7,11 @@ if [[ $system == 'Linux' ]]; then
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
     alias fgrep='fgrep --color=auto'
-
-    #export TERM="xterm-256color"
-    #export JAVA_HOME=/opt/java/jre1.7.0/
-    #export PATH=/opt/node/bin:$PATH
 fi
 
 if [[ $system == 'OSX' ]]; then
     export CLICOLOR=1
     export LSCOLORS="gxfxcxdxbxegedabagacad"
-    #export HOMEBREW_BUILD_FROM_SOURCE=1
-    #bindkey "^[[3~" delete-char
 
     if [[ -x /usr/local/bin/gls ]]; then
         alias ls='/usr/local/bin/gls -h --color=auto'
@@ -25,11 +19,9 @@ if [[ $system == 'OSX' ]]; then
         alias ls='ls -hG'
     fi
 
-    #if [[ -z "$LANG" ]]; then
     export LANG=en_US.UTF-8
     export LC_CTYPE=en_US.UTF-8
     export LC_ALL=en_US.UTF-8
-    #fi
 fi
 
 if [[ $system == 'Cygwin' ]]; then
@@ -39,9 +31,6 @@ fi
 # Aliases & functions
 source $rcfiles/aliases
 source $rcfiles/functions
-
-# Unset aliases
-unalias grc
 
 # Tmux improver
 if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
@@ -68,9 +57,9 @@ if [[ -f ~/.dir_colors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors
 fi
 
 # SSH_AUTH_SOCK
-if [[ -e ~/.ssh/ssh_auth_sock ]]; then
-    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
-fi
+#if [[ -e ~/.ssh/ssh_auth_sock ]]; then
+#    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+#fi
 
 # Turn off Ctrl-s XOFF
 # Commented out pending further investigation (x key stopped working)
@@ -78,10 +67,6 @@ fi
 #stty ixoff -ixon
 #stty stop undef
 #stty start undef
-
-# Remove duplicates from environment vars
-#typeset -U PATH # remove duplicates
-#dedup_pathvar PATH
 
 unset rcfiles
 unset system

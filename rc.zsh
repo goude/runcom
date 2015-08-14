@@ -1,42 +1,6 @@
 #!/usr/bin/env zsh
 source $HOME/.homesick/repos/runcom/rc.common
 
-# oh-my-zsh configuration
-#omz_dir=$HOME/.homesick/repos/oh-my-zsh
-#if [[ -e $omz_dir/oh-my-zsh.sh ]] then
-    #DISABLE_AUTO_UPDATE="true"
-    #DISABLE_AUTO_TITLE="true"
-    #COMPLETION_WAITING_DOTS="false"
-
-    #export ZSH=$omz_dir
-    #export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
-
-    #if [[ -z "$ZSH_THEME" ]] then
-        #export ZSH_THEME="drone"
-    #fi
-
-    #plugins+=(git tmux vi-mode history dircycle dirpersist)
-    #plugins+=(bower node npm rbenv catimg git-extras jsontools lwd pip web-search wd)
-
-    #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-
-    #if [[ $system == 'Linux' ]]; then
-        #plugins+=()
-    #fi
-
-    #if [[ $system == 'OSX' ]]; then
-        #plugins+=(terminalapp osx brew)
-    #fi
-
-    ## Must be last plugin
-    #plugins+=(zsh-syntax-highlighting)
-
-    #source $omz_dir/oh-my-zsh.sh
-    #unsetopt correct_all
-#fi
-#unset omz_dir
-
-# prezto
 prezto_dir=$HOME/.homesick/repos/prezto
 if [[ -e $prezto_dir/init.zsh ]] then
     source $prezto_dir/init.zsh
@@ -59,14 +23,6 @@ noop () { }
 zle -N noop
 bindkey -M vicmd '\e' noop
 
-# Vim's text-objects-ish for zsh
-if [[ -f $HOME/.homesick/repos/opp.zsh/opp.zsh ]]; then
-    source $HOME/.homesick/repos/opp.zsh/opp.zsh
-    source $HOME/.homesick/repos/opp.zsh/opp/*.zsh
-fi
-
-# -o - allow long option names
-
 # Allow octothorpe-prefixed comments
 setopt -o interactivecomments
 
@@ -76,4 +32,25 @@ setopt -o sharehistory
 # Disable Ctrl-Z
 set -o ignoreeof
 
+# Experimental candidates
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt AUTO_NAME_DIRS
+setopt GLOB_COMPLETE
+setopt PUSHD_MINUS
+setopt PUSHD_TO_HOME
+setopt PUSHD_IGNORE_DUPS
+setopt RM_STAR_WAIT
+setopt ZLE
+setopt EXTENDED_GLOB
+
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+bindkey -M vicmd "//" history-beginning-search-backward
+bindkey -M vicmd "??" history-beginning-search-forward
+
+bindkey -M vicmd "q" push-line
+bindkey -M viins ' ' magic-space
+
+# Finally, source common-post
 source $HOME/.homesick/repos/runcom/rc.common-post

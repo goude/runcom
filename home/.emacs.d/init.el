@@ -3,10 +3,10 @@
 
 ;(load "~/.emacs.d/modeline.el")
 
-(setq url-proxy-services
-      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-      ("http" . "localhost:3128")
-      ("https" . "localhost:3128")))
+;(setq url-proxy-services
+      ;'(("no_proxy" . "^\\(localhost\\|10.*\\)")
+      ;("http" . "localhost:3128")
+      ;("https" . "localhost:3128")))
 
 (require 'package)
 
@@ -73,7 +73,7 @@
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 ;; Emacs23 style font setting.
-(set-face-attribute 'default nil :font (font-candidate '"Ubuntu Mono derivative Powerline-12:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Ubuntu Mono derivative Powerline-20:weight=normal"))
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)

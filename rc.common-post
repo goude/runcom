@@ -55,6 +55,9 @@ fi
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
     eval `dircolors $HOME/.dircolors`
 fi
+if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
+    eval `gdircolors $HOME/.dircolors`
+fi
 
 # SSH_AUTH_SOCK
 #if [[ -e ~/.ssh/ssh_auth_sock ]]; then

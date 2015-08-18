@@ -43,6 +43,9 @@ fi
 # z.sh utility to move around quickly
 source $rcfiles/utils/z.sh
 
+# generic colou?ri[sz]er
+source $rcfiles/home/.grc/grc.bashrc
+
 # Tmux improver
 if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"

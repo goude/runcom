@@ -59,6 +59,9 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
     eval `gdircolors $HOME/.dircolors`
 fi
 
+# z.sh utility to move around quickly
+source $rcfiles/utils/z.sh
+
 # SSH_AUTH_SOCK
 #if [[ -e ~/.ssh/ssh_auth_sock ]]; then
 #    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock

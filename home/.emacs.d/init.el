@@ -1,12 +1,13 @@
+
+(when (eq "1" (getenv "RUNCOM_USE_PROXY"))
+  (setq url-proxy-services
+    '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+     ("http" . "localhost:3128")
+     ("https" . "localhost:3128")))
+)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
-
-;(load "~/.emacs.d/modeline.el")
-
-;(setq url-proxy-services
-      ;'(("no_proxy" . "^\\(localhost\\|10.*\\)")
-      ;("http" . "localhost:3128")
-      ;("https" . "localhost:3128")))
 
 (require 'package)
 
@@ -14,85 +15,44 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
-(setq package-enable-at-startup nil)
+;;(setq package-enable-at-startup nil)
 
-(defun ensure-package-installed(&rest packages)
-  (mapcar
-   (lambda (package)
-     (if (package-installed-p package)
-     nil
-       (if (y-or-n-p (format "Package %s is missing. Install it?" package))
-       (package-install package)
-     package)))
-   packages))
+(setq package-list '(
+  evil evil-leader helm helm-ag markdown-mode+ latex-preview-pane
+  smart-mode-line nyan-mode xkcd flx-ido jedi js2-mode haskell-mode
+  go-mode rainbow-mode visual-regexp-steroids magit evil-nerd-commenter
+  smartparens auto-complete flycheck linum-relative
+  ace-jump-mode ace-window ace-link
 
-(or (file-exists-p package-user-dir)
-    (package-refresh-contents))
+  key-chord dired+ projectile
+
+  solarized-theme
+  monokai-theme
+))
 
 (package-initialize)
 
-(ensure-package-installed
- 'evil
- 'evil-leader
- 'helm
- 'helm-ag
+; Update your local package index
+(unless package-archive-contents
+  (package-refresh-contents))
 
- 'markdown-mode+
- 'latex-preview-pane
-
- 'smart-mode-line
-
- 'nyan-mode
- 'xkcd
-
- 'flx-ido
-
- 'jedi
- 'js2-mode
- 'haskell-mode
- 'go-mode
-
- 'rainbow-mode
- 'visual-regexp-steroids
-
- 'magit
-
- 'evil-nerd-commenter
- 'smartparens
-
- 'auto-complete
-
- 'flycheck
-
- 'linum-relative
-
- 'ace-jump-mode
- 'ace-window
- 'ace-link
-
- 'key-chord
-
-; 'icicles
- 'dired+
-
- 'projectile
-
- 'solarized-theme
- 'monokai-theme
-
- )
-
-(global-evil-leader-mode)
-
-;; Emacs key bindings
-(global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
-(global-set-key (kbd "C-c l") 'evilnc-quick-comment-or-uncomment-to-the-line)
-(global-set-key (kbd "C-c c") 'evilnc-copy-and-comment-lines)
-(global-set-key (kbd "C-c p") 'evilnc-comment-or-uncomment-paragraphs)
+; Install all missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;; Vim key bindings
 (require 'evil-leader)
 (global-evil-leader-mode)
+
+(require 'evil)
+(evil-mode t)
+
+(evil-leader/set-key
+  "e" 'find-file
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer)
+
 (evil-leader/set-key
   "ci" 'evilnc-comment-or-uncomment-lines
   "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
@@ -103,14 +63,6 @@
   "cv" 'evilnc-toggle-invert-comment-line-by-line
   ;"\\" 'evilnc-comment-operator ; if you prefer backslash key
 )
-
-(require 'evil)
-(evil-mode t)
-
-(evil-leader/set-key
-  "e" 'find-file
-  "b" 'switch-to-buffer
-  "k" 'kill-buffer)
 
 (require 'ido)
 (ido-mode t)

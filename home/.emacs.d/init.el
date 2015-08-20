@@ -114,7 +114,7 @@
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 ;; Emacs23 style font setting.
-(set-face-attribute 'default nil :font (font-candidate '"Ubuntu Mono derivative Powerline-20:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Input Mono-16:weight=light" "Ubuntu Mono derivative Powerline-20:weight=normal"))
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)

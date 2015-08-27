@@ -15,7 +15,8 @@ alias gp='git push'
 alias ga='git add'
 
 alias hi='history 0'
-alias higr='history 0 | grep -i'
+alias higr='history 0 | egrep -i'
+alias engr='env | egrep -i'
 
 alias t='tmux'
 alias ta='tmux attach || tmux new'

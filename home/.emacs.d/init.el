@@ -4,9 +4,9 @@
 
 (when (eq "1" (getenv "RUNCOM_USE_PROXY"))
   (setq url-proxy-services
-	'(("no_proxy" . "^\\(localhost\\|10.*\\)")
-	  ("http" . "localhost:3128")
-	  ("https" . "localhost:3128")))
+        '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+          ("http" . "localhost:3128")
+          ("https" . "localhost:3128")))
   )
 
 (setq custom-file "~/.emacs.d/custom.el")
@@ -19,32 +19,32 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 (setq package-list '(
-		     recentf
-		     helm helm-ag
-		     evil evil-leader evil-nerd-commenter
-		     ace-jump-mode ace-window ace-link
-		     key-chord dired+ 
-		     smart-mode-line
-		     linum-relative
-		     smartparens
-		     visual-regexp-steroids
-		     auto-complete
+                     recentf
+                     helm helm-ag
+                     evil evil-leader evil-nerd-commenter
+                     ace-jump-mode ace-window ace-link
+                     key-chord
+                     dired+
+                     smart-mode-line
+                     linum-relative
+                     smartparens
+                     visual-regexp-steroids
+                     auto-complete
 
-		     icicles
-		     magit
-		     flx-ido
-		     rainbow-mode
+                     flx-ido
 
-		     flycheck
-		     latex-preview-pane
-		     markdown-mode+
-		     jedi js2-mode haskell-mode go-mode
+                     magit
+                     rainbow-mode
+                     flycheck
+                     latex-preview-pane
+                     markdown-mode+
+                     jedi js2-mode haskell-mode go-mode
 
-		     nyan-mode xkcd
+                     nyan-mode xkcd
 
-		     solarized-theme
-		     monokai-theme
-		     ))
+                     solarized-theme
+                     monokai-theme
+                     ))
 
 (package-initialize)
 
@@ -67,7 +67,7 @@
   "k" 'kill-buffer)
 
 (evil-leader/set-key
-  "ci" 'evilnc-comment-or-uncomment-lines
+  "c SPC" 'evilnc-comment-or-uncomment-lines
   "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
   "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
   "cc" 'evilnc-copy-and-comment-lines
@@ -77,7 +77,6 @@
   ;;"\\" 'evilnc-comment-operator ; if you prefer backslash key
   )
 
-
 (require 'recentf)
 (setq recentf-max-saved-items 50)
 
@@ -85,9 +84,9 @@
 (require 'smartparens-config)
 (require 'linum-relative)
 (require 'flx-ido)
-(ido-mode t)
-(ido-everywhere t)
-(flx-ido-mode t)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
 
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
@@ -101,24 +100,18 @@
 (setq jedi:complete-on-dot t) ; optional
 
 (tool-bar-mode -1)
-
-;; (require 'icicles)
-;; (icy-mode 1)
+(setq inhibit-splash-screen t)
 
 (add-to-list 'default-frame-alist '(height . 40))
 (add-to-list 'default-frame-alist '(width . 120))
 
 (global-linum-mode t)
 (global-hl-line-mode t)
-
 (display-time)
-
+(show-paren-mode 1)
+(setq-default indent-tabs-mode nil)
 (setq next-line-add-newlines nil)
-
 (fset 'yes-or-no-p 'y-or-n-p)
-
-(setq inhibit-splash-screen t)
-;;(switch-to-buffer "**")
 
 (require 'cl)
 (defun font-candidate (&rest fonts)
@@ -138,16 +131,16 @@
 
 ;; Remap org-mode meta keys for convenience
 (mapcar (lambda (state)
-	  (evil-declare-key state org-mode-map
-	    (kbd "M-l") 'org-metaright
-	    (kbd "M-h") 'org-metaleft
-	    (kbd "M-k") 'org-metaup
-	    (kbd "M-j") 'org-metadown
-	    (kbd "M-L") 'org-shiftmetaright
-	    (kbd "M-H") 'org-shiftmetaleft
-	    (kbd "M-K") 'org-shiftmetaup
-	    (kbd "M-J") 'org-shiftmetadown))
-	'(normal insert))
+          (evil-declare-key state org-mode-map
+            (kbd "M-l") 'org-metaright
+            (kbd "M-h") 'org-metaleft
+            (kbd "M-k") 'org-metaup
+            (kbd "M-j") 'org-metadown
+            (kbd "M-L") 'org-shiftmetaright
+            (kbd "M-H") 'org-shiftmetaleft
+            (kbd "M-K") 'org-shiftmetaup
+            (kbd "M-J") 'org-shiftmetadown))
+        '(normal insert))
 
 (defvar --backup-directory (concat user-emacs-directory "backups"))
 (if (not (file-exists-p --backup-directory))
@@ -165,14 +158,7 @@
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
 
-
-(show-paren-mode 1)
-
-;;(load-theme 'tango-dark)
 (load-theme 'monokai)
-
-(define-key emacs-lisp-mode-map [(f1)] 'describe-foo-at-point)
-
 
 (provide 'init)
 ;;; init.el ends here

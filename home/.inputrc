@@ -13,8 +13,8 @@ set completion-query-items 40
 
 # disable/enable 8bit input
 #set meta-flag on
-#set input-meta on
-#set output-meta off
+set input-meta on
+set output-meta on
 #set convert-meta on
 
 # visible-stats
@@ -28,7 +28,8 @@ set show-all-if-ambiguous off
 # use vi key bindings for input
 set editing-mode vi
 set keymap vi
-set convert-meta on
+#set convert-meta on
+set convert-meta off
 
 # Fix Ctrl-L not clearing screen in Bash
 set keymap vi-insert

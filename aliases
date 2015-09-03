@@ -26,7 +26,10 @@ alias hocd='homeshick cd'
 
 alias pu='pushd'
 
+alias ..='cd ..'
+alias ...='cd ../..'
 alias c='z'
+
 alias g='git'
 alias s='ssh'
 alias v='vim'

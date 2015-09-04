@@ -125,11 +125,11 @@ set -g mode-keys vi
 
 # setup v as selection key
 bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+#bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # set shell
 #set-option -g default-shell $HOME/opt/zsh-5.0.7/bin/zsh
-set-option -g default-shell /usr/local/bin/zsh
+#set-option -g default-shell /usr/local/bin/zsh
 
 #### COLOUR (Solarized 256)
 

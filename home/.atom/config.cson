@@ -7,9 +7,14 @@
     audioBeep: false
   editor:
     invisibles: {}
-    fontSize: 14
     showInvisibles: true
+    fontFamily: "Input Mono; Menlo; Consolas"
   minimap: {}
   linter: {}
   "tree-view":
     showOnRightSide: true
+  "terminal-plus":
+    core: {}
+    style:
+      fontFamily: "Input Mono"
+      theme: "pro"

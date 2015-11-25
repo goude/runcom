@@ -1,3 +1,9 @@
 #!/bin/bash
+
+if [ -f "$HOME/.motd" ];
+then
+  cat "$HOME/.motd"
+fi
+
 # non-indexed non-secret gist
-curl https://gist.githubusercontent.com/goude/c9253570e943aa42aba5/raw/motd
+curl -w "\n" https://gist.githubusercontent.com/goude/c9253570e943aa42aba5/raw/motd

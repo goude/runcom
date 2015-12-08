@@ -73,10 +73,12 @@ fi
 
 # Turn off Ctrl-s XOFF
 # Commented out pending further investigation (x key stopped working)
-#stty ixany
-#stty ixoff -ixon
-#stty stop undef
-#stty start undef
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
+# http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
+#stty ixon
 
 unset rcfiles
 unset system

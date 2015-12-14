@@ -22,8 +22,19 @@ def main():
         'uptime': get_uptime(),
     }
 
+    try:
+        import sensehat
+        sensehat_info = sensehat.get_info()
+        hbi.update(sensehat_info)
+
+    except OSError:
+        pass
+
+    except ImportError:
+        pass
+
     hbs = json.dumps(hbi)
-    #print(hbs)
+    print(hbs)
     log_event(name=u'heartbeat.info', value=hbs, unit='json', ip=hbi['ip'])
     log_event(name=u'heartbeat', value=hbi['hostname'], unit=u'', ip=hbi['ip'])
 

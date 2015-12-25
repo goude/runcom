@@ -79,6 +79,9 @@ autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Global and plugin settings {
 
+" editorconfig
+let g:EditorConfig_core_mode = 'external_command'
+
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"
 

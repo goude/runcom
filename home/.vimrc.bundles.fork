@@ -7,5 +7,6 @@ Bundle "vim-scripts/Vim-R-plugin"
 
 Bundle "suan/vim-instant-markdown"
 
-"Bundle "neilagabriel/vim-geeknote"
-"Bundle "editorconfig/editorconfig-vim"
+Bundle "editorconfig/editorconfig-vim"
+
+Bundle "jceb/vim-orgmode"

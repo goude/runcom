@@ -79,9 +79,6 @@ autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Global and plugin settings {
 
-" editorconfig
-let g:EditorConfig_core_mode = 'external_command'
-
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"
 
@@ -106,6 +103,11 @@ let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
 " }
 
 " System settings {
+
+if OSX()
+    " editorconfig
+    let g:EditorConfig_core_mode = 'external_command'
+endif
 
 " Set font on Windows/portable gvim
 if WINDOWS()

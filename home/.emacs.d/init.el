@@ -14,12 +14,26 @@
 
 (require 'package)
 
+;; ;; "after" macro definition
+;; (if (fboundp 'with-eval-after-load)
+;;     (defmacro after (feature &rest body)
+;;       "After FEATURE is loaded, evaluate BODY."
+;;       (declare (indent defun))
+;;       `(with-eval-after-load ,feature ,@body))
+;;   (defmacro after (feature &rest body)
+;;     "After FEATURE is loaded, evaluate BODY."
+;;     (declare (indent defun))
+;;     `(eval-after-load ,feature
+;;        '(progn ,@body))))
+
+
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 (setq package-list '(
                      recentf
+                     ag
                      helm helm-ag
                      evil evil-leader evil-nerd-commenter
                      ace-jump-mode ace-window ace-link
@@ -31,17 +45,21 @@
                      visual-regexp-steroids
                      auto-complete
 
+                     smooth-scrolling
+
                      flx-ido
 
                      magit
                      rainbow-mode
                      flycheck
-                     latex-preview-pane
+                     ;;latex-preview-pane
                      markdown-mode+
                      jedi js2-mode haskell-mode go-mode
 
-                     nyan-mode xkcd
+                     nyan-mode
+                     ;;xkcd
 
+                     color-theme-approximate
                      solarized-theme
                      monokai-theme
                      ))
@@ -61,32 +79,36 @@
 (require 'evil)
 (evil-mode t)
 
+;; If leader key doesn't work
+;; http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/
+;;(setq evil-leader/in-all-states 1)
+
 (evil-leader/set-key
-  "e" 'find-file
   "b" 'switch-to-buffer
   "k" 'kill-buffer)
 
 (evil-leader/set-key
   "c SPC" 'evilnc-comment-or-uncomment-lines
-  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
-  "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
-  "cc" 'evilnc-copy-and-comment-lines
-  "cp" 'evilnc-comment-or-uncomment-paragraphs
-  "cr" 'comment-or-uncomment-region
-  "cv" 'evilnc-toggle-invert-comment-line-by-line
-  ;;"\\" 'evilnc-comment-operator ; if you prefer backslash key
+  ;; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  ;; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+  ;; "cc" 'evilnc-copy-and-comment-lines
+  ;; "cp" 'evilnc-comment-or-uncomment-paragraphs
+  ;; "cr" 'comment-or-uncomment-region
+  ;; "cv" 'evilnc-toggle-invert-comment-line-by-line
+  ;; "\\" 'evilnc-comment-operator ; if you prefer backslash key
   )
 
 (require 'recentf)
 (setq recentf-max-saved-items 50)
 
 (require 'ido)
-(require 'smartparens-config)
-(require 'linum-relative)
 (require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
+
+(require 'smartparens-config)
+(require 'linum-relative)
 
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
@@ -105,9 +127,15 @@
 (add-to-list 'default-frame-alist '(height . 40))
 (add-to-list 'default-frame-alist '(width . 120))
 
+(setq scroll-margin 5
+scroll-conservatively 9999
+scroll-step 1)
+
 (global-linum-mode t)
+(column-number-mode 1)
 (global-hl-line-mode t)
-(display-time)
+(display-time-mode 1)
+(setq display-time-24hr-format t)
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (setq next-line-add-newlines nil)
@@ -129,6 +157,40 @@
 
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
+;; Make C-u behave as in vim
+;; http://stackoverflow.com/questions/14302171/ctrl-u-in-emacs-when-using-evil-key-bindings
+;; (setq evil-want-C-u-scroll t)
+;;(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+
+;; Let's go with C-j/k for now instead.
+(define-key evil-normal-state-map (kbd "C-k") (lambda ()
+                    (interactive)
+                    (evil-scroll-up nil)))
+(define-key evil-normal-state-map (kbd "C-j") (lambda ()
+                        (interactive)
+                        (evil-scroll-down nil)))
+
+;; http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/
+;; esc quits
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+
+
 ;; Remap org-mode meta keys for convenience
 (mapcar (lambda (state)
           (evil-declare-key state org-mode-map
@@ -141,6 +203,11 @@
             (kbd "M-K") 'org-shiftmetaup
             (kbd "M-J") 'org-shiftmetadown))
         '(normal insert))
+
+;; Save cursor position between invocations
+(setq save-place-file "~/.emacs.d/saveplace")
+(setq-default save-place t)
+(require 'saveplace)
 
 (defvar --backup-directory (concat user-emacs-directory "backups"))
 (if (not (file-exists-p --backup-directory))
@@ -159,6 +226,7 @@
       )
 
 (load-theme 'monokai)
+(color-theme-approximate-on)
 
 (provide 'init)
 ;;; init.el ends here

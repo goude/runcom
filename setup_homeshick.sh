@@ -11,6 +11,7 @@ homeshick_repos=(
     "goude/runcom"
     "goude/thxtime"
     "goude/yaprox"
+    "syl20bnr/spacemacs"
     "spf13/spf13-vim"
     "jamesob/desk" # A lightweight workspace manager for the shell
     #"jimeh/tmuxifier"

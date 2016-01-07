@@ -7,6 +7,9 @@ if [[ $system == 'Linux' ]]; then
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
     alias fgrep='fgrep --color=auto'
+
+    # FIXME: do we need to test for existence?
+    setxkbmap -option ctrl:nocaps
 fi
 
 if [[ $system == 'OSX' ]]; then

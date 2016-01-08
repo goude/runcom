@@ -2,6 +2,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
+alias ls='ls --color'
 alias l='ls -A'
 alias ll='ls -lAh'
 alias la='ls -A'
@@ -14,8 +15,11 @@ alias gca='git commit -a'
 alias gp='git push'
 alias ga='git add'
 
-alias hi='history 0'
-alias higr='history 0 | egrep -i'
+#alias hi='history 0'
+#alias higr='history 0 | egrep -i'
+
+alias hi='history'
+alias higr='hi | egrep -i'
 alias engr='env | egrep -i'
 
 alias t='tmux'

@@ -14,6 +14,6 @@ GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 source ~/.bash-git-prompt/gitprompt.sh
 
-#export PS1='\[\e[0;31m\]\u\[\e[0m\]@\[\e[0;33m\]\h\[\e[0m\] \[\e[0;90m\]\W λ\[\e[0m\] '
+export PS1='\[\e[0;31m\]\u\[\e[0m\]@\[\e[0;33m\]\h\[\e[0m\] \[\e[0;90m\]\W λ\[\e[0m\] '
 
 source $HOME/.homesick/repos/runcom/rc.common-post

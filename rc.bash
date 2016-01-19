@@ -7,9 +7,14 @@ source $rcfiles/git/git-completion.bash
 source $rcfiles/git/git-prompt.sh
 source $rcfiles/bash/bash_colors
 
-bprompt="\$(git_user_name_prompt) \$(__git_ps1 '[%s]')\\n"
-bprompt+="\[$Red\]\u\[$CReset\]@\[$Yellow\]\h\[$CReset\] "
-bprompt+="\[$Blue\]\W\[$CReset\] \[$Green\]λ\[$CReset\] "
+bprompt="\[$IBlack\]\$(git_user_name_prompt)\[$CReset\]"
+bprompt+=" \[$IBlack\]\u\[$CReset\]"
+bprompt+="\[$IBlack\]@\[$CReset\]"
+bprompt+="\[$IBlack\]\h\[$CReset\]"
+bprompt+=" \[$IBlack\]\$(__git_ps1 '[%s]')\[$CReset\]"
+bprompt+="\\n"
+bprompt+="\[$IPurple\]\W\[$CReset\] "
+bprompt+="\[$IGreen\]λ\[$CReset\] "
 
 export PS1=$bprompt
 unset bprompt

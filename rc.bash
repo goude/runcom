@@ -6,7 +6,13 @@ source $homeshick_repos/homeshick/completions/homeshick-completion.bash
 source $rcfiles/git/git-completion.bash
 source $rcfiles/git/git-prompt.sh
 source $rcfiles/bash/bash_colors
-export PS1="\$(__git_ps1 '[%s]')\\n\[$Red\]\u\[$CReset\]@\[$Yellow\]\h\[$CReset\] \[$Blue\]\W\[$CReset\] \[$Green\]λ\[$CReset\] "
+
+bprompt="\$(git_user_name_prompt) \$(__git_ps1 '[%s]')\\n"
+bprompt+="\[$Red\]\u\[$CReset\]@\[$Yellow\]\h\[$CReset\] "
+bprompt+="\[$Blue\]\W\[$CReset\] \[$Green\]λ\[$CReset\] "
+
+export PS1=$bprompt
+unset bprompt
 
 source $rcfiles/rc.common-post
 

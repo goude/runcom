@@ -48,3 +48,7 @@ dedup_pathvar () {
     deduped_path="$(echo -n $pathvar_value | perl -e 'print join(":",grep { not $seen{$_}++ } split(/:/, scalar <>))')"
     set_var $pathvar_name "$deduped_path"
 }
+
+git_user_name_prompt () {
+    git config user.email | sed 's/\(.\).\+@\(.\).\+/\1@\2/'
+}

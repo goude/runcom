@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 source $HOME/.homesick/repos/runcom/rc.common
 
+# homeshick completion needs to come before zsh compinit
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+
 prezto_dir=$HOME/.homesick/repos/prezto
 if [[ -e $prezto_dir/init.zsh ]] then
     source $prezto_dir/init.zsh

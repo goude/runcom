@@ -14,4 +14,3 @@ export PATH=$PATH:$HOME/.node/bin:$GOPATH/bin:$HOME/bin
 
 # homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)

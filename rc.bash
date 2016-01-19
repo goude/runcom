@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 source $HOME/.homesick/repos/runcom/rc.common
 
-source $HOME/.homesick/repos/runcom/git/git-completion.bash
-source $HOME/.homesick/repos/runcom/git/git-prompt.sh
-source $HOME/.homesick/repos/runcom/bash_colors
+source $homeshick_repos/homeshick/completions/homeshick-completion.bash
+
+source $rcfiles/git/git-completion.bash
+source $rcfiles/git/git-prompt.sh
+source $rcfiles/bash/bash_colors
 export PS1="\$(__git_ps1 '[%s]')\\n\[$Red\]\u\[$CReset\]@\[$Yellow\]\h\[$CReset\] \[$Blue\]\W\[$CReset\] \[$Green\]λ\[$CReset\] "
 
-source $HOME/.homesick/repos/runcom/rc.common-post
+source $rcfiles/rc.common-post
+
+# needs to come after aliases have been created, obviously
+source $HOME/.homesick/repos/runcom/bash/fix_alias_completion.bash

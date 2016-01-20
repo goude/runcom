@@ -3,6 +3,11 @@ source $HOME/.homesick/repos/runcom/rc.common
 
 source $homeshick_repos/homeshick/completions/homeshick-completion.bash
 
+GIT_PS1_SHOWDIRTYSTATE=1
+#GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWCOLORHINTS=1
+
 source $rcfiles/git/git-completion.bash
 source $rcfiles/git/git-prompt.sh
 source $rcfiles/bash/bash_colors

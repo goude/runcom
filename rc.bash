@@ -22,8 +22,6 @@ bpr="\[$IBlack\]\u\[$CReset\]"
 bpr+="\[$IBlack\]@\[$CReset\]"
 bpr+="\[$IBlack\]\h\[$CReset\]"
 
-bpr+=" \[$IBlack\]\$(git_user_name_prompt)\[$CReset\]"
-bpr+=" \[$IBlack\]$BOXNAME\[$CReset\]"
 bpr+=" \[$IBlack\]\$(get_extended_prompt_string)\[$CReset\]"
 bpr+=" \[$IBlack\]\$(__git_ps1 '[%s]')\[$CReset\]"
 bpr+="\\n"

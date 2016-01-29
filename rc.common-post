@@ -88,6 +88,12 @@ unset rcfiles
 unset system
 unset homeshick_repos
 
+# Set boxname
+if [[ -f $HOME/.boxname ]]; then
+    BOXNAME=$(cat "$HOME/.boxname")
+    export BOXNAME
+fi
+
 # Source local settings
 if [ -f ~/.localenv ]; then
     source ~/.localenv

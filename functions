@@ -50,5 +50,9 @@ dedup_pathvar () {
 }
 
 git_user_name_prompt () {
-    git config user.email | sed 's/\(.\).\+@\(.\).\+/\1@\2/'
+    git config user.email | gsed 's/\(.\).\+@\(.\).\+/\1@\2/'
+}
+
+get_extended_prompt_string () {
+    [[ -f ~/bin/generate-prompt-info.py ]] && python ~/bin/generate-prompt-info.py
 }

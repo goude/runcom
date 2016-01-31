@@ -1,18 +1,34 @@
 from __future__ import print_function
+#import os
+#import subprocess
 import os
-import subprocess
+
+def virtualenv():
+    path = os.environ.get('VIRTUAL_ENV', '')
+    if path:
+        path = os.path.basename(path)
+    return path
+
+def docker():
+    path = os.environ.get('DOCKER_MACHINE_NAME', '')
+    if path:
+        path = os.path.basename(path)
+    return path
+
+def gituser():
+    return "d@z"
 
 def main():
-    output = []
+    parts = [
+        virtualenv(),
+        docker(),
+        gituser(),
+    ]
 
-    if 'BOXNAME' in os.environ:
-        output.append('@' + os.environ['BOXNAME'])
+    # Remove empty strings
+    parts = [part for part in parts if part]
 
-    git_user = subprocess.check_output(["git", "config", "--get", "user.email"])
-
-    output.append(git_user)
-
-    output_string = " ".join(output)
+    output_string = " ".join(parts)
     print(output_string)
 
 if __name__ == '__main__':

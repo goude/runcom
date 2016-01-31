@@ -7,6 +7,7 @@ export EDITOR=vim
 
 export PYTHONSTARTUP=$HOME/.pystartup
 export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export GOPATH=$HOME/go
 export FORTUNE_PATH=$rcfiles/adages
 

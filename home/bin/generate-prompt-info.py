@@ -1,8 +1,8 @@
 from __future__ import print_function
-#import os
-#import subprocess
+
 import os
 import re
+import datetime
 
 def virtualenv():
     path = os.environ.get('VIRTUAL_ENV', '')
@@ -16,22 +16,37 @@ def docker():
         path = os.path.basename(path)
     return path
 
+def proxy():
+    proxy = os.environ.get('HTTP_PROXY', '')
+    if proxy:
+        return 'prx'
+    return None
+
+
 def gituser():
     home = os.environ.get('HOME', '')
     with open(os.path.join(home, '.gitconfig'), 'rb') as fp:
-        s = fp.read()
-        res = re.search(r'email = (.+)', s)
-        if res:
-            return res.groups(1)[0]
+        gitstring = fp.read()
+        email = re.search(r'email = (.+)', gitstring)
+        if email:
+            shortened = re.sub(r'^(.)[^@]+@(.{1,2}).+$', r'\1@\2', email.groups(1)[0])
+            return shortened
 
     return None
 
 def main():
+
+    t0 = datetime.datetime.now()
+
     parts = [
         virtualenv(),
         docker(),
+        proxy(),
         gituser(),
     ]
+
+    tm = datetime.datetime.now() - t0
+    parts.append('%.1f ms' % (tm.microseconds / 1000.0))
 
     # Remove empty strings
     parts = [part for part in parts if part]

@@ -45,8 +45,11 @@ def main():
         gituser(),
     ]
 
+    # slowness warning
     tm = datetime.datetime.now() - t0
-    parts.append('%.1f ms' % (tm.microseconds / 1000.0))
+    milliseconds = tm.microseconds / 1000.0
+    if milliseconds > 2.0:
+        parts.append('%.1f ms' % milliseconds)
 
     # Remove empty strings
     parts = [part for part in parts if part]

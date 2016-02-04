@@ -54,5 +54,5 @@ git_user_name_prompt () {
 }
 
 get_extended_prompt_string () {
-    [[ -f ~/bin/generate-prompt-info.py ]] && python ~/bin/generate-prompt-info.py
+    [[ -f ~/.homesick/repos/runcom/prompt/prompt.py ]] && python ~/.homesick/repos/runcom/prompt/prompt.py
 }

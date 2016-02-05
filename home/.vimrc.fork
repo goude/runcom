@@ -121,4 +121,6 @@ if LINUX()
     "colorscheme solarized
 endif
 
+color monokain
+
 " }

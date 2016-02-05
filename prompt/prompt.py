@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from __future__ import print_function
 import os
 import re
@@ -20,9 +23,8 @@ def docker():
 def proxy():
     proxy = os.environ.get('HTTP_PROXY', '')
     if proxy:
-        return 'prx'
+        return '℗'
     return None
-
 
 def gituser():
     home = os.environ.get('HOME', '')
@@ -40,10 +42,11 @@ def main():
     t0 = datetime.datetime.now()
 
     parts = [
+        '│',
         virtualenv(),
         docker(),
         proxy(),
-        color(gituser(), foreground='red')
+        color(gituser(), foreground='blue')
     ]
 
     # slowness warning

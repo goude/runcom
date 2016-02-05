@@ -1,8 +1,9 @@
 from __future__ import print_function
-
 import os
 import re
 import datetime
+
+from zsh_color import color
 
 def virtualenv():
     path = os.environ.get('VIRTUAL_ENV', '')
@@ -42,7 +43,7 @@ def main():
         virtualenv(),
         docker(),
         proxy(),
-        gituser(),
+        color(gituser(), foreground='red')
     ]
 
     # slowness warning

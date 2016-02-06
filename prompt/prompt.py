@@ -29,7 +29,7 @@ def proxy():
 def gituser():
     home = os.environ.get('HOME', '')
     with open(os.path.join(home, '.gitconfig'), 'rb') as fp:
-        gitstring = fp.read()
+        gitstring = str(fp.read())
         email = re.search(r'email = (.+)', gitstring)
         if email:
             shortened = re.sub(r'^(.)[^@]+@(.{1,2}).+$', r'\1@\2', email.groups(1)[0])

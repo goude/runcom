@@ -42,7 +42,7 @@ def main():
     t0 = datetime.datetime.now()
 
     parts = [
-        '│',
+        #'│',
         virtualenv(),
         docker(),
         proxy(),

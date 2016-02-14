@@ -17,7 +17,7 @@ alias ga='git add'
 #alias hi='history 0'
 #alias higr='history 0 | egrep -i'
 
-alias hi='history'
+alias hi='history 0'
 alias higr='hi | egrep -i'
 alias engr='env | egrep -i'
 

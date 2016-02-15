@@ -1,4 +1,3 @@
-Bundle "vim-airline/vim-airline-themes"
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-speeddating"
 Bundle "myusuf3/numbers.vim"

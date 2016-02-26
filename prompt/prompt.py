@@ -6,7 +6,7 @@ import os
 import re
 import datetime
 
-from zsh_color import color
+from prompt_color import color
 
 def virtualenv():
     path = os.environ.get('VIRTUAL_ENV', '')

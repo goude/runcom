@@ -84,12 +84,17 @@ stty start undef
 # http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
 #stty ixon
 
-unset rcfiles
-unset system
-unset homeshick_repos
+export _BASE16_THEME="monokai.dark"
 
 # Source local settings
 if [ -f ~/.localenv ]; then
     source ~/.localenv
 fi
 
+# Base16 Shell
+BASE16_SHELL="$homeshick_repos/base16-shell/base16-$_BASE16_THEME.sh"
+[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
+
+unset rcfiles
+unset system
+unset homeshick_repos

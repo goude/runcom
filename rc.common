@@ -15,3 +15,7 @@ export PATH=$PATH:$HOME/.node/bin:$GOPATH/bin:$HOME/bin
 
 # homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh
+
+# Base16 Shell
+BASE16_SHELL="$homeshick_repos/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL

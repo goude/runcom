@@ -1,12 +1,8 @@
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-speeddating"
 Bundle "myusuf3/numbers.vim"
-
 Bundle "fatih/vim-go"
 Bundle "vim-scripts/Vim-R-plugin"
-
 Bundle "suan/vim-instant-markdown"
-
 Bundle "editorconfig/editorconfig-vim"
-
-Bundle "jceb/vim-orgmode"
+Bundle "chriskempson/base16-vim"

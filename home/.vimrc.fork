@@ -116,11 +116,12 @@ endif
 
 if LINUX()
     " Proper solarized setup on Ubuntu
-    "set background=dark
     "let g:solarized_termcolors=16
     "colorscheme solarized
 endif
 
-color monokain
+let base16colorspace=256
+set background=dark
+color base16-monokai
 
 " }

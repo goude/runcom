@@ -13,7 +13,8 @@ homeshick_repos=(
     "goude/yaprox"
     "syl20bnr/spacemacs"
     "spf13/spf13-vim"
-    "jamesob/desk" # A lightweight workspace manager for the shell
+    "chriskempson/base16-shell.git"
+    #"jamesob/desk" # A lightweight workspace manager for the shell
     #"magicmonty/bash-git-prompt"
     #"jimeh/tmuxifier"
 )

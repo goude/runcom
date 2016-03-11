@@ -3,6 +3,8 @@ homeshick_repos=$HOME/.homesick/repos
 rcfiles=$HOME/.homesick/repos/runcom
 system=`$rcfiles/system`
 
+export HOMESHICK_REPOS=$homeshick_repos
+
 export EDITOR=vim
 
 export PYTHONSTARTUP=$HOME/.pystartup

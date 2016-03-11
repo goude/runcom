@@ -4,39 +4,9 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
-history_high_score () {
-    history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
-}
-
-cs () {
-    # only change directory if a directory is specified
-    [ -n "${1}" ] && cd $1
-    # filesystem stats
-    echo "`df -hT .`"
-    echo ""
-    echo -n "[`pwd`:"
-    # count files
-    echo -n " <`find . -maxdepth 1 -mindepth 1 -type f | wc -l | tr -d '[:space:]'` files>"
-    # count sub-directories
-    echo -n " <`find . -maxdepth 1 -mindepth 1 -type d | wc -l | tr -d '[:space:]'` dirs/>"
-    # count links
-    echo -n " <`find . -maxdepth 1 -mindepth 1 -type l | wc -l | tr -d '[:space:]'` links@>"
-    # total disk space used by this directory and all subdirectories
-    echo " <~`du -sh . 2> /dev/null | cut -f1`>]"
-    ROWS=`stty size | cut -d' ' -f1`
-    FILES=`find . -maxdepth 1 -mindepth 1 |
-    wc -l | tr -d '[:space:]'`
-    # if the terminal has enough lines, do a long listing
-    if [ `expr "${ROWS}" - 6` -lt "${FILES}" ]; then
-        ls -ACF
-    else
-        ls -hlAF #--full-time
-    fi
-}
-
 # Pull all git repos one level below current directory
 pullall () {
-    find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \; ;
+    find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \; ;
 }
 
 # Deduplicate path variables
@@ -49,10 +19,23 @@ dedup_pathvar () {
     set_var $pathvar_name "$deduped_path"
 }
 
+# Prompt functions
 git_user_name_prompt () {
     git config user.email | sed 's/\(.\).\+@\(.\).\+/\1@\2/'
 }
 
 get_extended_prompt_string () {
     [[ -f ~/.homesick/repos/runcom/prompt/prompt.py ]] && python ~/.homesick/repos/runcom/prompt/prompt.py
+}
+
+# Misc
+history-high-score () {
+    history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
+}
+
+base16-random-colorscheme () {
+  randscheme=$(ls "$HOMESHICK_REPOS"/base16-shell/*dark*.sh | gshuf -n 1)
+  echo $randscheme
+  source $randscheme
+  unset randscheme
 }

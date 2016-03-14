@@ -11,7 +11,7 @@ def log_event(name, value, ip=u'', unit=u'', timestamp=u'CURRENT_TIMESTAMP'):
     }
 
     requests.post(
-        'http://log.goude.se/api/event',
+        'https://log.goude.se/api/event',
         data = json.dumps(log_item),
         headers = {'content-type': 'application/json'}
     )

@@ -18,8 +18,8 @@ map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVI
 inoremap jk <Esc>
 
 " Switch between buffers
-"map <up> :bp<CR>
-"map <down> :bn<CR>
+map <up> :bp<CR>
+map <down> :bn<CR>
 
 " Mappings to move lines
 " http://vim.wikia.com/wiki/VimTip646

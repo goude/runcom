@@ -63,7 +63,10 @@ nnoremap / /\v
 cnoremap %s/ %s/\v
 
 " Press space to move quickly on a line
-nmap <Space> <Plug>(easymotion-lineanywhere)
+nmap <Space> <Plug>(easymotion-jumptoanywhere)
+map <Left> <Plug>(easymotion-jumptoanywhere)
+map <Right> <Plug>(easymotion-jumptoanywhere)
+
 
 " }
 
@@ -78,6 +81,9 @@ autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 " }
 
 " Global and plugin settings {
+
+" Disable autoclose
+let g:autoclose_on = 0
 
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"

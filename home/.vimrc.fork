@@ -6,6 +6,7 @@
 " Unbundling {
 " Unbundle certain plugins
 UnBundle "spf13/vim-preview"
+UnBundle "spf13/vim-autoclose"
 " }
 
 " Personalized mappings {

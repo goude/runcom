@@ -134,6 +134,12 @@ let base16colorspace=256
 set background=dark
 color base16-monokai
 
-autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
+"autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
 
+let g:startify_custom_header_quotes = [
+    \ ['Limelight and Goyo are plugins for distraction-free writing.'],
+    \ ['Wordy uncovers common usage problems in your writing.'],
+    \ ['Reed Esau has a growing list of plugins for writers.'],
+    \ ['Ctrl-V inserts literals.']
+    \ ]
 " }

@@ -11,7 +11,13 @@ Bundle "takac/vim-hardtime"
 
 " Distraction-free editing
 Bundle "junegunn/limelight.vim"
-Bundle "junegunn/goyo.vim"
+Bundle "junegunn/vim-easy-align"
 
 " Start screen
 Bundle "mhinz/vim-startify"
+
+" Add sneak command s{char}{char}
+Bundle "justinmk/vim-sneak"
+
+" Align stuff
+Bundle "junegunn/goyo.vim"

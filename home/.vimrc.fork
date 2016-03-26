@@ -105,6 +105,9 @@ let g:syntastic_html_tidy_ignore_errors = [
 let g:instant_markdown_autostart = 0
 let g:hardtime_default_on = 1
 
+" Fix problem with <M-e> conflict (unable to type Swedish char å)
+let g:AutoPairsShortcutFastWrap = ''
+
 " UltiSnips settings
 let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
 "let g:UltiSnipsExpandTrigger       = '<c-j>'

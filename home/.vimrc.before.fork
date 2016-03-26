@@ -1,8 +1,12 @@
 let g:spf13_leader='\'
 let g:airline_powerline_fonts = 1
+let g:spf13_edit_config_mapping='<leader>ev'
+let g:spf13_apply_config_mapping='<leader>sv'
 
-if OSX()
-  let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
-else
-  let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
-endif
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]
+
+"if OSX()
+  "let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+"else
+  "let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+"endif

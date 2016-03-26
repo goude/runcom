@@ -84,6 +84,7 @@ autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 " Global and plugin settings {
 
 " Disable autoclose
+" Update: auto-pairs was the culprit; use C-V ' to insert single quotes
 let g:autoclose_on = 0
 
 " Increase html indenting
@@ -101,7 +102,8 @@ let g:syntastic_html_tidy_ignore_errors = [
     \"proprietary attribute \"hidden\"",
 \]
 
-let g:instant_markdown_autostart=0
+let g:instant_markdown_autostart = 0
+let g:hardtime_default_on = 1
 
 " UltiSnips settings
 let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
@@ -122,13 +124,13 @@ if WINDOWS()
 endif
 
 if LINUX()
-    " Proper solarized setup on Ubuntu
-    "let g:solarized_termcolors=16
-    "colorscheme solarized
+    " Do nothing.
 endif
 
 let base16colorspace=256
 set background=dark
 color base16-monokai
+
+autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
 
 " }

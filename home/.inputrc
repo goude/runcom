@@ -15,7 +15,7 @@ set completion-query-items 40
 #set meta-flag on
 set input-meta on
 set output-meta on
-#set convert-meta on
+set convert-meta off
 
 # visible-stats
 # Append a mark according to the file type in a listing

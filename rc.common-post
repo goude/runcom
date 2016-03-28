@@ -7,6 +7,7 @@ if [[ $system == 'Linux' ]]; then
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
     alias fgrep='fgrep --color=auto'
+    alias hi='history'
 
     if [[ -n "$DISPLAY" ]]; then
         setxkbmap -option ctrl:nocaps
@@ -31,8 +32,7 @@ if [[ $system == 'OSX' ]]; then
 fi
 
 if [[ $system == 'Cygwin' ]]; then
-    #source $HOME/.homesick/repos/runcom/mintty/sol.dark
-    echo
+    alias hi='history'
 fi
 
 # Aliases & functions

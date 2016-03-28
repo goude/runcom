@@ -14,7 +14,6 @@ alias gca='git commit -a'
 alias gp='git push'
 alias ga='git add'
 
-alias hi='history'
 alias higr='hi | egrep -i'
 alias engr='env | egrep -i'
 

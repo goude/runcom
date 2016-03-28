@@ -152,13 +152,15 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }
 
 " Theming settings {
+if has("gui_running")
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+else
+    let base16colorspace=256
+endif
 
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-
-let base16colorspace=256
 set background=dark
 color base16-monokai
 

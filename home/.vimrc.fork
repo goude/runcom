@@ -6,7 +6,7 @@
 " Unbundling {
 " Unbundle certain plugins
 UnBundle "spf13/vim-preview"
-UnBundle "spf13/vim-autoclose"
+"UnBundle "spf13/vim-autoclose"
 " }
 
 " Personalized mappings {
@@ -120,6 +120,73 @@ let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
 
 " }
 
+" Writing settings {
+
+function! s:goyo_enter()
+  silent !tmux set status off
+  set nocursorline
+  set noshowmode
+  set noshowcmd
+  set nonumber
+  set norelativenumber
+  set scrolloff=999
+  NumbersDisable
+  Limelight
+  " ...
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  set cursorline
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  NumbersEnable
+  " ...
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" }
+
+" Theming settings {
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+
+let base16colorspace=256
+set background=dark
+color base16-monokai
+
+let g:thematic#themes = {
+\ 'goude'      : { 'colorscheme': 'base16-monokai',
+\                  'background': 'dark',
+\                  'font-size': 18,
+\                  'typeface': 'Input Mono',
+\                },
+\ 'iawriter'   : { 'colorscheme': 'pencil',
+\                  'background': 'light',
+\                  'columns': 75,
+\                  'font-size': 20,
+\                  'fullscreen': 1,
+\                  'laststatus': 0,
+\                  'linespace': 8,
+\                  'typeface': 'Cousine',
+\                },
+\ }
+
+let g:thematic#theme_name = 'goude'
+
+" <c-l> to clear the highlight, as well as redraw the screen
+noremap <silent> <C-l> :<C-u>nohlsearch<cr><C-l>
+inoremap <silent> <C-l> <C-o>:nohlsearch<cr>
+
+" }
+
 " System settings {
 
 if OSX()
@@ -135,10 +202,6 @@ endif
 if LINUX()
     " Do nothing.
 endif
-
-let base16colorspace=256
-set background=dark
-color base16-monokai
 
 "autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
 

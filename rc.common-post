@@ -17,6 +17,8 @@ if [[ $system == 'OSX' ]]; then
     export CLICOLOR=1
     #export LSCOLORS="gxfxcxdxbxegedabagacad"
 
+    alias hi='history 0'
+
     if [[ -x /usr/local/bin/gls ]]; then
         alias ls='/usr/local/bin/gls -h --color=auto'
     else

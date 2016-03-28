@@ -4,14 +4,18 @@ Bundle "myusuf3/numbers.vim"
 "Bundle "vim-scripts/Vim-R-plugin"
 "Bundle "suan/vim-instant-markdown"
 Bundle "editorconfig/editorconfig-vim"
-Bundle "chriskempson/base16-vim"
 
 " Prevent multiple jk presses
 Bundle "takac/vim-hardtime"
 
-" Distraction-free editing
+" Writing
 Bundle "junegunn/limelight.vim"
 Bundle "junegunn/vim-easy-align"
+Bundle "reedes/vim-pencil"
+
+" Theming
+Bundle "chriskempson/base16-vim"
+Bundle "reedes/vim-thematic"
 
 " Start screen
 Bundle "mhinz/vim-startify"

@@ -1,5 +1,5 @@
 let g:spf13_leader='\'
-let g:airline_powerline_fonts = 0
+"let g:airline_powerline_fonts = 0
 
 if OSX()
   let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]

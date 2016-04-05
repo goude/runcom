@@ -1,0 +1,15 @@
+Limelight and Goyo are plugins for distraction-free writing.
+%
+Wordy uncovers common usage problems in your writing.
+%
+Reed Esau has a growing list of plugins for writers.
+%
+Use vim-sneak to quickly jump around.
+%
+C-o: insert a newline and leave point before it, and then enter insert mode
+%
+C-h: delete previous character.
+%
+vim-easy-align: ga
+%
+Ctrl-V inserts literals.

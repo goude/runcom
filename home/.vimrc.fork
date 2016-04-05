@@ -11,7 +11,7 @@ UnBundle "spf13/vim-preview"
 
 " Personalized mappings {
 " Quickly edit/reload the vimrc file
-nnoremap <silent> <leader>ef :e ~/.vimrc.fork<CR>
+nnoremap <silent> <leader>ev :e ~/.vimrc.fork<CR>
 nnoremap <silent> <leader>et :e $HOME/.tmux.conf<CR>
 map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
@@ -85,7 +85,8 @@ autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Disable autoclose
 " Update: auto-pairs was the culprit; use C-V ' to insert single quotes
-let g:autoclose_on = 0
+" Update 2: probably misdiagnosed, so disabling.
+"let g:autoclose_on = 0
 
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"
@@ -103,7 +104,10 @@ let g:syntastic_html_tidy_ignore_errors = [
 \]
 
 let g:instant_markdown_autostart = 0
+
+" Hardtime configuration
 let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 2
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -111,7 +115,8 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" Fix problem with <M-e> conflict (unable to type Swedish char å)
+" 'Varför fungerar inte å i vim?'
+" Fix problem with <M-e> conflict (symptom: unable to type Swedish char å)
 let g:AutoPairsShortcutFastWrap = ''
 
 " UltiSnips settings
@@ -161,11 +166,12 @@ else
     let base16colorspace=256
 endif
 
-set background=dark
-color base16-monokai
+"set background=dark
+"color base16-monokai
 
 let g:thematic#themes = {
 \ 'goude'      : { 'colorscheme': 'base16-monokai',
+\                  'airline-theme': 'base16_monokai',
 \                  'background': 'dark',
 \                  'font-size': 18,
 \                  'typeface': 'Input Mono',
@@ -207,14 +213,51 @@ endif
 
 "autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
 
-let g:startify_custom_header_quotes = [
-    \ ['Limelight and Goyo are plugins for distraction-free writing.'],
-    \ ['Wordy uncovers common usage problems in your writing.'],
-    \ ['Reed Esau has a growing list of plugins for writers.'],
-    \ ['Use vim-sneak to quickly jump around.'],
-    \ ['C-o: insert a newline and leave point before it, and then enter insert mode'],
-    \ ['C-h: delete previous character.'],
-    \ ['vim-easy-align: ga'],
-    \ ['Ctrl-V inserts literals.']
-    \ ]
+" }
+
+" Startify {
+
+autocmd User Startified setlocal cursorline
+
+let g:startify_enable_special         = 0
+let g:startify_files_number           = 8
+let g:startify_relative_path          = 1
+let g:startify_change_to_dir          = 1
+let g:startify_update_oldfiles        = 1
+let g:startify_session_autoload       = 1
+let g:startify_session_persistence    = 1
+let g:startify_session_delete_buffers = 1
+
+let g:startify_list_order = [
+  \ ['   LRU:'],
+  \ 'files',
+  \ ['   LRU within this dir:'],
+  \ 'dir',
+  \ ['   Sessions:'],
+  \ 'sessions',
+  \ ['   Bookmarks:'],
+  \ 'bookmarks',
+  \ ]
+
+let g:startify_skiplist = [
+            \ 'COMMIT_EDITMSG',
+            \ 'bundle/.*/doc',
+            \ '/data/repo/neovim/runtime/doc',
+            \ '/Users/mhi/local/vim/share/vim/vim74/doc',
+            \ ]
+
+let g:startify_bookmarks = [
+            \ { 'c': '~/.vim/vimrc' },
+            \ '~/golfing',
+            \ ]
+
+let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
+
+let g:startify_custom_footer =
+      \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+
+let g:startify_custom_header =
+        \ map(split(system('adage | cowsay'), '\n'), '"   ". v:val')
+
+
 " }

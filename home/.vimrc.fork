@@ -162,6 +162,8 @@ if has("gui_running")
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar
+    set gfn=InputMono\ Thin:h18
+    let g:airline_powerline_fonts = 1
 else
     let base16colorspace=256
 endif
@@ -171,10 +173,8 @@ endif
 
 let g:thematic#themes = {
 \ 'goude'      : { 'colorscheme': 'base16-monokai',
-\                  'airline-theme': 'base16_monokai',
+\                  'airline-theme': 'base16color',
 \                  'background': 'dark',
-\                  'font-size': 18,
-\                  'typeface': 'Input Mono',
 \                },
 \ 'iawriter'   : { 'colorscheme': 'pencil',
 \                  'background': 'light',
@@ -247,8 +247,7 @@ let g:startify_skiplist = [
             \ ]
 
 let g:startify_bookmarks = [
-            \ { 'c': '~/.vim/vimrc' },
-            \ '~/golfing',
+            \ '~/git',
             \ ]
 
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
@@ -257,7 +256,7 @@ let g:startify_custom_footer =
       \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
 
 let g:startify_custom_header =
-        \ map(split(system('adage | cowsay'), '\n'), '"   ". v:val')
+        \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
 
 
 " }

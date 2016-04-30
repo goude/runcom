@@ -13,7 +13,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export GOPATH=$HOME/go
 export FORTUNE_PATH=$rcfiles/adages
 
-export PATH=$PATH:$HOME/.node/bin:$GOPATH/bin:$HOME/bin
+export PATH=$PATH:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin
 
 # homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh

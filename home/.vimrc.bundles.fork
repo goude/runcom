@@ -25,3 +25,6 @@ Bundle "justinmk/vim-sneak"
 
 " Align stuff
 Bundle "junegunn/goyo.vim"
+
+" Fix neocompcache complaints
+Bundle "Konfekt/FastFold"

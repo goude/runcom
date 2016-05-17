@@ -8,12 +8,12 @@ Wordy uncovers common usage problems in your writing.
 %
 Reed Esau has a growing list of plugins for writers.
 %
-Use vim-sneak to quickly jump around.
+Sneak is a Vim plugin that enables you to move to any location specified by two characters.
 %
 C-o: insert a newline and leave point before it, and then enter insert mode
 %
 C-h: delete previous character.
 %
-vim-easy-align: ga
+gaip=: vim-easy-align – see examples at https://github.com/junegunn/vim-easy-align
 %
 Ctrl-V inserts literals.

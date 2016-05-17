@@ -7,7 +7,6 @@ if [[ $system == 'Linux' ]]; then
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
     alias fgrep='fgrep --color=auto'
-    alias hi='history'
 
     if [[ -n "$DISPLAY" ]]; then
         setxkbmap -option ctrl:nocaps
@@ -17,8 +16,6 @@ fi
 if [[ $system == 'OSX' ]]; then
     export CLICOLOR=1
     #export LSCOLORS="gxfxcxdxbxegedabagacad"
-
-    alias hi='history 0'
 
     if [[ -x /usr/local/bin/gls ]]; then
         alias ls='/usr/local/bin/gls -h --color=auto'
@@ -31,8 +28,17 @@ if [[ $system == 'OSX' ]]; then
     export LC_ALL=en_US.UTF-8
 fi
 
-if [[ $system == 'Cygwin' ]]; then
-    alias hi='history'
+#if [[ $system == 'Cygwin' ]]; then
+#fi
+
+if [ -n "$ZSH_VERSION" ]; then
+   # assume Zsh
+   alias hi='history 0'
+elif [ -n "$BASH_VERSION" ]; then
+   # assume Bash
+   alias hi='history'
+else
+   alias hi='history'
 fi
 
 # Aliases & functions

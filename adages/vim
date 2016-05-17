@@ -1,3 +1,7 @@
+(Shell) Esc-v or Meta-v: edit current command line in $EDITOR
+%
+gv: reselect visual selection.
+%
 Limelight and Goyo are plugins for distraction-free writing.
 %
 Wordy uncovers common usage problems in your writing.

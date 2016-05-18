@@ -64,10 +64,11 @@ nnoremap / /\v
 cnoremap %s/ %s/\v
 
 " Press space to move quickly on a line
-nmap <Space> <Plug>(easymotion-jumptoanywhere)
-map <Left> <Plug>(easymotion-jumptoanywhere)
-map <Right> <Plug>(easymotion-jumptoanywhere)
+"nmap <Space> <Plug>(easymotion-jumptoanywhere)
+nmap <Left> <Plug>(easymotion-jumptoanywhere)
+nmap <Right> <Plug>(easymotion-jumptoanywhere)
 
+nmap <Space> za
 
 " }
 

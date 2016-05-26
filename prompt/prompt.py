@@ -2,11 +2,16 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+import sys
 import os
 import re
 import datetime
 
 from prompt_color import color
+
+def version():
+    v = sys.version_info
+    return 'py' + str(v[0])
 
 def virtualenv():
     path = os.environ.get('VIRTUAL_ENV', '')
@@ -43,6 +48,7 @@ def main():
 
     parts = [
         #'│',
+        version(),
         virtualenv(),
         docker(),
         proxy(),

@@ -220,6 +220,10 @@ endif
 
 " }
 
+" Fix crontab -e problem
+" http://vim.wikia.com/wiki/Editing_crontab
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
 " Startify {
 
 autocmd User Startified setlocal cursorline

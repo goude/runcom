@@ -11,7 +11,7 @@ from prompt_color import color
 
 def version():
     v = sys.version_info
-    return 'py' + str(v[0])
+    return 'py%d.%d' % (v[0], v[1])
 
 def virtualenv():
     path = os.environ.get('VIRTUAL_ENV', '')

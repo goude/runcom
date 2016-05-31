@@ -111,8 +111,8 @@ let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
 " Hardtime configuration
-let g:hardtime_default_on = 1
-let g:hardtime_maxcount = 4
+let g:hardtime_default_on = 0
+let g:hardtime_maxcount = 20
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

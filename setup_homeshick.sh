@@ -14,9 +14,7 @@ homeshick_repos=(
     "syl20bnr/spacemacs"
     "spf13/spf13-vim"
     "chriskempson/base16-shell"
-    #"jamesob/desk" # A lightweight workspace manager for the shell
-    #"magicmonty/bash-git-prompt"
-    #"jimeh/tmuxifier"
+    "jimeh/tmuxifier"
 )
 
 for i in "${homeshick_repos[@]}"

@@ -28,3 +28,6 @@ Bundle "junegunn/goyo.vim"
 
 " Fix neocompcache complaints
 Bundle "Konfekt/FastFold"
+
+" tmux navigation
+Bundle "christoomey/vim-tmux-navigator"

@@ -2,16 +2,23 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-import sys
 import os
 import re
 import datetime
+import platform
 
 from prompt_color import color
 
+SLOWNESS_LIMIT = 10.0
+
+def system():
+    rel = platform.release()
+    sy = platform.system().lower()
+    return "%s%s" % (sy[:3], rel.split('.')[0])
+
 def version():
-    v = sys.version_info
-    return 'py%d.%d' % (v[0], v[1])
+    v = platform.python_version_tuple()
+    return ("py%s.%s" % (v[0], v[1]))
 
 def virtualenv():
     path = os.environ.get('VIRTUAL_ENV', '')
@@ -48,6 +55,7 @@ def main():
 
     parts = [
         #'│',
+        system(),
         version(),
         virtualenv(),
         docker(),
@@ -58,7 +66,7 @@ def main():
     # slowness warning
     tm = datetime.datetime.now() - t0
     milliseconds = tm.microseconds / 1000.0
-    if milliseconds > 2.0:
+    if milliseconds > SLOWNESS_LIMIT:
         parts.append('%.1f ms' % milliseconds)
 
     # Remove empty strings

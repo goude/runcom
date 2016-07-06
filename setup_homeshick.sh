@@ -11,10 +11,10 @@ homeshick_repos=(
     "goude/runcom"
     "goude/thxtime"
     "goude/yaprox"
-    "syl20bnr/spacemacs"
     "spf13/spf13-vim"
     "chriskempson/base16-shell"
     "jimeh/tmuxifier"
+    #"syl20bnr/spacemacs"
 )
 
 for i in "${homeshick_repos[@]}"

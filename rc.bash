@@ -8,8 +8,8 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWCOLORHINTS=1
 
-source $rcfiles/git/git-completion.bash
-source $rcfiles/git/git-prompt.sh
+source $rcfiles/utils/git-completion.bash
+source $rcfiles/utils/git-prompt.sh
 source $rcfiles/bash/bash_colors
 
 source $rcfiles/rc.common-post

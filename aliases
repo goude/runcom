@@ -17,16 +17,14 @@ alias ga='git add'
 alias higr='hi | egrep -i'
 alias engr='env | egrep -i'
 
-alias t='tmux'
 alias ta='tmux attach || tmux new'
 
 alias ho='homeshick'
 alias hocd='homeshick cd'
 
-alias pu='pushd'
-
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias c='z'
 
 alias g='git'
@@ -34,6 +32,4 @@ alias s='ssh'
 alias v='vim'
 
 alias serve-directory='python -m SimpleHTTPServer'
-alias cpProgress="rsync --progress -ravz"
-
-alias rt=runcom-test
+alias cp-progress="rsync --progress -ravz"

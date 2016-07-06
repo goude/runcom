@@ -30,11 +30,11 @@ get_extended_prompt_string () {
 
 # Misc
 history-high-score () {
-    history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
+    history 0 | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
 }
 
 base16-random-colorscheme () {
-  randscheme=$(ls "$HOMESHICK_REPOS"/base16-shell/*dark*.sh | gshuf -n 1)
+  randscheme=$(ls "$HOMESHICK_REPOS"/base16-shell/*.sh | gshuf -n 1)
   echo $randscheme
   source $randscheme
   unset randscheme

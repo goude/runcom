@@ -1,0 +1,10 @@
+apt-get install build-essential
+apt-get install exuberant-ctags
+apt-get install nodejs
+apt-get install openjdk-8-jdk
+apt-get install openssh-server
+apt-get install python-dev python3-dev cmake
+apt-get install silversearcher-ag
+apt-get install sshd
+apt-get install vim-nox
+apt-get install wget

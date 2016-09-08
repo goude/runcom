@@ -1,7 +1,9 @@
 let g:spf13_leader='\'
 
-if OSX()
-  let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]
-else
-  let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]
-endif
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]
+
+"if OSX()
+  "let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]
+"else
+  "let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'ruby', 'go', 'html', 'misc',]
+"endif

@@ -103,6 +103,10 @@ fi
 BASE16_SHELL="$homeshick_repos/base16-shell/scripts/base16-$_BASE16_THEME.sh"
 [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/goude/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 unset rcfiles
 unset system
 unset homeshick_repos

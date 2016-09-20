@@ -57,7 +57,7 @@ map <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>
 
 " C-j removes previous character and inserts a newline (in test, needs tweaking)
-nnoremap <C-j> gElr<CR>h
+"nnoremap <C-j> gElr<CR>h
 
 " Use very magic regexps by default
 nnoremap / /\v

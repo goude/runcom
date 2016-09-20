@@ -5,4 +5,3 @@
 # Temporary testing iterm launching tmux as shell instead
 
 . $HOME/.homesick/repos/runcom/rc.zsh
-

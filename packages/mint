@@ -1,0 +1,20 @@
+apt-get install build-essential
+apt-get install cabal
+apt-get install exuberant-ctags
+apt-get install ghc-mod
+apt-get install hdevtools
+apt-get install hugs ghc
+apt-get install install ghc-mod
+apt-get install nodejs
+apt-get install openjdk-8-jdk
+apt-get install openssh-server
+apt-get install python-dev python3-dev cmake
+apt-get install' | sed 's/[^a]\+//'
+apt-get install' | sed 's/[^a]\+//' | sort | uniq
+apt-get install' | sed 's/[^a]\+//' | sort | uniq 
+apt-get install silversearcher-ag
+apt-get install smbnetfs
+apt-get install sshd
+apt-get install sshfs
+apt-get install vim-nox
+apt-get install wget

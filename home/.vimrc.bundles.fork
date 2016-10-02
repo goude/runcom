@@ -31,3 +31,14 @@ Bundle "Konfekt/FastFold"
 
 " tmux navigation
 Bundle "christoomey/vim-tmux-navigator"
+
+" typescript
+Bundle "leafgarland/typescript-vim"
+Bundle "Quramy/tsuquyomi"
+Bundle "Quramy/vim-js-pretty-template"
+Bundle "Quramy/vim-dtsm"
+Bundle "jason0x43/vim-js-indent"
+Bundle "mhartington/vim-typings"
+
+" autoformat
+Bundle "Chiel92/vim-autoformat"

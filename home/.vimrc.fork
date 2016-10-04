@@ -85,6 +85,10 @@ set nospell
 
 " Global and plugin settings {
 
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"
 

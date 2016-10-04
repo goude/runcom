@@ -4,10 +4,6 @@
 # bind options
 # -r key may repeat
 
-# use UTF8
-set -g utf8
-set-window-option -g utf8 on
-
 # use 256 colors
 set -g default-terminal "screen-256color"
 
@@ -49,19 +45,13 @@ bind J resize-pane -D 5
 bind K resize-pane -U 5
 bind L resize-pane -R 5
 
-# # explicitly disable mouse control
-#setw -g mode-mouse off
-#set -g mouse-select-pane off
-#set -g mouse-resize-pane off
-#set -g mouse-select-window off
-
 # force a reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf
 
 # quick pane cycling
 #unbind ^A
-#bind ^A select-pane -t :.+
+#bind ^B select-pane -t :.+
 
 # splits
 bind-key | split-window -h
@@ -84,26 +74,15 @@ set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name
 
 # status bar
 set-option -g status on                # turn the status bar on
-set -g status-utf8 on                  # set utf-8 for the status bar
+#set -g status-utf8 on                  # set utf-8 for the status bar
 set -g status-interval 10              # set update frequencey (default 15 seconds)
 set -g status-justify centre           # center window list for clarity
 
-# color settings
-#set -g status-bg colour010
-set-option -g status-bg black
-set-option -g status-utf8 on
-set-option -g status-fg green
-
-#set-option -g status-attr dim
-set-option -g status-attr bright
-
-set-window-option -g window-status-attr dim
-set-window-option -g window-status-current-attr bright
-
 # show host name and IP address on left side of status bar
 set -g status-left-length 60
-#set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
 set -g status-left "#[fg=green]#h #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') "
+
+#set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
 
 # show session name, window & pane number, date and time on right side of
 # status bar
@@ -144,7 +123,19 @@ bind-key -t vi-copy v begin-selection
 #set-option -g default-shell $HOME/opt/zsh-5.0.7/bin/zsh
 #set-option -g default-shell /usr/local/bin/zsh
 
-#### COLOUR (Solarized 256)
+# only color settings below this line
+
+# color settings
+#set -g status-bg colour010
+set-option -g status-bg black
+#set-option -g status-utf8 on
+set-option -g status-fg green
+
+#set-option -g status-attr dim
+set-option -g status-attr bright
+
+set-window-option -g window-status-attr dim
+set-window-option -g window-status-current-attr bright
 
 # default statusbar colors
 set-option -g status-bg colour235 #base02
@@ -153,12 +144,12 @@ set-option -g status-attr default
 
 # default window title colors
 set-window-option -g window-status-fg colour244 #base0
-set-window-option -g window-status-bg default
+set-window-option -g window-status-bg black
 #set-window-option -g window-status-attr dim
 
 # active window title colors
 set-window-option -g window-status-current-fg colour166 #orange
-set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-bg black
 #set-window-option -g window-status-current-attr bright
 
 # pane border
@@ -175,3 +166,4 @@ set-option -g display-panes-colour colour166 #orange
 
 # clock
 set-window-option -g clock-mode-colour colour64 #green
+

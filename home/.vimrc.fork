@@ -9,15 +9,24 @@
 " }
 
 " Unbundling {
-" Unbundle certain plugins
+
+" Remove certain plugins from spf13
 UnBundle "spf13/vim-preview"
+
 " }
 
 " Personalized mappings {
-" Quickly edit/reload the vimrc file
+
+" Leader commands
 nnoremap <silent> <leader>ev :e ~/.vimrc.fork<CR>
 nnoremap <silent> <leader>et :e $HOME/.tmux.conf<CR>
+nnoremap <leader>f :Autoformat<CR>
+nnoremap <silent> <leader>j <Plug>(easymotion-jumptoanywhere)
 map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
+
+" <c-l> to clear the highlight, as well as redraw the screen
+noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
+inoremap <silent> <leader>l <C-o>:nohlsearch<cr>
 
 " Reduce finger movement for Esc
 inoremap jk <Esc>
@@ -64,9 +73,6 @@ imap <C-s> <ESC>:w<cr>
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
-" _J_ump quickly to anywhere on-screen
-nnoremap <Leader>j <Plug>(easymotion-jumptoanywhere)
-
 " Toggle folds
 nmap <Space> za
 
@@ -74,8 +80,8 @@ nmap <Space> za
 
 " Vim settings {
 
-" Turn off spellcheck by default; it's annoying
-set nospell
+set nospell " Turn off spellcheck by default; it's annoying
+set wrap
 
 " Tab settings
 " Should be caught by editorconfig. Commenting out.
@@ -124,40 +130,9 @@ nmap ga <Plug>(EasyAlign)
 let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
 let g:UltiSnipsExpandTrigger       = '<c-j>'
 
-" tsuquyomi javascript
+" tsuquyomi typescript
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
-
-" }
-
-" Writing settings {
-
-function! s:goyo_enter()
-  silent !tmux set status off
-  set nocursorline
-  set noshowmode
-  set noshowcmd
-  set nonumber
-  set norelativenumber
-  set scrolloff=999
-  NumbersDisable
-  Limelight
-  " ...
-endfunction
-
-function! s:goyo_leave()
-  silent !tmux set status on
-  set cursorline
-  set showmode
-  set showcmd
-  set scrolloff=5
-  Limelight!
-  NumbersEnable
-  " ...
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " }
 
@@ -194,13 +169,9 @@ let g:thematic#themes = {
 
 let g:thematic#theme_name = 'goude'
 
-" <c-l> to clear the highlight, as well as redraw the screen
-noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
-inoremap <silent> <leader>l <C-o>:nohlsearch<cr>
-
 " }
 
-" System settings {
+" System-specific settings {
 
 if OSX()
     " editorconfig
@@ -237,7 +208,7 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 autocmd User Startified setlocal cursorline
 
 let g:startify_enable_special         = 0
-let g:startify_files_number           = 8
+let g:startify_files_number           = 4
 let g:startify_relative_path          = 1
 let g:startify_change_to_dir          = 1
 let g:startify_update_oldfiles        = 1
@@ -274,5 +245,36 @@ let g:startify_custom_footer =
 
 let g:startify_custom_header =
         \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
+
+" }
+
+" Writing settings {
+
+function! s:goyo_enter()
+  silent !tmux set status off
+  set nocursorline
+  set noshowmode
+  set noshowcmd
+  set nonumber
+  set norelativenumber
+  set scrolloff=999
+  NumbersDisable
+  Limelight
+  " ...
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  set cursorline
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  NumbersEnable
+  " ...
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " }

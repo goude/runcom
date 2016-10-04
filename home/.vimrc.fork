@@ -1,12 +1,16 @@
 " Preamble {
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
+" Todo:
+"   - Configure Ctrl-P better - lru and rtfm
+"   - Ultisnips/supertab?
+"   - Check maintainedness of spf13
+"
 " }
 
 " Unbundling {
 " Unbundle certain plugins
 UnBundle "spf13/vim-preview"
-"UnBundle "spf13/vim-autoclose"
 " }
 
 " Personalized mappings {
@@ -56,18 +60,14 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 map <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>
 
-" C-j removes previous character and inserts a newline (in test, needs tweaking)
-"nnoremap <C-j> gElr<CR>h
-
 " Use very magic regexps by default
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
-" Press space to move quickly on a line
-"nmap <Space> <Plug>(easymotion-jumptoanywhere)
-nmap <Left> <Plug>(easymotion-jumptoanywhere)
-nmap <Right> <Plug>(easymotion-jumptoanywhere)
+" _J_ump quickly to anywhere on-screen
+nnoremap <Leader>j <Plug>(easymotion-jumptoanywhere)
 
+" Toggle folds
 nmap <Space> za
 
 " }
@@ -78,8 +78,9 @@ nmap <Space> za
 set nospell
 
 " Tab settings
-autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
+" Should be caught by editorconfig. Commenting out.
+"autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
+"autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 " }
 
 " Global and plugin settings {
@@ -114,10 +115,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" 'Varför fungerar inte å i vim?'
-" Fix problem with <M-e> conflict (symptom: unable to type Swedish char å)
-let g:AutoPairsShortcutFastWrap = ''
 
 " UltiSnips settings
 let g:UltiSnipsSnippetsDir        = '~/.vim/UltiSnips/'
@@ -221,6 +218,10 @@ endif
 
 " Workarounds {
 
+" 'Varför fungerar inte å i vim?'
+" Fix problem with <M-e> conflict (symptom: unable to type Swedish char å)
+let g:AutoPairsShortcutFastWrap = ''
+
 " Fix crontab -e problem
 " http://vim.wikia.com/wiki/Editing_crontab
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
@@ -269,6 +270,5 @@ let g:startify_custom_footer =
 
 let g:startify_custom_header =
         \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
-
 
 " }

@@ -1,8 +1,7 @@
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-speeddating"
 Bundle "myusuf3/numbers.vim"
-"Bundle "vim-scripts/Vim-R-plugin"
-"Bundle "suan/vim-instant-markdown"
+
 Bundle "editorconfig/editorconfig-vim"
 
 " Prevent multiple jk presses
@@ -23,16 +22,13 @@ Bundle "mhinz/vim-startify"
 " Add sneak command s{char}{char}
 Bundle "justinmk/vim-sneak"
 
-" Align stuff
+" Distraction-free writing
 Bundle "junegunn/goyo.vim"
 
 " Fix neocompcache complaints
 Bundle "Konfekt/FastFold"
 
-" tmux navigation
-Bundle "christoomey/vim-tmux-navigator"
-
-" typescript
+" Typescript
 Bundle "leafgarland/typescript-vim"
 Bundle "Quramy/tsuquyomi"
 Bundle "Quramy/vim-js-pretty-template"
@@ -40,5 +36,5 @@ Bundle "Quramy/vim-dtsm"
 Bundle "jason0x43/vim-js-indent"
 Bundle "mhartington/vim-typings"
 
-" autoformat
+" Autoformat code
 Bundle "Chiel92/vim-autoformat"

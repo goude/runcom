@@ -4,4 +4,6 @@ REPOS=$HOME/.homesick/repos
 source $REPOS/homeshick/homeshick.sh
 
 homeshick pull
-vim +BundleInstall! +BundleClean +q
+
+vim +BundleInstall! +BundleClean +q!
+cd $HOME/.vim/bundle/YouCompleteMe && ./install.py

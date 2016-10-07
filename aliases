@@ -29,6 +29,7 @@ alias c='z'
 
 alias g='git'
 alias s='ssh'
+alias vim='nvim || vim'
 alias v='vim'
 
 alias serve-directory='python -m SimpleHTTPServer'

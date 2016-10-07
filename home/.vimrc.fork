@@ -24,6 +24,13 @@ nnoremap <leader>f :Autoformat<CR>
 nnoremap <silent> <leader>j <Plug>(easymotion-jumptoanywhere)
 map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
+" EasyMotion is triggered using the normal movements, but prefixing them with <leader><leader>
+
+" Launch using <Leader>e. Use <C-E> to toggle NERDTree. Use <leader>e or <leader>nt
+
+"<leader>gs :Gstatus <leader>gd :Gdiff <leader>gc :Gcommit <leader>gb :Gblame <leader>gl :Glog <leader>gp :Git push
+" CTRL-] while the cursor is on a keyword (such as a function name) to jump to it's definition. Customizations: spf13-vim binds <Leader>tt to toggle the tagbar panel
+
 " <c-l> to clear the highlight, as well as redraw the screen
 noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 inoremap <silent> <leader>l <C-o>:nohlsearch<cr>

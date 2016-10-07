@@ -232,26 +232,26 @@ let g:startify_list_order = [
   \ 'sessions',
   \ ['   Bookmarks:'],
   \ 'bookmarks',
-  \ ]
+\ ]
 
 let g:startify_skiplist = [
-            \ 'COMMIT_EDITMSG',
-            \ 'bundle/.*/doc',
-            \ '/data/repo/neovim/runtime/doc',
-            \ '/Users/mhi/local/vim/share/vim/vim74/doc',
-            \ ]
+    \ 'COMMIT_EDITMSG',
+    \ 'bundle/.*/doc',
+    \ '/data/repo/neovim/runtime/doc',
+    \ '/Users/mhi/local/vim/share/vim/vim74/doc',
+\ ]
 
 let g:startify_bookmarks = [
-            \ '~/git',
-            \ ]
+    \ '~/git',
+\ ]
 
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 
 let g:startify_custom_footer =
-      \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+    \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
 
 let g:startify_custom_header =
-        \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
+    \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
 
 " }
 

@@ -105,6 +105,9 @@ set wrap
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+" Rainbow parentheses, enable with RainbowToggle
+let g:rainbow_active = 0
+
 " Increase html indenting
 let g:html_indent_inctags = "html,body,head,tbody"
 

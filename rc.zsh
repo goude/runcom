@@ -35,6 +35,9 @@ setopt -o sharehistory
 # Disable Ctrl-Z
 set -o ignoreeof
 
+# Allow redirect to overwrite existing files
+setopt clobber
+
 # Experimental candidates
 setopt AUTO_CD
 setopt AUTO_PUSHD

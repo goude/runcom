@@ -24,6 +24,9 @@ nnoremap <leader>f :Autoformat<CR>
 nnoremap <silent> <leader>j <Plug>(easymotion-jumptoanywhere)
 map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
+nnoremap <leader>j ^lrX: <Esc>:r! date +" [\%H:\%M]"<ENTER><Esc>kJ$
+nnoremap <leader>k O<Esc>:s/\v(\W+)?/[ ] /<ENTER><Esc>:set nohlsearch<ENTER>A
+
 " EasyMotion is triggered using the normal movements, but prefixing them with <leader><leader>
 
 " Launch using <Leader>e. Use <C-E> to toggle NERDTree. Use <leader>e or <leader>nt

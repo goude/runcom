@@ -161,26 +161,30 @@ else
     let base16colorspace=256
 endif
 
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 "set background=dark
 "color base16-monokai
 
-let g:thematic#themes = {
-\ 'goude'      : { 'colorscheme': 'base16-monokai',
-\                  'airline-theme': 'base16color',
-\                  'background': 'dark',
-\                },
-\ 'iawriter'   : { 'colorscheme': 'pencil',
-\                  'background': 'light',
-\                  'columns': 75,
-\                  'font-size': 20,
-\                  'fullscreen': 1,
-\                  'laststatus': 0,
-\                  'linespace': 8,
-\                  'typeface': 'Cousine',
-\                },
-\ }
-
-let g:thematic#theme_name = 'goude'
+"let g:thematic#themes = {
+"\ 'goude'      : { 'colorscheme': 'base16-monokai',
+"\                  'airline-theme': 'base16color',
+"\                  'background': 'dark',
+"\                },
+"\ 'iawriter'   : { 'colorscheme': 'pencil',
+"\                  'background': 'light',
+"\                  'columns': 75,
+"\                  'font-size': 20,
+"\                  'fullscreen': 1,
+"\                  'laststatus': 0,
+"\                  'linespace': 8,
+"\                  'typeface': 'Cousine',
+"\                },
+"\ }
+"let g:thematic#theme_name = 'goude'
 
 " }
 

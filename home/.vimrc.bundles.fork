@@ -13,8 +13,7 @@ Bundle "junegunn/vim-easy-align"
 Bundle "reedes/vim-pencil"
 
 " Theming
-Bundle "chriskempson/base16-vim"
-Bundle "reedes/vim-thematic"
+"Bundle "chriskempson/base16-vim"
 
 " Start screen
 Bundle "mhinz/vim-startify"

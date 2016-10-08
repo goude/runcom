@@ -33,7 +33,7 @@ history-high-score () {
     history 0 | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
 }
 
-base16-random-colorscheme () {
+random-base16-colorscheme () {
   randscheme=$(ls "$HOMESHICK_REPOS"/base16-shell/*.sh | gshuf -n 1)
   echo $randscheme
   source $randscheme

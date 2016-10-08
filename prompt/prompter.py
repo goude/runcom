@@ -9,7 +9,7 @@ import platform
 
 from prompt_color import color
 
-SLOWNESS_LIMIT = 10.0
+SLOWNESS_LIMIT = 20.0
 
 def system():
     rel = platform.release()

@@ -80,14 +80,11 @@ set -g status-justify centre           # center window list for clarity
 
 # show host name and IP address on left side of status bar
 set -g status-left-length 60
-set -g status-left "#[fg=green]#h #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') "
+set -g status-left "#[fg=colour02]#h #[fg=colour04]#(curl icanhazip.com) #[fg=colour05]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') "
 
-#set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
-
-# show session name, window & pane number, date and time on right side of
-# status bar
+# show session name, window & pane number, date and time on right side of status bar
 set -g status-right-length 60
-set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]%Y-%m-%d #[fg=green]#(thxtime)"
+set -g status-right "#[fg=colour04]#S #I:#P #[fg=colour16]%Y-%m-%d #[fg=colour02]#(thxtime)"
 
 # command bindings
 bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"
@@ -123,13 +120,7 @@ bind-key -t vi-copy v begin-selection
 #set-option -g default-shell $HOME/opt/zsh-5.0.7/bin/zsh
 #set-option -g default-shell /usr/local/bin/zsh
 
-# only color settings below this line
-
 # color settings
-#set -g status-bg colour010
-set-option -g status-bg black
-#set-option -g status-utf8 on
-set-option -g status-fg green
 
 #set-option -g status-attr dim
 set-option -g status-attr bright
@@ -138,24 +129,27 @@ set-window-option -g window-status-attr dim
 set-window-option -g window-status-current-attr bright
 
 # default statusbar colors
-set-option -g status-bg colour235 #base02
-set-option -g status-fg colour136 #yellow
+set-option -g status-bg colour18
+set-option -g status-fg colour20
 set-option -g status-attr default
 
 # default window title colors
-set-window-option -g window-status-fg colour244 #base0
-set-window-option -g window-status-bg black
 #set-window-option -g window-status-attr dim
-
-# active window title colors
-set-window-option -g window-status-current-fg colour166 #orange
-set-window-option -g window-status-current-bg black
 #set-window-option -g window-status-current-attr bright
+set-window-option -g window-status-fg colour20
+set-window-option -g window-status-bg colour18
+
+set-window-option -g window-status-current-fg colour16
+set-window-option -g window-status-current-bg colour18
 
 # pane border
-set-option -g pane-border-fg colour235 #base02
-set-option -g pane-active-border-fg colour240 #base01
+set-option -g pane-border-fg colour18
+set-option -g pane-active-border-fg colour19
 
+# clock
+set-window-option -g clock-mode-colour colour02
+
+# todo below
 # message text
 set-option -g message-bg colour235 #base02
 set-option -g message-fg colour166 #orange
@@ -163,7 +157,4 @@ set-option -g message-fg colour166 #orange
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
 set-option -g display-panes-colour colour166 #orange
-
-# clock
-set-window-option -g clock-mode-colour colour64 #green
 

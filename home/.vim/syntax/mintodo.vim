@@ -16,6 +16,8 @@ syn match mtdComment '}}'
 syn match mtdComment '\['
 syn match mtdComment '\]'
 
+syn match mtdUrl '\vhttp\S+'
+
 syn match mtdTime '\d\d:\d\d'
 syn match mtdTime '^\d\d\d\d-\d\d-\d\d'
 
@@ -34,8 +36,9 @@ syn match mtdCheck 'X'
 " highlight
 
 hi link mtdComment Comment
-hi link mtdCheck String
-hi link mtdTime Identifier
+hi link mtdCheck Boolean
+hi link mtdTime String
+hi link mtdUrl Underlined
 
 "hi link ngxVariableString PreProc
 "hi link ngxBlock Normal

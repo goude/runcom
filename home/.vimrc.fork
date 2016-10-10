@@ -45,7 +45,7 @@ inoremap jk <Esc>
 map <up> :bp<CR>
 map <down> :bn<CR>
 
-" Mappings to move lines
+" Mappings to move lines {{{
 " http://vim.wikia.com/wiki/VimTip646
 nnoremap ˙ <<
 nnoremap ¬ >>
@@ -74,6 +74,7 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+" }}}
 
 " Save with Ctrl-s
 map <C-s> :w<cr>
@@ -99,7 +100,7 @@ set wrap
 "autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 " }
 
-" Global and plugin settings {
+" Plugin settings {
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -147,16 +148,52 @@ let g:UltiSnipsExpandTrigger       = '<c-j>'
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
+" Airline settings {
+"let g:airline_powerline_fonts = 1
+let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled = 1
 " }
 
-" Theming settings {
+" Goyo settings {
+
+function! s:goyo_enter()
+  silent !tmux set status off
+  set nocursorline
+  set noshowmode
+  set noshowcmd
+  set nonumber
+  set norelativenumber
+  set scrolloff=999
+  NumbersDisable
+  Limelight
+  " ...
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  set cursorline
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  NumbersEnable
+  " ...
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" }
+
+" }
+
+" Color and GUI settings {
 if has("gui_running")
     set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar
     set gfn=InputMono\ Thin:h18
-    let g:airline_powerline_fonts = 1
 else
     let base16colorspace=256
 endif
@@ -165,8 +202,6 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-
-let g:airline_theme='base16'
 " }
 
 " System-specific settings {
@@ -244,36 +279,5 @@ let g:startify_custom_footer =
 
 let g:startify_custom_header =
     \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
-
-" }
-
-" Writing settings {
-
-function! s:goyo_enter()
-  silent !tmux set status off
-  set nocursorline
-  set noshowmode
-  set noshowcmd
-  set nonumber
-  set norelativenumber
-  set scrolloff=999
-  NumbersDisable
-  Limelight
-  " ...
-endfunction
-
-function! s:goyo_leave()
-  silent !tmux set status on
-  set cursorline
-  set showmode
-  set showcmd
-  set scrolloff=5
-  Limelight!
-  NumbersEnable
-  " ...
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " }

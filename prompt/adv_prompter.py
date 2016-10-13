@@ -10,25 +10,25 @@ SLOWNESS_LIMIT = 1000.0
 
 def cpu():
     nic = sysinfo.non_idle_cpu()
-    return "CPU %.1f%%" % nic
+    return "C%.0f%%" % nic
 
 def mem():
     nic = sysinfo.non_idle_cpu()
-    return "MEM %.1f%%" % nic
+    return "M%.0f%%" % nic
 
 def disk():
     nic = sysinfo.non_idle_cpu()
-    return "DISK %.1f%%" % nic
+    return "D%.0f%%" % nic
 
 def main():
 
     t0 = datetime.datetime.now()
 
     parts = [
-        cpu(),
-        mem(),
-        disk(),
-        #color(gituser(), foreground='blue')
+        # cpu(),
+        # disk(),
+        datetime.datetime.now().isoformat(),
+        'HMM'
     ]
 
     # slowness warning

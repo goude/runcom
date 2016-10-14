@@ -70,7 +70,7 @@ set -g status-justify centre           # center window list for clarity
 
 # Show host name and IP address on left side of status bar
 set -g status-left-length 60
-set -g status-left "#[fg=colour02]#h #[fg=colour04]#(curl icanhazip.com) #[fg=colour07]#(python $HOMESHICK_REPOS/runcom/prompt/adv_prompt.py) #[fg=colour05]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') "
+set -g status-left "#[fg=colour02]#h #[fg=colour07]#($HOMESHICK_REPOS/runcom/prompt/adv_prompt.py)"
 
 # Show session name, window & pane number, date and time on right side of status bar
 set -g status-right-length 60

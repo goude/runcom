@@ -1,35 +1,35 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
 import datetime
 import sysinfo
-from prompt_color import color
+import random
+#from prompt_color import color
 
 SLOWNESS_LIMIT = 1000.0
+
+def color(string, foreground):
+    return("#[fg=%s]%s" % (foreground, string))
 
 def cpu():
     nic = sysinfo.non_idle_cpu()
     return "C%.0f%%" % nic
 
-def mem():
-    nic = sysinfo.non_idle_cpu()
-    return "M%.0f%%" % nic
-
-def disk():
-    nic = sysinfo.non_idle_cpu()
-    return "D%.0f%%" % nic
+def thingy():
+    BLOCKS = list(" ▁▂▃▄▅▆▇█")
+    b = random.choice(BLOCKS)
+    return b
 
 def main():
-
     t0 = datetime.datetime.now()
 
-    parts = [
-        # cpu(),
-        # disk(),
-        datetime.datetime.now().isoformat(),
-        'HMM'
-    ]
+    parts = []
+    # map sin() to range
+    for i in range(40):
+        parts.append(
+            color(thingy(), 'colour%0d' % i)
+        )
 
     # slowness warning
     tm = datetime.datetime.now() - t0
@@ -41,7 +41,7 @@ def main():
     # Remove empty strings
     parts = [part for part in parts if part]
 
-    output_string = " ".join(parts)
+    output_string = "".join(parts)
     print(output_string)
 
 if __name__ == '__main__':

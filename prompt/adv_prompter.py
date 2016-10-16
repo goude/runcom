@@ -4,10 +4,24 @@
 from __future__ import print_function
 import datetime
 import sysinfo
-import random
+import math
 #from prompt_color import color
 
 SLOWNESS_LIMIT = 1000.0
+
+def make_interpolator(left_min, left_max, right_min, right_max):
+    # Figure out how 'wide' each range is
+    leftSpan = left_max - left_min
+    rightSpan = right_max - right_min
+
+    # Compute the scale factor between left and right values
+    scaleFactor = float(rightSpan) / float(leftSpan)
+
+    # create interpolation function using pre-calculated scaleFactor
+    def interp_fn(value):
+        return right_min + (value-left_min)*scaleFactor
+
+    return interp_fn
 
 def color(string, foreground):
     return("#[fg=%s]%s" % (foreground, string))
@@ -16,19 +30,22 @@ def cpu():
     nic = sysinfo.non_idle_cpu()
     return "C%.0f%%" % nic
 
-def thingy():
+def thingy(i):
+    mapper = make_interpolator(0.0, 1.0, 0, 8)
+    height = math.sin(float(i/3.0))
+    heightval = int(mapper(height))
     BLOCKS = list(" ▁▂▃▄▅▆▇█")
-    b = random.choice(BLOCKS)
+    b = BLOCKS[heightval]
     return b
 
 def main():
     t0 = datetime.datetime.now()
 
     parts = []
-    # map sin() to range
-    for i in range(40):
+
+    for i in range(17):
         parts.append(
-            color(thingy(), 'colour%0d' % i)
+            color(thingy(i), 'colour%0d' % i)
         )
 
     # slowness warning

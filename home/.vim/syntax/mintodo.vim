@@ -20,6 +20,7 @@ syn match mtdUrl '\vhttp\S+'
 
 syn match mtdTime '\d\d:\d\d'
 syn match mtdTime '^\d\d\d\d-\d\d-\d\d'
+syn match mtdTime '\d\d\d\d-\d\d-\d\d \d\d:\d\d'
 
 syn match mtdCheck 'X'
 

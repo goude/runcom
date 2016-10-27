@@ -1,3 +1,7 @@
+Use C-z to suspend vim. It's very useful.
+%
+Find, do, next, repeat.
+%
 (Shell) Esc-v or Meta-v: edit current command line in $EDITOR
 %
 gv: reselect visual selection.

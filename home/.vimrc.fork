@@ -268,7 +268,7 @@ let g:startify_skiplist = [
 \ ]
 
 let g:startify_bookmarks = [
-    \ '~/todo.txt',
+    \ '~/doc/todo.txt',
     \ '~/.vimrc.fork',
     \ '~/git',
 \ ]

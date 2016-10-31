@@ -57,7 +57,7 @@ def main():
         #'│',
         system(),
         version(),
-        virtualenv(),
+        color(virtualenv(), foreground='green'),
         docker(),
         proxy(),
         color(gituser(), foreground='blue')

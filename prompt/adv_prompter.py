@@ -42,7 +42,8 @@ def main():
     t0 = datetime.datetime.now()
 
     parts = [
-        color(thingy(sysinfo.free_disk()), 'colour%0d' % 1)
+        'advp'
+        #color(thingy(sysinfo.free_disk()), 'colour%0d' % 1)
     ]
 
 

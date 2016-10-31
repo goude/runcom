@@ -5,10 +5,10 @@ from __future__ import print_function
 import datetime
 import sysinfo
 import math
-#from prompt_color import color
 
 SLOWNESS_LIMIT = 1000.0
 
+# cred stackoverflow
 def make_interpolator(left_min, left_max, right_min, right_max):
     # Figure out how 'wide' each range is
     leftSpan = left_max - left_min
@@ -31,7 +31,7 @@ def cpu():
     return "C%.0f%%" % nic
 
 def thingy(i):
-    mapper = make_interpolator(0.0, 1.0, 0, 8)
+    mapper = make_interpolator(0.0, 100.0, 0, 8)
     height = math.sin(float(i/3.0))
     heightval = int(mapper(height))
     BLOCKS = list(" ▁▂▃▄▅▆▇█")
@@ -41,12 +41,10 @@ def thingy(i):
 def main():
     t0 = datetime.datetime.now()
 
-    parts = []
+    parts = [
+        color(thingy(sysinfo.free_disk()), 'colour%0d' % 1)
+    ]
 
-    for i in range(17):
-        parts.append(
-            color(thingy(i), 'colour%0d' % i)
-        )
 
     # slowness warning
     tm = datetime.datetime.now() - t0

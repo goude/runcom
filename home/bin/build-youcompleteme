@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cd $HOME/.vim/bundle/YouCompleteMe && ./install.py

@@ -33,7 +33,7 @@ c.InteractiveShellApp.exec_lines = [
     'import pandas as pd',
     'import numpy as np',
     'import matplotlib',
-    'matplotlib.use(\'macosx\')',
+    #'matplotlib.use(\'macosx\')',
     'import matplotlib.pyplot as plt',
     'plt.ion()'
 ]
@@ -297,10 +297,10 @@ c.InteractiveShellApp.exec_lines = [
 #c.TerminalInteractiveShell.display_completions = 'multicolumn'
 
 ## Shortcut style to use at the prompt. 'vi' or 'emacs'.
-#c.TerminalInteractiveShell.editing_mode = 'emacs'
+c.TerminalInteractiveShell.editing_mode = 'vi'
 
 ## Set the editor used by IPython (default to $EDITOR/vi/notepad).
-c.TerminalInteractiveShell.editor = 'vim'
+#c.TerminalInteractiveShell.editor = 'vim'
 
 ## Highlight matching brackets .
 #c.TerminalInteractiveShell.highlight_matching_brackets = True

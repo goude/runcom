@@ -1,0 +1,13 @@
+git
+openssh-server
+build-essential
+hdevtools
+wget
+vim-nox
+tmux
+zsh
+exuberant-ctags
+silversearcher-ag
+python-dev python3-dev cmake
+nodejs
+openjdk-8-jdk

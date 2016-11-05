@@ -300,7 +300,7 @@ c.InteractiveShellApp.exec_lines = [
 #c.TerminalInteractiveShell.editing_mode = 'emacs'
 
 ## Set the editor used by IPython (default to $EDITOR/vi/notepad).
-#c.TerminalInteractiveShell.editor = 'vim'
+c.TerminalInteractiveShell.editor = 'vim'
 
 ## Highlight matching brackets .
 #c.TerminalInteractiveShell.highlight_matching_brackets = True
@@ -309,7 +309,7 @@ c.InteractiveShellApp.exec_lines = [
 #  tango, vs, default, xcode, pastie, native, rrt, murphy, borland, autumn, vim,
 #  paraiso-light, algol, bw, manni, colorful, algol_nu, monokai, igor, trac,
 #  perldoc, friendly, lovelace, paraiso-dark
-#c.TerminalInteractiveShell.highlighting_style = 'legacy'
+c.TerminalInteractiveShell.highlighting_style = 'monokai'
 
 ## Override highlighting format for specific tokens
 #c.TerminalInteractiveShell.highlighting_style_overrides = {}

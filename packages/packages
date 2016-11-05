@@ -1,13 +1,16 @@
 git
 openssh-server
-build-essential
-hdevtools
 wget
 vim-nox
 tmux
 zsh
+build-essential
+cmake
+hdevtools
 exuberant-ctags
 silversearcher-ag
-python-dev python3-dev cmake
+python-dev
+python3-dev
+python3-pip
+python3-venv
 nodejs
-openjdk-8-jdk

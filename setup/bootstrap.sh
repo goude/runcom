@@ -2,6 +2,7 @@
 echo "Bootstrapping runcom..."
 
 mkdir -p "$HOME/tmp"
-cd "$HOME/tmp" || exit
+cd "$HOME/tmp"
 git clone https://github.com/goude/runcom.git
-runcom/setup/install.sh
+cd runcom/setup
+./install.sh

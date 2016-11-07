@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 homeshick_repos=$HOME/.homesick/repos
 rcfiles=$HOME/.homesick/repos/runcom
-system=`$rcfiles/system`
+system=`$rcfiles/utils/system`
 
 export HOMESHICK_REPOS=$homeshick_repos
 

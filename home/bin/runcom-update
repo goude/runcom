@@ -5,6 +5,6 @@ source $REPOS/homeshick/homeshick.sh
 
 homeshick pull
 
-vim +BundleInstall! +BundleClean +q!
+vim +BundleInstall! +BundleClean! +qall! +q! +q!
 
 #cd $HOME/.vim/bundle/YouCompleteMe && ./install.py

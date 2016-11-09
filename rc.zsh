@@ -1,14 +1,19 @@
 #!/usr/bin/env zsh
+
+# FIXME: There are some things in .zprofile, check these.
+
 source $HOME/.homesick/repos/runcom/rc.common
 
 # homeshick completion needs to come before zsh compinit
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
-prezto_dir=$HOME/.homesick/repos/prezto
-if [[ -e $prezto_dir/init.zsh ]] then
-    source $prezto_dir/init.zsh
-fi
-unset prezto_dir
+source $HOME/.homesick/repos/antigen/antigen.zsh
+
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle nojhan/liquidprompt
+
+antigen apply
 
 # Tweak this value if necessary
 export KEYTIMEOUT=20

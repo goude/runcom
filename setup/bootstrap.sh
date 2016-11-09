@@ -5,5 +5,4 @@ mkdir -p "$HOME/tmp"
 cd "$HOME/tmp" || exit
 git clone https://github.com/goude/runcom.git
 cd runcom/setup || exit
-./install.sh
-./post-install.sh
+./install.sh && ./post-install.sh

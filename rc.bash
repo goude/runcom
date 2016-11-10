@@ -10,12 +10,12 @@ GIT_PS1_SHOWCOLORHINTS=1
 
 source $rcfiles/utils/git-completion.bash
 source $rcfiles/utils/git-prompt.sh
-source $rcfiles/bash/bash_colors
+source $rcfiles/utils/bash_colors
 
 source $rcfiles/rc.common-post
 
 # needs to come after aliases have been created, obviously
-source $HOME/.homesick/repos/runcom/bash/fix_alias_completion.bash
+source $HOME/.homesick/repos/runcom/utils/fix_alias_completion.bash
 
 # define prompt
 

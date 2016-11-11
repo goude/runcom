@@ -14,7 +14,7 @@ if [[ "$(locale -k LC_CTYPE | sed -n 's/^charmap="\(.*\)"/\1/p')" == *"UTF-8"* ]
     LP_MARK_ADAPTER="⏚"        # displayed when plugged
     LP_MARK_LOAD="⌂"           # in front of the load
     LP_MARK_TEMP="θ"           # in front of the temp
-    LP_MARK_PROXY="↥"          # indicate a proxy in use
+    LP_MARK_PROXY="℗"          # indicate a proxy in use
     LP_MARK_HG="☿"             # prompt mark in hg repositories
     LP_MARK_SVN="‡"            # prompt mark in svn repositories
     LP_MARK_GIT="±"            # prompt mark in git repositories
@@ -42,7 +42,7 @@ fi
 
 LP_MARK_BRACKET_OPEN="["  # open bracket
 LP_MARK_BRACKET_CLOSE="]" # close bracket
-#LP_MARK_DEFAULT=""        # default prompt mark
+LP_MARK_DEFAULT="∫"        # default prompt mark
 LP_MARK_PREFIX=" "        # prompt mark prefix
 LP_PS1_PREFIX=""
 LP_PS1_POSTFIX=""

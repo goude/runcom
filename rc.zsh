@@ -10,16 +10,22 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 source $HOME/.homesick/repos/antigen/antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
-
 antigen bundle git
-
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle nojhan/liquidprompt
 
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
-antigen bundle history-substring-search
+antigen bundle colored-man-pages
+antigen bundle colorize
+antigen bundle docker
+antigen bundle extract # x swiss army knife
+antigen bundle gitignore
 antigen bundle gnu-utils
+antigen bundle gpg-agent
+antigen bundle history # h, hsi
+antigen bundle history-substring-search
+antigen bundle mvn
 antigen bundle node
 antigen bundle pip
 antigen bundle python
@@ -27,13 +33,15 @@ antigen bundle rupa/z
 antigen bundle ssh-agent
 antigen bundle tmux
 antigen bundle vagrant
+antigen bundle vagrant
 antigen bundle virtualenv
+antigen bundle web-search # h, hsi
 
 #antigen bundle vi-mode
 #antigen bundle npm
 
-antigen bundle felixr/docker-zsh-completion
-antigen bundle srijanshetty/zsh-pip-completion
+#antigen bundle felixr/docker-zsh-completion
+#antigen bundle srijanshetty/zsh-pip-completion
 antigen bundle lukechilds/zsh-better-npm-completion
 
 if [[ $system == 'OSX' ]]; then

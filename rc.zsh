@@ -21,15 +21,16 @@ antigen bundle nojhan/liquidprompt
 antigen bundle history-substring-search
 antigen bundle gnu-utils
 antigen bundle node
-antigen bundle npm
 antigen bundle pip
 antigen bundle python
 antigen bundle rupa/z
 antigen bundle ssh-agent
 antigen bundle tmux
 antigen bundle vagrant
-antigen bundle vi-mode
 antigen bundle virtualenv
+
+#antigen bundle vi-mode
+#antigen bundle npm
 
 antigen bundle felixr/docker-zsh-completion
 antigen bundle srijanshetty/zsh-pip-completion

@@ -4,7 +4,13 @@ REPOS=$HOME/.homesick/repos
 source $REPOS/homeshick/homeshick.sh
 
 homeshick pull
+antigen update
 
-vim +BundleInstall! +BundleClean! +qall! +q! +q!
+read -p "Update vim bundles? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    vim +BundleInstall! +BundleClean! +qall! +q! +q!
+fi
 
 #cd $HOME/.vim/bundle/YouCompleteMe && ./install.py

@@ -31,13 +31,13 @@ antigen bundle pip
 antigen bundle python
 antigen bundle rupa/z
 antigen bundle ssh-agent
-antigen bundle tmux
+#antigen bundle tmux
 antigen bundle vagrant
 antigen bundle vagrant
 antigen bundle virtualenv
 antigen bundle web-search # h, hsi
 
-#antigen bundle vi-mode
+antigen bundle vi-mode
 #antigen bundle npm
 
 #antigen bundle felixr/docker-zsh-completion

@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # FIXME: There are some things in .zprofile, check these.
+export RPROMPT=" "
 
 source $HOME/.homesick/repos/runcom/rc.common
 

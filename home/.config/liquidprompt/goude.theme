@@ -61,7 +61,7 @@ LP_COLOR_PATH="$BOLD"         # as normal user
 LP_COLOR_PATH_ROOT="$BOLD_YELLOW"   # as root
 
 # Color of the proxy mark
-LP_COLOR_PROXY="$BOLD_BLUE"
+LP_COLOR_PROXY="$BOLD_RED"
 
 # Jobs count
 LP_COLOR_JOB_D="$YELLOW"        # Detached (aka screen sessions)

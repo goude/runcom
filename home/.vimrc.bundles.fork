@@ -1,16 +1,12 @@
 Bundle "tpope/vim-unimpaired"
-Bundle "tpope/vim-speeddating"
 Bundle "myusuf3/numbers.vim"
-
 Bundle "editorconfig/editorconfig-vim"
-
-" Prevent multiple jk presses
-Bundle "takac/vim-hardtime"
 
 " Writing
 Bundle "junegunn/limelight.vim"
 Bundle "junegunn/vim-easy-align"
 Bundle "reedes/vim-pencil"
+Bundle "junegunn/goyo.vim"
 
 " Theming
 Bundle "chriskempson/base16-vim"
@@ -20,9 +16,6 @@ Bundle "mhinz/vim-startify"
 
 " Add sneak command s{char}{char}
 Bundle "justinmk/vim-sneak"
-
-" Distraction-free writing
-Bundle "junegunn/goyo.vim"
 
 " Fix neocompcache complaints
 Bundle "Konfekt/FastFold"

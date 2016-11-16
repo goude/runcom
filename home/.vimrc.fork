@@ -24,6 +24,7 @@ nnoremap <leader>f :Autoformat<CR>
 nnoremap <silent> <leader>j <Plug>(easymotion-jumptoanywhere)
 map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
+" todo.txt special commands
 nnoremap <leader>j ^lrX: <Esc>:r! date +" [\%Y-\%m-\%d \%H:\%M]"<ENTER><Esc>kJ$
 nnoremap <leader>k O<Esc>:s/\v(\W+)?/[ ] /<ENTER><Esc>:set nohlsearch<ENTER>A
 
@@ -32,9 +33,10 @@ nnoremap <leader>k O<Esc>:s/\v(\W+)?/[ ] /<ENTER><Esc>:set nohlsearch<ENTER>A
 " Launch using <Leader>e. Use <C-E> to toggle NERDTree. Use <leader>e or <leader>nt
 
 "<leader>gs :Gstatus <leader>gd :Gdiff <leader>gc :Gcommit <leader>gb :Gblame <leader>gl :Glog <leader>gp :Git push
+
 " CTRL-] while the cursor is on a keyword (such as a function name) to jump to it's definition. Customizations: spf13-vim binds <Leader>tt to toggle the tagbar panel
 
-" <c-l> to clear the highlight, as well as redraw the screen
+" clear the highlight, as well as redraw the screen
 noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 inoremap <silent> <leader>l <C-o>:nohlsearch<cr>
 
@@ -98,6 +100,7 @@ set wrap
 " Should be caught by editorconfig. Commenting out.
 "autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 "autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
+
 " }
 
 " Plugin settings {
@@ -220,11 +223,12 @@ if LINUX()
     " Do nothing.
 endif
 
-"autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
 
 " }
 
 " Workarounds {
+
+"autocmd VimEnter * echo "C-V ' to disable auto-pairs temporarily."
 
 " 'Varför fungerar inte å i vim?'
 " Fix problem with <M-e> conflict (symptom: unable to type Swedish char å)

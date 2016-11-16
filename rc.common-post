@@ -31,19 +31,15 @@ fi
 #if [[ $system == 'Cygwin' ]]; then
 #fi
 
-if [ -n "$ZSH_VERSION" ]; then
+#if [ -n "$ZSH_VERSION" ]; then
    # assume Zsh
-   alias hi='history 0'
-elif [ -n "$BASH_VERSION" ]; then
+   #alias hi='history 0'
+#elif [ -n "$BASH_VERSION" ]; then
    # assume Bash
-   alias hi='history'
-else
-   alias hi='history'
-fi
-
-# Aliases & functions
-source $rcfiles/aliases
-source $rcfiles/functions
+   #alias hi='history'
+#else
+   #alias hi='history'
+#fi
 
 # Directory colors
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
@@ -54,7 +50,7 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
 fi
 
 # z.sh utility to move around quickly
-source $rcfiles/utils/z.sh
+#source $rcfiles/utils/z.sh
 
 # generic colou?ri[sz]er
 source $rcfiles/home/.grc/grc.bashrc
@@ -92,17 +88,18 @@ stty start undef
 # http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
 #stty ixon
 
+# Base16 Shell
+BASE16_SHELL="$homeshick_repos/base16-shell/"
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# Aliases & functions
+source $rcfiles/aliases
+source $rcfiles/functions
+
 # Source local settings
 if [ -f ~/.localenv ]; then
     source ~/.localenv
 fi
-
-# Base16 Shell
-#export _BASE16_THEME="monokai"
-#BASE16_SHELL="$homeshick_repos/base16-shell/scripts/base16-$_BASE16_THEME.sh"
-#[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
-BASE16_SHELL="$homeshick_repos/base16-shell/"
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/goude/.sdkman"

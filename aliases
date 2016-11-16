@@ -13,9 +13,10 @@ alias gs='git status'
 alias gca='git commit -a'
 alias gp='git push'
 alias ga='git add'
+alias gd='git diff'
 
-alias higr='hi | egrep -i'
-alias engr='env | egrep -i'
+#alias higr='hi | egrep -i'
+alias esi='env | egrep -i'
 
 alias ta='tmux attach || tmux new'
 
@@ -29,8 +30,7 @@ alias c='z'
 
 alias g='git'
 alias s='ssh'
-#alias vim='nvim'
 alias v='vim'
 
-alias serve-directory='python -m SimpleHTTPServer'
-alias cp-progress="rsync --progress -ravz"
+alias serve-directory='python3 -m http.server'
+#alias cp-progress="rsync --progress -ravz"

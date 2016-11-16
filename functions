@@ -30,7 +30,7 @@ get_extended_prompt_string () {
 
 # Misc
 history-high-score () {
-    history 0 | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
+    history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
 }
 
 random-base16-colorscheme () {

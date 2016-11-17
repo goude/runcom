@@ -14,7 +14,7 @@ antigen bundle robbyrussell/oh-my-zsh lib/
 antigen bundle git
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle nojhan/liquidprompt
+antigen bundle goude/liquidprompt
 
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
 antigen bundle colored-man-pages

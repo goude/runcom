@@ -2,21 +2,28 @@ FROM ubuntu:xenial
 MAINTAINER Daniel Goude <daniel@goude.se>
 
 # Base packages
-RUN apt-get update && apt-get install -y sudo git zsh tmux vim-nox openssh-server gnupg
+RUN \
+  apt-get update && \
+  apt-get install -y --no-install-recommends \
+    sudo git zsh tmux vim-nox openssh-server \
+    gnupg build-essential cmake hdevtools \
+    exuberant-ctags silversearcher-ag \
+    nodejs npm \
+    python-dev python3-dev python3-pip python3-venv \
+    python3-matplotlib python3-pandas
 
-# Base development packages
-RUN apt-get install -y build-essential cmake hdevtools exuberant-ctags silversearcher-ag
-
-# Development packages
-RUN apt-get install -y nodejs python-dev python3-dev python3-pip python3-venv python3-matplotlib python3-pandas
-
-RUN locale-gen en_US.UTF-8
-
-RUN useradd -ms /usr/bin/zsh runcom && echo "runcom:runcom" | chpasswd && adduser runcom sudo
-
-RUN mkdir -p /var/run/sshd
+RUN \
+  mkdir -p /var/run/sshd && \
+  locale-gen en_US.UTF-8 && \
+  useradd -ms /usr/bin/zsh runcom && \
+  echo "runcom:runcom" | chpasswd && \
+  adduser runcom sudo
 
 USER runcom
 WORKDIR /home/runcom
-RUN git clone https://github.com/goude/runcom.git
-#RUN runcom/setup/bootstrap.sh
+
+RUN \
+  mkdir -p tmp/ && \
+  git clone https://github.com/goude/runcom.git tmp/runcom && \
+  tmp/runcom/setup/bootstrap.sh && \
+  rm -rf tmp/runcom

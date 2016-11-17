@@ -10,7 +10,7 @@ RUN \
     sudo git zsh tmux vim-nox openssh-server \
     gnupg build-essential cmake hdevtools \
     exuberant-ctags silversearcher-ag \
-    nodejs npm \
+    nodejs nodejs-legacy npm \
     python3-dev python3-pip python3-venv \
     python3-matplotlib python3-pandas
 

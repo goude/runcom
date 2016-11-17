@@ -2,9 +2,10 @@ FROM ubuntu:xenial
 MAINTAINER Daniel Goude <daniel@goude.se>
 
 # Base packages
+# --no-install-recommends \
 RUN \
   apt-get update && \
-  apt-get install -y --no-install-recommends \
+  apt-get install -y \
     sudo git zsh tmux vim-nox openssh-server \
     gnupg build-essential cmake hdevtools \
     exuberant-ctags silversearcher-ag \
@@ -26,4 +27,5 @@ RUN \
   mkdir -p tmp/ && \
   git clone https://github.com/goude/runcom.git tmp/runcom && \
   tmp/runcom/setup/bootstrap.sh && \
-  rm -rf tmp/runcom
+  rm -rf tmp/runcom && \
+  bin/build-youcompleteme

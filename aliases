@@ -28,6 +28,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias c='z'
 
+alias d='docker'
 alias g='git'
 alias s='ssh'
 alias v='vim'

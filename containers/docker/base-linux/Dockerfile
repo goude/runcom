@@ -10,10 +10,6 @@ RUN \
     sudo git zsh tmux vim-nox openssh-server \
     gnupg build-essential cmake hdevtools \
     exuberant-ctags silversearcher-ag \
-    nodejs nodejs-legacy npm \
-    python-dev \
-    python3-dev python3-pip python3-venv \
-    python3-matplotlib python3-pandas
 
 RUN \
   mkdir -p /var/run/sshd && \

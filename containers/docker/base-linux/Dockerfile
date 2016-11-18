@@ -9,7 +9,7 @@ RUN \
   apt-get install -y \
     sudo git zsh tmux vim-nox openssh-server \
     gnupg build-essential cmake hdevtools \
-    exuberant-ctags silversearcher-ag \
+    exuberant-ctags silversearcher-ag
 
 RUN \
   mkdir -p /var/run/sshd && \

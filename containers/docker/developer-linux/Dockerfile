@@ -1,4 +1,4 @@
-FROM goude:base-linux
+FROM goude/base-linux
 MAINTAINER Daniel Goude <daniel@goude.se>
 
 # Developer packages

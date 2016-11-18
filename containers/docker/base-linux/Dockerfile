@@ -20,6 +20,6 @@ RUN \
   locale-gen en_US.UTF-8 && \
   useradd -ms /usr/bin/zsh runcom && \
   echo "runcom:runcom" | chpasswd && \
-  adduser runcom sudo && \
-  /usr/bin/sshd
+  adduser runcom sudo
+  #/usr/bin/sshd
 

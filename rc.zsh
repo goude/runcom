@@ -2,6 +2,7 @@
 
 # FIXME: There are some things in .zprofile, check these.
 export RPROMPT=" "
+export DISABLE_AUTO_TITLE="true"
 
 source $HOME/.homesick/repos/runcom/rc.common
 

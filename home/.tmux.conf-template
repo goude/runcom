@@ -110,6 +110,8 @@ bind-key -t vi-copy v begin-selection
 # set shell
 #set-option -g default-shell $HOME/opt/zsh-5.0.7/bin/zsh
 #set-option -g default-shell /usr/local/bin/zsh
+set-option -g default-shell $RUNCOM_TMUX_SHELL
+
 
 # color settings
 

@@ -85,15 +85,7 @@ set -g visual-activity on
 
 # Fix access to Mac OS X pasteboard using a wrapper script to avoid multiple configuration files.
 # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/issues/8#issuecomment-4134987
-#set-option -g default-command 'reattach-to-user-namespace-tmux -l "$SHELL"'
-
-# For tmux >= 1.9, this is an alternative (race condition in 1.8):
-#if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'
-#
-# .tmux-osx.conf contents:
-#set-option -g default-command "reattach-to-user-namespace -l zsh"
-#
-# TODO: idea: make reattach-to... an 'identity command' on non-OSX platforms
+set-option -g default-command '$HOME/bin/reattach-to-user-namespace-tmux -l "$RUNCOM_TMUX_SHELL"'
 
 set-window-option -g automatic-rename on
 
@@ -108,12 +100,16 @@ bind-key -t vi-copy v begin-selection
 #bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # set shell
-#set-option -g default-shell $HOME/opt/zsh-5.0.7/bin/zsh
-#set-option -g default-shell /usr/local/bin/zsh
 set-option -g default-shell $RUNCOM_TMUX_SHELL
 
-
-# color settings
+#
+#    mmm         ""#
+#  m"   "  mmm     #     mmm    m mm   mmm
+#  #      #" "#    #    #" "#   #"  " #   "
+#  #      #   #    #    #   #   #      """m
+#   "mmm" "#m#"    "mm  "#m#"   #     "mmm"
+#
+#
 
 #set-option -g status-attr dim
 set-option -g status-attr bright

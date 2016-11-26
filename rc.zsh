@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# FIXME: There are some things in .zprofile, check these.
+# FIXME: There are still some things in .zprofile, check these.
 export RPROMPT=" "
 export DISABLE_AUTO_TITLE="true"
 
@@ -14,7 +14,6 @@ source $HOME/.homesick/repos/antigen/antigen.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/
 antigen bundle git
 antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle goude/liquidprompt
 
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
@@ -45,6 +44,10 @@ antigen bundle vi-mode
 #antigen bundle felixr/docker-zsh-completion
 #antigen bundle srijanshetty/zsh-pip-completion
 antigen bundle lukechilds/zsh-better-npm-completion
+
+# Should be at end of .zshrc, according to instructions
+# FIXME: lots of things happening below...
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 if [[ $system == 'OSX' ]]; then
   antigen bundle brew

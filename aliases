@@ -17,6 +17,7 @@ alias gd='git diff'
 
 #alias higr='hi | egrep -i'
 alias esi='env | egrep -i'
+alias eg='egrep -i'
 
 alias ta='tmux attach || tmux new'
 

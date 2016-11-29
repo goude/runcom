@@ -7,15 +7,13 @@ source "$REPOS/homeshick/homeshick.sh"
 echo "Cloning homeshick repos..."
 
 homeshick_repos=(
-    "goude/runcom"
+    "git@github.com:goude/runcom.git"
+    "git@github.com:goude/thxtime.git"
+    "git@github.com:goude/yaprox.git"
     "zsh-users/antigen"
-    "goude/thxtime"
-    "goude/yaprox"
     "spf13/spf13-vim"
     "chriskempson/base16-shell"
     "jimeh/tmuxifier"
-    #"syl20bnr/spacemacs"
-    #"goude/prezto"
 )
 
 for i in "${homeshick_repos[@]}"

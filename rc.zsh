@@ -3,6 +3,7 @@
 # FIXME: There are still some things in .zprofile, check these.
 export RPROMPT=" "
 export DISABLE_AUTO_TITLE="true"
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
 source $HOME/.homesick/repos/runcom/rc.common
 

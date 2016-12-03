@@ -4,8 +4,16 @@
 export RPROMPT=" "
 export DISABLE_AUTO_TITLE="true"
 
+# Highlighters {{{
+# Declare the variable
+typeset -A ZSH_HIGHLIGHT_STYLES
+typeset -A ZSH_HIGHLIGHT_HIGHLIGHTERS # not according to documentation
+
+# https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/highlighters/main
+# To differentiate aliases from other command types
+ZSH_HIGHLIGHT_STYLES[comment]='fg=magenta,bold'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-export ZSH_HIGHLIGHT_HIGHLIGHTERS
+# }}}
 
 source $HOME/.homesick/repos/runcom/rc.common
 

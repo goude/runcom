@@ -19,11 +19,11 @@ source $HOME/.homesick/repos/runcom/utils/fix_alias_completion.bash
 
 # define prompt
 
-bpr="\$(get_extended_prompt_string)"
-bpr+=" \$(__git_ps1 '[%s]')"
-bpr+="\\n"
+#bpr="\$(get_extended_prompt_string)"
+#bpr=" \$(__git_ps1 '[%s]')"
+#bpr+="\\n"
 
-bpr+="\[$IRed\]\u\[$CReset\]"
+bpr="\[$IRed\]\u\[$CReset\]"
 bpr+="\[$White\]@\[$CReset\]"
 bpr+="\[$Yellow\]\h\[$CReset\]"
 bpr+=" \[$IBlack\]\W\[$CReset\]"

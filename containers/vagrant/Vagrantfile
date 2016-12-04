@@ -68,15 +68,10 @@ Vagrant.configure("2") do |config|
      echo Running provisioning script...
      apt-get update
      apt-get install -y git vim-nox tmux zsh
+
      #su - vagrant '/vagrant/bootstrap.sh'
 
-     su - vagrant
-     echo "Bootstrapping runcom..."
-     mkdir -p "$HOME/tmp"
-     cd "$HOME/tmp" || exit
-     git clone https://github.com/goude/runcom.git
-     cd runcom/setup || exit
-     ./install.sh && ./post-install.sh
+     su - vagrant 'mkdir -p "~/tmp" && cd "~/tmp" && git clone https://github.com/goude/runcom.git && cd runcom/setup && ./install.sh && ./post-install.sh'
 
      echo Done.
   SHELL

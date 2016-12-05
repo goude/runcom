@@ -17,5 +17,10 @@ if [[ $system =~ "CYGWIN_NT-6." ]]; then
     exit 0
 fi
 
+if [[ $system =~ "MINGW64" ]]; then
+    printf 'GitBash'
+    exit 0
+fi
+
 printf 'Unknown system' >&2
 exit 1

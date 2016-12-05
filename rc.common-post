@@ -55,13 +55,6 @@ fi
 # generic colou?ri[sz]er
 source $rcfiles/home/.grc/grc.bashrc
 
-# Tmux improver
-if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
-  export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
-  PATH=$PATH:$HOME/.homesick/repos/tmuxifier/bin
-  eval "$(tmuxifier init -)"
-fi
-
 # Wrapper for virtualenv
 if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -95,6 +88,13 @@ BASE16_SHELL="$homeshick_repos/base16-shell/"
 # Aliases & functions
 source $rcfiles/aliases
 source $rcfiles/functions
+
+# Tmux improver
+if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
+  export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
+  PATH=$PATH:$HOME/.homesick/repos/tmuxifier/bin
+  command_exists tmux && eval "$(tmuxifier init -)"
+fi
 
 # Source local settings
 if [ -f ~/.localenv ]; then

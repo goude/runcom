@@ -42,7 +42,7 @@ else
 fi
 
 LP_MARK_BRACKET_OPEN="["  # open bracket
-LP_MARK_BRACKET_CLOSE=".:]" # close bracket
+LP_MARK_BRACKET_CLOSE="]" # close bracket
 LP_MARK_DEFAULT="∫"        # default prompt mark
 LP_MARK_PREFIX=" "        # prompt mark prefix
 LP_PS1_PREFIX=""
@@ -77,8 +77,8 @@ LP_COLOR_MARK_ROOT="$BOLD_RED"  # as root
 LP_COLOR_MARK_SUDO="$BOLD_RED"  # when sudo credentials are cached
 
 # Current user
-LP_COLOR_USER_LOGGED=""           # user who logged in
-LP_COLOR_USER_ALT="$BOLD"         # user but not the one who logged in
+LP_COLOR_USER_LOGGED="$COLOR16"           # user who logged in
+LP_COLOR_USER_ALT="$COLOR16"         # user but not the one who logged in
 LP_COLOR_USER_ROOT="$BOLD_YELLOW" # root
 
 # Hostname

@@ -14,6 +14,7 @@ alias gca='git commit -a'
 alias gp='git push'
 alias ga='git add'
 alias gd='git diff'
+alias gl='git log'
 
 #alias higr='hi | egrep -i'
 alias esi='env | egrep -i'
@@ -27,12 +28,11 @@ alias hocd='homeshick cd'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias c='z'
 
 alias d='docker'
 alias g='git'
 alias s='ssh'
-alias v='vim'
+alias v='f -e vim'
 
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"

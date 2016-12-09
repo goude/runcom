@@ -49,9 +49,6 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
     eval `gdircolors $HOME/.dircolors`
 fi
 
-# z.sh utility to move around quickly
-#source $rcfiles/utils/z.sh
-
 # generic colou?ri[sz]er
 source $rcfiles/home/.grc/grc.bashrc
 
@@ -85,9 +82,8 @@ stty start undef
 BASE16_SHELL="$homeshick_repos/base16-shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-# Aliases & functions
-source $rcfiles/aliases
-source $rcfiles/functions
+# fasd navigator
+eval "$(fasd --init auto)"
 
 # Tmux improver
 if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
@@ -96,8 +92,9 @@ if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   command_exists tmux && eval "$(tmuxifier init -)"
 fi
 
-# fasd navigator
-eval "$(fasd --init auto)"
+# Aliases & functions
+source $rcfiles/aliases
+source $rcfiles/functions
 
 # Source local settings
 if [ -f ~/.localenv ]; then

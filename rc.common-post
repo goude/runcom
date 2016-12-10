@@ -82,6 +82,9 @@ stty start undef
 BASE16_SHELL="$homeshick_repos/base16-shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+# custom functions
+source $rcfiles/functions
+
 # fasd navigator
 eval "$(fasd --init auto)"
 
@@ -92,9 +95,8 @@ if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   command_exists tmux && eval "$(tmuxifier init -)"
 fi
 
-# Aliases & functions
+# custom aliases
 source $rcfiles/aliases
-source $rcfiles/functions
 
 # Source local settings
 if [ -f ~/.localenv ]; then

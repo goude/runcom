@@ -19,6 +19,7 @@ export GOPATH=$HOME/go
 export FORTUNE_PATH=$rcfiles/adages
 
 export PATH=$PATH:/usr/local/bin:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin
+export no_proxy="localhost,127.0.0.1"
 
 # overwrite in .localenv if necessary
 export RUNCOM_TMUX_SHELL=$SHELL

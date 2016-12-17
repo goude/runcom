@@ -9,6 +9,7 @@ RUN \
   apt-get install -y \
     sudo git zsh tmux vim-nox openssh-server \
     gnupg build-essential cmake hdevtools \
+    libxml2-dev libxslt-dev \
     exuberant-ctags silversearcher-ag
 
 RUN \

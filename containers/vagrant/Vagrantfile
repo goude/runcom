@@ -43,13 +43,13 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = true
+ 
+   # Customize the amount of memory on the VM:
+   vb.memory = "2048"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -67,8 +67,30 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
      echo Running provisioning script...
      apt-get update
-     apt-get install -y git vim-nox tmux zsh
-     su - vagrant '/vagrant/bootstrap.sh'
+     apt-get install -y git vim-nox tmux zsh \
+       build-essential cmake hdevtools \
+       exuberant-ctags silversearcher-ag
+     
+     apt-get install -y  apt-transport-https ca-certificates gnupg2
+     
+     apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+     echo 'deb https://apt.dockerproject.org/repo debian-jessie main' > /etc/apt/sources.list.d/docker.list
+
+     apt-get update
+     apt-get install -y docker-engine
+
+     groupadd docker
+     gpasswd -a vagrant docker
+
+     service docker start
+
+     #su - vagrant '/vagrant/bootstrap.sh'
+     #su - vagrant 'git clone https://github.com/goude/runcom.git'
+     #su - vagrant 'runcom/setup/bootstrap.sh'
+
+     git clone https://github.vom/goude/runcom /tmp/runcom
+
      echo Done.
   SHELL
 end

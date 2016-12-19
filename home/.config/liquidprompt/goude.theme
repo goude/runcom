@@ -77,8 +77,8 @@ LP_COLOR_MARK_ROOT="$BOLD_RED"  # as root
 LP_COLOR_MARK_SUDO="$BOLD_RED"  # when sudo credentials are cached
 
 # Current user
-LP_COLOR_USER_LOGGED=""           # user who logged in
-LP_COLOR_USER_ALT="$BOLD"         # user but not the one who logged in
+LP_COLOR_USER_LOGGED="$COLOR16"           # user who logged in
+LP_COLOR_USER_ALT="$COLOR16"         # user but not the one who logged in
 LP_COLOR_USER_ROOT="$BOLD_YELLOW" # root
 
 # Hostname
@@ -110,7 +110,7 @@ LP_COLOR_DISCHARGING_UNDER="$RED"     # discharging and under threshold
 LP_COLOR_TIME="$BLUE"
 
 # Brackets inside screen/tmux
-LP_COLOR_IN_MULTIPLEXER="$BOLD_BLUE"
+LP_COLOR_IN_MULTIPLEXER="$COLOR20"
 
 # Virtual environment
 LP_COLOR_VIRTUALENV="$CYAN"

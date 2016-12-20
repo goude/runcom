@@ -8,6 +8,7 @@ RUN \
   apt-get update && \
   apt-get install -y \
     sudo git zsh tmux vim-nox openssh-server \
+    curl \
     gnupg build-essential cmake hdevtools \
     libxml2-dev libxslt-dev \
     libaio1 alien \

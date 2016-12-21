@@ -12,5 +12,7 @@ RUN \
     python-dev \
     python3-dev python3-pip python3-venv \
     python3-lxml \
-    python3-matplotlib python3-pandas
+    python3-matplotlib python3-pandas \
+    openjdk-8-jre-headless \
+    texlive-xetex
 

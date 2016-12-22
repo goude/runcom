@@ -9,6 +9,7 @@ RUN \
     nodejs nodejs-legacy npm \
     golang \
     ghc \
+    pandoc \
     python-dev \
     python3-dev python3-pip python3-venv \
     python3-lxml \

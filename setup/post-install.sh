@@ -10,3 +10,6 @@ ln -s $HOME/.npmrc-template $HOME/.npmrc
 if [[ -f $HOME/.zshrc ]]; then
   zsh -c "source $HOME/.zshrc"
 fi
+
+# Set initial color scheme
+$HOME/.homesick/repos/base16-shell/scripts/base16-monokai.sh

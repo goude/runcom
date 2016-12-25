@@ -12,4 +12,5 @@ if [[ -f $HOME/.zshrc ]]; then
 fi
 
 # Set initial color scheme
-$HOME/.homesick/repos/base16-shell/scripts/base16-monokai.sh
+ln -s $HOME/.homesick/repos/base16-shell/scripts/base16-monokai.sh $HOME/.base16_theme
+cp vimrc_background $HOME/.vimrc_background

@@ -97,6 +97,7 @@ antigen bundle vagrant
 antigen bundle vagrant
 antigen bundle virtualenv
 antigen bundle web-search # h, hsi
+antigen bundle Tarrasch/zsh-autoenv
 
 antigen bundle vi-mode
 #antigen bundle npm

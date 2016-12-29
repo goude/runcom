@@ -13,4 +13,4 @@ fi
 
 # Set initial color scheme
 ln -s $HOME/.homesick/repos/base16-shell/scripts/base16-monokai.sh $HOME/.base16_theme
-cp vimrc_background $HOME/.vimrc_background
+cp $HOME/.homesick/repos/runcom/setup/vimrc_background $HOME/.vimrc_background

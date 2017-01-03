@@ -30,3 +30,6 @@ Bundle "mhartington/vim-typings"
 
 " Autoformat code
 Bundle "Chiel92/vim-autoformat"
+
+Bundle "artur-shaik/vim-javacomplete2"
+

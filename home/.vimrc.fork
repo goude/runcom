@@ -96,10 +96,6 @@ nmap <Space> za
 set nospell " Turn off spellcheck by default; it's annoying
 set wrap
 
-" Tab settings
-" Should be caught by editorconfig. Commenting out.
-"autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
-"autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
 " }
 
@@ -211,7 +207,8 @@ endif
 
 if OSX()
     " editorconfig
-    let g:EditorConfig_core_mode = 'external_command'
+    " Commented out for now
+    "let g:EditorConfig_core_mode = 'external_command'
 endif
 
 " Set font on Windows/portable gvim
@@ -237,6 +234,15 @@ let g:AutoPairsShortcutFastWrap = ''
 " Fix crontab -e problem
 " http://vim.wikia.com/wiki/Editing_crontab
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
+" FIXME: this is annoying
+" Tab/indent settings
+" Should be caught by editorconfig. Commenting out.
+"autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
+"autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
+" Again, should be caught by editorconfig. Probably some plugin or spf13
+" interfering, or need to use external_command (google it)
+set expandtab
 
 " }
 
@@ -286,3 +292,6 @@ let g:startify_custom_header =
     \ map(split(system('FORTUNE_PATH=~/.homesick/repos/runcom/adages ~/bin/adage | cowsay'), '\n'), '"   ". v:val')
 
 " }
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+

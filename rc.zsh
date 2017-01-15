@@ -91,9 +91,8 @@ antigen bundle node
 antigen bundle pip
 antigen bundle python
 #antigen bundle rupa/z
-#antigen bundle ssh-agent
+antigen bundle ssh-agent
 #antigen bundle tmux
-antigen bundle vagrant
 antigen bundle vagrant
 antigen bundle virtualenv
 antigen bundle web-search # h, hsi

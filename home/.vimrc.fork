@@ -12,6 +12,7 @@
 
 " Remove certain plugins from spf13
 UnBundle "spf13/vim-preview"
+UnBundle "amirh/HTML-AutoCloseTag"
 
 " }
 

@@ -1,0 +1,7 @@
+docker run \
+  -t -i \
+  -p 8888:8888 \
+  -v $HOME:/home/runcom/jupyter-virtualenv/data/home \
+  --name=ephemeric-jupyter-notebook \
+  --rm \
+  goude/jupyter-virtualenv /home/runcom/jupyter-virtualenv/start-jupyter.sh

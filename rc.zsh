@@ -105,6 +105,8 @@ antigen bundle vi-mode
 #antigen bundle srijanshetty/zsh-pip-completion
 antigen bundle lukechilds/zsh-better-npm-completion
 
+antigen bundle taskwarrior # experimental
+
 if [[ $system == 'OSX' ]]; then
   antigen bundle brew
   antigen bundle brew-cask

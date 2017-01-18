@@ -23,7 +23,11 @@ Bundle "Konfekt/FastFold"
 " Autoformat code
 Bundle "Chiel92/vim-autoformat"
 
+" TaskWarrior
+Bundle "blindFS/vim-taskwarrior"
+
 " VimWiki
+" TODO: Experimental, test!
 Bundle "vimwiki/vimwiki"
 
 " Typescript

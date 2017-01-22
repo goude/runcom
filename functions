@@ -42,7 +42,7 @@ reload-zshrc () {
 }
 
 random-base16-colorscheme () {
-  pushd . && hocd base16-shell/scripts && foo=$(ls *.sh | shuf | head -1) && echo $foo && source $foo && unset $foo && popd
+  pushd . && cd "$HOMESHICK_REPOS/base16-shell/scripts" && foo=$(ls *.sh | shuf | head -1) && echo $foo && source $foo && unset $foo && popd
   #randscheme=$(ls "$HOMESHICK_REPOS"/base16-shell/*.sh | shuf)
   #echo $randscheme
   #source $randscheme

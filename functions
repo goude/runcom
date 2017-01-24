@@ -24,10 +24,6 @@ git_user_name_prompt () {
     git config user.email | sed 's/\(.\).\+@\(.\).\+/\1@\2/'
 }
 
-get_extended_prompt_string () {
-    [[ -f ~/.homesick/repos/runcom/prompt/prompt.py ]] && python ~/.homesick/repos/runcom/prompt/prompt.py
-}
-
 # Misc
 history-high-score () {
     history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
@@ -43,8 +39,4 @@ reload-zshrc () {
 
 random-base16-colorscheme () {
   pushd . && cd "$HOMESHICK_REPOS/base16-shell/scripts" && foo=$(ls *.sh | shuf | head -1) && echo $foo && source $foo && unset $foo && popd
-  #randscheme=$(ls "$HOMESHICK_REPOS"/base16-shell/*.sh | shuf)
-  #echo $randscheme
-  #source $randscheme
-  #unset randscheme
 }

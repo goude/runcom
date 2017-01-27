@@ -21,6 +21,7 @@ alias esi='env | egrep -i'
 alias eg='egrep -i'
 
 alias ta='tmux attach || tmux new'
+alias tm='tmuxifier'
 
 alias ho='homeshick'
 alias hocd='homeshick cd'

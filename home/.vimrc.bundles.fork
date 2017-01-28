@@ -39,6 +39,6 @@ Bundle "jason0x43/vim-js-indent"
 Bundle "mhartington/vim-typings"
 
 " Autoformat code
-Bundle "Chiel92/vim-autoformat"
+"Bundle "Chiel92/vim-autoformat"
 
 Bundle "artur-shaik/vim-javacomplete2"

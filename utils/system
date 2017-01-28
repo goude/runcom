@@ -12,7 +12,7 @@ if [[ $system =~ "Darwin" ]]; then
     exit 0
 fi
 
-if [[ $system =~ "CYGWIN_NT-6." ]]; then
+if [[ $system =~ "CYGWIN_NT-" ]]; then
     printf 'Cygwin'
     exit 0
 fi

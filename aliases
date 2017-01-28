@@ -16,11 +16,14 @@ alias ga='git add'
 alias gd='git diff'
 alias gl="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -r"
 
-#alias higr='hi | egrep -i'
+alias mrs='mr status'
+
+alias hsi='history | egrep -i'
 alias esi='env | egrep -i'
 alias eg='egrep -i'
 
 alias ta='tmux attach || tmux new'
+alias tm='tmuxifier'
 
 alias ho='homeshick'
 alias hocd='homeshick cd'
@@ -33,6 +36,7 @@ alias d='docker'
 alias g='git'
 alias s='ssh'
 alias v='f -e vim'
+alias t='task'
 
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"

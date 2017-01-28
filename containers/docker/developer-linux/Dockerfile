@@ -15,6 +15,6 @@ RUN \
     python3-lxml \
     python3-cairo \
     python3-matplotlib python3-pandas \
-    openjdk-8-jre-headless \
-    texlive-xetex
+    python3-sklearn \
+    openjdk-8-jre-headless
 

@@ -20,6 +20,16 @@ Bundle "justinmk/vim-sneak"
 " Fix neocompcache complaints
 Bundle "Konfekt/FastFold"
 
+" Autoformat code
+Bundle "Chiel92/vim-autoformat"
+
+" TaskWarrior
+Bundle "blindFS/vim-taskwarrior"
+
+" VimWiki
+" TODO: Experimental, test!
+Bundle "vimwiki/vimwiki"
+
 " Typescript
 Bundle "leafgarland/typescript-vim"
 Bundle "Quramy/tsuquyomi"
@@ -32,4 +42,3 @@ Bundle "mhartington/vim-typings"
 Bundle "Chiel92/vim-autoformat"
 
 Bundle "artur-shaik/vim-javacomplete2"
-

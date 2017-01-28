@@ -18,9 +18,6 @@ source $rcfiles/rc.common-post
 source $HOME/.homesick/repos/runcom/utils/fix_alias_completion.bash
 
 # define prompt
-#bpr="\$(get_extended_prompt_string)"
-#bpr=" \$(__git_ps1 '[%s]')"
-#bpr+="\\n"
 bpr="\[$IRed\]\u\[$CReset\]"
 bpr+="\[$White\]@\[$CReset\]"
 bpr+="\[$Yellow\]\h\[$CReset\]"
@@ -28,3 +25,11 @@ bpr+=" \[$IBlack\]\W\[$CReset\]"
 bpr+=" \[$IBlack\]λ\[$CReset\] "
 export PS1=$bpr
 unset bpr
+
+lc_script=~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-goude-SLASH-liquidprompt.git/liquidprompt
+
+if [[ -f $lc_script ]] ; then
+  source $lc_script
+fi
+
+unset lc_script

@@ -12,7 +12,8 @@ RUN \
     gnupg build-essential cmake hdevtools \
     libxml2-dev libxslt-dev \
     libaio1 alien \
-    exuberant-ctags silversearcher-ag
+    exuberant-ctags silversearcher-ag \
+    task
 
 RUN \
   mkdir -p /var/run/sshd && \

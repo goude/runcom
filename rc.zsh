@@ -94,7 +94,6 @@ antigen bundle python
 #antigen bundle ssh-agent
 #antigen bundle tmux
 antigen bundle vagrant
-antigen bundle vagrant
 antigen bundle virtualenv
 antigen bundle web-search # h, hsi
 antigen bundle Tarrasch/zsh-autoenv
@@ -106,9 +105,7 @@ antigen bundle vi-mode
 #antigen bundle srijanshetty/zsh-pip-completion
 antigen bundle lukechilds/zsh-better-npm-completion
 
-# Should be at end of .zshrc, according to instructions
-# FIXME: lots of things happening below...
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle taskwarrior # experimental
 
 if [[ $system == 'OSX' ]]; then
   antigen bundle brew
@@ -119,6 +116,10 @@ elif [[ $system == 'Linux' ]]; then
 elif [[ $system == 'Cygwin' ]]; then
   antigen bundle cygwin
 fi
+
+# Should be at end of .zshrc, according to instructions
+# FIXME: lots of things happening below...
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 

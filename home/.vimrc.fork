@@ -295,5 +295,9 @@ let g:startify_custom_header =
 
 " }
 
+" VimWiki Configuration {
+let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+" }
+
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 

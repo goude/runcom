@@ -13,6 +13,8 @@ RUN \
     libxml2-dev libxslt-dev \
     libaio1 alien \
     exuberant-ctags silversearcher-ag \
+    samba-client cifs-utils \
+    tree ntptime htop \
     task
 
 RUN \

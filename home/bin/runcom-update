@@ -4,7 +4,7 @@ REPOS=$HOME/.homesick/repos
 source $REPOS/homeshick/homeshick.sh
 
 homeshick pull
-antigen update
+#antigen update
 
 read -p "Update vim bundles? " -n 1 -r
 echo    # (optional) move to a new line

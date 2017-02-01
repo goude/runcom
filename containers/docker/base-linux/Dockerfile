@@ -14,7 +14,7 @@ RUN \
     libaio1 alien \
     exuberant-ctags silversearcher-ag \
     samba-client cifs-utils \
-    tree ntptime htop \
+    tree htop \
     task
 
 RUN \

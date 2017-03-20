@@ -95,6 +95,13 @@ if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
   command_exists tmux && eval "$(tmuxifier init -)"
 fi
 
+# pyenv
+if [[ -d $HOME/.pyenv/bin ]]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 # custom aliases
 source $rcfiles/aliases
 

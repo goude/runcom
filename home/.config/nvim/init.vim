@@ -82,3 +82,11 @@ nmap <Space> za
 
 "map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 " }
+
+" Workarounds {
+
+" Fix neovim color problems in hyper terminal
+" https://github.com/zeit/hyper/issues/364
+set termguicolors
+
+"}

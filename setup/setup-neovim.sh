@@ -16,5 +16,6 @@ pyenv deactivate
 pyenv install 2.7.11
 pyenv virtualenv 2.7.11 neovim2
 pyenv activate neovim2
+unalias pip
 pip install neovim
 pyenv deactivate

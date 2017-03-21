@@ -25,6 +25,14 @@ Plug 'myusuf3/numbers.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'Shougo/vimproc'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'jason0x43/vim-js-indent'
+Plug 'mhartington/vim-typings'
+Plug 'Quramy/ng-tsserver'
+
 " experimental
 Plug 'junegunn/vim-easy-align'
 Plug 'ctrlpvim/ctrlp.vim'

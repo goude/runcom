@@ -118,6 +118,10 @@ Plug 'ecomba/vim-ruby-refactoring'
 "*****************************************************************************
 "*****************************************************************************
 
+if filereadable(expand("~/.config/nvim/fork_bundles.vim"))
+  source ~/.config/nvim/fork_bundles.vim
+endif
+
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
   source ~/.config/nvim/local_bundles.vim

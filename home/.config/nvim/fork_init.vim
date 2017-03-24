@@ -7,6 +7,7 @@ let g:python3_host_prog=$HOME . "/.pyenv/versions/neovim3/bin/python"
 " }
 
 " Basic configuration {
+let mapleader = "\\"
 set nospell
 set relativenumber
 " }

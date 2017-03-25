@@ -1,15 +1,20 @@
-#/bin/bash
+#!/bin/bash
+
+if [[ -d $HOME/.pyenv/bin ]]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# not tested yet
 
 pyenv install 3.4.4
 pyenv virtualenv 3.4.4 neovim3
 pyenv activate neovim3
 pip3.4 install neovim
-pip3.4 install flake8
+pip3.4 install flake8 vim-vint yamllint
+npm install -g htmlhint write-good jsonlint
 ln -s `pyenv which flake8` ~/bin/flake8
 pyenv deactivate
 
@@ -19,3 +24,5 @@ pyenv activate neovim2
 unalias pip
 pip install neovim
 pyenv deactivate
+
+nvim +PlugInstall +q +q

@@ -35,9 +35,10 @@ alias ....='cd ../../..'
 alias d='docker'
 alias g='git'
 alias s='ssh'
-alias v='f -e vim'
+alias v='f -e nvim'
 alias t='task'
 alias n='nvim'
+alias vim='nvim'
 
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"

@@ -9,6 +9,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'justinmk/vim-sneak'
 
+Plug 'vimwiki/vimwiki'
+
 "Plug 'Shougo/vimproc'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'

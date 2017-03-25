@@ -22,6 +22,9 @@ let g:deoplete#enable_at_startup = 1
 
 autocmd! BufWritePost * Neomake
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+
 " }
 
 " Mappings {

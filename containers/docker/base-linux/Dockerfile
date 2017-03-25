@@ -14,8 +14,14 @@ RUN \
     libaio1 alien \
     exuberant-ctags silversearcher-ag \
     samba-client cifs-utils \
+    software-properties-common \
     tree htop \
     task
+
+RUN \
+  add-apt-repository ppa:neovim-ppa/stable
+  apt-get update
+  apt-get install neovim
 
 RUN \
   mkdir -p /var/run/sshd && \

@@ -2,8 +2,8 @@
 
 " Set pyenvs to use {
 " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-let g:python_host_prog=$HOME . "/.pyenv/versions/neovim2/bin/python"
-let g:python3_host_prog=$HOME . "/.pyenv/versions/neovim3/bin/python"
+let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
 " Basic configuration {
@@ -13,7 +13,7 @@ set relativenumber
 " }
 
 " Plugin Settings {
-if filereadable(expand("~/.vimrc_background"))
+if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
@@ -28,8 +28,9 @@ let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 " }
 
 " Mappings {
-nnoremap <silent> <leader>ev :e ~/.config/nvim/init.vim<CR>
-map <silent> <leader>r :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
+nnoremap <silent> <leader>ii :e ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>if :e ~/.config/nvim/fork_init.vim<CR>
+map <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 inoremap <silent> <leader>l <C-o>:nohlsearch<cr>

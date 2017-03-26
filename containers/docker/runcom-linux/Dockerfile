@@ -8,5 +8,4 @@ RUN \
   mkdir -p tmp/ && \
   git clone https://github.com/goude/runcom.git tmp/runcom && \
   tmp/runcom/setup/bootstrap.sh && \
-  rm -rf tmp/runcom && \
-  bin/build-youcompleteme
+  rm -rf tmp/runcom

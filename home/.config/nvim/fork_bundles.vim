@@ -1,5 +1,6 @@
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'chriskempson/base16-vim'
 Plug 'neomake/neomake'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }

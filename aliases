@@ -40,5 +40,8 @@ alias t='task'
 alias n='nvim'
 alias vim='nvim'
 
+alias gug='runcom-setup-git'
+alias gua='runcom-setup-git-az'
+
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"

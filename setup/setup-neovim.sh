@@ -13,7 +13,7 @@ pyenv install 3.4.4
 pyenv virtualenv 3.4.4 neovim3
 pyenv activate neovim3
 pip3.4 install --upgrade pip
-pip3.4 install neovim flake8 vim-vint yamllint
+pip3.4 install neovim jedi flake8 vim-vint yamllint
 npm install -g htmlhint write-good jsonlint
 ln -s `pyenv which flake8` ~/bin/flake8
 pyenv deactivate

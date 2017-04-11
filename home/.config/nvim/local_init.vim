@@ -1,6 +1,6 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldmethod=marker spell:
 
-" Set pyenvs to use {
+" Neovim pyenv paths {
 " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
@@ -13,13 +13,18 @@ set relativenumber
 " }
 
 " Plugin Settings {
+
+" Base16
 if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
 
+" Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#show_docstring = 1
 
+" Neomake
 autocmd! BufWritePost * Neomake
 
 " vimwiki
@@ -39,8 +44,8 @@ let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
 " }
 
 " Mappings {
-nnoremap <silent> <leader>ii :e ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>if :e ~/.config/nvim/fork_init.vim<CR>
+nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
+nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
 map <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>

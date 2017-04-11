@@ -1,16 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 REPOS=$HOME/.homesick/repos
 source $REPOS/homeshick/homeshick.sh
-
 homeshick pull
-#antigen update
 
-read -p "Update vim bundles? " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    vim +BundleInstall! +BundleClean! +qall! +q! +q!
-fi
+source $REPOS/antigen/antigen.zsh
+antigen update
 
-#cd $HOME/.vim/bundle/YouCompleteMe && ./install.py
+nvim +PlugUpdate +q +q

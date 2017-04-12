@@ -69,6 +69,9 @@ cnoremap %s/ %s/\v
 " Toggle folds
 nmap <Space> za
 
+" Jump to next Neomake error
+nnoremap <leader>ne :ll<CR>
+
 " }
 
 " Workarounds {

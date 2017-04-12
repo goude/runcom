@@ -1,4 +1,4 @@
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldmethod=marker spell:
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=99 foldmarker={,} foldmethod=marker spell:
 
 " Neovim pyenv paths {
 " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
@@ -26,6 +26,10 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 " Neomake
 autocmd! BufWritePost * Neomake
+
+" Tagbar
+let g:tagbar_autofocus = 0
+autocmd VimEnter * TagbarOpen
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
@@ -72,6 +76,7 @@ nmap <Space> za
 " Jump to next Neomake error
 nnoremap <leader>ne :ll<CR>
 
+nnoremap <silent> <leader>e :FZF -m<CR>
 " }
 
 " Workarounds {

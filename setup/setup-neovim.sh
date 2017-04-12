@@ -18,11 +18,11 @@ npm install -g htmlhint write-good jsonlint
 ln -s `pyenv which flake8` ~/bin/flake8
 pyenv deactivate
 
+# TODO: reactivate
 #pyenv install 2.7.11
 #pyenv virtualenv 2.7.11 neovim2
 #pyenv activate neovim2
-#unalias pip
-#pip install neovim
+#$(pyenv which pip) install neovim
 #pyenv deactivate
 
 nvim +PlugInstall +q +q

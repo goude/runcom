@@ -85,6 +85,7 @@ source $HOME/.homesick/repos/antigen/antigen.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/
 antigen bundle git
 antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle goude/liquidprompt
 
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview

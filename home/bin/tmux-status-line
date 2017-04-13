@@ -1,7 +1,7 @@
 #!/bin/bash
 source $HOME/.homesick/repos/yaprox/yaprox.sh
 
-notify_data=$(yap curl -s https://notify.goude.se/getall)
+notify_data=$(curl -s https://notify.goude.se/getall)
 
 weather=$(echo $notify_data | jq '.weather')
 temp=$(echo $weather | jq '.data.main.temp' | xargs printf "%.*f°C" 0)

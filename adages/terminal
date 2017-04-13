@@ -1,3 +1,5 @@
+peco is a tool that lets you search interactively in long outputs: ps aux | peco
+%
 Use C-z to suspend vim. It's very useful.
 %
 Find, do, next, repeat.

@@ -57,6 +57,7 @@ let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
 " Mappings {
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>it :e ~/TODO<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Clear search highlight

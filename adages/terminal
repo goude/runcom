@@ -1,3 +1,19 @@
+guu, gUU - change case
+%
+cc - change entire line
+%
+viw, vip, vib, viB, vab, vaB - visually mark word, paragraph, various blocks
+%
+ea - append at end of word
+%
+ga - show character ascii/hex/octal code
+%
+:mkview, :loadview - save folds, windows, tabs
+%
+"{a-z}y - yank to buffer ("{A-Z}y append to buffer)
+%
+"*y - yank (put) to system clipboard
+%
 peco is a tool that lets you search interactively in long outputs: ps aux | peco
 %
 Use C-z to suspend vim. It's very useful.

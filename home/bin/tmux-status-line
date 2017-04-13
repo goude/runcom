@@ -1,0 +1,10 @@
+#!/bin/bash
+source $HOME/.homesick/repos/yaprox/yaprox.sh
+
+prefix=""
+weather=$(yap curl -s https://notify.goude.se/weather)
+temp=$(echo $weather | jq '.data.main.temp' | xargs printf "%.*f°C" 1)
+wind=$(echo $weather | jq '.data.wind.speed' | xargs printf "%.*f m/s" 1)
+
+#yap curl -s https://notify.goude.se/weather | \
+echo $prefix $temp $wind

@@ -31,13 +31,12 @@ let g:deoplete#sources#jedi#show_docstring = 1
 " Experimental (check behavior)
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-
 " Neomake
 autocmd! BufWritePost * Neomake
 
 " Tagbar
-let g:tagbar_autofocus = 0
-autocmd VimEnter * TagbarOpen
+"let g:tagbar_autofocus = 0
+"autocmd VimEnter * TagbarOpen
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]

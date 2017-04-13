@@ -58,10 +58,10 @@ let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
 " Mappings {
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
-map <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
+nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
-noremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
-inoremap <silent> <leader>l <C-o>:nohlsearch<cr>
+" Clear search highlight
+nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 
 " Reduce finger movement for Esc
 inoremap jk <Esc>

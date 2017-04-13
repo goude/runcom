@@ -24,6 +24,6 @@ function center-text() {
 
 if (( $+commands[adage] )); then
   if [[ -t 0 || -t 1 ]]; then
-    adage -s | center-text
+    adage -e -s | center-text
   fi
 fi

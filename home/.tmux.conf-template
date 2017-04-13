@@ -67,17 +67,17 @@ set-option -g set-titles on
 set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name, active(or not)
 
 # Status bar
-set -g status-interval 15              # set update frequency (default 15 seconds)
+set -g status-interval 30              # set update frequency (default 15 seconds)
 set-option -g status on                # turn the status bar on
 set -g status-justify centre           # center window list for clarity
 
 # Show host name and IP address on left side of status bar
 set -g status-left-length 60
-set -g status-left "#[fg=colour02]#h #[fg=colour01] #($HOME/bin/tmux-status-line)"
+set -g status-left "#[fg=colour01]#h #[fg=colour08] #($HOME/bin/tmux-status-line)"
 
 # Show session name, window & pane number, date and time on right side of status bar
 set -g status-right-length 60
-set -g status-right "#[fg=colour04]#S #I:#P #[fg=colour16]%Y-%m-%d #[fg=colour02]#(thxtime)"
+set -g status-right "#[fg=colour04]#S #I:#P #[fg=colour16]#(thxtime)"
 
 # Command bindings
 bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"

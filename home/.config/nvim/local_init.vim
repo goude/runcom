@@ -31,8 +31,14 @@ let g:deoplete#sources#jedi#show_docstring = 1
 " Experimental (check behavior)
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Neomake
-autocmd! BufWritePost * Neomake
+" Tern
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+let g:tern#filetypes = [
+    \ 'jsx',
+    \ 'javascript.jsx',
+    \ 'vue'
+    \ ]
 
 " Tagbar
 "let g:tagbar_autofocus = 0
@@ -41,6 +47,9 @@ autocmd! BufWritePost * Neomake
 " vimwiki
 let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
+" Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {
  \   'text': '',
@@ -56,6 +65,7 @@ let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
 
 " Mappings {
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
+nnoremap <silent> <leader>ik :e ~/.config/nvim/local_bundles.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <leader>it :e ~/TODO<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
@@ -109,6 +119,14 @@ xmap f <Plug>Sneak_f
 xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
+
+" vim-emoji
+let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+let g:gitgutter_sign_modified_removed = emoji#for('collision')
+"set completefunc=emoji#complete
+
 
 " }
 

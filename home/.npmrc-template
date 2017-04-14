@@ -1,4 +1,3 @@
-#prefix = ~/.npm-packages
 prefix = ~/.node
 
 #proxy = "http://localhost:3128"

@@ -15,8 +15,8 @@ homeshick_repos=(
     "goude/thxtime"
     "goude/yaprox"
     "zsh-users/antigen"
-    "chriskempson/base16-shell"
     "jimeh/tmuxifier"
+    #"chriskempson/base16-shell"
     #"spf13/spf13-vim"
 )
 

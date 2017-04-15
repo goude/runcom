@@ -1,7 +1,6 @@
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'chriskempson/base16-vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'justinmk/vim-sneak'
 
@@ -21,6 +20,10 @@ Plug 'vimwiki/vimwiki'
 
 " Show register contents (C-R in insert mode)
 Plug 'junegunn/vim-peekaboo'
+
+" base16
+"Plug 'chriskempson/base16-vim'
+Plug '~/.homesick/repos/runcom/base16/templates/vim'
 
 " Typescript plugins
 "Plug 'Shougo/vimproc'

@@ -15,9 +15,9 @@ homeshick_repos=(
     "goude/thxtime"
     "goude/yaprox"
     "zsh-users/antigen"
-    "spf13/spf13-vim"
     "chriskempson/base16-shell"
     "jimeh/tmuxifier"
+    #"spf13/spf13-vim"
 )
 
 for i in "${homeshick_repos[@]}"

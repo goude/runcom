@@ -8,7 +8,10 @@ Plug 'justinmk/vim-sneak'
 Plug 'neomake/neomake'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
 Plug 'zchee/deoplete-jedi'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+
+Plug 'ervandew/supertab'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'

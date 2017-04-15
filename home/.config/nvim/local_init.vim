@@ -17,6 +17,43 @@ set nospell
 set relativenumber
 " }
 
+" Deoplete / Omnicompletion {
+let g:deoplete#enable_at_startup = 1
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+" let g:deoplete#disable_auto_complete = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:deoplete#sources#jedi#show_docstring = 1
+
+" Experimental (check behavior)
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Experimental
+augroup omnifuncs
+    autocmd!
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
+
+" deoplete tab-complete
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" tern
+autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
+
+" }
+
 " Plugin Settings {
 
 " Base16
@@ -24,21 +61,6 @@ if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#show_docstring = 1
-" Experimental (check behavior)
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" Tern
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
-let g:tern#filetypes = [
-    \ 'jsx',
-    \ 'javascript.jsx',
-    \ 'vue'
-    \ ]
 
 " Tagbar
 "let g:tagbar_autofocus = 0
@@ -49,6 +71,7 @@ let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Neomake
 autocmd! BufWritePost * Neomake
+"let g:neomake_verbose = 3
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {

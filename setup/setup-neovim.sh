@@ -12,9 +12,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 pyenv install 3.4.4
 pyenv virtualenv 3.4.4 neovim3
 pyenv activate neovim3
-pip3.4 install --upgrade pip
-pip3.4 install neovim jedi flake8 vim-vint yamllint
-npm install -g htmlhint write-good jsonlint
+$(pyenv which pip) install --upgrade pip
+$(pyenv which pip) install neovim jedi flake8 vim-vint yamllint
+#npm install -g htmlhint write-good jsonlint
 ln -s `pyenv which flake8` ~/bin/flake8
 pyenv deactivate
 

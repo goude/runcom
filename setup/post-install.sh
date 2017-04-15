@@ -11,6 +11,9 @@ if [[ -f $HOME/.zshrc ]]; then
   zsh -c "source $HOME/.zshrc"
 fi
 
+# After .npmrc setup above
+./setup-node.sh
+
 # Set initial color scheme
-ln -s $HOME/.homesick/repos/base16-shell/scripts/base16-monokai.sh $HOME/.base16_theme
+ln -s $HOME/.homesick/repos/runcom/base16/templates/shell/scripts/base16-gruvbox-dark-soft.sh $HOME/.base16_theme
 cp $HOME/.homesick/repos/runcom/setup/vimrc_background $HOME/.vimrc_background

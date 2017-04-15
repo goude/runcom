@@ -1,3 +1,9 @@
+C-w _, C-w = - make current window max, all windows equal size
+%
+C-w (C-)w - jump between windows
+%
+The minus and equal sign keys look like a Y-wing going left -= _+
+%
 guu, gUU - change case
 %
 cc - change entire line

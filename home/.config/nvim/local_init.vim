@@ -87,10 +87,12 @@ let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
 " }
 
 " Mappings {
+
+" Leader-I - edit certain files
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
 nnoremap <silent> <leader>ik :e ~/.config/nvim/local_bundles.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>it :e ~/TODO<CR>
+nnoremap <silent> <leader>it :e ~/TODO.md<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Clear search highlight
@@ -99,10 +101,13 @@ nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 " Reduce finger movement for Esc
 inoremap jk <Esc>
 
+" Arrow keys
 nnoremap <Left> :vertical resize -1<CR>
 nnoremap <Right> :vertical resize +1<CR>
 nnoremap <Up> :resize -1<CR>
 nnoremap <Down> :resize +1<CR>
+"nnoremap <C-Right> :bnext!<CR>
+"nnoremap <C-Left> :bprev!<CR><Paste>
 
 " Disable arrow keys completely in Insert Mode
 imap <up> <nop>
@@ -112,10 +117,6 @@ imap <right> <nop>
 
 " Open previously opened buffer
 nmap <Leader><Leader> <c-^>
-
-" Switch between buffers
-nnoremap <Tab> :bnext!<CR>
-nnoremap <S-Tab> :bprev!<CR><Paste>
 
 " Save with Ctrl-s
 map <C-s> :w<cr>

@@ -24,9 +24,9 @@ else
   msg+="…"
 fi
 
-if [[ -f ~/TODO ]]; then
+if [[ -f ~/TODO.md ]]; then
   msg+=' '
-  msg+=$(head -n1 ~/TODO)
+  msg+=$(head -n1 ~/TODO.md)
   #msg+=$(shuf -n1 ~/.reminders)
 fi
 

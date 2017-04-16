@@ -15,5 +15,5 @@ fi
 ./setup-node.sh
 
 # Set initial color scheme
-ln -s $HOME/.homesick/repos/runcom/base16/templates/shell/scripts/base16-gruvbox-dark-soft.sh $HOME/.base16_theme
+ln -s $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-soft.sh $HOME/.base16_theme
 cp $HOME/.homesick/repos/runcom/setup/vimrc_background $HOME/.vimrc_background

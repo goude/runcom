@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 echo "Performing post-installation..."
 
-../home/bin/runcom-setup-git
+# setup git
+../home/bin/rcg
 
 ln -s $HOME/.tmux.conf-template $HOME/.tmux.conf
 ln -s $HOME/.npmrc-template $HOME/.npmrc

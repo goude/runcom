@@ -72,7 +72,14 @@ let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 " Neomake
 autocmd! BufWritePost * Neomake
 "let g:neomake_verbose = 3
-let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_json_enabled_makers = ['jsonlint']
+
+let g:neomake_javascript_eslint_maker = {
+\ 'args': ['--env', 'es6', '-f', 'compact'],
+\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
+\ }
+
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {
  \   'text': '',
@@ -106,8 +113,6 @@ nnoremap <Left> :vertical resize -1<CR>
 nnoremap <Right> :vertical resize +1<CR>
 nnoremap <Up> :resize -1<CR>
 nnoremap <Down> :resize +1<CR>
-"nnoremap <C-Right> :bnext!<CR>
-"nnoremap <C-Left> :bprev!<CR><Paste>
 
 " Disable arrow keys completely in Insert Mode
 imap <up> <nop>
@@ -117,6 +122,14 @@ imap <right> <nop>
 
 " Open previously opened buffer
 nmap <Leader><Leader> <c-^>
+nnoremap <Leader><Tab> :bnext!<CR>
+"nnoremap <C-Left> :bprev!<CR><Paste>
+
+"nmap <Leader><Space>o :lopen<CR>      " open location window
+"nmap <Leader><Space>c :lclose<CR>     " close location window
+"nmap <Leader><Space>, :ll<CR>         " go to current error/warning
+"nmap <Leader><Space>n :lnext<CR>      " next error/warning
+"nmap <Leader><Space>p :lprev<CR>      " previous error/warning
 
 " Save with Ctrl-s
 map <C-s> :w<cr>
@@ -145,10 +158,10 @@ omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
 
 " vim-emoji
-let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+"let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+"let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
 let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-let g:gitgutter_sign_modified_removed = emoji#for('collision')
+"let g:gitgutter_sign_modified_removed = emoji#for('collision')
 "set completefunc=emoji#complete
 
 

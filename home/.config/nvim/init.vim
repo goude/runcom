@@ -110,8 +110,8 @@ Plug 'mattn/emmet-vim'
 
 
 " javascript
-"" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
+" Javascript Bundle
+"Plug 'jelera/vim-javascript-syntax'
 
 
 " lisp
@@ -623,13 +623,13 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 
 " javascript
-let g:javascript_enable_domhtmlcss = 1
+"let g:javascript_enable_domhtmlcss = 1
 
 " vim-javascript
-augroup vimrc-javascript
-  autocmd!
-  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
-augroup END
+"augroup vimrc-javascript
+  "autocmd!
+  "autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
+"augroup END
 
 
 " lisp

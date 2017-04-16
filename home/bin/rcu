@@ -7,4 +7,4 @@ homeshick pull
 source $REPOS/antigen/antigen.zsh
 antigen update
 
-nvim +PlugUpdate +q +q
+nvim +PlugClean +PlugInstall +PlugUpdate +q +q

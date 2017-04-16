@@ -23,7 +23,7 @@ Plug 'junegunn/vim-peekaboo'
 
 " base16
 "Plug 'chriskempson/base16-vim'
-Plug '~/.homesick/repos/runcom/base16/templates/vim'
+Plug '~/.local/share/base16/templates/vim'
 
 " Typescript plugins
 "Plug 'Shougo/vimproc'

@@ -145,8 +145,3 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
     exec 2>&3 3>&-
 fi
 # end cleanup profiling
-
-# FIXME: Doesn't work
-#autoload -Uz bashcompinit
-#bashcompinit -i
-#eval "$(_TMUXP_COMPLETE=source tmuxp)"

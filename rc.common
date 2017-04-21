@@ -17,8 +17,10 @@ export PYTHONSTARTUP=$HOME/.pystartup
 export WORKON_HOME=$HOME/.virtualenvs
 export GOPATH=$HOME/go
 export FORTUNE_PATH=$rcfiles/adages
+export NVM_DIR="$HOME/.nvm"
 
-export PATH=$PATH:/usr/local/bin:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin:$HOME/.fzf/bin
+#export PATH=$PATH:/usr/local/bin:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin:$HOME/.fzf/bin
+export PATH=$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.fzf/bin
 
 # overwrite in .localenv if necessary
 export RUNCOM_TMUX_SHELL=$SHELL

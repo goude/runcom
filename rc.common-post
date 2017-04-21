@@ -95,6 +95,9 @@ if [[ -d $HOME/.pyenv/bin ]]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+# nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # custom aliases
 source $rcfiles/aliases
 

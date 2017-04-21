@@ -13,6 +13,7 @@ if [[ -f $HOME/.zshrc ]]; then
 fi
 
 # After .npmrc setup above
+./setup-nvm.sh
 ./setup-node.sh
 
 # Set initial color scheme

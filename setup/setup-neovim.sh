@@ -9,15 +9,20 @@ fi
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Python 3 - main environment
 pyenv install 3.4.4
 pyenv virtualenv 3.4.4 neovim3
 pyenv activate neovim3
 $(pyenv which pip) install --upgrade pip
 $(pyenv which pip) install neovim jedi flake8 vim-vint yamllint
-#npm install -g htmlhint write-good jsonlint
-ln -s `pyenv which flake8` ~/bin/flake8
+$(pyenv which pip) install tmuxp
+
+ln -s "$(pyenv which flake8)" ~/bin/flake8
+ln -s "$(pyenv which tmuxp)" ~/bin/tmuxp
+
 pyenv deactivate
 
+# Python 2.7
 pyenv install 2.7.11
 pyenv virtualenv 2.7.11 neovim2
 pyenv activate neovim2

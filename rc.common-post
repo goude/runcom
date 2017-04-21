@@ -88,13 +88,6 @@ source $rcfiles/functions
 # fasd navigator
 eval "$(fasd --init auto)"
 
-# Tmux improver
-if [[ -d $HOME/.homesick/repos/tmuxifier/bin ]]; then
-  export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
-  PATH=$PATH:$HOME/.homesick/repos/tmuxifier/bin
-  command_exists tmux && eval "$(tmuxifier init -)"
-fi
-
 # pyenv
 if [[ -d $HOME/.pyenv/bin ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"

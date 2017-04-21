@@ -26,10 +26,13 @@ set convert-meta off
 set show-all-if-ambiguous off
 
 # use vi key bindings for input
+# https://blog.bugsnag.com/tmux-and-vim/
 set editing-mode vi
 set keymap vi
-#set convert-meta on
-set convert-meta off
+$if mode=vi
+  set keymap vi-insert
+  "jk": vi-movement-mode # remap escape
+$endif
 
 # Fix Ctrl-L not clearing screen in Bash
 set keymap vi-insert

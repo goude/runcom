@@ -80,6 +80,7 @@ bindkey -M vicmd "q" push-line
 bindkey -M viins ' ' magic-space
 
 # antigen stuff
+
 source $HOME/.homesick/repos/antigen/antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
@@ -95,29 +96,26 @@ antigen bundle docker
 antigen bundle extract # x swiss army knife
 antigen bundle gitignore
 antigen bundle gnu-utils
-#antigen bundle gpg-agent
 antigen bundle history # h, hsi
 antigen bundle history-substring-search
 antigen bundle mvn
 antigen bundle node
 antigen bundle pip
 antigen bundle python
-#antigen bundle rupa/z
-#antigen bundle ssh-agent
-#antigen bundle tmux
 antigen bundle vagrant
 antigen bundle virtualenv
 antigen bundle web-search # h, hsi
 antigen bundle Tarrasch/zsh-autoenv
-
 antigen bundle vi-mode
-#antigen bundle npm
-
-#antigen bundle felixr/docker-zsh-completion
-#antigen bundle srijanshetty/zsh-pip-completion
 antigen bundle lukechilds/zsh-better-npm-completion
 
-antigen bundle taskwarrior # experimental
+#antigen bundle gpg-agent
+#antigen bundle npm
+#antigen bundle felixr/docker-zsh-completion
+#antigen bundle srijanshetty/zsh-pip-completion
+#antigen bundle rupa/z
+#antigen bundle ssh-agent
+#antigen bundle tmux
 
 if [[ $system == 'OSX' ]]; then
   antigen bundle brew

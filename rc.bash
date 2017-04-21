@@ -26,6 +26,10 @@ bpr+=" \[$IBlack\]λ\[$CReset\] "
 export PS1=$bpr
 unset bpr
 
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# liquidprompt
 lc_script=~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-goude-SLASH-liquidprompt.git/liquidprompt
 
 if [[ -f $lc_script ]] ; then

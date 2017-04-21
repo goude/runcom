@@ -135,6 +135,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
+# Command-line Fuzzy Finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Finally, source common-post
 source $HOME/.homesick/repos/runcom/rc.common-post
 

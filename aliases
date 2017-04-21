@@ -39,6 +39,8 @@ alias v='f -e nvim'
 alias t='task'
 alias n='nvim'
 alias vim='nvim'
+alias f='fzf'
+alias ft='fzf-tmux'
 
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"

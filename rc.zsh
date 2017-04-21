@@ -127,14 +127,14 @@ elif [[ $system == 'Cygwin' ]]; then
   antigen bundle cygwin
 fi
 
+# Command-line Fuzzy Finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Should be at end of .zshrc, according to instructions
 # FIXME: lots of things happening below...
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
-
-# Command-line Fuzzy Finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Finally, source common-post
 source $HOME/.homesick/repos/runcom/rc.common-post

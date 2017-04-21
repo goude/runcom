@@ -109,8 +109,9 @@ fi
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# Don't use here - leads to problems with zcompdump and stuff
 # cleanup PATH duplicates
-dedup_pathvar PATH
+#dedup_pathvar PATH
 
 unset rcfiles
 unset system

@@ -1,0 +1,6 @@
+docker run \
+  -t -i \
+  -e TERM=xterm-256color \
+  -e SHELL=/usr/bin/zsh \
+  --rm \
+  goude/runcom-linux /usr/bin/zsh --login

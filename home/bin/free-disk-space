@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/bin/df | /usr/bin/grep '/$' | cut -d' ' -f13

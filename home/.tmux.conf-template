@@ -73,11 +73,11 @@ set -g status-justify centre           # center window list for clarity
 
 # Show host name and IP address on left side of status bar
 set -g status-left-length 60
-set -g status-left "#[fg=colour01]#h #[fg=colour08] #($HOME/bin/tmux-status-line)"
+set -g status-left "#[fg=colour01]#h #[fg=colour11] #($HOME/bin/tmux-status-line)"
 
 # Show session name, window & pane number, date and time on right side of status bar
 set -g status-right-length 60
-set -g status-right "#[fg=colour04]#S #I:#P #[fg=colour16]#(thxtime)"
+set -g status-right "#[fg=colour04]#S #I:#P #[fg=colour11]#(free-disk-space) #[fg=colour16]#(thxtime)"
 
 # Command bindings
 bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"

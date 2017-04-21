@@ -91,6 +91,14 @@ let g:neomake_message_sign = {
   \ }
 let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
 
+" vimux
+let g:VimuxHeight = "20"
+let g:VimuxOrientation = "h"
+let g:VimuxUseNearest = 1
+let g:VimuxResetSequence = ""
+
+
+
 " }
 
 " Mappings {

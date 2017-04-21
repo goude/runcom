@@ -116,6 +116,9 @@ fi
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# cleanup PATH duplicates
+dedup_pathvar PATH
+
 unset rcfiles
 unset system
 unset homeshick_repos

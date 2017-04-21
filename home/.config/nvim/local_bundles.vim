@@ -51,3 +51,11 @@ Plug 'junegunn/vim-emoji'
 " Text editing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+" vim-tmux integration
+Plug 'benmills/vimux'
+Plug 'pitluga/vimux-nose-test'
+
+" TODO
+" https://github.com/ivanov/vim-ipython/
+" https://github.com/kana/vim-arpeggio

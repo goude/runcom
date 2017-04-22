@@ -52,13 +52,6 @@ fi
 # generic colou?ri[sz]er
 source $rcfiles/home/.grc/grc.bashrc
 
-# Wrapper for virtualenv
-if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-elif [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh
@@ -96,7 +89,10 @@ if [[ -d $HOME/.pyenv/bin ]]; then
 fi
 
 # nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# commented out for now - slow
+# using hardcoded PATH instead, source nvm.sh when necessary
+# FIXME: version number is hardcoded, will fail eventually
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # custom aliases
 source $rcfiles/aliases

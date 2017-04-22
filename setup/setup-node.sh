@@ -1,5 +1,5 @@
 #!/bin/bash
-source "$NVM_DIR/nvm.sh"
+source "$HOME/.nvm/nvm.sh"
 nvm use node
 
 npm install -g htmlhint write-good jsonlint base16-builder-node

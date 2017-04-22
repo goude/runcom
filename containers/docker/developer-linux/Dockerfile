@@ -3,10 +3,10 @@ MAINTAINER Daniel Goude <daniel@goude.se>
 
 # Developer packages
 # --no-install-recommends \
+# nodejs nodejs-legacy npm \
 RUN \
   apt-get update && \
   apt-get install -y \
-    nodejs nodejs-legacy npm \
     golang \
     ghc \
     pandoc \
@@ -17,4 +17,3 @@ RUN \
     python3-matplotlib python3-pandas \
     python3-sklearn \
     openjdk-8-jre-headless
-

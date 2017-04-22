@@ -7,7 +7,7 @@ EXPOSE 22
 RUN \
   apt-get update && \
   apt-get install -y \
-    sudo git zsh tmux vim-nox openssh-server \
+    sudo git zsh tmux openssh-server \
     curl \
     gnupg build-essential cmake hdevtools \
     libxml2-dev libxslt-dev \
@@ -16,7 +16,7 @@ RUN \
     samba-client cifs-utils \
     software-properties-common \
     tree htop \
-    task
+    jq
 
 RUN \
   add-apt-repository ppa:neovim-ppa/stable && \

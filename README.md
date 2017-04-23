@@ -1,6 +1,6 @@
 runcom
 ======
-homeshick compatible dotfiles
+my homeshick compatible dotfiles
 
 https://github.com/andsens/homeshick
 

@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-/bin/df | /usr/bin/grep '/$' | cut -d' ' -f13
+d1=$(/bin/df | /usr/bin/grep '/$' | cut -d' ' -f13)
+d2=$(/bin/df | /usr/bin/grep '/SSD2$' | cut -d' ' -f10)
+
+echo "$d1|$d2"

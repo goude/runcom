@@ -16,4 +16,5 @@ RUN \
     python3-cairo \
     python3-matplotlib python3-pandas \
     python3-sklearn \
-    openjdk-8-jre-headless
+    openjdk-8-jre-headless && \
+  apt-get clean

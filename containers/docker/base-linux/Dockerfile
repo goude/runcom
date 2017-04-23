@@ -7,16 +7,32 @@ EXPOSE 22
 RUN \
   apt-get update && \
   apt-get install -y \
-    sudo git zsh tmux openssh-server \
+    build-essential \
+    cifs-utils \
+    cmake \
     curl \
-    gnupg build-essential cmake hdevtools \
-    libxml2-dev libxslt-dev \
+    exuberant-ctags \
+    git \
+    gnupg \
+    hdevtools \
+    htop \
     libaio1 alien \
-    exuberant-ctags silversearcher-ag \
-    samba-client cifs-utils \
-    software-properties-common \
-    tree htop \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    libssl-dev \
+    libxml2-dev \
+    libxslt-dev \
     locales \
+    openssh-server \
+    samba-client \
+    silversearcher-ag \
+    software-properties-common \
+    sudo \
+    tmux \
+    tree \
+    zlib1g-dev \
+    zsh \
     jq
 
 RUN \

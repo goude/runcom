@@ -1,3 +1,5 @@
+[e, ]e - transpose lines up/down
+%
 C-w _, C-w = - make current window max, all windows equal size
 %
 C-w (C-)w - jump between windows

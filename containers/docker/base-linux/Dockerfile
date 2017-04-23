@@ -16,6 +16,7 @@ RUN \
     samba-client cifs-utils \
     software-properties-common \
     tree htop \
+    locales \
     jq
 
 RUN \
@@ -24,6 +25,7 @@ RUN \
   apt-get install -y neovim
 
 RUN \
+  apt-get clean && \
   mkdir -p /var/run/sshd && \
   locale-gen en_US.UTF-8 && \
   useradd -ms /usr/bin/zsh runcom && \

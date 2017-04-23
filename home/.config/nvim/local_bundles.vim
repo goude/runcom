@@ -51,6 +51,7 @@ Plug 'junegunn/vim-emoji'
 " Text editing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'reedes/vim-pencil'
 
 " vim-tmux integration
 Plug 'benmills/vimux'

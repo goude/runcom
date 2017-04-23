@@ -97,7 +97,8 @@ let g:VimuxOrientation = "h"
 let g:VimuxUseNearest = 1
 let g:VimuxResetSequence = ""
 
-
+" airline
+let g:airline_theme='monochrome'
 
 " }
 

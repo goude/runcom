@@ -1,6 +1,0 @@
-let g:spf13_leader='\'
-
-let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'scala', 'haskell', 'go', 'html', 'misc',]
-
-" see if this fixes editorconfig
-let g:spf13_keep_trailing_whitespace = 1

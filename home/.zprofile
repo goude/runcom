@@ -21,6 +21,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+export FOOBARTEST='42'
 #
 # Language
 #

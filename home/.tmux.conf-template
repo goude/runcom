@@ -99,7 +99,7 @@ set-environment -g 'IGNOREEOF' 2
 set -g mode-keys vi
 
 # setup v as selection key
-bind-key -t vi-copy v begin-selection
+#bind-key -t vi-copy v begin-selection
 #bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # set shell

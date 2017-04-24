@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-d1=$(/bin/df | /usr/bin/grep '/$' | awk '{print $5}')
-d2=$(/bin/df | /usr/bin/grep '/SSD2$' | awk '{print $5}')
+d1=$(/bin/df | awk '/\/$/ {print $5}')
+d2=$(/bin/df | awk '/\/SSD2$/ {print $5}')
 
 echo "$d1|$d2"

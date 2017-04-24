@@ -5,15 +5,15 @@
 module.exports = {
   config: {
 
-    base16: {
-      scheme: 'monokai',
-    },
+    //base16: {
+      //scheme: 'gruvbox',
+    //},
 
     // default font size in pixels for all tabs
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Input Mono", monospace, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Fira Code, "Input Mono", monospace, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -38,7 +38,12 @@ module.exports = {
 
     // custom css to embed in the terminal window
     //termCSS: '',
-    termCSS: 'x-row {font-weight: 100}',
+    //x-row {font-weight: 100}
+    termCSS: `
+      x-screen x-row {
+            font-variant-ligatures: initial;
+      }
+    `,
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
@@ -111,8 +116,9 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+    'hyperterm-gruvbox-dark',
     'hypersixteen',
-    "hyper-font-smoothing",
+    'hyper-font-smoothing',
   ],
 
   // in development, you can create a directory under

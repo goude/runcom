@@ -1,0 +1,21 @@
+session_name: 'main-session'
+windows:
+- focus: 'true'
+  layout: main-vertical
+  options:
+    main-pane-height: 80
+  panes:
+  - focus: 'true'
+    shell_command:
+    - nvim
+  - shell_command:
+    - adage
+  window_name: main
+- layout: tiled
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command:
+  start_directory: $HOME
+  window_name: servers

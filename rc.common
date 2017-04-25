@@ -18,6 +18,8 @@ export GOPATH=$HOME/go
 export FORTUNE_PATH=$rcfiles/adages
 export NVM_DIR="$HOME/.nvm"
 
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 # Avoid path duplication
 if [[ -z $TMUX ]]; then
   #export PATH=$PATH:/usr/local/bin:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin:$HOME/.fzf/bin

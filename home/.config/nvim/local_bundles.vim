@@ -1,6 +1,3 @@
-" reset defaults
-Plug 'tpope/vim-sensible'
-
 " basic plugins
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'

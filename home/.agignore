@@ -1,1 +1,7 @@
+vendor/
+venv/
+node_modules/
+bower_components/
+.bundle/
+.sass-cache/
 *.min.js

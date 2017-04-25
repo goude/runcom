@@ -2,7 +2,7 @@
 source "$HOME/.nvm/nvm.sh"
 nvm use node
 
-npm install -g htmlhint write-good jsonlint base16-builder-node
+npm install -g htmlhint write-good jsonlint base16-builder-node eslint eslint-plugin-react
 
 # build base16
 mkdir -p $HOME/.local/share/base16

@@ -21,10 +21,10 @@ export NVM_DIR="$HOME/.nvm"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # Avoid path duplication
-if [[ -z $TMUX ]]; then
+#if [[ -z $TMUX ]]; then
   #export PATH=$PATH:/usr/local/bin:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin:$HOME/.fzf/bin
-  export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.fzf/bin
-fi
+export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.fzf/bin
+#fi
 
 # overwrite in .localenv if necessary
 export RUNCOM_TMUX_SHELL=$SHELL

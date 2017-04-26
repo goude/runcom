@@ -17,5 +17,8 @@ windows:
   panes:
   - focus: 'true'
     shell_command:
+  -
+  -
+  -
   start_directory: $HOME
-  window_name: servers
+  window_name: other

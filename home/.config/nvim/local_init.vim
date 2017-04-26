@@ -100,6 +100,10 @@ let g:VimuxResetSequence = ""
 " airline
 let g:airline_theme='monochrome'
 
+let g:lightline = {
+		\ 'colorscheme': 'base16',
+		\ }
+
 " }
 
 " Mappings {

@@ -10,6 +10,10 @@ Plug 'ervandew/supertab'
 "Plug 'chriskempson/base16-vim'
 Plug '~/.local/share/base16/templates/vim'
 
+" Experimental: replace airline
+Plug 'itchyny/lightline.vim'
+Plug 'daviesjamie/vim-base16-lightline'
+
 " Coding
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'

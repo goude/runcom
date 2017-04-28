@@ -7,9 +7,6 @@ echo "Installing/updating runcom..."
 
 echo "Performing post-installation..."
 
-# Setup git
-../home/bin/rcg
-
 ln -s $HOME/.tmux.conf-template $HOME/.tmux.conf
 ln -s $HOME/.npmrc-template $HOME/.npmrc
 

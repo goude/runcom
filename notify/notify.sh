@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Keep track of the drones
+# Don't worry, this will only run if you explicitly tell it to.
 
 NOTIFY_NAME=notify-swarm-$(hostname)
 

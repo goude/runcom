@@ -1,0 +1,16 @@
+[C64]
+SoundDeviceName="coreaudio"
+SoundBufferSize=100
+VICIIVideoCache=1
+VICIIHwScale=0
+VICIIFilter=0
+SidEngine=1
+SidModel=1
+KeySet1North=35
+KeySet1East=39
+KeySet1South=41
+KeySet1West=37
+KeySet1Fire=6
+JoyDevice1=2
+Acia1Base=56832
+

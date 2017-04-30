@@ -1,6 +1,8 @@
 session_name: 'main-session'
 windows:
 - focus: 'true'
+  window_name: main
+  start_directory: $HOME
   layout: main-vertical
   options:
     main-pane-height: 80
@@ -8,17 +10,6 @@ windows:
   - focus: 'true'
     shell_command:
     - nvim
-  - shell_command:
-    - adage
-  window_name: main
-- layout: tiled
-  options:
-    automatic-rename: 'off'
-  panes:
-  - focus: 'true'
+  - focus: true
     shell_command:
-  -
-  -
-  -
-  start_directory: $HOME
-  window_name: other
+    - rcu

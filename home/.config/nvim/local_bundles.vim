@@ -14,6 +14,10 @@ Plug '~/.local/share/base16/templates/vim'
 Plug 'itchyny/lightline.vim'
 Plug 'daviesjamie/vim-base16-lightline'
 
+" File handling (TODO: unite->denite)
+Plug 'shougo/unite.vim'
+Plug 'shougo/vimfiler.vim'
+
 " Coding
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'

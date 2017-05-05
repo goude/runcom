@@ -30,7 +30,7 @@ unset bpr
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # liquidprompt
-lc_script=~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-goude-SLASH-liquidprompt.git/liquidprompt
+lc_script=~/.antigen/bundles/goude/liquidprompt/liquidprompt
 
 if [[ -f $lc_script ]] ; then
   source $lc_script

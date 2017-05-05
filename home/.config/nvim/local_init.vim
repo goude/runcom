@@ -49,8 +49,6 @@ if exists('g:plugs["tern_for_vim"]')
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
 
-" deoplete tab-complete
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " tern
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
 
@@ -82,26 +80,18 @@ let g:neomake_javascript_eslint_maker = {
 \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
 \ }
 
-let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {
- \   'text': '',
- \   'texthl': 'NeomakeWarningSign',
- \ }
-let g:neomake_message_sign = {
-  \   'text': '►',
-  \   'texthl': 'NeomakeMessageSign',
-  \ }
-let g:neomake_info_sign = {'text': '•', 'texthl': 'NeomakeInfoSign'}
+let g:neomake_error_sign = {'text': 'E', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': 'W', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
 
 " vimux
-let g:VimuxHeight = "20"
-let g:VimuxOrientation = "h"
+let g:VimuxHeight = '20'
+let g:VimuxOrientation = 'h'
 let g:VimuxUseNearest = 1
-let g:VimuxResetSequence = ""
+let g:VimuxResetSequence = ''
 
-" airline
-let g:airline_theme='monochrome'
-
+" lightline
 let g:lightline = {
 		\ 'colorscheme': 'base16',
 		\ }
@@ -110,7 +100,7 @@ let g:lightline = {
 
 " Mappings {
 
-" Leader-I - edit certain files
+" Leader-I - edit certain kinds of files
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
 nnoremap <silent> <leader>ik :e ~/.config/nvim/local_bundles.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
@@ -171,14 +161,6 @@ xmap f <Plug>Sneak_f
 xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
-
-" vim-emoji
-"let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-"let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-"let g:gitgutter_sign_modified_removed = emoji#for('collision')
-"set completefunc=emoji#complete
-
 
 " }
 

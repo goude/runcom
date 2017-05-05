@@ -10,7 +10,7 @@ Plug 'ervandew/supertab'
 "Plug 'chriskempson/base16-vim'
 Plug '~/.local/share/base16/templates/vim'
 
-" Experimental: replace airline
+" Status line
 Plug 'itchyny/lightline.vim'
 Plug 'daviesjamie/vim-base16-lightline'
 
@@ -49,9 +49,6 @@ Plug 'Quramy/ng-tsserver'
 
 " Your own wiki
 Plug 'vimwiki/vimwiki'
-
-" Emojis
-Plug 'junegunn/vim-emoji'
 
 " Text editing
 Plug 'junegunn/goyo.vim'

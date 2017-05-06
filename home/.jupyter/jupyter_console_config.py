@@ -108,8 +108,12 @@
 #  should return `False` to indicate this.
 #c.ZMQTerminalInteractiveShell.callable_image_handler = None
 
+## Set to display confirmation dialog on exit. You can always use 'exit' or
+#  'quit', to force a direct exit without any confirmation.
+#c.ZMQTerminalInteractiveShell.confirm_exit = True
+
 ## Shortcut style to use at the prompt. 'vi' or 'emacs'.
-#c.ZMQTerminalInteractiveShell.editing_mode = 'emacs'
+c.ZMQTerminalInteractiveShell.editing_mode = 'vi'
 
 ## The name of a Pygments style to use for syntax highlighting
 #c.ZMQTerminalInteractiveShell.highlighting_style = ''
@@ -161,6 +165,9 @@
 #  Only relevant if include_other_output is True.
 #c.ZMQTerminalInteractiveShell.other_output_prefix = '[remote] '
 
+## Use simple fallback prompt. Features may be limited.
+#c.ZMQTerminalInteractiveShell.simple_prompt = False
+
 ## Command to invoke an image viewer program when you are using 'stream' image
 #  handler.  This option is a list of string where the first element is the
 #  command itself and reminders are the options for the command.  Raw image data
@@ -173,6 +180,11 @@
 #  {file} and {format} in the string to represent the location of the generated
 #  image file and image format.
 #c.ZMQTerminalInteractiveShell.tempfile_image_handler = []
+
+## Use 24bit colors instead of 256 colors in prompt highlighting. If your
+#  terminal supports true color, the following command should print 'TRUECOLOR'
+#  in orange: printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
+#c.ZMQTerminalInteractiveShell.true_color = False
 
 ## Whether to use the kernel's is_complete message handling. If False, then the
 #  frontend will use its own is_complete handler.
@@ -198,6 +210,9 @@
 #  kernel does not receive the option --debug if it given on the Jupyter command
 #  line.
 #c.KernelManager.kernel_cmd = []
+
+## Time to wait for a kernel to terminate before killing it, in seconds.
+#c.KernelManager.shutdown_wait_time = 5.0
 
 #------------------------------------------------------------------------------
 # KernelRestarter(LoggingConfigurable) configuration

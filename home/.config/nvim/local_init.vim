@@ -158,7 +158,7 @@ nmap <leader>z za
 nnoremap <leader>ne :ll<CR>
 
 " Fuzzy file finder
-nnoremap <silent> <leader>e :FZF -m<CR>
+nnoremap <silent> <leader>e :Files<CR>
 
 " vim-sneak
 let g:sneak#s_next = 1

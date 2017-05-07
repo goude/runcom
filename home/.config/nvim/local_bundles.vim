@@ -52,6 +52,7 @@ Plug 'vimwiki/vimwiki'
 
 " Text editing
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
 

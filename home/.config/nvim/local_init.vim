@@ -17,6 +17,12 @@ let mapleader="\<SPACE>"
 
 set nospell
 set relativenumber
+
+if has('persistent_undo')
+    set undodir=~/.undodir/
+    set undofile
+endif
+
 " }
 
 " Deoplete / Omnicompletion {
@@ -148,6 +154,16 @@ nnoremap <Leader><Tab> :bnext!<CR>
 " Save with Ctrl-s
 map <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>
+
+" Make Y behave
+nnoremap Y y$
+
+" qq record, Q replay
+nnoremap Q @q
+
+" Prepend/Append to all adjacent lines with same indentation
+nmap <silent> <leader>I ^vio<C-V>I
+nmap <silent> <leader>A ^vio<C-V>$A
 
 " Use very magic regexps by default
 nnoremap / /\v

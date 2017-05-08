@@ -1,7 +1,9 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=99 foldmarker={,} foldmethod=marker spell:
 
-" TODO: have a look at http://wrotenwrites.com/a_modern_terminal_workflow_2/
-" https://github.com/w0rp/ale (htmlhint and friends also)
+" TODO: have a look at
+" - http://wrotenwrites.com/a_modern_terminal_workflow_2/
+" - https://github.com/w0rp/ale (htmlhint and friends also)
+" - https://github.com/junegunn/dotfiles/blob/master/vimrc
 
 " Neovim pyenv paths {
 " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim

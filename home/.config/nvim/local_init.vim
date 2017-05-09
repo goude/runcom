@@ -140,6 +140,25 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" Moving lines
+nnoremap <silent> <C-k> :move-2<cr>
+nnoremap <silent> <C-j> :move+<cr>
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
+xnoremap <silent> <C-k> :move-2<cr>gv
+xnoremap <silent> <C-j> :move'>+<cr>gv
+xnoremap <silent> <C-h> <gv
+xnoremap <silent> <C-l> >gv
+xnoremap < <gv
+xnoremap > >gv
+
+nnoremap <tab>   <c-w>w
+nnoremap <S-tab> <c-w>W
+
+nnoremap <Leader>- :split<CR>
+nnoremap <Leader>\| :vsplit<CR>
+
+
 " Open previously opened buffer
 nmap <Leader><Leader> <c-^>
 nnoremap <Leader><Tab> :bnext!<CR>

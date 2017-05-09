@@ -12,7 +12,7 @@ alias df='df -h'
 alias gs='git status'
 alias gca='git commit -a'
 alias gp='git push'
-alias gpa='git push && git push --tags'
+alias gpa='git push --tags && git push'
 alias ga='git add'
 alias gd='git diff'
 alias gl="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -r"

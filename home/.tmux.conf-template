@@ -48,8 +48,8 @@ bind r source-file ~/.tmux.conf
 #bind ^B select-pane -t :.+
 
 # splits
-bind-key | split-window -h -c "#{pane-current-path}"
-bind-key - split-window -v -c "#{pane-current-path}"
+bind-key | split-window -h # -c "#{pane-current-path}"
+bind-key - split-window -v # -c "#{pane-current-path}"
 
 # set window and pane index to 1 instead of default 0
 set-option -g base-index 1

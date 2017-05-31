@@ -60,6 +60,9 @@ Plug 'reedes/vim-pencil'
 Plug 'benmills/vimux'
 Plug 'pitluga/vimux-nose-test'
 
+" table editing
+Plug 'dhruvasagar/vim-table-mode'
+
 " TODO
 " https://github.com/ivanov/vim-ipython/
 " https://github.com/kana/vim-arpeggio

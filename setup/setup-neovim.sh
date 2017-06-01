@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# ## Python Virtual Environments
+#
+# Python 2.7 and 3.6 are installed as pyenvs. If you need to drop into a quick
+# 'general use' python environment, say `pyenv activate neovim3`.
+
 if [[ -d $HOME/.pyenv/bin ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"

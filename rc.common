@@ -24,7 +24,7 @@ export FZF_DEFAULT_OPTS='--reverse --height=40% --inline-info'
 # Avoid path duplication
 #if [[ -z $TMUX ]]; then
   #export PATH=$PATH:/usr/local/bin:$HOME/.node/bin:$GOPATH/bin:$HOME/bin:$HOME/.cabal/bin:$HOME/.fzf/bin
-export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.fzf/bin
+export PATH=$HOME/.rbenv/bin:$HOME/.nvm/versions/node/v7.9.0/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.fzf/bin
 #fi
 
 # overwrite in .localenv if necessary

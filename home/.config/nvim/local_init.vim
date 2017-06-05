@@ -18,6 +18,11 @@ let mapleader="\<SPACE>"
 set nospell
 set relativenumber
 
+" Experimental: Change to current files directory
+set autochdir " may interfere with some plugins
+"autocmd BufEnter * silent! lcd %:p:h
+
+
 if has('persistent_undo')
     set undodir=~/.undodir/
     set undofile
@@ -119,7 +124,7 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
 nnoremap <silent> <leader>ik :e ~/.config/nvim/local_bundles.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>it :e ~/TODO.md<CR>
+nnoremap <silent> <leader>it :e ~/.homesick/repos/wiki/TODO.md<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Clear search highlight

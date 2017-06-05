@@ -38,5 +38,15 @@ reload-zshrc () {
 }
 
 random-base16-colorscheme () {
-  pushd . && cd "$HOMESHICK_REPOS/base16-shell/scripts" && foo=$(ls *.sh | shuf | head -1) && echo $foo && source $foo && unset $foo && popd
+  pushd . > /dev/null && \
+  cd "$HOME/.local/share/base16/templates/shell/scripts" && \
+  foo=$(ls *.sh | shuf | head -1) && \
+  echo $foo && \
+  source $foo && \
+  popd > /dev/null
+}
+
+save () {
+  cmt_msg='updated using save()'
+  git commit -a -m "$cmt_msg" && git push && git status
 }

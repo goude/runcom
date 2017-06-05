@@ -1,2 +1,3 @@
-virtualenv-3.4 --python=/usr/local/bin/python3.5 venv
+#!/usr/bin/env bash
+#virtualenv-3.4 --python=/usr/local/bin/python3.5 venv
 curl 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' -o .gitignore

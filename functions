@@ -47,6 +47,9 @@ random-base16-colorscheme () {
 }
 
 save () {
-  cmt_msg='updated using save()'
-  git commit -a -m "$cmt_msg" && git push && git status
+  if [ -z ${1+x} ]; then
+		echo "Missing commit message.";
+	else
+		git commit -a -m "$1" && git push && git status;
+	fi
 }

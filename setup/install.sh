@@ -4,6 +4,7 @@ echo "Installing/updating runcom..."
 ./setup-homeshick.sh
 ./setup-pyenv.sh
 ./setup-neovim.sh
+./setup-rbenv.sh
 
 echo "Performing post-installation..."
 
@@ -18,6 +19,7 @@ fi
 # After .npmrc setup above
 ./setup-nvm.sh
 ./setup-node.sh
+./setup-ruby.sh
 
 # Set initial color scheme
 ln -s $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-soft.sh $HOME/.base16_theme

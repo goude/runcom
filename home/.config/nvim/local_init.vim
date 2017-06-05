@@ -175,9 +175,13 @@ nnoremap <Leader><Tab> :bnext!<CR>
 "nmap <Leader><Space>n :lnext<CR>      " next error/warning
 "nmap <Leader><Space>p :lprev<CR>      " previous error/warning
 
-" Save with Ctrl-s
+" Save with Ctrl-C
 map <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>
+
+" Close buffer with Ctrl-Q
+map <C-q> :bd<cr>
+imap <C-q> <ESC>:bd<cr>
 
 " Make Y behave
 nnoremap Y y$

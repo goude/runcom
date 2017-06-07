@@ -5,10 +5,13 @@ Vagrant.configure("2") do |config|
   #config.vm.box = "ubuntu/xenial64"
   config.vm.box = "bento/ubuntu-16.04"
   config.ssh.forward_agent = true
-  #config.vm.network "forwarded_port", guest: 8888, host: 8888
-  #config.vm.network "forwarded_port", guest: 8889, host: 8889
-  #config.vm.network "forwarded_port", guest: 8890, host: 8890
-  #config.vm.network "forwarded_port", guest: 18353, host: 18353
+  config.vm.network "forwarded_port", guest: 1313, host: 1313
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 5000, host: 5000
+  config.vm.network "forwarded_port", guest: 8888, host: 8888
+  config.vm.network "forwarded_port", guest: 8889, host: 8889
+  config.vm.network "forwarded_port", guest: 8890, host: 8890
+  config.vm.network "forwarded_port", guest: 18353, host: 18353
   #config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -54,7 +57,6 @@ Vagrant.configure("2") do |config|
         libxml2-dev \
         libxslt-dev \
         ghc \
-        golang \
         pandoc \
         python-dev \
         python3-cairo \

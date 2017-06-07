@@ -55,5 +55,10 @@ save () {
 }
 
 n () {
-  nvim `fzf`
+  if [ $# -eq 0 ]
+    then
+      nvim "$(fzf)"
+    else
+      nvim "$@"
+  fi
 }

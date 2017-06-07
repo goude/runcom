@@ -28,12 +28,3 @@ unset bpr
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# liquidprompt
-lc_script=~/.antigen/bundles/goude/liquidprompt/liquidprompt
-
-if [[ -f $lc_script ]] ; then
-  source $lc_script
-fi
-
-unset lc_script

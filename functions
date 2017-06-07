@@ -53,3 +53,7 @@ save () {
 		git commit -a -m "$1" && git push && git status;
 	fi
 }
+
+n () {
+  nvim `fzf`
+}

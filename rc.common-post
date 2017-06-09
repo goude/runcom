@@ -15,30 +15,17 @@ fi
 
 if [[ $system == 'OSX' ]]; then
     export CLICOLOR=1
-    #export LSCOLORS="gxfxcxdxbxegedabagacad"
 
     if [[ -x /usr/local/bin/gls ]]; then
         alias ls='/usr/local/bin/gls -h --color=auto'
     else
         alias ls='ls -hG'
     fi
-
-    export LANG=en_US.UTF-8
-    export LC_CTYPE=en_US.UTF-8
-    export LC_ALL=en_US.UTF-8
 fi
 
-#if [[ $system == 'Cygwin' ]]; then
-#fi
-
 #if [ -n "$ZSH_VERSION" ]; then
-   # assume Zsh
-   #alias hi='history 0'
 #elif [ -n "$BASH_VERSION" ]; then
-   # assume Bash
-   #alias hi='history'
 #else
-   #alias hi='history'
 #fi
 
 # Directory colors
@@ -49,7 +36,7 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
     eval `gdircolors $HOME/.dircolors`
 fi
 
-# generic colou?ri[sz]er
+# Generic colou?ri[sz]er
 source $rcfiles/home/.grc/grc.bashrc
 
 # Proxy helper
@@ -75,7 +62,7 @@ stty start undef
 BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-# custom functions
+# Custom functions
 source $rcfiles/functions
 
 # fasd navigator
@@ -93,13 +80,10 @@ if type "rbenv" > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-# nvm
-# commented out for now - slow
-# using hardcoded PATH instead, source nvm.sh when necessary
-# FIXME: version number is hardcoded, will fail eventually
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# nvm (slows down things)
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# custom aliases
+# Custom aliases
 source $rcfiles/aliases
 
 # Source local settings

@@ -9,7 +9,6 @@ echo "Installing/updating runcom..."
 echo "Performing post-installation..."
 
 ln -s $HOME/.tmux.conf-template $HOME/.tmux.conf
-ln -s $HOME/.npmrc-template $HOME/.npmrc
 
 # Force antigen install
 if [[ -f $HOME/.zshrc ]]; then

@@ -21,14 +21,17 @@ if [[ $network_data_ok == 1 ]]; then
   picomon_age=$(printf '%s' "$notify_data" | jq '."picomon-ok-all".age' | xargs printf "%.*f" 0)
   picomon_ok_all=$(printf '%s' "$notify_data" | jq '."picomon-ok-all".data' | xargs printf "%s")
   picomon_ok_primary=$(printf '%s' "$notify_data" | jq '."picomon-ok-primary".data' | xargs printf "%s")
+  picomon_not_ok_list=$(printf '%s' "$notify_data" | jq '."picomon-not-ok".data' | xargs printf "%s")
+
   pic_reason=""
+
   (( $picomon_age < 305 )) && pic_age='●' || { pic_age='○'; pic_reason+=' STALE DATA'; }
-  [[ $picomon_ok_primary == "True" ]] && pic_pri='●' || { pic_pri='○';pic_reason+=' PRIMARY FAIL'; }
+  [[ $picomon_ok_primary == "True" ]] && pic_pri='●' || { pic_pri='○';pic_reason+=$picomon_not_ok_list; }
   [[ $picomon_ok_all == "True" ]] && pic_all='●' || { pic_all='○';pic_reason+=''; }
 
   main_kpi=$(echo "$notify_data" | jq '."main-kpi".data | tonumber')
 
-  msg+="→$main_kpi $temp $wind $pic_age$pic_pri$pic_all$pic_reason"
+  msg+="→$main_kpi $temp $wind $pic_age$pic_pri$pic_all$pic_reason$picomon_not_ok"
 else
   msg+="…"
 fi
@@ -41,4 +44,4 @@ if [[ -f ~/TODO.md ]]; then
 fi
 
 # Output data
-echo $msg
+echo "$msg"

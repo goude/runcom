@@ -10,6 +10,17 @@ windows:
   - focus: 'true'
     shell_command:
     - nvim
-  - focus: true
-    shell_command:
+  - shell_command:
     - rcu
+- window_name: hugo
+  start_directory: $HOME/git/goude-se/goude.se
+  layout: main-vertical
+  panes:
+  - focus: 'true'
+    shell_command:
+    - n
+  - shell_command:
+    - make serve
+  - shell_command:
+    - date
+

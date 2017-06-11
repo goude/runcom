@@ -8,7 +8,6 @@ apt-get install -y \
   ca-certificates \
   cmake \
   git \
-  hdevtools \
   software-properties-common \
   tlsdate \
   tmux \

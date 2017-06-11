@@ -7,6 +7,6 @@ npm install -g htmlhint write-good jsonlint base16-builder-node eslint eslint-pl
 # TODO: check https://github.com/sindresorhus/awesome-nodejs
 
 # build base16
-mkdir -p $HOME/.local/share/base16
-cd $HOME/.local/share/base16
-base16 builder
+#mkdir -p $HOME/.local/share/base16
+#cd $HOME/.local/share/base16
+#base16 builder

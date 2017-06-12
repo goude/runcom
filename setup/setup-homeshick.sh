@@ -7,10 +7,6 @@ source "$REPOS/homeshick/homeshick.sh"
 echo "Cloning homeshick repos..."
 
 homeshick_repos=(
-    # TODO: Docker build process didn't like the ssh links...
-    #"git@github.com:goude/runcom.git"
-    #"git@github.com:goude/thxtime.git"
-    #"git@github.com:goude/yaprox.git"
     "goude/runcom"
     "goude/thxtime"
     "goude/yaprox"

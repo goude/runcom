@@ -3,23 +3,17 @@
 REPOS=$HOME/.homesick/repos
 source "$REPOS/homeshick/homeshick.sh"
 
-echo "Removing homeshick repos..."
-
-rm -rf $REPOS/runcom
-rm -rf $REPOS/thxtime
-rm -rf $REPOS/yaprox
-
-echo "Cloning homeshick repos..."
-
 homeshick_repos=(
-    "git@github.com:goude/runcom.git"
-    "git@github.com:goude/thxtime.git"
-    "git@github.com:goude/yaprox.git"
+    "runcom"
+    "thxtime"
+    "yaprox"
+    "jupyter-virtualenv"
 )
 
 for i in "${homeshick_repos[@]}"
 do
-    homeshick --force --batch clone "$i"
+    rm -rf "$REPOS/$i"
+    homeshick --force --batch clone "git@github.com:goude/$i.git"
 done
 
 echo "Silently and forcefully linking homeshick..."

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+function join_by { local IFS="$1"; shift; echo "$*"; }
+
 d1=$(/bin/df | awk '/\/$/ {print $5}')
 d2=$(/bin/df | awk '/\/SSD2$/ {print $5}')
 
-echo "$d1|$d2"
+join_by '·' $d1 $d2

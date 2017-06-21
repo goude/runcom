@@ -5,6 +5,7 @@ source "$REPOS/homeshick/homeshick.sh"
 
 homeshick_repos=(
     "runcom"
+    "adages"
     "thxtime"
     "yaprox"
     "jupyter-virtualenv"

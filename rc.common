@@ -17,7 +17,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export PYTHONSTARTUP=$HOME/.pystartup
 export GOPATH=$HOME/go
-export FORTUNE_PATH=$rcfiles/adages
+export FORTUNE_PATH=$homeshick_repos/adages/adages
 export NVM_DIR="$HOME/.nvm"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'

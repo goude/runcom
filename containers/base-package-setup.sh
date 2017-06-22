@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#PACKAGES=$(cat base development)
+#echo $PACKAGES
+#apt-get update && apt-get install $PACKAGES
+
 echo Installing base packages...
 
 # essentials
@@ -24,3 +29,4 @@ apt-get install -y \
   libssl-dev \
   libxml2-dev \
   libxslt-dev
+

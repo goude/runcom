@@ -53,7 +53,7 @@ setopt -o interactivecomments
 # Share history
 setopt -o sharehistory
 
-# Disable Ctrl-Z
+# Disable Ctrl-D
 set -o ignoreeof
 
 # Allow redirect to overwrite existing files
@@ -80,6 +80,7 @@ bindkey -M vicmd "q" push-line
 bindkey -M viins ' ' magic-space
 
 # antigen stuff
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
 
 source $HOME/.homesick/repos/antigen/antigen.zsh
 
@@ -88,35 +89,35 @@ antigen bundle git
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle goude/liquidprompt
-
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
-antigen bundle colored-man-pages
-antigen bundle colorize
-antigen bundle docker
-antigen bundle extract # x swiss army knife
-antigen bundle gitignore
+antigen bundle Tarrasch/zsh-autoenv
 antigen bundle gnu-utils
 antigen bundle history # h, hsi
 antigen bundle history-substring-search
-antigen bundle mvn
+antigen bundle lukechilds/zsh-better-npm-completion
+
+antigen bundle colored-man-pages
+antigen bundle colorize
+antigen bundle docker
 antigen bundle node
 antigen bundle pip
 antigen bundle python
 antigen bundle vagrant
-antigen bundle virtualenv
-antigen bundle web-search # h, hsi
-antigen bundle Tarrasch/zsh-autoenv
-antigen bundle vi-mode
-antigen bundle lukechilds/zsh-better-npm-completion
 
-#antigen bundle gpg-agent
-#antigen bundle npm
+#antigen bundle extract # x swiss army knife
 #antigen bundle felixr/docker-zsh-completion
-#antigen bundle srijanshetty/zsh-pip-completion
+#antigen bundle gitignore
+#antigen bundle gpg-agent
+#antigen bundle mvn
+#antigen bundle npm
 #antigen bundle rupa/z
+#antigen bundle srijanshetty/zsh-pip-completion
 #antigen bundle ssh-agent
 #antigen bundle tmux
+#antigen bundle vi-mode
+#antigen bundle virtualenv
+#antigen bundle web-search # h, hsi
 
+# System-specific tweaks
 if [[ $system == 'OSX' ]]; then
   antigen bundle brew
   antigen bundle brew-cask
@@ -130,14 +131,12 @@ fi
 # Command-line Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Should be at end of .zshrc, according to instructions
-# FIXME: lots of things happening below...
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
-
-# Finally, source common-post
+# Source more common setup
 source $HOME/.homesick/repos/runcom/rc.common-post
+
+# This should be at end of .zshrc, according to instructions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
 
 # cleanup profiling
 if [[ "$PROFILE_STARTUP" == true ]]; then

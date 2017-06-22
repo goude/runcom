@@ -23,11 +23,6 @@ if [[ $system == 'OSX' ]]; then
     fi
 fi
 
-#if [ -n "$ZSH_VERSION" ]; then
-#elif [ -n "$BASH_VERSION" ]; then
-#else
-#fi
-
 # Directory colors
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
     eval `dircolors $HOME/.dircolors`
@@ -44,19 +39,14 @@ if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
     source $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
 
-# SSH_AUTH_SOCK
-#if [[ -e ~/.ssh/ssh_auth_sock ]]; then
-#    export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
-#fi
-
 # Turn off Ctrl-s XOFF
 # Commented out pending further investigation (x key stopped working)
+# http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
+#stty ixon
 stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
-# http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
-#stty ixon
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
@@ -90,16 +80,6 @@ source $rcfiles/aliases
 if [ -f ~/.localenv ]; then
     source ~/.localenv
 fi
-
-# sdkman
-# commented out for now - slow
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="$HOME/.sdkman"
-#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Don't use here - leads to problems with zcompdump and stuff
-# cleanup PATH duplicates
-#dedup_pathvar PATH
 
 unset rcfiles
 unset system

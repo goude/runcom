@@ -28,5 +28,10 @@ export PATH=$HOME/.rbenv/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.f
 # Overwrite this in .localenv if necessary
 export RUNCOM_TMUX_SHELL=$SHELL
 
+# Source optional additional settings
+if [[ -f $homeshick_repos/pruncom/rc.pruncom ]]; then
+  source $homeshick_repos/pruncom/rc.pruncom
+fi
+
 # Activate homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh

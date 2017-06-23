@@ -13,6 +13,7 @@ Plug '~/.local/share/base16/templates/vim'
 " Status line
 Plug 'itchyny/lightline.vim'
 Plug 'daviesjamie/vim-base16-lightline'
+Plug 'fholgado/minibufexpl.vim'
 
 " File handling (TODO: unite->denite)
 Plug 'shougo/unite.vim'
@@ -46,6 +47,7 @@ Plug 'mhartington/vim-typings'
 Plug 'Quramy/ng-tsserver'
 
 " Experimental - can be disabled if needed
+Plug 'severin-lemaignan/vim-minimap'
 
 " Your own wiki
 Plug 'vimwiki/vimwiki'

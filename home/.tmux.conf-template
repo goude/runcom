@@ -90,7 +90,8 @@ set -g visual-activity on
 # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/issues/8#issuecomment-4134987
 set-option -g default-command '$HOME/bin/reattach-to-user-namespace-tmux -l "$RUNCOM_TMUX_SHELL"'
 
-set-window-option -g automatic-rename on
+# Disable automatix titles
+set-window-option -g automatic-rename off
 
 # disable Ctrl-D - (in Bash)
 set-environment -g 'IGNOREEOF' 2

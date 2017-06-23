@@ -54,6 +54,13 @@ save () {
 	fi
 }
 
+function center-text() {
+  #colcount=$((`tput cols` - 1))
+  colcount=$(($COLUMNS - 3))
+  sed  -e :a -e "s/^.\{1,$colcount\}$/ & /;ta"
+  unset colcount
+}
+
 n () {
   if [ $# -eq 0 ]
     then

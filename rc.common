@@ -10,14 +10,16 @@ export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export HOMESHICK_REPOS=$homeshick_repos
+export EDITOR='nvim'
+export VISUAL='vim'
+export PAGER='less'
+export LESS='-F -g -i -M -R -S -w -X -z-4'
 
-export EDITOR=nvim
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+export FORTUNE_PATH=$homeshick_repos/adages/adages
 export PYTHONSTARTUP=$HOME/.pystartup
 export GOPATH=$HOME/go
-export FORTUNE_PATH=$homeshick_repos/adages/adages
 export NVM_DIR="$HOME/.nvm"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
@@ -27,6 +29,7 @@ export PATH=$HOME/.rbenv/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.f
 
 # Overwrite this in .localenv if necessary
 export RUNCOM_TMUX_SHELL=$SHELL
+export HOMESHICK_REPOS=$homeshick_repos
 
 # Source optional additional settings
 if [[ -f $homeshick_repos/pruncom/rc.pruncom ]]; then

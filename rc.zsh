@@ -11,6 +11,24 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
 fi
 # end profiling (see also section at end)
 
+typeset -gU cdpath fpath mailpath path
+
+#path=(
+  #/usr/local/{bin,sbin}
+  #$path
+#)
+
+if (( $#commands[(i)lesspipe(|.sh)] )); then
+  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+fi
+
+if [[ ! -d "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/$LOGNAME"
+  mkdir -p -m 700 "$TMPDIR"
+fi
+
+TMPPREFIX="${TMPDIR%/}/zsh"
+
 # FIXME: There are still some things in .zprofile, check these.
 export RPROMPT=" "
 export DISABLE_AUTO_TITLE="true"
@@ -35,12 +53,17 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 export KEYTIMEOUT=20
 
 # Global zsh key bindings
-bindkey -M viins 'jk' vi-cmd-mode
 bindkey "^?" backward-delete-char
 bindkey "^W" backward-kill-word
 bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
 bindkey "^U" kill-line
 bindkey '^R' history-incremental-search-backward
+
+bindkey -M viins 'jk' vi-cmd-mode
+bindkey -M viins ' ' magic-space
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+bindkey -M vicmd "q" push-line
 
 # Fix esc behavior a la http://superuser.com/questions/516474/escape-not-idempotent-in-zshs-vi-emulation
 noop () { }
@@ -71,23 +94,13 @@ setopt RM_STAR_WAIT
 setopt ZLE
 setopt EXTENDED_GLOB
 
-bindkey -M vicmd "/" history-incremental-search-backward
-bindkey -M vicmd "?" history-incremental-search-forward
-bindkey -M vicmd "//" history-beginning-search-backward
-bindkey -M vicmd "??" history-beginning-search-forward
-
-bindkey -M vicmd "q" push-line
-bindkey -M viins ' ' magic-space
-
-# antigen stuff
+# Antigen
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
 
 source $HOME/.homesick/repos/antigen/antigen.zsh
-
 antigen bundle robbyrussell/oh-my-zsh lib/
+
 antigen bundle git
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle goude/liquidprompt
 antigen bundle Tarrasch/zsh-autoenv
 antigen bundle gnu-utils
@@ -115,7 +128,7 @@ antigen bundle vagrant
 #antigen bundle tmux
 #antigen bundle vi-mode
 #antigen bundle virtualenv
-#antigen bundle web-search # h, hsi
+#antigen bundle web-search
 
 # System-specific tweaks
 if [[ $system == 'OSX' ]]; then
@@ -128,15 +141,19 @@ elif [[ $system == 'Cygwin' ]]; then
   antigen bundle cygwin
 fi
 
-# Command-line Fuzzy Finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+# zsh-syntax-highlighting should be at end of .zshrc, according to instructions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
 
 # Source more common setup
 source $HOME/.homesick/repos/runcom/rc.common-post
 
-# This should be at end of .zshrc, according to instructions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen apply
+# Command-line Fuzzy Finder
+# Note: if this line is moved above source rc.common-post, hocd completions
+# (and possibly others) stop working in OSX.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # cleanup profiling
 if [[ "$PROFILE_STARTUP" == true ]]; then

@@ -98,12 +98,6 @@ let g:neomake_warning_sign = {'text': 'W', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
 let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
 
-" vimux
-let g:VimuxHeight = '20'
-let g:VimuxOrientation = 'h'
-let g:VimuxUseNearest = 1
-let g:VimuxResetSequence = ''
-
 " lightline
 let g:lightline = {
 		\ 'colorscheme': 'base16',
@@ -167,6 +161,7 @@ nnoremap <Leader>\| :vsplit<CR>
 " Open previously opened buffer
 nmap <Leader><Leader> <c-^>
 nnoremap <Leader><Tab> :bnext!<CR>
+nnoremap <Leader><S-tab> :bprev!<CR>
 "nnoremap <C-Left> :bprev!<CR><Paste>
 
 "nmap <Leader><Space>o :lopen<CR>      " open location window

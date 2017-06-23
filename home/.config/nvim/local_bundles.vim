@@ -13,7 +13,7 @@ Plug '~/.local/share/base16/templates/vim'
 " Status line
 Plug 'itchyny/lightline.vim'
 Plug 'daviesjamie/vim-base16-lightline'
-Plug 'fholgado/minibufexpl.vim'
+Plug 'ap/vim-buftabline'
 
 " File handling (TODO: unite->denite)
 Plug 'shougo/unite.vim'
@@ -57,10 +57,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
-
-" vim-tmux integration
-Plug 'benmills/vimux'
-Plug 'pitluga/vimux-nose-test'
 
 " table editing
 Plug 'dhruvasagar/vim-table-mode'

@@ -79,9 +79,6 @@ endif
 "let g:tagbar_autofocus = 0
 "autocmd VimEnter * TagbarOpen
 
-" vimwiki
-let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-
 " Neomake
 autocmd! BufWritePost * Neomake
 "let g:neomake_verbose = 3
@@ -99,9 +96,26 @@ let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
 let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
 
 " lightline
+set noshowmode  " disabled, since it's displayed by lightline
 let g:lightline = {
-		\ 'colorscheme': 'base16',
-		\ }
+    \ 'colorscheme': 'base16',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'wordcount', 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype', ] ]
+    \ },
+    \ 'component': {
+    \   'helloworld': 'Hello, World!',
+    \   'charvaluehex': '0x%B'
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head',
+    \   'wordcount': 'wordCount#WordCount'
+    \ },
+    \ }
+
 
 " vim-easy-align.vim
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -115,10 +129,10 @@ nmap ga <Plug>(EasyAlign)
 " Mappings {
 
 " Leader-I - edit certain kinds of files
-nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
-nnoremap <silent> <leader>ik :e ~/.config/nvim/local_bundles.vim<CR>
-nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>it :e ~/.homesick/repos/wiki/todo/todo.txt<CR>
+nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_init.vim<CR>
+nnoremap <silent> <leader>ik :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_bundles.vim<CR>
+nnoremap <silent> <leader>ij :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Clear search highlight
@@ -132,6 +146,10 @@ nnoremap <Left> :vertical resize -1<CR>
 nnoremap <Right> :vertical resize +1<CR>
 nnoremap <Up> :resize -1<CR>
 nnoremap <Down> :resize +1<CR>
+
+" Move up and down visually
+nnoremap j gj
+nnoremap k gk
 
 " Disable arrow keys completely in Insert Mode
 imap <up> <nop>
@@ -151,12 +169,12 @@ xnoremap <silent> <C-l> >gv
 xnoremap < <gv
 xnoremap > >gv
 
-nnoremap <tab>   <c-w>w
-nnoremap <S-tab> <c-w>W
+" DEPRECATE: Don't use, and don't want conflict with tab completions
+"nnoremap <tab>   <c-w>w
+"nnoremap <S-tab> <c-w>W
 
 nnoremap <Leader>- :split<CR>
 nnoremap <Leader>\| :vsplit<CR>
-
 
 " Open previously opened buffer
 nmap <Leader><Leader> <c-^>

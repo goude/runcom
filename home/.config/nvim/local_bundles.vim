@@ -61,6 +61,9 @@ Plug 'reedes/vim-pencil'
 " table editing
 Plug 'dhruvasagar/vim-table-mode'
 
+" word count
+Plug 'ChesleyTan/wordCount.vim'
+
 " TODO
 " https://github.com/ivanov/vim-ipython/
 " https://github.com/kana/vim-arpeggio

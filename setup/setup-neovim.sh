@@ -19,10 +19,11 @@ pyenv install 3.6.1
 pyenv virtualenv 3.6.1 neovim3
 pyenv activate neovim3
 $(pyenv which pip) install --upgrade pip
-$(pyenv which pip) install neovim jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp
+$(pyenv which pip) install neovim jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl
 
 ln -s "$(pyenv which flake8)" ~/bin/flake8
 ln -s "$(pyenv which tmuxp)" ~/bin/tmuxp
+ln -s "$(pyenv which jrnl)" ~/bin/jrnl
 
 pyenv deactivate
 

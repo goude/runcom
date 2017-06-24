@@ -32,11 +32,11 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
 fi
 
 # Generic colou?ri[sz]er
-source $rcfiles/home/.grc/grc.bashrc
+. $rcfiles/home/.grc/grc.bashrc
 
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
-    source $HOME/.homesick/repos/yaprox/yaprox.sh
+    . $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
 
 # Turn off Ctrl-s XOFF
@@ -53,7 +53,7 @@ BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Custom functions
-source $rcfiles/functions
+. "$rcfiles/functions"
 
 # fasd navigator
 eval "$(fasd --init auto)"
@@ -74,11 +74,16 @@ fi
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Custom aliases
-source $rcfiles/aliases
+. "$rcfiles/aliases"
+
+# Source optional additional settings
+if [[ -f $HOMESHICK_REPOS/pruncom/rc.pruncom-post ]]; then
+  . "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
+fi
 
 # Source local settings
 if [ -f ~/.localenv ]; then
-    source ~/.localenv
+    . ~/.localenv
 fi
 
 unset rcfiles

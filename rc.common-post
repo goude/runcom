@@ -76,16 +76,17 @@ fi
 # Custom aliases
 . "$rcfiles/aliases"
 
-# Source optional additional settings
-if [[ -f $HOMESHICK_REPOS/pruncom/rc.pruncom-post ]]; then
-  . "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
-fi
+# Cleanup
+unset rcfiles
+unset system
+unset homeshick_repos
 
 # Source local settings
 if [ -f ~/.localenv ]; then
     . ~/.localenv
 fi
 
-unset rcfiles
-unset system
-unset homeshick_repos
+# Source optional additional settings
+if [[ -f $HOMESHICK_REPOS/pruncom/rc.pruncom-post ]]; then
+  . "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
+fi

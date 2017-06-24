@@ -37,9 +37,9 @@ else
 fi
 
 # Format static data
-if [[ -f ~/TODO.md ]]; then
+if [[ -f ~/.homesick/repos/wiki/TODO.md ]]; then
   msg+=' '
-  msg+=$(head -n1 ~/TODO.md)
+  msg+=$(head -n1 ~/.homesick/repos/wiki/TODO.md)
   #msg+=$(shuf -n1 ~/.reminders)
 fi
 

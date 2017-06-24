@@ -41,7 +41,6 @@ alias f='fzf'
 alias ft='fzf-tmux'
 
 alias t='todo.sh -c'
-alias save-todo='pushd . && hocd wiki && save "ud todo" && popd'
 
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"

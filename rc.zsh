@@ -29,10 +29,6 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-# FIXME: There are still some things in .zprofile, check these.
-export RPROMPT=" "
-export DISABLE_AUTO_TITLE="true"
-
 # Highlighters {{{
 # Declare the variable
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -149,6 +145,11 @@ antigen apply
 
 # Source more common setup
 source $HOME/.homesick/repos/runcom/rc.common-post
+
+# Setup right prompt
+setopt prompt_subst
+export RPROMPT='$RUNCOM_TODO_CONTEXT'
+export DISABLE_AUTO_TITLE="true"
 
 # Command-line Fuzzy Finder
 # Note: if this line is moved above source rc.common-post, hocd completions

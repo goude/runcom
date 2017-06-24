@@ -40,7 +40,7 @@ alias vim='nvim'
 alias f='fzf'
 alias ft='fzf-tmux'
 
-alias todo='hocd wiki && nvim TODO.md'
+alias t='todo.sh'
 alias serve-directory='python3 -m http.server'
 #alias cp-progress="rsync --progress -ravz"
 alias pan='pyenv activate neovim3'

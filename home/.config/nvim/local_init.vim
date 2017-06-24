@@ -118,7 +118,7 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <silent> <leader>ii :e ~/.config/nvim/local_init.vim<CR>
 nnoremap <silent> <leader>ik :e ~/.config/nvim/local_bundles.vim<CR>
 nnoremap <silent> <leader>ij :e ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>it :e ~/.homesick/repos/wiki/TODO.md<CR>
+nnoremap <silent> <leader>it :e ~/.homesick/repos/wiki/todo/todo.txt<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Clear search highlight

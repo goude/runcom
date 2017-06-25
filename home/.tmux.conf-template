@@ -88,7 +88,7 @@ set -g visual-activity on
 
 # Fix access to Mac OS X pasteboard using a wrapper script to avoid multiple configuration files.
 # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/issues/8#issuecomment-4134987
-set-option -g default-command '$HOME/bin/reattach-to-user-namespace-tmux -l "$RUNCOM_TMUX_SHELL"'
+set-option -g default-command '$HOME/bin/tmux-sh -l "$RUNCOM_TMUX_SHELL"'
 
 # Disable automatix titles
 set-window-option -g automatic-rename off

@@ -64,6 +64,9 @@ Plug 'dhruvasagar/vim-table-mode'
 " word count
 Plug 'ChesleyTan/wordCount.vim'
 
+" todo.txt (my fork)
+Plug 'goude/todo.txt-vim'
+
 " TODO
 " https://github.com/ivanov/vim-ipython/
 " https://github.com/kana/vim-arpeggio

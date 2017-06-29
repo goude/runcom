@@ -50,7 +50,7 @@ Plug 'Quramy/ng-tsserver'
 Plug 'severin-lemaignan/vim-minimap'
 
 " Your own wiki
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 
 " Text editing
 Plug 'junegunn/goyo.vim'

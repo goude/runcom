@@ -70,6 +70,7 @@ autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
 " Plugin Settings {
 
 " Base16
+let g:base16_shell_path = '~/.local/share/base16/templates/shell/scripts'
 if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background

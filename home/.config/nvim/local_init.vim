@@ -17,6 +17,7 @@ let mapleader="\<SPACE>"
 
 set nospell
 set relativenumber
+set t_Co=256
 
 " Experimental: Change to current files directory
 set autochdir " may interfere with some plugins

@@ -12,7 +12,7 @@ Plug '~/.local/share/base16/templates/vim'
 
 " Status line
 Plug 'itchyny/lightline.vim'
-Plug 'daviesjamie/vim-base16-lightline'
+"Plug 'daviesjamie/vim-base16-lightline'
 Plug 'ap/vim-buftabline'
 
 " File handling (TODO: unite->denite)

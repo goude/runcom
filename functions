@@ -5,11 +5,14 @@ command_exists () {
 }
 
 # Pull all git repos one level below current directory
+# TODO: Broken, test and fix portability
 pullall () {
     find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \; ;
 }
 
-# Deduplicate path variables
+# Deduplicate path variables, shell-agnostic
+# TODO: use to cleanup env after logging in
+# TODO: probably problematic, test.
 get_var () { eval "echo \$$1" ; }
 set_var () { eval "$1=\"$2\"" ; }
 dedup_pathvar () {
@@ -19,12 +22,13 @@ dedup_pathvar () {
     set_var $pathvar_name "$deduped_path"
 }
 
-# Prompt functions
+# Shorten the email to the format x@y; useful in prompt
 git_user_name_prompt () {
     git config user.email | sed 's/\(.\).\+@\(.\).\+/\1@\2/'
 }
 
-# Misc
+# Which commands are most commonly used?
+# (use this information to improve workflow)
 history-high-score () {
     history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
 }
@@ -37,6 +41,7 @@ reload-zshrc () {
     source ~/.zshrc
 }
 
+# set a random colorscheme
 random-base16-colorscheme () {
   pushd . > /dev/null && \
   cd "$HOME/.local/share/base16/templates/shell/scripts" && \
@@ -46,6 +51,7 @@ random-base16-colorscheme () {
   popd > /dev/null
 }
 
+# git quicksave: commit and push
 save () {
   if [ -z ${1+x} ]; then
 		echo "Missing commit message.";
@@ -54,6 +60,7 @@ save () {
 	fi
 }
 
+# print the argument in the terminal, centered
 function center-text() {
   #colcount=$((`tput cols` - 1))
   colcount=$(($COLUMNS - 3))
@@ -61,6 +68,7 @@ function center-text() {
   unset colcount
 }
 
+# neovim launcher
 n () {
   if [ $# -eq 0 ]
     then
@@ -68,4 +76,8 @@ n () {
     else
       nvim "$@"
   fi
+}
+
+nt () {
+  nvim "$HOME/.homesick/repos/wiki/todo/todo.txt"
 }

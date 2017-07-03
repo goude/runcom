@@ -12,7 +12,7 @@ let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
 " Basic configuration {
-"let mapleader = "\\"
+let maplocalleader = "\\"
 let mapleader="\<SPACE>"
 
 set nospell

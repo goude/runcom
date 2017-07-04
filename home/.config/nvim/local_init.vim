@@ -12,17 +12,21 @@ let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
 " Basic configuration {
-"let mapleader = "\\"
+let maplocalleader = "\\"
 let mapleader="\<SPACE>"
 
 set nospell
 set relativenumber
 set t_Co=256
 
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+
 " Experimental: Change to current files directory
 set autochdir " may interfere with some plugins
 "autocmd BufEnter * silent! lcd %:p:h
-
 
 if has('persistent_undo')
     set undodir=~/.undodir/

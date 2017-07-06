@@ -1,5 +1,8 @@
 #!/bin/bash
 
 /tmp/runcom/setup/bootstrap.sh
-#base16_monokai
-#chsh
+
+# chsh
+# post-setups
+# ssh-copy-key
+# dpkg-reconfigure tzdata

@@ -64,6 +64,13 @@ if exists('g:plugs["tern_for_vim"]')
   "let g:tern_map_keys=1
   let g:tern_show_argument_hints = 'on_hold'
   let g:tern_show_signature_in_pum = 1
+  let g:tern#command = ['tern']
+  let g:tern#arguments = ['--persistent']
+  let g:tern#filetypes = [
+    \ 'jsx',
+    \ 'javascript.jsx',
+    \ 'vue',
+    \ ]
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
 
@@ -89,6 +96,8 @@ endif
 autocmd! BufWritePost * Neomake
 "let g:neomake_verbose = 3
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_jsx_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
 
 let g:neomake_javascript_eslint_maker = {

@@ -8,6 +8,8 @@
 # -r key may repeat
 
 # use 256 colors
+# changed from default screen-256color
+# TODO: if this breaks things, see https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
 set -g default-terminal "xterm-256color"
 
 # set scrollback history to 10k

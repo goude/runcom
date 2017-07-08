@@ -9,4 +9,4 @@ cd .nvm
 #git checkout v0.33.1
 git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
 source ./nvm.sh
-nvm install node
+nvm install 7

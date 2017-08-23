@@ -6,6 +6,9 @@ Plug 'myusuf3/numbers.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ervandew/supertab'
 
+" Git
+Plug 'junegunn/gv.vim'
+
 " colors - base16
 "Plug 'chriskempson/base16-vim'
 Plug '~/.local/share/base16/templates/vim'

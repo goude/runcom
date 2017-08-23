@@ -150,6 +150,9 @@ nnoremap <silent> <leader>ij :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.v
 nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
+" Toggles
+nnoremap <leader>tt :TagbarToggle<CR>
+
 " Clear search highlight
 nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 
@@ -184,10 +187,7 @@ xnoremap <silent> <C-l> >gv
 xnoremap < <gv
 xnoremap > >gv
 
-" DEPRECATE: Don't use, and don't want conflict with tab completions
-"nnoremap <tab>   <c-w>w
-"nnoremap <S-tab> <c-w>W
-
+" Splits - same mappings as in tmux
 nnoremap <Leader>- :split<CR>
 nnoremap <Leader>\| :vsplit<CR>
 

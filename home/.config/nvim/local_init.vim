@@ -33,6 +33,9 @@ if has('persistent_undo')
     set undofile
 endif
 
+set showbreak=↪\
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+
 " }
 
 " Deoplete / Omnicompletion {

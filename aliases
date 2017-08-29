@@ -43,6 +43,8 @@ alias ft='fzf-tmux'
 alias t='todo.sh -c'
 
 alias serve-directory='python3 -m http.server'
-#alias cp-progress="rsync --progress -ravz"
 
 alias pan='pyenv activate neovim3'
+alias paj='pyenv activate jupyter-virtualenv'
+
+#alias cp-progress="rsync --progress -ravz"

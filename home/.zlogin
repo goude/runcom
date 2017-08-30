@@ -9,6 +9,8 @@
 # Print a centered logon message
 if (( $+commands[adage] )); then
   if [[ -t 0 || -t 1 ]]; then
-    adage -e -s | center-text
+    if [[ -z "$TMUX" || -n "$RUNCOM_SHOW_ADAGE" ]]; then
+      adage -e -s | center-text
+    fi
   fi
 fi

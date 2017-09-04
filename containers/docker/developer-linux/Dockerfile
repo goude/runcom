@@ -58,4 +58,5 @@ RUN \
     python3-matplotlib python3-pandas \
     python3-sklearn \
     openjdk-8-jre-headless && \
+    r-base \
   apt-get clean

@@ -33,8 +33,9 @@ if has('persistent_undo')
     set undofile
 endif
 
-set showbreak=↪\
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+" ¬¦«»¶→⌂⌐⏎⌫⌧∕_
+set showbreak=⏎\
+set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 
 " }
 

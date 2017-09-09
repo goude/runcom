@@ -5,6 +5,7 @@ EXPOSE 22
 RUN \
   apt-get update && \
   apt-get install -y \
+    apt-transport-https \
     build-essential \
     cifs-utils \
     cmake \
@@ -31,23 +32,7 @@ RUN \
     tree \
     zlib1g-dev \
     zsh \
-    jq
-
-RUN \
-  add-apt-repository ppa:neovim-ppa/stable && \
-  apt-get update && \
-  apt-get install -y neovim
-
-RUN \
-  apt-get clean && \
-  mkdir -p /var/run/sshd && \
-  locale-gen en_US.UTF-8 && \
-  useradd -ms /usr/bin/zsh runcom && \
-  echo "runcom:runcom" | chpasswd && \
-  adduser runcom sudo
-
-RUN \
-  apt-get install -y \
+    jq \
     golang \
     ghc \
     pandoc \
@@ -57,6 +42,15 @@ RUN \
     python3-cairo \
     python3-matplotlib python3-pandas \
     python3-sklearn \
-    openjdk-8-jre-headless \
-    r-base && \
+    openjdk-8-jre-headless && \
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
+  add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \
+  add-apt-repository ppa:neovim-ppa/stable && \
+  apt-get update && \
+  apt-get install -y neovim r-base && \
+  mkdir -p /var/run/sshd && \
+  locale-gen en_US.UTF-8 && \
+  useradd -ms /usr/bin/zsh runcom && \
+  echo "runcom:runcom" | chpasswd && \
+  adduser runcom sudo && \
   apt-get clean

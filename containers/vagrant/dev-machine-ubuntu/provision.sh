@@ -41,7 +41,9 @@ apt-get install -y \
   python3-pandas \
   python3-pip \
   python3-venv \
-  cifs-utils
+  cifs-utils \
+  openjdk-8-jre-headless \
+  postgresql-client
 
 # Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -

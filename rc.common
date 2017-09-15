@@ -38,3 +38,6 @@ fi
 
 # Activate homeshick - git dotfile synchronizer
 source $HOME/.homesick/repos/homeshick/homeshick.sh
+
+# Activate pyenv
+. "$rcfiles/rc.pyenv"

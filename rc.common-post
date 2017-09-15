@@ -58,13 +58,6 @@ BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
 # fasd navigator
 eval "$(fasd --init auto)"
 
-# pyenv
-if [[ -d $HOME/.pyenv/bin ]]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]]; then
   eval "$(rbenv init -)"

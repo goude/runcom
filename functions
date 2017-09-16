@@ -24,7 +24,12 @@ dedup_pathvar () {
 
 # Shorten the email to the format x@y; useful in prompt
 git_user_name_prompt () {
-    git config user.email | sed 's/\(.\).\+@\(.\).\+/\1@\2/'
+    gitname=$(git config user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
+    if [[ $gitname =~ 'as' ]]; then
+      echo -n $gitname | color red
+    else
+      echo -n $gitname | color green
+    fi
 }
 
 # Which commands are most commonly used?

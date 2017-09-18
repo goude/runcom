@@ -156,6 +156,9 @@ export DISABLE_AUTO_TITLE="true"
 # (and possibly others) stop working in OSX.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# FIXME: Ugly hack: rebind(?) to vi keys (did not need to, previously)
+bindkey -v
+
 # cleanup profiling
 if [[ "$PROFILE_STARTUP" == true ]]; then
     unsetopt xtrace

@@ -99,6 +99,7 @@ endif
 " Neomake
 autocmd! BufWritePost * Neomake
 "let g:neomake_verbose = 3
+let g:neomake_python_enabled_makers = ['pylint']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_jsx_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']

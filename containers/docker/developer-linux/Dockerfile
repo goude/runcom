@@ -42,6 +42,7 @@ RUN \
     python3-cairo \
     python3-matplotlib python3-pandas \
     python3-sklearn \
+    postgresql-client \
     openjdk-8-jre-headless && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
   add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \

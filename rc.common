@@ -27,6 +27,12 @@ export FZF_DEFAULT_OPTS='--reverse --height=40% --inline-info'
 
 export PATH=$HOME/.rbenv/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.fzf/bin
 
+# Set temporary directory and protect it
+if [[ ! -d "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/$LOGNAME"
+  mkdir -p -m 700 "$TMPDIR"
+fi
+
 # Overwrite this in .localenv if necessary
 export RUNCOM_TMUX_SHELL=$SHELL
 export HOMESHICK_REPOS=$homeshick_repos

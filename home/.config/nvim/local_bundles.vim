@@ -25,7 +25,8 @@ Plug 'shougo/vimfiler.vim'
 " Coding
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
 Plug 'zchee/deoplete-jedi'
 

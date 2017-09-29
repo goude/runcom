@@ -97,7 +97,7 @@ endif
 "autocmd VimEnter * TagbarOpen
 
 " Neomake
-autocmd! BufWritePost * Neomake
+"autocmd! BufWritePost * Neomake
 "let g:neomake_verbose = 3
 let g:neomake_python_enabled_makers = ['pylint']
 let g:neomake_javascript_enabled_makers = ['eslint']
@@ -114,6 +114,10 @@ let g:neomake_error_sign = {'text': '»', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {'text': '•', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
 let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
+
+" ALE
+let g:ale_sign_error = '»'
+let g:ale_sign_warning = '•'
 
 " lightline
 set noshowmode  " disabled, since it's displayed by lightline

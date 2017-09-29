@@ -22,7 +22,7 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-TMPPREFIX="${TMPDIR%/}/zsh"
+#TMPPREFIX="${TMPDIR%/}/zsh"
 
 # Highlighters {{{
 # Declare the variable

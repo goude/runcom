@@ -1,14 +1,15 @@
-"*****************************************************************************
-"" Vim-PLug core
-"*****************************************************************************
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=0 foldmarker={,} foldmethod=marker spell:
+"
+
+" Initialization {
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "c,elixir,erlang,go,haskell,html,javascript,lisp,lua,ocaml,perl,php,python,ruby,rust,scala"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
+"let g:vim_bootstrap_langs = "c,elixir,erlang,go,haskell,html,javascript,lisp,lua,ocaml,perl,php,python,ruby,rust,scala"
+let g:vim_bootstrap_editor = "nvim"
 
 if !filereadable(vimplug_exists)
   echo "Installing Vim-Plug..."
@@ -19,180 +20,26 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
-" Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
+source ~/.config/nvim/bundles.vim
 
-"*****************************************************************************
-"" Plug install packages
-"*****************************************************************************
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/grep.vim'
-Plug 'vim-scripts/CSApprox'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
-"Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
-Plug 'sheerun/vim-polyglot'
-if isdirectory('/usr/local/opt/fzf')
-  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-else
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-  Plug 'junegunn/fzf.vim'
-endif
-let g:make = 'gmake'
-if exists('make')
-        let g:make = 'make'
-endif
-Plug 'Shougo/vimproc.vim', {'do': g:make}
-
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-
-if v:version >= 703
-  Plug 'Shougo/vimshell.vim'
-endif
-
-if v:version >= 704
-  "" Snippets
-  Plug 'SirVer/ultisnips'
-endif
-
-Plug 'honza/vim-snippets'
-
-"" Color
-Plug 'tomasr/molokai'
-
-"*****************************************************************************
-"" Custom bundles
-"*****************************************************************************
-
-" c
-Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
-Plug 'ludwig/split-manpage.vim'
-
-
-" elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'carlosgaldino/elixir-snippets'
-
-
-" erlang
-Plug 'jimenezrick/vimerl'
-
-
-" go
-"" Go Lang Bundle
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
-
-" haskell
-"" Haskell Bundle
-Plug 'eagletmt/neco-ghc'
-Plug 'dag/vim2hs'
-Plug 'pbrisbin/vim-syntax-shakespeare'
-
-
-" html
-"" HTML Bundle
-Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-haml'
-Plug 'mattn/emmet-vim'
-
-
-" javascript
-" Javascript Bundle
-"Plug 'jelera/vim-javascript-syntax'
-
-
-" lisp
-"" Lisp Bundle
-Plug 'vim-scripts/slimv.vim'
-
-
-" lua
-"" Lua Bundle
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'xolox/vim-lua-inspect'
-
-
-" ocaml
-"" OCaml Bundle
-Plug 'def-lkb/ocp-indent-vim'
-
-
-" perl
-"" Perl Bundle
-Plug 'vim-perl/vim-perl'
-Plug 'c9s/perlomni.vim'
-
-
-" php
-"" PHP Bundle
-Plug 'arnaud-lb/vim-php-namespace'
-
-
-" python
-"" Python Bundle
-" Plug 'davidhalter/jedi-vim'
-
-
-" ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring'
-
-
-" rust
-" Vim racer
-Plug 'racer-rust/vim-racer'
-
-" Rust.vim
-Plug 'rust-lang/rust.vim'
-
-
-" scala
-" sbt-vim
-"Plug 'ktvoelker/sbt-vim'
-"" vim-scala
-"Plug 'derekwyatt/vim-scala'
-
-
-"*****************************************************************************
-"*****************************************************************************
-
-"" Include user's extra bundle
+" Include user's extra bundle
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
   source ~/.config/nvim/local_bundles.vim
 endif
 
 call plug#end()
 
-" Required:
 filetype plugin indent on
+" }
 
-
-"*****************************************************************************
-"" Basic Setup
-"*****************************************************************************"
+" Basic Setup {
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
-
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -234,9 +81,9 @@ let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
-"*****************************************************************************
-"" Visual Settings
-"*****************************************************************************
+" }
+
+" Visual Settings {
 syntax on
 set ruler
 set number
@@ -297,17 +144,16 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
+"let g:airline_theme = 'powerlineish'
+"let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tagbar#enabled = 1
+"let g:airline_skip_empty_sections = 1
 
-"*****************************************************************************
-"" Abbreviations
-"*****************************************************************************
-"" no one is really happy until you have this shortcuts
+" }
+
+" Abbreviations {
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -318,6 +164,7 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+" }
 
 "" NERDTree configuration
 let g:NERDTreeChDirMode=2
@@ -348,9 +195,7 @@ else
   nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
 
-"*****************************************************************************
-"" Functions
-"*****************************************************************************
+" Functions {
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
     set wrap
@@ -358,10 +203,9 @@ if !exists('*s:setupWrapping')
     set textwidth=79
   endfunction
 endif
+" }
 
-"*****************************************************************************
-"" Autocmd Rules
-"*****************************************************************************
+" Autocmd Rules {
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -389,138 +233,11 @@ augroup END
 
 set autoread
 
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
+" }
 
-"" Split
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
+source ~/.config/nvim/mappings.vim
 
-"" Git
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
-
-" session management
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
-
-"" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
-
-"" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
-"" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-"" fzf.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-
-" ripgrep
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-endif
-
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
-
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-
-" Disable visualbell
-set noerrorbells visualbell t_vb=
-if has('autocmd')
-  autocmd GUIEnter * set visualbell t_vb=
-endif
-
-"" Copy/Paste/Cut
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-endif
-
-noremap YY "+y<CR>
-noremap <leader>p "+gP<CR>
-noremap XX "+x<CR>
-
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
-
-"" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
-
-"" Close buffer
-noremap <leader>c :bd<CR>
-
-"" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
-
-"" Switching windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-
-"" Vmap for maintain Visual Mode after shifting > and <
-vmap < <gv
-vmap > >gv
-
-"" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
-"" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
-
-"*****************************************************************************
-"" Custom configs
-"*****************************************************************************
+" Custom configs {
 
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
@@ -735,52 +452,275 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " scala
 
-
-"*****************************************************************************
-"*****************************************************************************
+" }
 
 "" Include user's local vim config
 if filereadable(expand("~/.config/nvim/local_init.vim"))
   source ~/.config/nvim/local_init.vim
 endif
 
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
+" Previously localinit {
 
-" vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+" TODO: have a look at
+" - http://wrotenwrites.com/a_modern_terminal_workflow_2/
+" - https://github.com/w0rp/ale (htmlhint and friends also)
+" - https://github.com/junegunn/dotfiles/blob/master/vimrc
+
+" Neovim pyenv paths {
+" https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
+" }
+
+" Basic configuration {
+let maplocalleader = "\\"
+let mapleader="\<SPACE>"
+
+set nospell
+set relativenumber
+set t_Co=256
+
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+
+" Experimental: Change to current files directory
+set autochdir " may interfere with some plugins
+"autocmd BufEnter * silent! lcd %:p:h
+
+if has('persistent_undo')
+    set undodir=~/.undodir/
+    set undofile
 endif
 
-if !exists('g:airline_powerline_fonts')
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
-  let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
-  let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
-  let g:airline_symbols.linenr    = '␊'
-  let g:airline_symbols.branch    = '⎇'
-  let g:airline_symbols.paste     = 'ρ'
-  let g:airline_symbols.paste     = 'Þ'
-  let g:airline_symbols.paste     = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-else
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
+" ¬¦«»¶→⌂⌐⏎⌫⌧∕_
+set showbreak=⏎\
+set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 
-  " powerline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
+" }
+
+" Deoplete / Omnicompletion {
+let g:deoplete#enable_at_startup = 1
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+" let g:deoplete#disable_auto_complete = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:deoplete#sources#jedi#show_docstring = 1
+
+" Experimental (check behavior)
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Experimental
+augroup omnifuncs
+    autocmd!
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  "enable keyboard shortcuts - <Leader>tn, tr, tR
+  "let g:tern_map_keys=1
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  let g:tern#command = ['tern']
+  let g:tern#arguments = ['--persistent']
+  let g:tern#filetypes = [
+    \ 'jsx',
+    \ 'javascript.jsx',
+    \ 'vue',
+    \ ]
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
 
+" tern
+autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
+
+" }
+
+" Plugin Settings {
+
+" Base16
+let g:base16_shell_path = '~/.local/share/base16/templates/shell/scripts'
+if filereadable(expand('~/.vimrc_background'))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+" Tagbar
+"let g:tagbar_autofocus = 0
+"autocmd VimEnter * TagbarOpen
+
+" Neomake
+"autocmd! BufWritePost * Neomake
+"let g:neomake_verbose = 3
+let g:neomake_python_enabled_makers = ['pylint']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_jsx_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_json_enabled_makers = ['jsonlint']
+
+let g:neomake_javascript_eslint_maker = {
+\ 'args': ['--env', 'es6', '-f', 'compact'],
+\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
+\ }
+
+let g:neomake_error_sign = {'text': '»', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': '•', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
+
+" ALE
+let g:ale_sign_error = '»'
+let g:ale_sign_warning = '•'
+
+" lightline
+set noshowmode  " disabled, since it's displayed by lightline
+let g:lightline = {
+    \ 'colorscheme': 'base16',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'wordcount', 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype', ] ]
+    \ },
+    \ 'component': {
+    \   'helloworld': 'Hello, World!',
+    \   'charvaluehex': '0x%B'
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head',
+    \   'wordcount': 'wordCount#WordCount'
+    \ },
+    \ }
+
+
+" vim-easy-align.vim
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" }
+
+" Mappings {
+
+" Leader-I - edit certain kinds of files
+nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_init.vim<CR>
+nnoremap <silent> <leader>ik :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_bundles.vim<CR>
+nnoremap <silent> <leader>ij :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
+nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
+
+" Toggles
+nnoremap <leader>tt :TagbarToggle<CR>
+
+" Clear search highlight
+nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
+
+" Reduce finger movement for Esc
+inoremap jk <Esc>
+
+" Arrow keys
+nnoremap <Left> :vertical resize -1<CR>
+nnoremap <Right> :vertical resize +1<CR>
+nnoremap <Up> :resize -1<CR>
+nnoremap <Down> :resize +1<CR>
+
+" Move up and down visually
+nnoremap j gj
+nnoremap k gk
+
+" Disable arrow keys completely in Insert Mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" Moving lines
+nnoremap <silent> <C-k> :move-2<cr>
+nnoremap <silent> <C-j> :move+<cr>
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
+xnoremap <silent> <C-k> :move-2<cr>gv
+xnoremap <silent> <C-j> :move'>+<cr>gv
+xnoremap <silent> <C-h> <gv
+xnoremap <silent> <C-l> >gv
+xnoremap < <gv
+xnoremap > >gv
+
+" Splits - same mappings as in tmux
+nnoremap <Leader>- :split<CR>
+nnoremap <Leader>\| :vsplit<CR>
+
+" Open previously opened buffer
+nmap <Leader><Leader> <c-^>
+nnoremap <Leader><Tab> :bnext!<CR>
+nnoremap <Leader><S-tab> :bprev!<CR>
+"nnoremap <C-Left> :bprev!<CR><Paste>
+
+"nmap <Leader><Space>o :lopen<CR>      " open location window
+"nmap <Leader><Space>c :lclose<CR>     " close location window
+"nmap <Leader><Space>, :ll<CR>         " go to current error/warning
+"nmap <Leader><Space>n :lnext<CR>      " next error/warning
+"nmap <Leader><Space>p :lprev<CR>      " previous error/warning
+
+" Save with Ctrl-C
+map <C-s> :w<cr>
+imap <C-s> <ESC>:w<cr>
+
+" Close buffer with Ctrl-Q
+map <C-q> :bd<cr>
+imap <C-q> <ESC>:bd<cr>
+
+" Make Y behave
+nnoremap Y y$
+
+" qq record, Q replay
+nnoremap Q @q
+
+" Prepend/Append to all adjacent lines with same indentation
+nmap <silent> <leader>I ^vio<C-V>I
+nmap <silent> <leader>A ^vio<C-V>$A
+
+" Use very magic regexps by default
+nnoremap / /\v
+cnoremap %s/ %s/\v
+
+" Toggle folds
+nmap <leader>z za
+
+" Jump to next Neomake error
+nnoremap <leader>ne :ll<CR>
+
+" Fuzzy file finder
+nnoremap <silent> <leader>e :GitFiles<CR>
+
+" vim-sneak
+let g:sneak#s_next = 1
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+
+" }
+
+" Workarounds {
+
+" Fix neovim color problems in hyper terminal
+" https://github.com/zeit/hyper/issues/364
+set termguicolors
+
+"}
+
+" }

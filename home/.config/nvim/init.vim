@@ -1,5 +1,9 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=0 foldmarker={,} foldmethod=marker spell:
 "
+" TODO: have a look at
+" - http://wrotenwrites.com/a_modern_terminal_workflow_2/
+" - https://github.com/w0rp/ale (htmlhint and friends also)
+" - https://github.com/junegunn/dotfiles/blob/master/vimrc
 
 " Initialization {
 if has('vim_starting')
@@ -80,6 +84,33 @@ let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
+
+" leader keys
+let maplocalleader = "\\"
+let mapleader="\<SPACE>"
+
+set nospell
+set relativenumber
+set t_Co=256
+
+" folding
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+
+" Experimental: Change to current files directory
+set autochdir " may interfere with some plugins
+
+if has('persistent_undo')
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+" Hidden characters
+" ¬¦«»¶→⌂⌐⏎⌫⌧∕_
+set showbreak=⏎\
+set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 
 " }
 
@@ -461,43 +492,10 @@ endif
 
 " Previously localinit {
 
-" TODO: have a look at
-" - http://wrotenwrites.com/a_modern_terminal_workflow_2/
-" - https://github.com/w0rp/ale (htmlhint and friends also)
-" - https://github.com/junegunn/dotfiles/blob/master/vimrc
-
 " Neovim pyenv paths {
 " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
-" }
-
-" Basic configuration {
-let maplocalleader = "\\"
-let mapleader="\<SPACE>"
-
-set nospell
-set relativenumber
-set t_Co=256
-
-set foldenable
-set foldlevelstart=10
-set foldnestmax=10
-set foldmethod=indent
-
-" Experimental: Change to current files directory
-set autochdir " may interfere with some plugins
-"autocmd BufEnter * silent! lcd %:p:h
-
-if has('persistent_undo')
-    set undodir=~/.undodir/
-    set undofile
-endif
-
-" ¬¦«»¶→⌂⌐⏎⌫⌧∕_
-set showbreak=⏎\
-set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
-
 " }
 
 " Deoplete / Omnicompletion {
@@ -608,110 +606,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" }
-
-" Mappings {
-
-" Leader-I - edit certain kinds of files
-nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_init.vim<CR>
-nnoremap <silent> <leader>ik :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_bundles.vim<CR>
-nnoremap <silent> <leader>ij :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
-nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
-
-" Toggles
-nnoremap <leader>tt :TagbarToggle<CR>
-
-" Clear search highlight
-nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
-
-" Reduce finger movement for Esc
-inoremap jk <Esc>
-
-" Arrow keys
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
-
-" Move up and down visually
-nnoremap j gj
-nnoremap k gk
-
-" Disable arrow keys completely in Insert Mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-" Moving lines
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
-xnoremap < <gv
-xnoremap > >gv
-
-" Splits - same mappings as in tmux
-nnoremap <Leader>- :split<CR>
-nnoremap <Leader>\| :vsplit<CR>
-
-" Open previously opened buffer
-nmap <Leader><Leader> <c-^>
-nnoremap <Leader><Tab> :bnext!<CR>
-nnoremap <Leader><S-tab> :bprev!<CR>
-"nnoremap <C-Left> :bprev!<CR><Paste>
-
-"nmap <Leader><Space>o :lopen<CR>      " open location window
-"nmap <Leader><Space>c :lclose<CR>     " close location window
-"nmap <Leader><Space>, :ll<CR>         " go to current error/warning
-"nmap <Leader><Space>n :lnext<CR>      " next error/warning
-"nmap <Leader><Space>p :lprev<CR>      " previous error/warning
-
-" Save with Ctrl-C
-map <C-s> :w<cr>
-imap <C-s> <ESC>:w<cr>
-
-" Close buffer with Ctrl-Q
-map <C-q> :bd<cr>
-imap <C-q> <ESC>:bd<cr>
-
-" Make Y behave
-nnoremap Y y$
-
-" qq record, Q replay
-nnoremap Q @q
-
-" Prepend/Append to all adjacent lines with same indentation
-nmap <silent> <leader>I ^vio<C-V>I
-nmap <silent> <leader>A ^vio<C-V>$A
-
-" Use very magic regexps by default
-nnoremap / /\v
-cnoremap %s/ %s/\v
-
-" Toggle folds
-nmap <leader>z za
-
-" Jump to next Neomake error
-nnoremap <leader>ne :ll<CR>
-
-" Fuzzy file finder
-nnoremap <silent> <leader>e :GitFiles<CR>
-
-" vim-sneak
-let g:sneak#s_next = 1
-nmap f <Plug>Sneak_f
-nmap F <Plug>Sneak_F
-xmap f <Plug>Sneak_f
-xmap F <Plug>Sneak_F
-omap f <Plug>Sneak_f
-omap F <Plug>Sneak_F
 
 " }
 

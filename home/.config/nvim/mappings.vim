@@ -1,7 +1,3 @@
-"" Split
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
-
 "" Git
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
@@ -115,9 +111,7 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>o :.Gbrowse<CR>
 
 " Leader-I - edit certain kinds of files
-nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_init.vim<CR>
-nnoremap <silent> <leader>ik :e $HOMESHICK_REPOS/runcom/home/.config/nvim/local_bundles.vim<CR>
-nnoremap <silent> <leader>ij :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
 nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 

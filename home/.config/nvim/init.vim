@@ -35,6 +35,10 @@ endif
 call plug#end()
 
 filetype plugin indent on
+
+" https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
 " Basic Setup {
@@ -197,7 +201,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 " }
 
-"" NERDTree configuration
+"" NERDTree configuration {
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -225,6 +229,8 @@ if g:vim_bootstrap_editor == 'nvim'
 else
   nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
+
+" }
 
 " Functions {
 if !exists('*s:setupWrapping')
@@ -274,14 +280,9 @@ source ~/.config/nvim/mappings.vim
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
-
-" elixir
-
-
 " erlang
 let erlang_folding = 1
 let erlang_show_errors = 1
-
 
 " go
 let g:tagbar_type_go = {
@@ -357,18 +358,15 @@ augroup go
 
 augroup END
 
-
 " haskell
 let g:haskell_conceal_wide = 1
 let g:haskell_multiline_strings = 1
 let g:necoghc_enable_detailed_browse = 1
 autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
 
-
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
-
 
 " javascript
 "let g:javascript_enable_domhtmlcss = 1
@@ -378,28 +376,6 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
   "autocmd!
   "autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
 "augroup END
-
-
-" lisp
-
-
-" lua
-
-
-" ocaml
-" Add Merlin to rtp
-"let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-"execute "set rtp+=" . g:opamshare . "/merlin/vim"
-
-" Set Merlin as Syntastic checker for OCaml
-let g:syntastic_ocaml_checkers = ['merlin']
-
-
-" perl
-
-
-" php
-
 
 " python
 " vim-python
@@ -432,7 +408,6 @@ let g:airline#extensions#virtualenv#enabled = 1
 let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
-
 " ruby
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
@@ -455,24 +430,6 @@ let g:tagbar_type_ruby = {
     \ ]
 \ }
 
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-" Ruby refactory
-nnoremap <leader>rap  :RAddParameter<cr>
-nnoremap <leader>rcpc :RConvertPostConditional<cr>
-nnoremap <leader>rel  :RExtractLet<cr>
-vnoremap <leader>rec  :RExtractConstant<cr>
-vnoremap <leader>relv :RExtractLocalVariable<cr>
-nnoremap <leader>rit  :RInlineTemp<cr>
-vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-vnoremap <leader>rem  :RExtractMethod<cr>
-
-
 " rust
 " Vim racer
 au FileType rust nmap gd <Plug>(rust-def)
@@ -480,23 +437,12 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
-
-" scala
-
 " }
 
 "" Include user's local vim config
 if filereadable(expand("~/.config/nvim/local_init.vim"))
   source ~/.config/nvim/local_init.vim
 endif
-
-" Previously localinit {
-
-" Neovim pyenv paths {
-" https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
-" }
 
 " Deoplete / Omnicompletion {
 let g:deoplete#enable_at_startup = 1
@@ -520,8 +466,8 @@ augroup omnifuncs
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
-
 " tern
+
 if exists('g:plugs["tern_for_vim"]')
   "enable keyboard shortcuts - <Leader>tn, tr, tR
   "let g:tern_map_keys=1
@@ -558,21 +504,21 @@ endif
 " Neomake
 "autocmd! BufWritePost * Neomake
 "let g:neomake_verbose = 3
-let g:neomake_python_enabled_makers = ['pylint']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_javascript_jsx_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_json_enabled_makers = ['jsonlint']
+"let g:neomake_python_enabled_makers = ['pylint']
+"let g:neomake_javascript_enabled_makers = ['eslint']
+"let g:neomake_javascript_jsx_enabled_makers = ['eslint']
+"let g:neomake_jsx_enabled_makers = ['eslint']
+"let g:neomake_json_enabled_makers = ['jsonlint']
 
-let g:neomake_javascript_eslint_maker = {
-\ 'args': ['--env', 'es6', '-f', 'compact'],
-\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
-\ }
+"let g:neomake_javascript_eslint_maker = {
+"\ 'args': ['--env', 'es6', '-f', 'compact'],
+"\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
+"\ }
 
-let g:neomake_error_sign = {'text': '»', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {'text': '•', 'texthl': 'NeomakeWarningSign'}
-let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
-let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
+"let g:neomake_error_sign = {'text': '»', 'texthl': 'NeomakeErrorSign'}
+"let g:neomake_warning_sign = {'text': '•', 'texthl': 'NeomakeWarningSign'}
+"let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
+"let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
 
 " ALE
 let g:ale_sign_error = '»'
@@ -599,7 +545,6 @@ let g:lightline = {
     \ },
     \ }
 
-
 " vim-easy-align.vim
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -616,5 +561,3 @@ nmap ga <Plug>(EasyAlign)
 set termguicolors
 
 "}
-
-" }

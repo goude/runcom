@@ -43,19 +43,6 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 # Tweak this value if necessary
 export KEYTIMEOUT=20
 
-# Global zsh key bindings
-bindkey "^?" backward-delete-char
-bindkey "^W" backward-kill-word
-bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
-bindkey "^U" kill-line
-bindkey '^R' history-incremental-search-backward
-
-bindkey -M viins 'jk' vi-cmd-mode
-bindkey -M viins ' ' magic-space
-bindkey -M vicmd "/" history-incremental-search-backward
-bindkey -M vicmd "?" history-incremental-search-forward
-bindkey -M vicmd "q" push-line
-
 # Fix esc behavior a la http://superuser.com/questions/516474/escape-not-idempotent-in-zshs-vi-emulation
 noop () { }
 zle -N noop
@@ -136,7 +123,25 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 # zsh-syntax-highlighting should be at end of .zshrc, according to instructions
 antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Apply antigen configuration
 antigen apply
+
+# Global zsh key bindings
+bindkey "^?" backward-delete-char
+bindkey "^W" backward-kill-word
+bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
+bindkey "^U" kill-line
+
+bindkey -M viins "^R" history-incremental-search-backward
+bindkey -M viins "^P" history-substring-search-up
+bindkey -M viins "^N" history-substring-search-down
+
+bindkey -M viins "jk" vi-cmd-mode
+bindkey -M viins " " magic-space
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+bindkey -M vicmd "q" push-line
 
 # Source more common setup
 source $HOME/.homesick/repos/runcom/rc.common-post

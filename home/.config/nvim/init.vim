@@ -523,6 +523,7 @@ endif
 " ALE
 let g:ale_sign_error = '»'
 let g:ale_sign_warning = '•'
+let g:ale_lint_delay = 1000
 
 " lightline
 set noshowmode  " disabled, since it's displayed by lightline

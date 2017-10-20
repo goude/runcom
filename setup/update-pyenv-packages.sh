@@ -8,7 +8,7 @@ fi
 
 pyenv activate neovim3
 
-$(pyenv which pip) install --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl
+$(pyenv which pip) install --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8
 
 ln -s "$(pyenv which flake8)" ~/bin/flake8
 ln -s "$(pyenv which tmuxp)" ~/bin/tmuxp

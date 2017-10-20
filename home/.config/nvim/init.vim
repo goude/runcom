@@ -524,6 +524,13 @@ endif
 let g:ale_sign_error = '»'
 let g:ale_sign_warning = '•'
 let g:ale_lint_delay = 1000
+let g:ale_fixers = {
+\   'python': [
+\      'autopep8',
+\      'isort',
+\      'yapf'
+\   ],
+\}
 
 " lightline
 set noshowmode  " disabled, since it's displayed by lightline

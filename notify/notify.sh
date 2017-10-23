@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Keep track of the drones
 # Don't worry, this will only run if you explicitly tell it to.
@@ -9,7 +9,7 @@ data="{"
 data+="\"uname\":\"$(uname -a)\","
 data+="\"uptime\":\"$(uptime)\","
 data+="\"date\":\"$(date)\","
-data+="\"xip\":\"$(curl -s canihazip.com/s)\","
+data+="\"xip\":\"$(curl -s https://canihazip.com/s)\","
 data+="\"ip\":\"$(hostname -I 2>/dev/null || ipconfig getifaddr en1)\","
 data+="\"hostname\":\"$(hostname)\""
 data+="}"

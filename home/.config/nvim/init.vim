@@ -381,7 +381,7 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 " vim-python
 augroup vimrc-python
   autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=80,100
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
@@ -552,6 +552,10 @@ let g:lightline = {
     \   'wordcount': 'wordCount#WordCount'
     \ },
     \ }
+
+" EditorConfig
+" Avoid overriding multi-line indicator already set up
+"let g:EditorConfig_max_line_indicator = "none"
 
 " vim-easy-align.vim
 " Start interactive EasyAlign in visual mode (e.g. vipga)

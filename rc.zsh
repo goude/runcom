@@ -120,7 +120,12 @@ elif [[ $system == 'Cygwin' ]]; then
 fi
 
 antigen bundle zsh-users/zsh-completions
-#antigen bundle zsh-users/zsh-autosuggestions
+
+# https://github.com/zsh-users/zsh-autosuggestions/issues/296
+if [[ $(zsh --version | awk '{print $2}') > 5.0.8 ]]; then
+  antigen bundle zsh-users/zsh-autosuggestions
+fi
+
 # zsh-syntax-highlighting should be at end of .zshrc, according to instructions
 antigen bundle zsh-users/zsh-syntax-highlighting
 

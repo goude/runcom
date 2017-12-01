@@ -41,6 +41,7 @@ alias f='fzf'
 alias ft='fzf-tmux'
 
 alias t='todo.sh -c'
+alias a='ansible'
 
 alias serve-directory='python3 -m http.server'
 

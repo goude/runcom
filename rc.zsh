@@ -11,6 +11,9 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
 fi
 # end profiling (see also section at end)
 
+export HISTFILE=~/.zsh_history
+export SAVEHIST=20000
+
 typeset -gU cdpath fpath mailpath path
 
 #path=(

@@ -11,9 +11,7 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
 fi
 # end profiling (see also section at end)
 
-export HISTFILE=~/.zsh_history
-export SAVEHIST=20000
-
+# dedupe paths
 typeset -gU cdpath fpath mailpath path
 
 #path=(
@@ -54,8 +52,12 @@ bindkey -M vicmd '\e' noop
 # Allow octothorpe-prefixed comments
 setopt -o interactivecomments
 
-# Share history
-setopt -o sharehistory
+# History options
+alias history='history 0' # make history show everything
+export HISTFILE=~/.zsh_history
+export HISTSIZE=20000
+export SAVEHIST=20000
+setopt share_history
 
 # Disable Ctrl-D
 set -o ignoreeof
@@ -85,8 +87,10 @@ antigen bundle git
 antigen bundle goude/liquidprompt
 antigen bundle Tarrasch/zsh-autoenv
 antigen bundle gnu-utils
-antigen bundle history # h, hsi
+
+# antigen bundle history # h, hsi
 antigen bundle history-substring-search
+
 antigen bundle lukechilds/zsh-better-npm-completion
 
 antigen bundle colored-man-pages

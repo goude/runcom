@@ -1,3 +1,9 @@
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 "" Git
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
@@ -190,12 +196,6 @@ nmap <silent> <leader>A ^vio<C-V>$A
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
-" Toggle folds
-nmap <leader>z za
-
-" Jump to next Neomake error
-nnoremap <leader>ne :ll<CR>
-
 " Fuzzy file finder
 nnoremap <silent> <leader>e :GitFiles<CR>
 
@@ -207,3 +207,11 @@ xmap f <Plug>Sneak_f
 xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
+
+" vim-easy-align.vim
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+

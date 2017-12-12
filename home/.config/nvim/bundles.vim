@@ -1,32 +1,28 @@
-"*****************************************************************************
-"" Plug install packages
-"*****************************************************************************
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
-"Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
-"Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
+
 let g:make = 'gmake'
 if exists('make')
         let g:make = 'make'
 endif
+
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 "" Vim-Session
@@ -55,27 +51,18 @@ Plug 'tomasr/molokai'
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
-
-" elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'carlosgaldino/elixir-snippets'
-
-
 " erlang
 Plug 'jimenezrick/vimerl'
-
 
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
 
 " haskell
 "" Haskell Bundle
 Plug 'eagletmt/neco-ghc'
 Plug 'dag/vim2hs'
 Plug 'pbrisbin/vim-syntax-shakespeare'
-
 
 " html
 "" HTML Bundle
@@ -84,43 +71,31 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
-
 " javascript
 " Javascript Bundle
 "Plug 'jelera/vim-javascript-syntax'
 
-
 " lisp
 "" Lisp Bundle
 Plug 'vim-scripts/slimv.vim'
-
 
 " lua
 "" Lua Bundle
 Plug 'xolox/vim-lua-ftplugin'
 Plug 'xolox/vim-lua-inspect'
 
-
-" ocaml
-"" OCaml Bundle
-"Plug 'def-lkb/ocp-indent-vim'
-
-
 " perl
 "" Perl Bundle
 Plug 'vim-perl/vim-perl'
 Plug 'c9s/perlomni.vim'
 
-
 " php
 "" PHP Bundle
 Plug 'arnaud-lb/vim-php-namespace'
 
-
 " python
 "" Python Bundle
 " Plug 'davidhalter/jedi-vim'
-
 
 " ruby
 Plug 'tpope/vim-rails'
@@ -129,21 +104,12 @@ Plug 'tpope/vim-projectionist'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
 
-
 " rust
 " Vim racer
 Plug 'racer-rust/vim-racer'
 
 " Rust.vim
 Plug 'rust-lang/rust.vim'
-
-
-" scala
-" sbt-vim
-"Plug 'ktvoelker/sbt-vim'
-"" vim-scala
-"Plug 'derekwyatt/vim-scala'
-
 
 " basic plugins
 Plug 'tpope/vim-repeat'
@@ -162,7 +128,6 @@ Plug '~/.local/share/base16/templates/vim'
 
 " Status line
 Plug 'itchyny/lightline.vim'
-"Plug 'daviesjamie/vim-base16-lightline'
 Plug 'ap/vim-buftabline'
 
 " File handling (TODO: unite->denite)
@@ -172,7 +137,6 @@ Plug 'shougo/vimfiler.vim'
 " Coding
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
-"Plug 'neomake/neomake'
 Plug 'w0rp/ale'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
 Plug 'zchee/deoplete-jedi'
@@ -199,9 +163,6 @@ Plug 'Quramy/ng-tsserver'
 
 " Experimental - can be disabled if needed
 Plug 'severin-lemaignan/vim-minimap'
-
-" Your own wiki
-"Plug 'vimwiki/vimwiki'
 
 " Text editing
 Plug 'junegunn/goyo.vim'

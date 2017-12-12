@@ -12,9 +12,6 @@ endif
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-"let g:vim_bootstrap_langs = "c,elixir,erlang,go,haskell,html,javascript,lisp,lua,ocaml,perl,php,python,ruby,rust,scala"
-let g:vim_bootstrap_editor = "nvim"
-
 if !filereadable(vimplug_exists)
   echo "Installing Vim-Plug..."
   echo ""
@@ -52,14 +49,11 @@ set binary
 "" Fix backspace indent
 set backspace=indent,eol,start
 
-"" Tabs. May be overriten by autocmd rules
+"" Tabs. May be overwriten by autocmd rules
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
-
-"" Map leader to ,
-let mapleader=','
 
 "" Enable hidden buffers
 set hidden
@@ -146,11 +140,7 @@ else
   let g:indentLine_concealcursor = 0
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
-
-
 endif
-
-
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -169,22 +159,9 @@ set titlestring=%F
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
-
-" vim-airline
-"let g:airline_theme = 'powerlineish'
-"let g:airline#extensions#syntastic#enabled = 1
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tagbar#enabled = 1
-"let g:airline_skip_empty_sections = 1
 
 " }
 
@@ -222,13 +199,6 @@ let Grep_Skip_Dirs = '.git node_modules'
 " vimshell.vim
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
-
-" terminal emulation
-if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
-else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
-endif
 
 " }
 
@@ -279,10 +249,6 @@ source ~/.config/nvim/mappings.vim
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
-
-" erlang
-let erlang_folding = 1
-let erlang_show_errors = 1
 
 " go
 let g:tagbar_type_go = {
@@ -400,9 +366,6 @@ let g:jedi#smart_auto_mappings = 0
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
 
-" vim-airline
-let g:airline#extensions#virtualenv#enabled = 1
-
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
@@ -429,13 +392,6 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-
-" rust
-" Vim racer
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " }
 
@@ -501,25 +457,6 @@ endif
 "let g:tagbar_autofocus = 0
 "autocmd VimEnter * TagbarOpen
 
-" Neomake
-"autocmd! BufWritePost * Neomake
-"let g:neomake_verbose = 3
-"let g:neomake_python_enabled_makers = ['pylint']
-"let g:neomake_javascript_enabled_makers = ['eslint']
-"let g:neomake_javascript_jsx_enabled_makers = ['eslint']
-"let g:neomake_jsx_enabled_makers = ['eslint']
-"let g:neomake_json_enabled_makers = ['jsonlint']
-
-"let g:neomake_javascript_eslint_maker = {
-"\ 'args': ['--env', 'es6', '-f', 'compact'],
-"\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
-"\ }
-
-"let g:neomake_error_sign = {'text': '»', 'texthl': 'NeomakeErrorSign'}
-"let g:neomake_warning_sign = {'text': '•', 'texthl': 'NeomakeWarningSign'}
-"let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
-"let g:neomake_info_sign = {'text': 'I', 'texthl': 'NeomakeInfoSign'}
-
 " ALE
 let g:ale_sign_error = '»'
 let g:ale_sign_warning = '•'
@@ -556,13 +493,6 @@ let g:lightline = {
 " EditorConfig
 " Avoid overriding multi-line indicator already set up
 "let g:EditorConfig_max_line_indicator = "none"
-
-" vim-easy-align.vim
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 " }
 

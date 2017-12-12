@@ -46,7 +46,7 @@ alias a='ansible'
 alias serve-directory='python3 -m http.server'
 
 alias pan='pyenv activate neovim3'
-alias paj='pyenv activate jupyter-virtualenv'
+alias paj='pyenv activate pyenv-jupyter'
 alias pad='pyenv deactivate'
 
 #alias cp-progress="rsync --progress -ravz"

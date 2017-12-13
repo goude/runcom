@@ -7,6 +7,6 @@ echo "Setting up programming environments..."
 ./setup-neovim.sh
 
 ./setup-nvm.sh
-./setup-node.sh
+./update-node-packages.sh
 
 ./setup-rbenv.sh

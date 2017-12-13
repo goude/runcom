@@ -2,7 +2,7 @@
 source "$HOME/.nvm/nvm.sh"
 nvm use node
 
-npm install -g htmlhint write-good jsonlint base16-builder-node eslint eslint-plugin-react tern
+npm install -g npm@latest htmlhint write-good jsonlint base16-builder-node eslint eslint-plugin-react tern tldr
 
 # TODO: check https://github.com/sindresorhus/awesome-nodejs
 

@@ -73,7 +73,7 @@ function center-text() {
   unset colcount
 }
 
-# neovim launcher
+# neovim launchers
 n () {
   if [ $# -eq 0 ]
     then

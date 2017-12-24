@@ -9,20 +9,12 @@ fi
 # Python 3 libs and command line tools
 pyenv activate neovim3
 
-$(pyenv which pip) install --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8
+$(pyenv which pip) install --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8 topydo
 
 ln -sf "$(pyenv which flake8)" ~/bin/flake8
 ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
 ln -sf "$(pyenv which jrnl)" ~/bin/jrnl
+ln -sf "$(pyenv which topydo)" ~/bin/topydo
 
 pyenv rehash
-pyenv deactivate
-
-
-# Python 2 libs and command line tools
-pyenv activate neovim2
-
-$(pyenv which pip) install --upgrade todopy
-ln -sf "$(pyenv which todopy)" ~/bin/todopy
-
 pyenv deactivate

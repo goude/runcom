@@ -98,7 +98,7 @@ set foldnestmax=10
 set foldmethod=indent
 
 " Experimental: Change to current files directory
-set autochdir " may interfere with some plugins
+" set autochdir " may interfere with some plugins
 
 if has('persistent_undo')
     set undodir=~/.undodir/

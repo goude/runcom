@@ -160,7 +160,8 @@ source $HOME/.homesick/repos/runcom/rc.common-post
 
 # Setup right prompt
 setopt prompt_subst
-export RPROMPT='$RUNCOM_TODO_CONTEXT'
+#export RPROMPT='$RUNCOM_TODO_CONTEXT'
+export RPROMPT='$([ -f ~/.runcom-rprompt ] && cat ~/.runcom-rprompt) $RUNCOM_TODO_CONTEXT'
 export DISABLE_AUTO_TITLE="true"
 
 # Command-line Fuzzy Finder

@@ -502,4 +502,8 @@ let g:lightline = {
 " https://github.com/zeit/hyper/issues/364
 set termguicolors
 
+" Speed up alacritty on OSX
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+
 "}

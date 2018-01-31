@@ -9,7 +9,7 @@ fi
 # Python 3 libs and command line tools
 pyenv activate neovim3
 
-$(pyenv which pip) install --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8 topydo
+$(pyenv which pip) install --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8 topydo mypy
 $(pyenv which pip) install topydo[columns]
 $(pyenv which pip) install topydo[ical]
 

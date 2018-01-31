@@ -506,4 +506,7 @@ set termguicolors
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 
+" Allow crontab editing
+set backupskip=/tmp/*,/private/tmp/*
+
 "}

@@ -33,17 +33,18 @@ apt-get install -y \
   libxslt-dev \
   ghc \
   pandoc \
-  python-dev \
-  python3-cairo \
-  python3-dev \
-  python3-lxml \
-  python3-matplotlib \
-  python3-pandas \
-  python3-pip \
-  python3-venv \
   cifs-utils \
   openjdk-8-jre-headless \
   postgresql-client
+
+#python-dev \
+#python3-cairo \
+#python3-dev \
+#python3-lxml \
+#python3-matplotlib \
+#python3-pandas \
+#python3-pip \
+#python3-venv \
 
 # Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -55,6 +56,7 @@ add-apt-repository \
 
 apt-get update
 apt-get install -y docker-ce
+apt-get clean
 
 gpasswd -a vagrant docker
 

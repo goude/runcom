@@ -36,12 +36,6 @@ RUN \
     golang \
     ghc \
     pandoc \
-    python-dev \
-    python3-dev python3-pip python3-venv \
-    python3-lxml \
-    python3-cairo \
-    python3-matplotlib python3-pandas \
-    python3-sklearn \
     postgresql-client \
     openjdk-8-jre-headless && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
@@ -55,3 +49,10 @@ RUN \
   echo "runcom:runcom" | chpasswd && \
   adduser runcom sudo && \
   apt-get clean
+
+#python-dev \
+#python3-dev python3-pip python3-venv \
+#python3-lxml \
+#python3-cairo \
+#python3-matplotlib python3-pandas \
+#python3-sklearn \

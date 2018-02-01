@@ -87,10 +87,6 @@ let g:session_command_aliases = 1
 let maplocalleader = "\\"
 let mapleader="\<SPACE>"
 
-set nospell
-set relativenumber
-set t_Co=256
-
 " folding
 set foldenable
 set foldlevelstart=10
@@ -105,6 +101,8 @@ if has('persistent_undo')
     set undofile
 endif
 
+set nospell
+
 " Hidden characters
 " ¬¦«»¶→⌂⌐⏎⌫⌧∕_
 set showbreak=⏎\
@@ -116,6 +114,7 @@ set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 syntax on
 set ruler
 set number
+set relativenumber
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
@@ -476,7 +475,7 @@ let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-    \   'right': [ [ 'wordcount', 'lineinfo' ],
+    \   'right': [ [ 'wordcount', 'lineinfo', 'charvaluehex' ],
     \              [ 'percent' ],
     \              [ 'fileformat', 'fileencoding', 'filetype', ] ]
     \ },

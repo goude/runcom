@@ -43,10 +43,6 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 
-"*****************************************************************************
-"" Custom bundles
-"*****************************************************************************
-
 " c
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'

@@ -83,10 +83,6 @@ n () {
   fi
 }
 
-nt () {
-  nvim "$HOME/.homesick/repos/wiki/todo/todo.txt"
-}
-
 # https://coderwall.com/p/_s_xda/fix-ssh-agent-in-reattached-tmux-session-shells
 fixssh() {
   for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do

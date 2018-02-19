@@ -10,7 +10,7 @@ data+="\"uname\":\"$(uname -a)\","
 data+="\"uptime\":\"$(uptime)\","
 data+="\"date\":\"$(date)\","
 data+="\"xip\":\"$(curl -s https://canihazip.com/s)\","
-data+="\"ip\":\"$(hostname -I 2>/dev/null || ipconfig getifaddr en1)\","
+data+="\"ip\":\"$(hostname -I 2>/dev/null || /usr/sbin/ipconfig getifaddr en1)\","
 data+="\"hostname\":\"$(hostname)\""
 data+="}"
 

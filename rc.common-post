@@ -2,7 +2,7 @@
 
 # OS specific settings
 if [[ $system == 'Linux' ]]; then
-    alias ls='ls -h --color=auto'
+    alias ls='ls -hpF --color=auto'
     alias rm='rm -I'
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
@@ -17,7 +17,7 @@ if [[ $system == 'OSX' ]]; then
     export CLICOLOR=1
 
     if [[ -x /usr/local/bin/gls ]]; then
-        alias ls='/usr/local/bin/gls -h --color=auto'
+        alias ls='/usr/local/bin/gls -hpF --color=auto'
     else
         alias ls='ls -hG'
     fi

@@ -5,7 +5,7 @@
 " - https://github.com/w0rp/ale (htmlhint and friends also)
 " - https://github.com/junegunn/dotfiles/blob/master/vimrc
 
-" Initialization {
+" Initialization / load bundles {
 if has('vim_starting')
   set nocompatible
 endif
@@ -38,7 +38,7 @@ let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
-" Basic Setup {
+" Basic setup {
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -121,7 +121,7 @@ endif
 
 " }
 
-" Visual Settings {
+" Visual settings {
 syntax on
 set ruler
 set number
@@ -188,7 +188,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 " }
 
-"" NERDTree configuration {
+" NERDTree configuration {
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -222,7 +222,7 @@ if !exists('*s:setupWrapping')
 endif
 " }
 
-" Autocmd Rules {
+" Autocmd rules {
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -252,7 +252,9 @@ set autoread
 
 " }
 
+" Load mappings {
 source ~/.config/nvim/mappings.vim
+" }
 
 " Custom configs {
 
@@ -405,12 +407,14 @@ let g:tagbar_type_ruby = {
 
 " }
 
+" Local configuration {
 "" Include user's local vim config
 if filereadable(expand("~/.config/nvim/local_init.vim"))
   source ~/.config/nvim/local_init.vim
 endif
+" }
 
-" Deoplete / Omnicompletion {
+" Deoplete / omnicompletion {
 let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
@@ -454,7 +458,7 @@ autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
 
 " }
 
-" Plugin Settings {
+" Plugin settings {
 
 " Base16
 let g:base16_shell_path = '~/.local/share/base16/templates/shell/scripts'

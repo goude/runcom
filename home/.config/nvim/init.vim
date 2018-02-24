@@ -108,6 +108,17 @@ set nospell
 set showbreak=⏎\
 set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 
+" Disable visualbell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
+"" Copy/Paste/Cut
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
 " }
 
 " Visual Settings {

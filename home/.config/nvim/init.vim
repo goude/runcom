@@ -46,6 +46,10 @@ set fileencodings=utf-8
 set bomb
 set binary
 
+" Fix highlighting colors for vim-sneak
+autocmd ColorScheme * hi Sneak guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+autocmd ColorScheme * hi SneakScope guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+
 "" Fix backspace indent
 set backspace=indent,eol,start
 

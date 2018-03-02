@@ -42,6 +42,7 @@ alias s='ssh'
 alias t='todo.sh -c'
 alias v='vim'
 
+alias jc='jupyter-console'
 alias pan='pyenv activate neovim3'
 alias paj='pyenv activate pyenv-jupyter'
 alias pad='pyenv deactivate'

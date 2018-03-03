@@ -29,8 +29,12 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-bind 9 select-window -p
-bind 0 select-window -n
+# bind 9 select-window -p
+# bind 0 select-window -n
+
+# swap panes AND switch focus -> cursor stays in 'same' location
+bind 9 select-pane -L\; swap-pane -U
+bind 0 select-pane -R\; swap-pane -D
 
 # use PREFIX C-l to clear screen
 bind C-l send-keys 'C-l'
@@ -39,10 +43,10 @@ bind C-l send-keys 'C-l'
 #bind -r C-l select-window -t :+
 
 # # resize panes using PREFIX H, J, K, L
-bind H resize-pane -L 5
-bind J resize-pane -D 5
-bind K resize-pane -U 5
-bind L resize-pane -R 5
+bind H resize-pane -L 10
+bind J resize-pane -D 10
+bind K resize-pane -U 10
+bind L resize-pane -R 10
 
 # force a reload of the config file
 unbind r
@@ -82,7 +86,7 @@ set -g status-left "#[fg=colour01]#h #[fg=colour11] #($HOME/bin/tmux-status-line
 
 # Show session name, window & pane number, date and time on right side of status bar
 set -g status-right-length 60
-set -g status-right "#[fg=colour04]#S #I:#P #[fg=colour11]#(free-disk-space) #[fg=colour16]#(thxtime)"
+set -g status-right "#[fg=colour04]#S W#I:P#P #[fg=colour11]#(free-disk-space) #[fg=colour16]#(thxtime)"
 
 # Command bindings
 bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"

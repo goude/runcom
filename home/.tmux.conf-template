@@ -29,6 +29,9 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+bind 9 select-window -p
+bind 0 select-window -n
+
 # use PREFIX C-l to clear screen
 bind C-l send-keys 'C-l'
 

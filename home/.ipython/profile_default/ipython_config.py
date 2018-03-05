@@ -34,10 +34,13 @@ c.InteractiveShellApp.exec_lines = [
     '%autoreload 2',
     'import pandas as pd',
     'import numpy as np',
-    'import matplotlib',
-    #'matplotlib.use(\'macosx\')',
-    'import matplotlib.pyplot as plt',
-    'plt.ion()'
+    '''
+if 'IPython' not in str(type(get_ipython())):
+    print("YOYOYO")
+    import matplotlib
+    import matplotlib.pyplot as plt
+    plt.ion()
+    '''
 ]
 
 ## A list of dotted module names of IPython extensions to load.
@@ -173,7 +176,7 @@ c.InteractiveShellApp.exec_lines = [
 #c.InteractiveShell.banner1 = 'Python 3.5.2 (default, Sep 28 2016, 18:08:09) \nType "copyright", "credits" or "license" for more information.\n\nIPython 5.1.0 -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
 
 ## The part of the banner to be printed after the profile
-#c.InteractiveShell.banner2 = ''
+#c.InteractiveShell.banner2 = ' WOO-HOO'
 
 ## Set the size of the output cache.  The default is 1000, you can change it
 #  permanently in your config file.  Setting it to 0 completely disables the
@@ -189,7 +192,7 @@ c.InteractiveShellApp.exec_lines = [
 #c.InteractiveShell.color_info = True
 
 ## Set the color scheme (NoColor, Neutral, Linux, or LightBG).
-#c.InteractiveShell.colors = 'Neutral'
+#c.InteractiveShell.colors = 'Linux'
 
 ##
 #c.InteractiveShell.debug = False

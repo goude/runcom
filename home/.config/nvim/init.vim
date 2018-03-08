@@ -508,9 +508,39 @@ let g:lightline = {
     \ },
     \ }
 
+" tmux-complete (deoplete needs no trigger)
+let g:tmuxcomplete#trigger = ''
+
 " EditorConfig
 " Avoid overriding multi-line indicator already set up
 "let g:EditorConfig_max_line_indicator = "none"
+
+" expand-region
+let g:expand_region_text_objects = {
+      \ 'iw'  :1,
+      \ 'iW'  :1,
+      \ 'i"'  :1,
+      \ 'i''' :1,
+      \ 'i]'  :1,
+      \ 'ib'  :1,
+      \ 'iB'  :1,
+      \ 'il'  :0,
+      \ 'ip'  :0,
+      \ 'ie'  :0,
+      \ }
+
+call expand_region#custom_text_objects({
+      \ "\/\\n\\n\<CR>": 0,
+      \ 'a]' :0,
+      \ 'ab' :0,
+      \ 'aB' :0,
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
+
+"map K <Plugj(expand_region_expand)
+"map J <Plug>(expand_region_shrink)
+
 
 " }
 

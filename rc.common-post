@@ -31,6 +31,12 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
     eval `gdircolors $HOME/.dircolors`
 fi
 
+# colorls
+if [[ -f ~/.rbenv/shims/colorls ]]; then
+    alias ls=colorls
+    source "$(dirname $(gem which colorls))/tab_complete.sh"
+fi
+
 # Generic colou?ri[sz]er
 . $rcfiles/home/.grc/grc.bashrc
 

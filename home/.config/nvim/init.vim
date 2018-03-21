@@ -554,6 +554,11 @@ set termguicolors
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 
+" Override search highlights
+set hlsearch
+hi! Search guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+hi! IncSearch guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+
 " Allow crontab editing
 set backupskip=/tmp/*,/private/tmp/*
 

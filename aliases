@@ -2,11 +2,6 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-alias l='ls -A --color'
-alias ll='ls -lAh --color'
-alias la='ls -A --color'
-alias lsa='ls -lAh --color'
-
 alias df='df -h'
 
 alias gs='git status'

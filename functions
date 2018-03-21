@@ -32,6 +32,15 @@ git_user_name_prompt () {
     fi
 }
 
+git_user_name_prompt_mkii () {
+    gitname=$(git config user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
+    if [[ $gitname =~ 'as' ]]; then
+      echo -n $gitname
+    else
+      echo -n $gitname
+    fi
+}
+
 # Which commands are most commonly used?
 # (use this information to improve workflow)
 history-high-score () {

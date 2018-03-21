@@ -33,8 +33,16 @@ fi
 
 # colorls
 if [[ -f ~/.rbenv/shims/colorls ]]; then
-    alias ls=colorls
+    alias l='colorls -A'
+    alias ls='colorls'
+    alias ll='colorls -A -l'
+    alias lt='colorls --tree'
     source "$(dirname $(gem which colorls))/tab_complete.sh"
+else
+    alias l='ls -A --color'
+    alias ll='ls -lAh --color'
+    alias lt='tree'
+    alias lsa='ls -lAh --color'
 fi
 
 # Generic colou?ri[sz]er

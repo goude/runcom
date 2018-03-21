@@ -9,9 +9,13 @@ fi
 # Python 3 libs and command line tools
 pyenv activate neovim3
 
-$(pyenv which pip) install --no-cache-dir --upgrade jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8 topydo mypy yapf
-$(pyenv which pip) install topydo[columns]
-$(pyenv which pip) install topydo[ical]
+install_command="$(pyenv which pip) install --no-cache-dir --upgrade"
+
+$install_command pip
+$install_command jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8 topydo mypy yapf neovim
+$install_command topydo[columns] topydo[ical]
+
+pyenv rehash
 
 ln -sf "$(pyenv which flake8)" ~/bin/flake8
 ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
@@ -20,5 +24,4 @@ ln -sf "$(pyenv which topydo)" ~/bin/topydo
 ln -sf "$(pyenv which mypy)" ~/bin/mypy
 ln -sf "$(pyenv which mypy)" ~/bin/yapf
 
-pyenv rehash
 pyenv deactivate

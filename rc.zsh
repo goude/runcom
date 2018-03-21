@@ -84,7 +84,7 @@ source $HOME/.homesick/repos/antigen/antigen.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/
 
 antigen bundle git
-antigen bundle goude/liquidprompt
+#antigen bundle goude/liquidprompt
 antigen bundle Tarrasch/zsh-autoenv
 antigen bundle gnu-utils
 
@@ -125,6 +125,17 @@ elif [[ $system == 'Linux' ]]; then
 elif [[ $system == 'Cygwin' ]]; then
   antigen bundle cygwin
 fi
+
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user dir dir_writable virtualenv pyenv todo docker_machine aws aws_eb_env nvm rbenv vcs)
+POWERLEVEL9K_CUSTOM_USER="\$(echo git_user_name_prompt_mkii)"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+
+antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen bundle zsh-users/zsh-completions
 

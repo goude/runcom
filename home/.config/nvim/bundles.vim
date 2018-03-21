@@ -182,3 +182,7 @@ Plug 'rust-lang/rust.vim'
 " TODO
 " https://github.com/ivanov/vim-ipython/
 " https://github.com/kana/vim-arpeggio
+
+" Should be loaded last, according to instructions
+Plug 'ryanoasis/vim-devicons'
+

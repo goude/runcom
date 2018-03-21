@@ -119,7 +119,7 @@ antigen bundle vagrant
 if [[ $system == 'OSX' ]]; then
   antigen bundle brew
   antigen bundle brew-cask
-  antigen bundle osx
+  # antigen bundle osx
 elif [[ $system == 'Linux' ]]; then
   # pass
 elif [[ $system == 'Cygwin' ]]; then

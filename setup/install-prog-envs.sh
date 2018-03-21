@@ -10,3 +10,4 @@ echo "Setting up programming environments..."
 ./update-node-packages.sh
 
 ./setup-rbenv.sh
+./setup-ruby.sh

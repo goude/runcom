@@ -131,9 +131,17 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user dir dir_writable virtualenv pyenv todo docker_machine aws aws_eb_env nvm rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user dir dir_writable pyenv todo docker_machine nvm rbenv vcs)
 POWERLEVEL9K_CUSTOM_USER="\$(echo git_user_name_prompt_mkii)"
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_STATUS_VERBOSE=false
+
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 

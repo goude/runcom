@@ -8,8 +8,8 @@ echo "Performing post-installation..."
 ln -s $HOME/.tmux.conf-template $HOME/.tmux.conf
 
 # Set initial color scheme
-ln -s $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-soft.sh $HOME/.base16_theme
-source $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-soft.sh
+ln -s $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-pale.sh $HOME/.base16_theme
+source $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-pale.sh
 
 ./install-prog-envs.sh
 

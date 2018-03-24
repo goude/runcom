@@ -128,13 +128,13 @@ set-option -g pane-border-fg colour18
 
 #set-window-option -g clock-mode-colour colour02
 
-#set-option -g status-bg colour18
-#set-option -g status-fg colour20
+set-option -g status-bg colour18
+set-option -g status-fg colour20
 
-#set-window-option -g window-status-bg colour18
-#set-window-option -g window-status-current-bg colour18
-#set-window-option -g window-status-current-fg colour16
-#set-window-option -g window-status-fg colour20
+set-window-option -g window-status-bg colour18
+set-window-option -g window-status-current-bg colour18
+set-window-option -g window-status-current-fg colour16
+set-window-option -g window-status-fg colour20
 
 set-window-option -g window-status-attr default
 set-window-option -g window-status-current-attr default

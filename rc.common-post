@@ -31,6 +31,11 @@ if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
     eval `gdircolors $HOME/.dircolors`
 fi
 
+# rbenv
+if [[ -d $HOME/.rbenv/bin ]]; then
+  eval "$(rbenv init -)"
+fi
+
 # colorls
 if [[ -f ~/.rbenv/shims/colorls ]]; then
     alias l='colorls -A'
@@ -71,11 +76,6 @@ BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
 
 # fasd navigator
 eval "$(fasd --init auto)"
-
-# rbenv
-if [[ -d $HOME/.rbenv/bin ]]; then
-  eval "$(rbenv init -)"
-fi
 
 # nvm (slows down things)
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

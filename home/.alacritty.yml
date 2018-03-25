@@ -61,19 +61,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "Fira Code" # should be "Fira Code" or something on macOS.
+    family: "FuraCode Nerd Font" # should be "Fira Code" or something on macOS.
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Light
 
   # The bold font face
   bold:
-    family: "Fira Code" # should be "Fira Code" or something on macOS.
+    family: "FuraCode Nerd Font" # should be "Fira Code" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: "Fira Code" # should be "Fira Code" or something on macOS.
+    family: "FuraCode Nerd Font" # should be "Fira Code" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Italic
 
@@ -125,8 +125,8 @@ colors:
     yellow:  '0xe6c547'
     blue:    '0x7aa6da'
     magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
     white:   '0xffffff'
+    cyan:    '0x70c0ba'
 
   # Bright colors
   bright:

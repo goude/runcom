@@ -93,7 +93,7 @@ bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"
 
 # Set window notifications
 setw -g monitor-activity on
-set -g visual-activity on
+#set -g visual-activity on
 
 # Fix access to Mac OS X pasteboard using a wrapper script to avoid multiple configuration files.
 # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/issues/8#issuecomment-4134987

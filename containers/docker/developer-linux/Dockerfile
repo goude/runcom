@@ -17,6 +17,7 @@ RUN \
     htop \
     libaio1 alien \
     libbz2-dev \
+    libcurl4-openssl-dev \
     libreadline-dev \
     libsqlite3-dev \
     libssl-dev \

@@ -27,6 +27,7 @@ apt-get install -y \
   tree \
   libbz2-dev \
   libreadline-dev \
+  libcurl4-openssl-dev \
   libsqlite3-dev \
   libssl-dev \
   libxml2-dev \

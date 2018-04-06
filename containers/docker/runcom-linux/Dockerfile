@@ -8,4 +8,5 @@ RUN \
   mkdir -p tmp/ && \
   git clone https://github.com/goude/runcom.git tmp/runcom && \
   tmp/runcom/setup/bootstrap.sh && \
-  rm -rf tmp/runcom
+  rm -rf tmp/runcom && \
+  echo "runcom-linux $(date --iso-8601=seconds)" >> /home/runcom/.runcom-log

@@ -50,7 +50,8 @@ RUN \
   echo "runcom:runcom" | chpasswd && \
   adduser runcom sudo && \
   apt-get clean && \
-  echo "developer-linux $(date --iso-8601=seconds)" >> /home/runcom/.runcom-log
+  echo "developer-linux $(date --iso-8601=seconds)" >> /home/runcom/.runcom-log && \
+  chown runcom:runcom /home/runcom/.runcom-log
 
 #python-dev \
 #python3-dev python3-pip python3-venv \

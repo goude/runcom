@@ -183,6 +183,8 @@ Plug 'rust-lang/rust.vim'
 " https://github.com/ivanov/vim-ipython/
 " https://github.com/kana/vim-arpeggio
 
+Plug 'schickling/vim-bufonly'
+
 " Should be loaded last, according to instructions
 Plug 'ryanoasis/vim-devicons'
 

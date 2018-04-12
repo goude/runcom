@@ -20,11 +20,6 @@ nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
-"" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
-
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
@@ -77,24 +72,6 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
-"" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
-
-"" Close buffer
-noremap <leader>c :bd<CR>
-
-"" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
-
-"" Switching windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
@@ -106,7 +83,7 @@ vnoremap K :m '<-2<CR>gv=gv
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
 
-" Leader-I - edit certain kinds of files
+" Leader-I - edIt certain kinds of files
 nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
 nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
@@ -153,10 +130,13 @@ nnoremap <Leader>- :split<CR>
 nnoremap <Leader>\| :vsplit<CR>
 
 " Open previously opened buffer
-nmap <Leader><Leader> <c-^>
+"nmap <Leader><Leader> <c-^>
+
+" Switch buffers with Tab
 nnoremap <Leader><Tab> :bnext!<CR>
 nnoremap <Leader><S-tab> :bprev!<CR>
-"nnoremap <C-Left> :bprev!<CR><Paste>
+nnoremap <Tab> :bnext!<CR>
+nnoremap <S-tab> :bprev!<CR>
 
 "nmap <Leader><Space>o :lopen<CR>      " open location window
 "nmap <Leader><Space>c :lclose<CR>     " close location window
@@ -188,6 +168,7 @@ cnoremap %s/ %s/\v
 
 " Fuzzy file finder
 nnoremap <silent> <leader>e :GitFiles<CR>
+nmap <Leader><Leader> :Buffers<CR>
 
 " vim-sneak
 let g:sneak#s_next = 1
@@ -204,4 +185,3 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-

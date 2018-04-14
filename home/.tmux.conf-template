@@ -38,7 +38,7 @@ bind 0 select-pane -R\; swap-pane -D
 
 # repeat last command in left/right pane
 unbind r
-bind r send-keys -t right 'Up' 'Enter'
+bind r send-keys -t right 'C-l' 'Up' 'Enter'
 
 # use PREFIX C-l to clear screen
 bind C-l send-keys 'C-l'

@@ -12,16 +12,15 @@ pyenv activate neovim3
 install_command="$(pyenv which pip) install --no-cache-dir --upgrade"
 
 $install_command pip
-$install_command jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp jrnl autopep8 topydo mypy yapf neovim
+$install_command jedi flake8 vim-vint yamllint requests pillow numpy click tmuxp autopep8 topydo mypy yapf neovim
 $install_command topydo[columns] topydo[ical]
 
 pyenv rehash
 
 ln -sf "$(pyenv which flake8)" ~/bin/flake8
-ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
-ln -sf "$(pyenv which jrnl)" ~/bin/jrnl
-ln -sf "$(pyenv which topydo)" ~/bin/topydo
 ln -sf "$(pyenv which mypy)" ~/bin/mypy
 ln -sf "$(pyenv which mypy)" ~/bin/yapf
+ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
+ln -sf "$(pyenv which topydo)" ~/bin/topydo
 
 pyenv deactivate

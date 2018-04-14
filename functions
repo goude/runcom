@@ -101,3 +101,7 @@ fixssh() {
     fi
   done
 }
+
+motd() {
+  echo "Welcome to goude/runcom."
+}

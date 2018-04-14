@@ -1,9 +1,12 @@
+# aliases to protect against mistakes (force interactive mode)
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
+# basic command customization aliases
 alias df='df -h'
 
+# git aliases
 alias gs='git status'
 alias gca='git commit -a'
 alias gp='git push'
@@ -13,20 +16,21 @@ alias ga='git add'
 alias gd='git diff'
 #alias gl="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -r"
 alias gl='git log --oneline --decorate --all --graph'
+
+# searching aliases
 alias hsi='history | egrep -i'
 alias esi='env | egrep -i'
 
-alias ta='tmux attach || tmux new'
-
+# homeshick aliases
 alias ho='homeshick'
 alias hocd='homeshick cd'
 
-alias mrs='mr --minimal status'
-
+# directory navigation shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# short form aliases
 alias a='ansible'
 alias d='docker'
 alias f='fzf'
@@ -35,11 +39,18 @@ alias g='git'
 alias h='history'
 alias s='ssh'
 alias t='todo.sh -c'
-alias v='vim'
+alias v='\vim'
 
+# python and jupyter aliases
 alias jc='jupyter-console'
 alias pan='pyenv activate neovim3'
 alias paj='pyenv activate pyenv-jupyter'
 alias pad='pyenv deactivate'
 
+# misc aliases
+alias clp='tmux split-window && exit'
+alias druncom='cd && source bin/start-runcom-docker'
+alias mrs='mr --minimal status'
 alias serve-directory='python3 -m http.server'
+alias ssh-vagrant='ssh -A -p 2222 vagrant@localhost'
+alias ta='tmux attach || tmux new'

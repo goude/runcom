@@ -562,4 +562,7 @@ hi! IncSearch guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
 " Allow crontab editing
 set backupskip=/tmp/*,/private/tmp/*
 
+" Make yaml front matter in notes look like a comment
+autocmd BufNewFile,BufRead */notes/*.md syntax match Comment /\%^---\_.\{-}---$/
+
 "}

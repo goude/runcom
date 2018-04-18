@@ -49,8 +49,6 @@ endif
 "endif
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -132,6 +130,9 @@ nnoremap <Leader>\| :vsplit<CR>
 " Open previously opened buffer
 "nmap <Leader><Leader> <c-^>
 
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
+
 " Switch buffers with Tab
 nnoremap <Leader><Tab> :bnext!<CR>
 nnoremap <Leader><S-tab> :bprev!<CR>
@@ -167,8 +168,9 @@ nnoremap / /\v
 cnoremap %s/ %s/\v
 
 " Fuzzy file finder
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>p :FZF -m<CR>
 nnoremap <silent> <leader>e :GitFiles<CR>
-nmap <Leader><Leader> :Buffers<CR>
 
 " vim-sneak
 let g:sneak#s_next = 1

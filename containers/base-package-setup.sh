@@ -14,7 +14,6 @@ apt-get install -y \
   cmake \
   git \
   software-properties-common \
-  tlsdate \
   tmux \
   zsh \
   exuberant-ctags \

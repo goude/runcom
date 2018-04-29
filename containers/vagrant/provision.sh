@@ -3,40 +3,44 @@ echo Running provisioning script...
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 
+PACKAGES=$(cat master-list)
+echo $PACKAGES
+apt-get -y install $PACKAGES
+
 # essentials
-apt-get install -y \
-  apt-transport-https \
-  build-essential \
-  ca-certificates \
-  cmake \
-  git \
-  hdevtools \
-  linux-image-extra-$(uname -r) \
-  linux-image-extra-virtual \
-  software-properties-common \
-  tlsdate \
-  tmux \
-  vim-nox \
-  zsh \
-  exuberant-ctags \
-  silversearcher-ag \
-  curl \
-  htop \
-  jq \
-  neovim \
-  tree \
-  libbz2-dev \
-  libreadline-dev \
-  libcurl4-openssl-dev \
-  libsqlite3-dev \
-  libssl-dev \
-  libxml2-dev \
-  libxslt-dev \
-  ghc \
-  pandoc \
-  cifs-utils \
-  openjdk-8-jre-headless \
-  postgresql-client
+#apt-get install -y \
+  #apt-transport-https \
+  #build-essential \
+  #ca-certificates \
+  #cmake \
+  #git \
+  #hdevtools \
+  #linux-image-extra-$(uname -r) \
+  #linux-image-extra-virtual \
+  #software-properties-common \
+  #tlsdate \
+  #tmux \
+  #vim-nox \
+  #zsh \
+  #exuberant-ctags \
+  #silversearcher-ag \
+  #curl \
+  #htop \
+  #jq \
+  #neovim \
+  #tree \
+  #libbz2-dev \
+  #libreadline-dev \
+  #libcurl4-openssl-dev \
+  #libsqlite3-dev \
+  #libssl-dev \
+  #libxml2-dev \
+  #libxslt-dev \
+  #ghc \
+  #pandoc \
+  #cifs-utils \
+  #openjdk-8-jre-headless \
+  #postgresql-client
 
 #python-dev \
 #python3-cairo \

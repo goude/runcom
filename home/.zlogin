@@ -9,7 +9,8 @@
 # Print a centered logon message
 if (( $+commands[adage] )); then
   if [[ -t 0 || -t 1 ]]; then
-    if [[ -z "$TMUX" || -n "$RUNCOM_SHOW_ADAGE" ]]; then
+    if [[ "$TMUX_PANE" == "%1" ]]; then
+      echo "tmux pane"
       adage -e -s | center-text
     fi
   fi

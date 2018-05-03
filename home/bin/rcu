@@ -2,6 +2,7 @@
 
 REPOS=$HOME/.homesick/repos
 source $REPOS/homeshick/homeshick.sh
+homeshick pull runcom
 homeshick pull
 
 source $REPOS/antigen/antigen.zsh

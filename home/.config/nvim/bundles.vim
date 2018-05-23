@@ -184,6 +184,7 @@ Plug 'rust-lang/rust.vim'
 " https://github.com/kana/vim-arpeggio
 
 Plug 'schickling/vim-bufonly'
+Plug 'kshenoy/vim-signature'
 
 " Should be loaded last, according to instructions
 Plug 'ryanoasis/vim-devicons'

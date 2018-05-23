@@ -1,4 +1,4 @@
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=0 foldmarker={,} foldmethod=marker spell:
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=99 foldmarker={,} foldmethod=marker spell:
 "
 " TODO: have a look at
 " - http://wrotenwrites.com/a_modern_terminal_workflow_2/
@@ -488,12 +488,20 @@ let g:ale_fixers = {
 \}
 
 " lightline
+function! Foobar() abort
+  let td = fnamemodify(getcwd(), ":~:.")
+  let wd = pathshorten(td)
+  return strlen(wd) ? wd : '[No CWD]'
+endfunction
+
+
 set noshowmode  " disabled, since it's displayed by lightline
+
 let g:lightline = {
     \ 'colorscheme': 'base16',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'workdir' ] ],
     \   'right': [ [ 'wordcount', 'lineinfo', 'charvaluehex' ],
     \              [ 'percent' ],
     \              [ 'fileformat', 'fileencoding', 'filetype', ] ]
@@ -504,7 +512,8 @@ let g:lightline = {
     \ },
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head',
-    \   'wordcount': 'wordCount#WordCount'
+    \   'wordcount': 'wordCount#WordCount',
+    \   'workdir': 'Foobar'
     \ },
     \ }
 

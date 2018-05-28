@@ -555,6 +555,18 @@ let g:expand_region_text_objects = {
 
 " Workarounds {
 
+" For autoread
+" https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
+" From: https://github.com/fphilipe/dotfiles/blob/64c0921d3601edf8c2a59e24097a80f430ad215c/vimrc#L183-L188
+"
+" Save whenever switching windows or leaving vim. This is useful when running
+" the tests inside vim without having to save all files first.
+"au FocusLost,WinLeave * :silent! wa
+" (disabled until I've had a chance to think through implications)
+
+" Trigger autoread when changing buffers or coming back to vim.
+au FocusGained,BufEnter * :silent! !
+
 " Fix neovim color problems in hyper terminal
 " https://github.com/zeit/hyper/issues/364
 set termguicolors

@@ -17,6 +17,8 @@ libaio1
 libbz2-dev
 libcurl4-openssl-dev
 libreadline-dev
+libncurses5-dev
+libncursesw5-dev
 libsqlite3-dev
 libssl-dev
 libxml2-dev

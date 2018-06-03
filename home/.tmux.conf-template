@@ -40,6 +40,9 @@ bind 0 select-pane -R\; swap-pane -D
 unbind r
 bind r send-keys -t right 'C-l' 'Up' 'Enter'
 
+# send command to all panes
+bind s setw synchronize-pane
+
 # use PREFIX C-l to clear screen
 bind C-l send-keys 'C-l'
 

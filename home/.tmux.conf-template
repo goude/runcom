@@ -4,26 +4,26 @@
 # <strike>Inspired by</strike> Copied from http://justinlilly.com/dotfiles/tmux.html
 # and http://zanshin.net/2013/09/05/my-tmux-configuration/
 
-# bind options
+# Bind options
 # -r key may repeat
 
-# use 256 colors
+# Use 256 colors
 # changed from default screen-256color
 # TODO: if this breaks things, see https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
 set -g default-terminal "xterm-256color"
 
-# set scrollback history to 10k
+# Set scrollback history to 10k
 set -g history-limit 10000
 
-# remap prefix to Ctrl-a
+# Remap prefix to Ctrl-a
 set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
-# shorten command delay
+# Shorten command delay
 set -sg escape-time 1
 
-# map Vi movement keys as pane/window movement keys
+# Map Vi movement keys as pane/window movement keys
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -32,45 +32,45 @@ bind l select-pane -R
 # bind 9 select-window -p
 # bind 0 select-window -n
 
-# swap panes AND switch focus -> cursor stays in 'same' location
+# Swap panes AND switch focus -> cursor stays in 'same' location
 bind 9 select-pane -L\; swap-pane -U
 bind 0 select-pane -R\; swap-pane -D
 
-# repeat last command in left/right pane
+# Repeat last command in left/right pane
 unbind r
 bind r send-keys -t right 'C-l' 'Up' 'Enter'
 
-# send command to all panes
 bind s setw synchronize-pane
+#bind -n C-x setw synchronize-pane
 
-# use PREFIX C-l to clear screen
+# Use PREFIX C-l to clear screen
 bind C-l send-keys 'C-l'
 
 #bind C-h select-window -t :-
 #bind -r C-l select-window -t :+
 
-# # resize panes using PREFIX H, J, K, L
+# Resize panes using PREFIX H, J, K, L
 bind H resize-pane -L 10
 bind J resize-pane -D 10
 bind K resize-pane -U 10
 bind L resize-pane -R 10
 
-# force a reload of the config file
+# Force a reload of the config file
 bind R source-file ~/.tmux.conf
 
-# quick pane cycling
+# Quick pane cycling
 #unbind ^A
 #bind ^B select-pane -t :.+
 
-# splits
+# Splits
 bind-key | split-window -h # -c "#{pane-current-path}"
 bind-key - split-window -v # -c "#{pane-current-path}"
 
-# set window and pane index to 1 instead of default 0
+# Set window and pane index to 1 instead of default 0
 set-option -g base-index 1
 setw -g pane-base-index 1
 
-# renumber windows, so indices are kept sequential
+# Renumber windows, so indices are kept sequential
 set-option -g renumber-windows on
 
 # Cause tmux to resize a window based on the smallest client actually viewing
@@ -108,19 +108,19 @@ set-option -g default-command 'shell > /dev/null 2>&1; $HOME/bin/tmux-sh -l "$RU
 # Disable automatix titles
 set-window-option -g automatic-rename off
 
-# disable Ctrl-D - (in Bash)
+# Disable Ctrl-D - (in Bash)
 set-environment -g 'IGNOREEOF' 2
 
-# use vim keybindings in copy mode
+# Begin a selection with v, and end it with y (instead of SPACE and ENTER)
 set -g mode-keys vi
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
-# setup v as selection key
-#bind-key -t vi-copy v begin-selection
-#bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
-
-# set shell
+# Set shell
 set-option -g default-shell $RUNCOM_TMUX_SHELL
 
+##################################
 # Colors
 set -g window-status-separator " "
 
@@ -128,24 +128,18 @@ set -g window-status-separator " "
 #set-option -g display-panes-colour colour166 #orange
 #set-option -g message-bg colour235 #base02
 #set-option -g message-fg colour166 #orange
-
-set-option -g pane-active-border-fg colour19
-set-option -g pane-border-fg colour18
-
 #set-window-option -g clock-mode-colour colour02
 
+set -g window-status-current-format "#[fg=colour00,bg=colour20] #I #W#F "
+set -g window-status-format "#[fg=colour00,bg=colour19] #I #W#F "
+set-option -g pane-active-border-fg colour19
+set-option -g pane-border-fg colour18
+set-option -g status-attr default
 set-option -g status-bg colour18
 set-option -g status-fg colour20
-
+set-window-option -g window-status-attr default
 set-window-option -g window-status-bg colour18
+set-window-option -g window-status-current-attr default
 set-window-option -g window-status-current-bg colour18
 set-window-option -g window-status-current-fg colour16
 set-window-option -g window-status-fg colour20
-
-set-window-option -g window-status-attr default
-set-window-option -g window-status-current-attr default
-
-set-option -g status-attr default
-
-set -g window-status-format "#[fg=colour00,bg=colour19] #I #W#F "
-set -g window-status-current-format "#[fg=colour00,bg=colour20] #I #W#F "

@@ -737,7 +737,7 @@ let g:expand_region_text_objects = {
       "\ 'ai' :0,
       "\ })
 
-"map K <Plugj(expand_region_expand)
+"map K <Plug>(expand_region_expand)
 "map J <Plug>(expand_region_shrink)
 
 

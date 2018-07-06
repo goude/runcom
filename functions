@@ -103,5 +103,5 @@ fixssh() {
 }
 
 motd() {
-  echo "Welcome to goude/runcom."
+  echo "Welcome to goude/runcom. help() might be available."
 }

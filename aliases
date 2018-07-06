@@ -38,7 +38,8 @@ alias ft='fzf-tmux'
 alias g='git'
 alias h='history'
 alias s='ssh'
-alias t='todo.sh -c'
+#alias t='todo.sh -c'
+alias t='topydo ls'
 alias v='\vim'
 
 # python and jupyter aliases

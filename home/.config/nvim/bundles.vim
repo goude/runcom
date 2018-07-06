@@ -186,6 +186,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'kshenoy/vim-signature'
 
+Plug 'ktonga/vim-follow-my-lead'
+
 " Should be loaded last, according to instructions
 Plug 'ryanoasis/vim-devicons'
 

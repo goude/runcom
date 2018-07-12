@@ -4,3 +4,10 @@ lynx
 ncdu
 rofi
 yank
+hugo
+cmake
+libfreetype6-dev
+libfontconfig1-dev
+xclip
+wmctrl
+xdotool

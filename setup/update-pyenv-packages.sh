@@ -26,6 +26,7 @@ $install_command \
   requests \
   tmuxp \
   topydo \
+  visidata \
   vim-vint \
   yamllint \
   yapf
@@ -40,5 +41,6 @@ ln -sf "$(pyenv which yapf)" ~/bin/yapf
 ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
 ln -sf "$(pyenv which topydo)" ~/bin/topydo
 ln -sf "$(pyenv which pipenv)" ~/bin/pipenv
+ln -sf "$(pyenv which vd)" ~/bin/vd
 
 pyenv deactivate

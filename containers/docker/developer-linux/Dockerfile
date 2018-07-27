@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 MAINTAINER Daniel Goude <daniel@goude.se>
 EXPOSE 22
 
@@ -40,7 +40,7 @@ RUN \
     postgresql-client \
     openjdk-8-jre-headless && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
-  add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \
+  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
   add-apt-repository ppa:neovim-ppa/stable && \
   apt-get update && \
   apt-get install -y neovim r-base && \
@@ -50,9 +50,10 @@ RUN \
   echo "runcom:runcom" | chpasswd && \
   adduser runcom sudo && \
   apt-get clean && \
-  echo "developer-linux $(date --iso-8601=seconds)" >> /home/runcom/.runcom-log && \
+  echo "developer-linux ubuntu:bionic $(date --iso-8601=seconds)" >> /home/runcom/.runcom-log && \
   chown runcom:runcom /home/runcom/.runcom-log
 
+#add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \
 #python-dev \
 #python3-dev python3-pip python3-venv \
 #python3-lxml \

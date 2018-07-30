@@ -3,6 +3,7 @@ MAINTAINER Daniel Goude <daniel@goude.se>
 EXPOSE 22
 
 RUN \
+  export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
   apt-get install -y \
     apt-transport-https \

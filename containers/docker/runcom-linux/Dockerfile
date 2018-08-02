@@ -5,6 +5,7 @@ USER runcom
 WORKDIR /home/runcom
 
 RUN \
+  export DEBIAN_FRONTEND=noninteractive && \
   mkdir -p tmp/ && \
   git clone https://github.com/goude/runcom.git tmp/runcom && \
   tmp/runcom/setup/bootstrap.sh && \

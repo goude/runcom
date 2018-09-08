@@ -19,6 +19,7 @@ $install_command \
   humanfriendly \
   jedi \
   mypy \
+  nbdime \
   neovim \
   numpy \
   pillow \
@@ -42,5 +43,7 @@ ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
 ln -sf "$(pyenv which topydo)" ~/bin/topydo
 ln -sf "$(pyenv which pipenv)" ~/bin/pipenv
 ln -sf "$(pyenv which vd)" ~/bin/vd
+ln -sf "$(pyenv which nbdiff)" ~/bin/nbdiff
+ln -sf "$(pyenv which git-nbdiffdriver)" ~/bin/git-nbdiffdriver
 
 pyenv deactivate

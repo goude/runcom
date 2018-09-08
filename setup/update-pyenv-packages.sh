@@ -44,6 +44,7 @@ ln -sf "$(pyenv which topydo)" ~/bin/topydo
 ln -sf "$(pyenv which pipenv)" ~/bin/pipenv
 ln -sf "$(pyenv which vd)" ~/bin/vd
 ln -sf "$(pyenv which nbdiff)" ~/bin/nbdiff
+ln -sf "$(pyenv which nbdime)" ~/bin/nbdime
 ln -sf "$(pyenv which git-nbdiffdriver)" ~/bin/git-nbdiffdriver
 
 pyenv deactivate

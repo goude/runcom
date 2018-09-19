@@ -83,6 +83,11 @@ eval "$(fasd --init auto)"
 # Custom aliases
 . "$rcfiles/aliases"
 
+# Alias to fix typos
+if [[ -x /usr/bin/thefuck ]]; then
+    eval $(thefuck --alias)
+fi
+
 # Cleanup
 unset rcfiles
 unset system

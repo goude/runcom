@@ -24,8 +24,11 @@ RUN \
     libssl-dev \
     libxml2-dev \
     libxslt-dev \
+    libfreetype6-dev \
+    libpng12-dev \
     locales \
     openssh-server \
+    pkg-config \
     samba-client \
     silversearcher-ag \
     software-properties-common \

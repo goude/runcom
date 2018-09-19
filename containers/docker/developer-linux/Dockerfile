@@ -19,13 +19,13 @@ RUN \
     libaio1 alien \
     libbz2-dev \
     libcurl4-openssl-dev \
+    libfreetype6-dev \
+    libpng-dev \
     libreadline-dev \
     libsqlite3-dev \
     libssl-dev \
     libxml2-dev \
     libxslt-dev \
-    libfreetype6-dev \
-    libpng12-dev \
     locales \
     openssh-server \
     pkg-config \

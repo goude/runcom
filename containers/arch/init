@@ -1,0 +1,20 @@
+ln -sd /usr/share/zoneinfo/Etc/UTC /etc/localtime
+hwclock --systohc
+# nano /etc/locale.gen 
+locale-gen
+# nano /etc/hostname
+# nano /etc/hosts 
+passwd
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+useradd --create-home mind
+passwd mind
+pacman -S grub
+pacman -S sudo
+pacman -S wpa_supplicant
+visudo
+ln -s /usr/share/dhcpcd/hooks/10-wpa_supplicant /usr/lib/dhcpcd/dhcpcd-hooks/
+systemctl start dhcpcd
+
+lspci -v
+dmesg | grep wlwi

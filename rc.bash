@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source $HOME/.homesick/repos/runcom/rc.common
 
-source $homeshick_repos/homeshick/completions/homeshick-completion.bash
+source $HOMESHICK_REPOS/homeshick/completions/homeshick-completion.bash
 
 GIT_PS1_SHOWDIRTYSTATE=1
 #GIT_PS1_SHOWSTASHSTATE=1

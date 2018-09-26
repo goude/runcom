@@ -91,7 +91,6 @@ fi
 # Cleanup
 unset rcfiles
 unset system
-unset homeshick_repos
 
 # Source local settings
 if [ -f ~/.localenv ]; then

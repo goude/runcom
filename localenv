@@ -1,0 +1,5 @@
+# Overwrite these in .localenv if necessary
+export RUNCOM_TMUX_SHELL=$SHELL
+export HOMESHICK_REPOS=$homeshick_repos
+export PYENV_PYTHON3_VERSION=3.6.4
+export PYENV_PYTHON2_VERSION=2.7.14

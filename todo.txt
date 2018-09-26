@@ -1,5 +1,5 @@
-Update setup to get nvim 0.3.1
-Fix adage with future print import
+Make pyenv use local python install if available
 Compare master-list to centos-setup
 Merge docker list with master-list
-Make pyenv use local python install if available
+x 2018-09-26 Update setup to get nvim 0.3.1
+x 2018-09-26 Fix adage with future print import

@@ -1,4 +1,6 @@
 #!/usr/bin/python
+from __future__ import print_function
+
 ############################################################################
 #    Copyright (C) 2008 by Michael Goerz                                   #
 #    http://www.physik.fu-berlin.de/~goerz                                 #
@@ -18,6 +20,9 @@
 #    Free Software Foundation, Inc.,                                       #
 #    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
 ############################################################################
+
+# 2018-09-26: Modified by Daniel Goude to work in Python 3
+
 """
 This script is an extended implementation of the classic BSD Unix fortune
 command. It combines the capabilities of the strfile command (which produces
@@ -40,15 +45,15 @@ _PICKLE_PROTOCOL = 2
 INDEX_EXT = '.pdat'   #  file extension of index files
 DEFAULT_LENGTH = 160  #  default number of characters a ''short'' fortune
                       #  can have at maximum
-ATTEMPTS = 10000      #  number of attempts that will be made to find an 
+ATTEMPTS = 10000      #  number of attempts that will be made to find an
                       #  appropriate fortune, before the program gives up
 
 
 
-def get_random_fortune(fortunepaths, weighted=True, offensive=None, 
+def get_random_fortune(fortunepaths, weighted=True, offensive=None,
                        min_length=0, max_length=None):
     """
-    Get a random fortune from a fortune file found in the fortunepaths . 
+    Get a random fortune from a fortune file found in the fortunepaths .
     Barfs if the corresponding index file isn't present.
 
     If 'weighted' is True, the likelihood for a fortune file to be selected
@@ -62,16 +67,16 @@ def get_random_fortune(fortunepaths, weighted=True, offensive=None,
     still weighted by the number of fortunes they contain.
 
     If 'offensive' is None, a fortune will be selected that may be offensive
-    or non-offensive. If 'offensive' is True, only offensive fortunes will 
+    or non-offensive. If 'offensive' is True, only offensive fortunes will
     be picked, if it is False, only non-offensive fortunes will be picked.
     An offensive fortune is defined as one appearing in a fortune file
     who's name ends in '-o'
 
     The length of the fortune that is returned will be between min_length and
-    max_length. 
+    max_length.
     """
     # get list of fortune files
-    percentages, fortune_files = fortune_files_from_paths(fortunepaths, 
+    percentages, fortune_files = fortune_files_from_paths(fortunepaths,
                                                           offensive)
     # choose fortune_file
     weights = None
@@ -86,8 +91,8 @@ def get_random_fortune(fortunepaths, weighted=True, offensive=None,
         fortune_file = rselect_fortune_file(fortune_files, weights)
         data = fortune_file_data(fortune_file)
         (start, length) = random.choice(data)
-        if (length < min_length 
-        or (max_length is not None and length > max_length)): 
+        if (length < min_length
+        or (max_length is not None and length > max_length)):
             attempt += 1
             if attempt > ATTEMPTS:
                 print >> sys.stderr,  "I've given up on finding a fortune " \
@@ -103,8 +108,8 @@ def get_random_fortune(fortunepaths, weighted=True, offensive=None,
 
 
 def adjust_weights_with_percentages(weights, percentages):
-    """ Adjust the weights to conform to the percentages 
-        If a percentage is given, the weight is adjusted so that it's the 
+    """ Adjust the weights to conform to the percentages
+        If a percentage is given, the weight is adjusted so that it's the
         percentage of the sum of all weights. All other weights (where
         percentage is None) are rescaled (keeping their relative magnitude
         to each other) so that the total sum of all weights stays constant
@@ -122,10 +127,10 @@ def adjust_weights_with_percentages(weights, percentages):
     for weight, percentage in zip(weights, percentages):
         if percentage is None:
             result.append( int(round(
-                                ( weight 
+                                ( weight
                                   * (100 - sum_of_percentages)
                                   * sum_of_weights)
-                                / float(100 * sum_of_free_weights) 
+                                / float(100 * sum_of_free_weights)
                               )) )
         else:
             result.append(int(round((percentage * sum_of_weights) / 100.0)))
@@ -135,26 +140,26 @@ def adjust_weights_with_percentages(weights, percentages):
 
 def fortune_files_from_paths(fortunepaths, offensive=None):
     """ Return (percentages, fortune_files)
-    
+
         fortune_files is a list of all fortune files found in fortunepaths.
-        
+
         fortunepaths may also contain percentage markers intermixed with
         actual paths. For example, fortunepaths may be
             ['10%', 'fortunes', '80%', 'fortunes2', 'limerick' ]
- 
-        'percentages' is an array of equal size as fortune_files, that 
+
+        'percentages' is an array of equal size as fortune_files, that
         contains float values corresponding to the given percentages or
         None if there was no percentage given for a path. If percentages
         were given for all paths, they will be rescaled so that they add
         up to 100.0
 
         If there is more than one fortune file in a single fortunepath,
-        and there is a percentage given for that fortunepath, the 
+        and there is a percentage given for that fortunepath, the
         percentage is split between all the fortune files found in that
         fortunepath.
 
         If 'offensive' is None, include offensive and non-offensive fortune
-        files. If 'offensive' is True, include only offensive fortune files, 
+        files. If 'offensive' is True, include only offensive fortune files,
         if it is False, include only non-offensive fortune files.
         An offensive fortune fortune files is defined as who's name ends in '-o'
     """
@@ -165,24 +170,24 @@ def fortune_files_from_paths(fortunepaths, offensive=None):
     for path in fortunepaths:
         percentage_match = percentage_pattern.match(path)
         if percentage_match:
-            percentage = percentage_match.group(1) 
+            percentage = percentage_match.group(1)
             continue
         else:
             if os.path.isdir(path):
-                files_in_path = [filename[:-len(INDEX_EXT)] for filename 
+                files_in_path = [filename[:-len(INDEX_EXT)] for filename
                                 in glob(os.path.join(path, "*"+INDEX_EXT))]
                 if offensive is not None:
-                    files_in_path = [fortune_file for fortune_file 
+                    files_in_path = [fortune_file for fortune_file
                                      in files_in_path
                                      if not xor(fortune_file.endswith('-o'),
                                                 offensive)]
 
                 fortune_files += files_in_path
-                number_of_added_files = float(len(fortune_files) 
+                number_of_added_files = float(len(fortune_files)
                                               - len(percentages))
                 while len(percentages) < len(fortune_files):
                     if percentage is not None:
-                        percentages.append(int(percentage) 
+                        percentages.append(int(percentage)
                                            / number_of_added_files)
                     else:
                         percentages.append(None)
@@ -190,7 +195,7 @@ def fortune_files_from_paths(fortunepaths, offensive=None):
                 if offensive is not None:
                     if xor(path.endswith('-o'), offensive):
                         path = None
-                if path is not None: 
+                if path is not None:
                     fortune_files.append(path) # path is file
                     if percentage is not None:
                         percentages.append(float(percentage))
@@ -203,22 +208,22 @@ def fortune_files_from_paths(fortunepaths, offensive=None):
 
 def check_percentages(percentages):
     """ Check percentages for validity
-        
-        percentages is an array where each array element is either a 
-        percentage value or None. The percentage values must add up to 
+
+        percentages is an array where each array element is either a
+        percentage value or None. The percentage values must add up to
         no more than 100.0. Negative values count as positive.
 
         If there are no None-values and the percentages do not add up
         to 100.0, they are rescaled so that they do.
 
-        None-values stay None 
+        None-values stay None
 
-        The result is a copy of percentages were all values that are 
+        The result is a copy of percentages were all values that are
         not None are floats and may have been rescaled.
     """
     # check that sum of percentages is not more than 100%
     try:
-        given_values = [abs(value) for value in percentages 
+        given_values = [abs(value) for value in percentages
                                         if value is not None]
         percentage_sum = sum(given_values)
     except ValueError:
@@ -227,7 +232,7 @@ def check_percentages(percentages):
     if percentage_sum > 100.0:
         print >> sys.stderr, "Percentages add up to more than a hundred"
         sys.exit(1)
-    
+
     # make everything that's not None into floats, rescale if applicable
     if len(percentages) == len(given_values): # no None-values
         # convert all values to float and rescale if necessary
@@ -252,7 +257,7 @@ def check_percentages(percentages):
 
 def filter_fortunes(fortunepaths, pattern, ignorecase=True, offensive=None,
                     min_length=0, max_length=None):
-    """ Print out all fortunes which match the regular expression pattern. 
+    """ Print out all fortunes which match the regular expression pattern.
 
         If ignorecase is True, the pattern is taken as case-insensitive.
 
@@ -269,7 +274,7 @@ def filter_fortunes(fortunepaths, pattern, ignorecase=True, offensive=None,
     regex_filter = re.compile(pattern)
     if ignorecase:
         regex_filter = re.compile(pattern, re.I)
-    percentages, fortune_files = fortune_files_from_paths(fortunepaths, 
+    percentages, fortune_files = fortune_files_from_paths(fortunepaths,
                                                           offensive)
 
     # "first" fortune file (or up to wherever the first match is)
@@ -285,20 +290,20 @@ def filter_fortunes(fortunepaths, pattern, ignorecase=True, offensive=None,
         while not found_first_match:
             try:
                 start, length, fortune = fortunes.next()
-                if (length < min_length 
+                if (length < min_length
                 or (max_length is not None and length > max_length)):
                     continue
                 if regex_filter.search(fortune):
-                    print fortune
+                    print(fortune)
                     found_first_match = True
             except StopIteration:
                 break
     for start, length, fortune in fortunes: # remaining fortunes of "first" file
-        if (length < min_length 
+        if (length < min_length
         or (max_length is not None and length > max_length)):
             continue
         if regex_filter.search(fortune):
-            print "%"
+            print("%")
             sys.stdout.write(fortune)
     sys.stdout.flush()
 
@@ -309,11 +314,11 @@ def filter_fortunes(fortunepaths, pattern, ignorecase=True, offensive=None,
         sys.stderr.flush()
         fortunes = read_fortunes(open(fortune_file, 'rU'))
         for start, length, fortune in fortunes: # starting a second!
-            if (length < min_length 
+            if (length < min_length
             or (max_length is not None and length > max_length)):
                 continue
             if regex_filter.search(fortune):
-                print "%"
+                print("%")
                 sys.stdout.write(fortune)
         sys.stdout.flush()
 
@@ -342,8 +347,8 @@ def rselect_fortune_file(fortune_files, weights=None):
 
         If weights is not given, all elements of fortune_files are equally
         likely to be returned.
-        If weights is given, it must be an array of the same length as 
-        fortune_files, consisting of integers. The ratio of the integer at 
+        If weights is given, it must be an array of the same length as
+        fortune_files, consisting of integers. The ratio of the integer at
         a position to the sum of all integers is the probability that the
         element at the same position in fortune_files is returned.
     """
@@ -380,7 +385,7 @@ def read_fortunes(fortune_file):
             if pos == 0: # "%" at top of file. Skip it.
                 continue
             fortune = "".join(fortune_lines)
-            if fortune != "": 
+            if fortune != "":
                 yield (start, pos - start, fortune)
             fortune_lines = []
             start = -1
@@ -391,7 +396,7 @@ def read_fortunes(fortune_file):
         pos += len(line)
 
     fortune = "".join(fortune_lines)
-    if fortune != "": 
+    if fortune != "":
         yield (start, pos - start, fortune)
 
 
@@ -403,7 +408,7 @@ def make_fortune_data_file(fortunepaths, quiet=False):
     fortune_files = []
     for path in fortunepaths:
         if os.path.isdir(path):
-            fortune_files += [filename for filename 
+            fortune_files += [filename for filename
                             in glob(os.path.join(path, "*"))
                             if not filename.endswith(INDEX_EXT)
                             ]
@@ -413,8 +418,8 @@ def make_fortune_data_file(fortunepaths, quiet=False):
 
         fortune_index_file = fortune_file + INDEX_EXT
         if not quiet:
-            print 'Updating "%s" from "%s"...' \
-                                            % (fortune_index_file, fortune_file)
+            print('Updating "%s" from "%s"...' \
+                                            % (fortune_index_file, fortune_file))
 
         data = []
         shortest = sys.maxint
@@ -429,8 +434,8 @@ def make_fortune_data_file(fortunepaths, quiet=False):
         fortune_index.close()
 
         if not quiet:
-            print 'Processed %d fortunes.\nLongest: %d\nShortest %d' % \
-                (len(data), longest, shortest)
+            print('Processed %d fortunes.\nLongest: %d\nShortest %d' % \
+                (len(data), longest, shortest))
 
 
 
@@ -470,7 +475,7 @@ def main():
         'the fortune command (which displays a random fortune). It reads ' \
         'the traditional fortune program\'s text file format. ' \
         "For more information about the fortune files, and the accompanying " \
-        "fortune index files, see below." 
+        "fortune index files, see below."
     arg_parser.add_option('-u', '--update', action='store_true', dest='update',
                           help='Update the index files, instead of printing a '
                                'fortune. You must run this before you will be '
@@ -483,12 +488,12 @@ def main():
                                'index files have the %s extension.' %  INDEX_EXT
                                )
     arg_parser.add_option('-q', '--quiet', action='store_true', dest='quiet',
-                          help="When updating the index file, don't emit " 
+                          help="When updating the index file, don't emit "
                                "messages.")
     arg_parser.add_option('-a', '--all', action='store_true', dest='use_all',
                           help="Choose from all fortune files, including "
                           "offensive ones. Don't complain if you are offended!")
-    arg_parser.add_option('-o', '--offensive', action='store_true', 
+    arg_parser.add_option('-o', '--offensive', action='store_true',
                           dest='offensive',
                           help="Choose only from offensive fortunes. "
                                "Offensive fortunes are those stored in files "
@@ -496,17 +501,17 @@ def main():
                                "sure that you want to be offended!")
     arg_parser.add_option('-e', '--equal', action='store_true',
                           dest='equal_size',
-                          help="Consider all fortune files to be of equal " 
+                          help="Consider all fortune files to be of equal "
                                "size, making it equally likely for a "
                                "fortune to be chosen from any fortune file")
     arg_parser.add_option('-f', '--fortunefiles', action='store_true',
                           dest='list_fortunefiles',
-                          help="Print out the list of files which would be " 
+                          help="Print out the list of files which would be "
                                "searched, but don't print a fortune. ")
     arg_parser.add_option('-l', '--long', action='store_true', dest='use_long',
-                          help="Show only long fortunes. See -n on how " 
+                          help="Show only long fortunes. See -n on how "
                                "''long'' is defined in this sense.")
-    arg_parser.add_option('-w', '--wait', action='store', type=int, 
+    arg_parser.add_option('-w', '--wait', action='store', type=int,
                           dest='seconds_to_wait',
                           help="Wait before termination for an amount of time "
                                "calculated from the number of characters in "
@@ -515,30 +520,30 @@ def main():
                                "that the message can be read before the screen "
                                "is cleared.")
     arg_parser.add_option('-m', '--filter', action='store', dest='pattern',
-                          help="Print out all fortunes which match the " 
-                               "regular expression pattern.\n" 
-                               "The fortunes are printed to standard output, " 
-                               "while the names of the file from which each " 
-                               "fortune comes are printed to standard " 
-                               "error.  Either or both can be redirected; " 
-                               "if standard output is redirected to a file, " 
-                               "the result is a valid fortunes database " 
-                               "file. If standard error is also redirected " 
-                               "to this file, the result is still valid, " 
-                               "but there will be ''bogus'' fortunes, i.e. " 
-                               "the filenames themselves, in parentheses.\n" 
-                               "You may combine this option with -o, -l, " 
+                          help="Print out all fortunes which match the "
+                               "regular expression pattern.\n"
+                               "The fortunes are printed to standard output, "
+                               "while the names of the file from which each "
+                               "fortune comes are printed to standard "
+                               "error.  Either or both can be redirected; "
+                               "if standard output is redirected to a file, "
+                               "the result is a valid fortunes database "
+                               "file. If standard error is also redirected "
+                               "to this file, the result is still valid, "
+                               "but there will be ''bogus'' fortunes, i.e. "
+                               "the filenames themselves, in parentheses.\n"
+                               "You may combine this option with -o, -l, "
                                "-s, -n, -i")
-    arg_parser.add_option('-i', '--ignorecase', action='store_true', 
+    arg_parser.add_option('-i', '--ignorecase', action='store_true',
                           dest='ignorecase',
                           help="Ignore case for -m patterns.")
-    arg_parser.add_option('-s', '--short', action='store_true', 
+    arg_parser.add_option('-s', '--short', action='store_true',
                           dest='use_short',
-                          help="Show only short fortunes. See -n on how " 
+                          help="Show only short fortunes. See -n on how "
                                "''short'' is defined in this sense.")
     arg_parser.add_option('-n', action='store', dest='max_shortlength',
-                          help="Set the longest fortune length (in " 
-                               "characters) considered to be ''short'' " 
+                          help="Set the longest fortune length (in "
+                               "characters) considered to be ''short'' "
                                "(the default is %s)" % DEFAULT_LENGTH)
 
     arg_parser.epilog = 'If <fortune_path> is omitted, fortune looks at ' \
@@ -566,7 +571,7 @@ def main():
          'fortunes with more speed and efficiency.\n\n' \
          'For more background information about the fortune utility ' \
          'look at http://en.wikipedia.org/wiki/Fortune_(Unix)'
-         
+
 
     options, args = arg_parser.parse_args(sys.argv)
 
@@ -589,11 +594,11 @@ def main():
 
     if options.use_short:
         minlength = 0
-        maxlength = DEFAULT_LENGTH 
+        maxlength = DEFAULT_LENGTH
         if not options.max_shortlength is None:
             maxlength = int(options.max_shortlength)
     elif options.use_long:
-        minlength = DEFAULT_LENGTH 
+        minlength = DEFAULT_LENGTH
         if not options.max_shortlength is None:
             minlength = int(options.max_shortlength)
         maxlength = None
@@ -611,18 +616,18 @@ def main():
             percentages, fortune_files = fortune_files_from_paths(fortunepaths,
                                                                   offensive)
             for filename in fortune_files:
-                print filename
+                print(filename)
 
         # Filtering Mode
         elif not options.pattern is None:
-            filter_fortunes(fortunepaths, options.pattern, 
-                            ignorecase=options.ignorecase, 
+            filter_fortunes(fortunepaths, options.pattern,
+                            ignorecase=options.ignorecase,
                             offensive=offensive)
-                
+
         # Printing Fortunes Mode
         else:
             sys.stdout.write(get_random_fortune(
-                fortunepaths, 
+                fortunepaths,
                 offensive=offensive,
                 weighted=(not options.equal_size),
                 min_length=minlength,

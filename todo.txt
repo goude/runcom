@@ -1,2 +1,4 @@
+Use pip fortune instead of adage (keep adage until tested db update)
 Compare master-list to centos-setup
 Merge docker list with master-list
+Make pyenv use local python install if available

@@ -14,7 +14,7 @@ install_command="$(pyenv which pip) install --no-cache-dir --upgrade"
 $install_command pip
 $install_command \
   autopep8 \
-  click \
+  click==6.7 \
   flake8 \
   humanfriendly \
   jedi \

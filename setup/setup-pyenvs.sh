@@ -12,16 +12,16 @@ if [[ -d $HOME/.pyenv/bin ]]; then
 fi
 
 # Python 3 - main environment
-pyenv install "$PYENV_PYTHON3_VERSION"
-pyenv virtualenv "$PYENV_PYTHON3_VERSION" neovim3
+pyenv install "$RUNCOM_PYENV_PYTHON3_VERSION"
+pyenv virtualenv "$RUNCOM_PYENV_PYTHON3_VERSION" neovim3
 pyenv activate neovim3
 $(pyenv which pip) install --upgrade pip
 $(pyenv which pip) install neovim
 pyenv deactivate
 
 # Python 2.7
-pyenv install "$PYENV_PYTHON2_VERSION"
-pyenv virtualenv "$PYENV_PYTHON2_VERSION" neovim2
+pyenv install "$RUNCOM_PYENV_PYTHON2_VERSION"
+pyenv virtualenv "$RUNCOM_PYENV_PYTHON2_VERSION" neovim2
 pyenv activate neovim2
 $(pyenv which pip) install neovim
 pyenv deactivate

@@ -1,4 +1,4 @@
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldlevel=99 foldmarker={,} foldmethod=marker spell:
+" vim: set sw=2 ts=2 sts=2 et tw=78 foldlevel=99 foldmarker={,} foldmethod=marker spell:
 "
 " TODO: have a look at
 " - http://wrotenwrites.com/a_modern_terminal_workflow_2/
@@ -128,6 +128,8 @@ endif
 " Visual settings {
 syntax on
 set ruler
+
+" Numbering
 set number
 set relativenumber
 
@@ -201,8 +203,6 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
@@ -317,7 +317,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 noremap YY "+y<CR>
@@ -330,7 +329,7 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
-"" Vmap for maintain Visual Mode after shifting > and <
+"" Vmap for maintaining Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
 
@@ -347,7 +346,13 @@ nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Toggles
-nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <F4> :TagbarToggle<CR>
+nnoremap <silent> <F5> :NumbersToggle<CR>
+nnoremap <silent> <leader><F5> :set nonumber<CR>:set norelativenumber<CR>
+nnoremap <silent> <F5> :NumbersToggle<CR>
+nnoremap <silent> <F6> :TogglePencil<CR>
 
 " Clear search highlight
 nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
@@ -389,9 +394,6 @@ nnoremap <Leader>\| :vsplit<CR>
 
 " Open previously opened buffer
 "nmap <Leader><Leader> <c-^>
-
-nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>t :TagbarToggle<CR>
 
 " Switch buffers with Tab
 nnoremap <Leader><Tab> :bnext!<CR>
@@ -694,7 +696,7 @@ let g:lightline = {
     \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'workdir' ] ],
     \   'right': [ [ 'wordcount', 'lineinfo', 'charvaluehex' ],
     \              [ 'percent' ],
-    \              [ 'fileformat', 'fileencoding', 'filetype', ] ]
+    \              [ 'pencil', 'fileformat', 'fileencoding', 'filetype', ] ]
     \ },
     \ 'component': {
     \   'helloworld': 'Hello, World!',
@@ -703,7 +705,8 @@ let g:lightline = {
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head',
     \   'wordcount': 'wordCount#WordCount',
-    \   'workdir': 'Foobar'
+    \   'workdir': 'Foobar',
+    \   'pencil': 'PencilMode'
     \ },
     \ }
 

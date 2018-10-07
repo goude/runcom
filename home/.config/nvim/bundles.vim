@@ -95,6 +95,9 @@ Plug 'junegunn/vim-peekaboo'
 " Close other buffers
 Plug 'schickling/vim-bufonly'
 
+" navigate and highlight matching words / modern matchit and matchparen replacement
+Plug 'andymass/vim-matchup'
+
 " Experimental - can be disabled if needed
 Plug 'severin-lemaignan/vim-minimap'
 

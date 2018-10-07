@@ -362,13 +362,19 @@ nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 nnoremap <leader>. :lcd %:p:h<CR>
 
 " Edit $MYVIMRC
-nnoremap <silent> <leader>ei :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>ev :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
 
 " Edit global todo.txt
 nnoremap <silent> <leader>et :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 
 " Reload $MYVIMRC
 nnoremap <silent> <leader>er :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
+
+" Surround with "/'
+vmap <Leader>" S"
+vmap <Leader>' S'
+nmap <Leader>" ysiw"
+nmap <Leader>' ysiw'
 
 " Open a horizontal split
 nnoremap <Leader>- :split<CR>

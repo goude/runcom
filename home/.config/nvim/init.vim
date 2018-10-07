@@ -5,6 +5,7 @@
 " - http://wrotenwrites.com/a_modern_terminal_workflow_2/
 " - https://github.com/w0rp/ale (htmlhint and friends also)
 " - https://github.com/junegunn/dotfiles/blob/master/vimrc
+" - https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
 " }
 
 " Initialization / load bundles {
@@ -244,9 +245,15 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Copy/paste mappings
-noremap YY "+y<CR>
-noremap <leader>p "+gP<CR>
-noremap XX "+x<CR>
+
+" Yank to system clipboard
+noremap <leader>c "+y<CR>
+
+" Paste from system clipboard
+noremap <leader>v "+gP<CR>
+
+" Cut to system clipboard
+noremap <leader>x "+x<CR>
 
 if has('macunix')
   " pbcopy for OSX copy/paste
@@ -295,6 +302,15 @@ nmap ga <Plug>(EasyAlign)
 
 " Disabled Mappings {
 
+" Opens an edit command with the path of the currently edited file filled in
+"noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a tab edit command with the path of the currently edited file filled
+"noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Open current line on GitHub
+"nnoremap <Leader>o :.Gbrowse<CR>
+
 "cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Git
@@ -330,6 +346,7 @@ function! Toggle_msg(tname)
   echom "Toggled" a:tname "."
 endfunction
 
+nnoremap <silent> <F1> :call FMLShow()<CR>
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TagbarToggle<CR>
@@ -341,40 +358,46 @@ nnoremap <silent> <F6> :TogglePencil<CR>:call Toggle_msg("pencil")<CR>
 " Clear search highlight
 nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 
-"" Set working directory
+" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-"" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" Edit $MYVIMRC
+nnoremap <silent> <leader>ei :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
 
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+" Edit global todo.txt
+nnoremap <silent> <leader>et :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 
-"" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
+" Reload $MYVIMRC
+nnoremap <silent> <leader>er :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
-" Leader-I - edIt certain kinds of files
-nnoremap <silent> <leader>ii :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>it :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
-nnoremap <silent> <leader>ir :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
-
-" Splits - same mappings as in tmux
+" Open a horizontal split
 nnoremap <Leader>- :split<CR>
+
+" Open a vertical split
 nnoremap <Leader>\| :vsplit<CR>
 
-" Prepend/Append to all adjacent lines with same indentation
+" Prepend to all adjacent lines with same indentation - finish with <esc>
 nmap <silent> <leader>I ^vio<C-V>I
+
+" Append to all adjacent lines with same indentation - finish with <esc>
 nmap <silent> <leader>A ^vio<C-V>$A
 
-" Fuzzy file finder
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>p :FZF -m<CR>
-nnoremap <silent> <leader>e :GitFiles<CR>
+" Fuzzy find in buffers
+nnoremap <silent> <leader>pb :Buffers<CR>
+
+" Fuzzy find in files
+nnoremap <silent> <leader>pp :FZF -m<CR>
+
+" Fuzzy find in git repo
+nnoremap <silent> <leader>pg :GitFiles<CR>
+
 " Open previously opened buffer
 "nmap <Leader><Leader> <c-^>
 
-" Switch buffers with Tab
+" Switch to next buffer
 nnoremap <Leader><Tab> :bnext!<CR>
+
+" Switch to previous buffer
 nnoremap <Leader><S-tab> :bprev!<CR>
 " }
 
@@ -394,8 +417,8 @@ augroup END
 "" Remember Folds (TODO: what else is remembered? / do we need a clear cmd?)
 augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
+  autocmd BufWinLeave *.txt,*.md,*.py,*.vim mkview
+  autocmd BufWinEnter *.txt,*.md,*.py,*.vim silent! loadview
 augroup END
 
 "" Text files
@@ -579,8 +602,8 @@ function! Prose()
   nnoremap <buffer> <silent> <leader>Q vapJgqap
 
   " force top correction on most recent misspelling
-  nnoremap <buffer> <c-s> [s1z=<c-o>
-  inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]A<c-g>u
+  "nnoremap <buffer> <c-s> [s1z=<c-o>
+  "inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]A<c-g>u
 
   " replace common punctuation
   iabbrev <buffer> -- –
@@ -589,7 +612,7 @@ function! Prose()
   iabbrev <buffer> >> »
 
   " open most folds
-  setlocal foldlevel=6
+  "setlocal foldlevel=6
 
   " replace typographical quotes (reedes/vim-textobj-quote)
   map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly

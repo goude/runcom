@@ -51,8 +51,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 
 " Text editing
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-lexical'
@@ -121,7 +121,7 @@ Plug 'myusuf3/numbers.vim'
 
 " Search {
 
-" 2-char f command
+" 2-char f command - quickly move to a location
 Plug 'justinmk/vim-sneak'
 
 " The grep plugin integrates the grep, fgrep, egrep, and agrep tools with Vim
@@ -170,10 +170,15 @@ Plug 'sheerun/vim-polyglot'
 " Comment functions so powerful—no comment necessary.
 Plug 'scrooloose/nerdcommenter'
 
+"
 Plug 'editorconfig/editorconfig-vim'
+
+"
 Plug 'w0rp/ale'
+
+"
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-Plug 'zchee/deoplete-jedi'
+
 
 " Javascript plugins
 " https://github.com/vimlab/neojs
@@ -192,17 +197,20 @@ Plug 'jason0x43/vim-js-indent'
 Plug 'mhartington/vim-typings'
 Plug 'Quramy/ng-tsserver'
 
-" c
+" Python
+Plug 'zchee/deoplete-jedi'
+
+" C
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
-" erlang
+" Erlang
 Plug 'jimenezrick/vimerl'
 
-" go
+" Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
-" haskell
+" Haskell
 Plug 'eagletmt/neco-ghc'
 Plug 'dag/vim2hs'
 Plug 'pbrisbin/vim-syntax-shakespeare'

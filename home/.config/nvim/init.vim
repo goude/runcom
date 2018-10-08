@@ -447,8 +447,10 @@ set autoread
 " Autocmd & language-specific configs {
 
 " c
-autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+augroup c_files
+  autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
+  autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+augroup END
 
 " go
 let g:tagbar_type_go = {
@@ -492,7 +494,10 @@ let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 0
 
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup go_files
+  au!
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
 
 augroup completion_preview_close
   autocmd!
@@ -528,11 +533,18 @@ augroup END
 let g:haskell_conceal_wide = 1
 let g:haskell_multiline_strings = 1
 let g:necoghc_enable_detailed_browse = 1
-autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+
+augroup haskell_files
+  au!
+  autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+augroup END
 
 " html
 " for html files, 2 spaces
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
+augroup haskell_files
+    au!
+    autocmd Filetype html setlocal ts=2 sw=2 expandtab
+augroup END
 
 " javascript
 "let g:javascript_enable_domhtmlcss = 1
@@ -691,7 +703,7 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 " Experimental
 augroup omnifuncs
-    autocmd!
+  autocmd!
 	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -795,19 +807,19 @@ let g:expand_region_text_objects = {
       \ 'i]'  :1,
       \ 'ib'  :1,
       \ 'iB'  :1,
-      \ 'il'  :0,
-      \ 'ip'  :0,
+      \ 'il'  :1,
+      \ 'ip'  :1,
       \ 'ie'  :0,
       \ }
 
-"call expand_region#custom_text_objects({
-      "\ "\/\\n\\n\<CR>": 0,
-      "\ 'a]' :0,
-      "\ 'ab' :0,
-      "\ 'aB' :0,
-      "\ 'ii' :0,
-      "\ 'ai' :0,
-      "\ })
+call expand_region#custom_text_objects({
+      \ "\/\\n\\n\<CR>": 0,
+      \ 'a]' :0,
+      \ 'ab' :0,
+      \ 'aB' :0,
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
 
 "map K <Plug>(expand_region_expand)
 "map J <Plug>(expand_region_shrink)
@@ -848,7 +860,10 @@ let g:vimshell_prompt =  '$ '
 " (disabled until I've had a chance to think through implications)
 
 " Trigger autoread when changing buffers or coming back to vim.
-au FocusGained,BufEnter * :silent! !
+augroup focus_workaround
+  au!
+  au FocusGained,BufEnter * :silent! !
+augroup END
 
 " Fix neovim color problems in hyper terminal
 " https://github.com/zeit/hyper/issues/364
@@ -863,15 +878,26 @@ set hlsearch
 hi! Search guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
 hi! IncSearch guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
 
-" FIXME: moved from top, probably there for a reason (source order?)
-" Fix highlighting colors for vim-sneak
-autocmd ColorScheme * hi Sneak guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-autocmd ColorScheme * hi SneakScope guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+" Fix match/highlight colors
+augroup fix_colors_augroup
+  au!
+  au ColorScheme * hi MatchParen guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+  "au ColorScheme * hi MatchWord guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+  "au ColorScheme * hi MatchParenCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+  "au ColorScheme * hi MatchWordCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+
+  " FIXME: moved from top, probably there for a reason (source order?)
+  " Fix highlighting colors for vim-sneak
+  au ColorScheme * hi Sneak guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+  au ColorScheme * hi SneakScope guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+augroup END
 
 " Allow crontab editing
 set backupskip=/tmp/*,/private/tmp/*
 
 " Make yaml front matter in notes look like a comment
-autocmd BufNewFile,BufRead */notes/*.md syntax match Comment /\%^---\_.\{-}---$/
-
+augroup notes_yaml
+  au!
+  au BufNewFile,BufRead */notes/*.md syntax match Comment /\%^---\_.\{-}---$/
+augroup END
 "}

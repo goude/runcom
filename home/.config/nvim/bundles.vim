@@ -58,6 +58,7 @@ Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'reedes/vim-textobj-quote'
 

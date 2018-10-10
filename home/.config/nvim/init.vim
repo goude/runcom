@@ -21,7 +21,7 @@ if !filereadable(vimplug_exists)
   silent !\curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   let g:not_finish_vimplug = "yes"
 
-  autocmd VimEnter * PlugInstall
+  au VimEnter * PlugInstall
 endif
 
 let g:make = 'gmake'
@@ -57,7 +57,7 @@ set binary
 "" Fix backspace indent
 set backspace=indent,eol,start
 
-"" Tabs. May be overwriten by autocmd rules
+"" Tabs. May be overwriten by au rules
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
@@ -118,8 +118,8 @@ set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=
-if has('autocmd')
-  autocmd GUIEnter * set visualbell t_vb=
+if has('au')
+  au GUIEnter * set visualbell t_vb=
 endif
 
 "" Copy/Paste/Cut
@@ -412,49 +412,50 @@ nnoremap <Leader><Tab> :bnext!<CR>
 nnoremap <Leader><S-tab> :bprev!<CR>
 " }
 
-" Autocmd {
+" Autocommands {
+
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
-  autocmd!
-  autocmd BufEnter * :syntax sync maxlines=200
+  au!
+  au BufEnter * :syntax sync maxlines=200
 augroup END
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  au!
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
 "" Remember Folds (TODO: what else is remembered? / do we need a clear cmd?)
 augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave *.txt,*.md,*.py,*.vim mkview
-  autocmd BufWinEnter *.txt,*.md,*.py,*.vim silent! loadview
+  au!
+  au BufWinLeave *.txt,*.md,*.py,*.vim mkview
+  au BufWinEnter *.txt,*.md,*.py,*.vim silent! loadview
 augroup END
 
 "" Text files
 augroup vimrc-wrapping
-  autocmd!
-  autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+  au!
+  au BufRead,BufNewFile *.txt call s:setupWrapping()
 augroup END
 
 "" make/cmake
 augroup vimrc-make-cmake
-  autocmd!
-  autocmd FileType make setlocal noexpandtab
-  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+  au!
+  au FileType make setlocal noexpandtab
+  au BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
 
 set autoread
 
 " }
 
-" Autocmd & language-specific configs {
+" Autocommands & language-specific configs {
 
 " c
 augroup c_files
-  autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
-  autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+  au FileType c setlocal tabstop=4 shiftwidth=4 expandtab
+  au FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 augroup END
 
 " go
@@ -501,13 +502,13 @@ let g:go_highlight_extra_types = 0
 
 augroup go_files
   au!
-  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+  au BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 augroup END
 
 augroup completion_preview_close
-  autocmd!
+  au!
   if v:version > 703 || v:version == 703 && has('patch598')
-    autocmd CompleteDone * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
+    au CompleteDone * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
   endif
 augroup END
 
@@ -541,14 +542,14 @@ let g:necoghc_enable_detailed_browse = 1
 
 augroup haskell_files
   au!
-  autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+  au Filetype haskell setlocal omnifunc=necoghc#omnifunc
 augroup END
 
 " html
 " for html files, 2 spaces
 augroup haskell_files
     au!
-    autocmd Filetype html setlocal ts=2 sw=2 expandtab
+    au Filetype html setlocal ts=2 sw=2 expandtab
 augroup END
 
 " javascript
@@ -556,15 +557,15 @@ augroup END
 
 " vim-javascript
 "augroup vimrc-javascript
-  "autocmd!
-  "autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
+  "au!
+  "au FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
 "augroup END
 
 " python
 " vim-python
 augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=80,100
+  au!
+  au FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=80,100
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
@@ -594,9 +595,9 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 
 augroup vimrc-ruby
-  autocmd!
-  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
-  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+  au!
+  au BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
+  au FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 augroup END
 
 let g:tagbar_type_ruby = {
@@ -649,7 +650,7 @@ function! Prose()
 endfunction
 
 " automatically initialize buffer by file type
-autocmd FileType markdown,mkd,text call Prose()
+au FileType markdown,mkd,text call Prose()
 
 " invoke manually by command for other file types
 command! -nargs=0 Prose call Prose()
@@ -699,7 +700,7 @@ if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
 " let g:deoplete#disable_auto_complete = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+au InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:deoplete#sources#jedi#show_docstring = 1
 
@@ -708,12 +709,12 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 " Experimental
 augroup omnifuncs
-  autocmd!
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  au!
+	au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	au FileType python setlocal omnifunc=pythoncomplete#Complete
+	au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
 " tern
 
@@ -729,11 +730,11 @@ if exists('g:plugs["tern_for_vim"]')
     \ 'javascript.jsx',
     \ 'vue',
     \ ]
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
+  au FileType javascript setlocal omnifunc=tern#Complete
 endif
 
 " tern
-autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
+au FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
 
 " }
 
@@ -746,7 +747,7 @@ endif
 
 " Tagbar
 "let g:tagbar_autofocus = 0
-"autocmd VimEnter * TagbarOpen
+"au VimEnter * TagbarOpen
 
 " ALE
 let g:ale_sign_error = '»'

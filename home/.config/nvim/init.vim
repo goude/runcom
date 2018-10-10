@@ -206,9 +206,11 @@ endif
 
 " Mappings {
 
-" Reduce finger movement for Esc / Disable Esc for learning
+" Reduce finger movement for Esc / Disable Esc key
 inoremap jk <Esc>
-"inoremap <esc> <nop>
+inoremap <esc> <nop>
+vnoremap <esc> <nop>
+nnoremap <esc> <nop>
 
 " Arrow keys
 nnoremap <Left> :vertical resize -1<CR>

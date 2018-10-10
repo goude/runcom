@@ -2,13 +2,10 @@
 
 " Base {
 
+" Repeat.vim remaps . in a way that plugins can tap into it.
 Plug 'tpope/vim-repeat'
 
-" Async helpers (still needed?)
-let g:make = 'gmake'
-if exists('make')
-        let g:make = 'make'
-endif
+" Interactive command execution in vim
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 " TODO: Active development on unite.vim has stopped. The only future changes will be
@@ -34,6 +31,7 @@ Plug 'Shougo/vimshell.vim'
 
 " Git {
 
+" A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
 
 " A git commit browser.
@@ -42,16 +40,18 @@ Plug 'junegunn/gv.vim'
 
 " }
 
-" Misc text editing {
+" Misc/text editing {
 
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
-
-" Text editing
 Plug 'junegunn/vim-easy-align'
+Plug 'terryma/vim-expand-region'
+Plug 'wellle/targets.vim'
+
+" Writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
@@ -61,13 +61,10 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'reedes/vim-textobj-sentence'
 Plug 'reedes/vim-textobj-quote'
+Plug 'coderifous/textobj-word-column.vim'
 
 " Table editing
 Plug 'dhruvasagar/vim-table-mode'
-
-Plug 'terryma/vim-expand-region'
-Plug 'wellle/targets.vim'
-Plug 'coderifous/textobj-word-column.vim'
 
 " }
 
@@ -96,7 +93,7 @@ Plug 'junegunn/vim-peekaboo'
 " Close other buffers
 Plug 'schickling/vim-bufonly'
 
-" navigate and highlight matching words / modern matchit and matchparen replacement
+" Navigate and highlight matching words / modern matchit and matchparen replacement
 Plug 'andymass/vim-matchup'
 
 " Experimental - can be disabled if needed
@@ -105,17 +102,20 @@ Plug 'severin-lemaignan/vim-minimap'
 " Word count
 Plug 'ChesleyTan/wordCount.vim'
 
-"
+" File browser
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
 " A powerful file explorer implemented in Vim script.
 Plug 'shougo/vimfiler.vim'
 
-"
+" Tag navigation
 Plug 'majutsushi/tagbar'
 
+" Show git markers in gutter
 Plug 'airblade/vim-gitgutter'
+
+" Show both relative and normal line numbers
 Plug 'myusuf3/numbers.vim'
 
 " }
@@ -158,7 +158,7 @@ Plug 'SirVer/ultisnips'
 " other improvements already.
 Plug 'honza/vim-snippets'
 
-"
+" Add completion from tmux panes
 Plug 'wellle/tmux-complete.vim'
 
 " }
@@ -174,7 +174,7 @@ Plug 'scrooloose/nerdcommenter'
 "
 Plug 'editorconfig/editorconfig-vim'
 
-"
+" Asynchronous lint engine
 Plug 'w0rp/ale'
 
 "

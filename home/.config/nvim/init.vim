@@ -24,6 +24,11 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
+let g:make = 'gmake'
+if exists('make')
+  let g:make = 'make'
+endif
+
 call plug#begin(expand('~/.config/nvim/plugged'))
 source ~/.config/nvim/bundles.vim
 

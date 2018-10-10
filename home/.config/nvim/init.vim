@@ -209,7 +209,6 @@ endif
 " Reduce finger movement for Esc / Disable Esc key
 inoremap jk <Esc>
 inoremap <esc> <nop>
-vnoremap <esc> <nop>
 nnoremap <esc> <nop>
 
 " Arrow keys

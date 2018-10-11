@@ -6,29 +6,40 @@ RUN \
   export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
   apt-get install -y \
+    alien \
     apt-transport-https \
     build-essential \
+    ca-certificates \
     cifs-utils \
     cmake \
     curl \
     exuberant-ctags \
+    ghc \
     git \
     gnupg \
+    golang \
     hdevtools \
     htop \
-    libaio1 alien \
+    jq \
+    libaio1 \
     libbz2-dev \
     libcurl4-openssl-dev \
     libfreetype6-dev \
+    libncurses5-dev \
+    libncursesw5-dev \
     libpng-dev \
     libreadline-dev \
     libsqlite3-dev \
     libssl-dev \
+    libtool-bin \
     libxml2-dev \
     libxslt-dev \
     locales \
+    ninja-build \
     openssh-server \
+    pandoc \
     pkg-config \
+    postgresql-client \
     samba-client \
     silversearcher-ag \
     software-properties-common \
@@ -37,11 +48,6 @@ RUN \
     tree \
     zlib1g-dev \
     zsh \
-    jq \
-    golang \
-    ghc \
-    pandoc \
-    postgresql-client \
     openjdk-8-jre-headless && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
   add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
@@ -56,11 +62,3 @@ RUN \
   apt-get clean && \
   echo "developer-linux ubuntu:bionic $(date --iso-8601=seconds)" >> /home/runcom/.runcom-log && \
   chown runcom:runcom /home/runcom/.runcom-log
-
-#add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \
-#python-dev \
-#python3-dev python3-pip python3-venv \
-#python3-lxml \
-#python3-cairo \
-#python3-matplotlib python3-pandas \
-#python3-sklearn \

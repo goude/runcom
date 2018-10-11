@@ -23,9 +23,11 @@ libpng-dev
 libreadline-dev
 libsqlite3-dev
 libssl-dev
+libtool-bin
 libxml2-dev
 libxslt-dev
 locales
+ninja-build
 openjdk-8-jre-headless
 openssh-server
 pandoc

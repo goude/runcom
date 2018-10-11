@@ -206,10 +206,10 @@ endif
 
 " Mappings {
 
-" Reduce finger movement for Esc / Disable Esc key
+" Reduce finger movement for Esc
 inoremap jk <Esc>
-inoremap <esc> <nop>
-nnoremap <esc> <nop>
+"inoremap <esc> <nop>
+"nnoremap <esc> <nop>
 
 " Arrow keys
 nnoremap <Left> :vertical resize -1<CR>
@@ -228,8 +228,8 @@ imap <left> <nop>
 imap <right> <nop>
 
 " Save with Ctrl-C
-map <C-s> :w<cr>
-imap <C-s> <ESC>:w<cr>
+noremap <C-s> :w<cr>
+inoremap <C-s> <ESC>:w<cr>
 
 " Close buffer with Ctrl-Q
 map <C-q> :bd<cr>

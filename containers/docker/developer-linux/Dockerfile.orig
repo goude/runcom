@@ -36,7 +36,6 @@ RUN \
     libxslt-dev \
     locales \
     ninja-build \
-    openjdk-8-jre-headless \
     openssh-server \
     pandoc \
     pkg-config \
@@ -47,9 +46,9 @@ RUN \
     sudo \
     tmux \
     tree \
-    vim-nox \
     zlib1g-dev \
-    zsh && \
+    zsh \
+    openjdk-8-jre-headless && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
   add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
   add-apt-repository ppa:neovim-ppa/stable && \

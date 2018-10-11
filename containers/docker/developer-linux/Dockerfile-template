@@ -6,50 +6,7 @@ RUN \
   export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
   apt-get install -y \
-    alien \
-    apt-transport-https \
-    build-essential \
-    ca-certificates \
-    cifs-utils \
-    cmake \
-    curl \
-    exuberant-ctags \
-    ghc \
-    git \
-    gnupg \
-    golang \
-    hdevtools \
-    htop \
-    jq \
-    libaio1 \
-    libbz2-dev \
-    libcurl4-openssl-dev \
-    libfreetype6-dev \
-    libncurses5-dev \
-    libncursesw5-dev \
-    libpng-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    libssl-dev \
-    libtool-bin \
-    libxml2-dev \
-    libxslt-dev \
-    locales \
-    ninja-build \
-    openjdk-8-jre-headless \
-    openssh-server \
-    pandoc \
-    pkg-config \
-    postgresql-client \
-    samba-client \
-    silversearcher-ag \
-    software-properties-common \
-    sudo \
-    tmux \
-    tree \
-    vim-nox \
-    zlib1g-dev \
-    zsh && \
+%packages%
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
   add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
   add-apt-repository ppa:neovim-ppa/stable && \

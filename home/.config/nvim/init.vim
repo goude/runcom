@@ -46,8 +46,6 @@ let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
-let g:loaded_matchit = 1
-
 " Basic setup {
 "" Encoding
 set encoding=utf-8
@@ -668,6 +666,13 @@ endif
 " }
 
 " Plugin settings {
+
+" matchup
+let g:matchup_matchparen_enabled = 1
+let g:matchup_motion_enabled = 1
+let g:matchup_text_obj_enabled = 1
+let g:matchup_surround_enabled = 1
+let g:matchup_transmute_enabled = 1
 
 "" fzf.vim
 set wildmode=list:longest,list:full

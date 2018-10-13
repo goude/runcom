@@ -46,6 +46,8 @@ let g:python_host_prog=$HOME . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog=$HOME . '/.pyenv/versions/neovim3/bin/python'
 " }
 
+let g:loaded_matchit = 1
+
 " Basic setup {
 "" Encoding
 set encoding=utf-8
@@ -885,19 +887,13 @@ set hlsearch
 hi! Search guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
 hi! IncSearch guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
 
-" Fix match/highlight colors
-augroup fix_colors_augroup
-  au!
-  au ColorScheme * hi MatchParen guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-  "au ColorScheme * hi MatchWord guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-  "au ColorScheme * hi MatchParenCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-  "au ColorScheme * hi MatchWordCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+hi! MatchParen guibg=#3a3a3a
+hi! Sneak guibg=#3a3a3a
+hi! SneakScope guibg=#3a3a3a
 
-  " FIXME: moved from top, probably there for a reason (source order?)
-  " Fix highlighting colors for vim-sneak
-  au ColorScheme * hi Sneak guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-  au ColorScheme * hi SneakScope guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-augroup END
+"au ColorScheme * hi MatchWord guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+"au ColorScheme * hi MatchParenCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+"au ColorScheme * hi MatchWordCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
 
 " Allow crontab editing
 set backupskip=/tmp/*,/private/tmp/*

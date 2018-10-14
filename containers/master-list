@@ -34,6 +34,7 @@ pandoc
 pkg-config
 postgresql-client
 samba-client
+screenfetch
 silversearcher-ag
 software-properties-common
 sudo

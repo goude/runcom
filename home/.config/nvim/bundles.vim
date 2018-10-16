@@ -66,6 +66,11 @@ Plug 'coderifous/textobj-word-column.vim'
 " Table editing
 Plug 'dhruvasagar/vim-table-mode'
 
+" Multiple file editing
+
+" Edit every line in a quickfix list at the same time
+Plug 'Olical/vim-enmasse'
+
 " }
 
 " UI {

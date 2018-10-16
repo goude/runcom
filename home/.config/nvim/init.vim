@@ -6,6 +6,11 @@
 " - https://github.com/w0rp/ale (htmlhint and friends also)
 " - https://github.com/junegunn/dotfiles/blob/master/vimrc
 " - https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
+"
+" - https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
+"
+"
+"
 " }
 
 " Initialization / load bundles {
@@ -202,6 +207,12 @@ if !exists('*s:setupWrapping')
     set textwidth=79
   endfunction
 endif
+
+function! ExecuteMacroOverVisualRange()
+    echo "@".getcmdline()
+      execute ":'<,'>normal @".nr2char(getchar())
+    endfunction
+
 " }
 
 " Mappings {
@@ -305,6 +316,9 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Apply macro over visual selection
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " Disabled Mappings {
 
@@ -411,6 +425,10 @@ nnoremap <Leader><Tab> :bnext!<CR>
 
 " Switch to previous buffer
 nnoremap <Leader><S-tab> :bprev!<CR>
+
+" Open WORD under cursor in default program
+nnoremap <silent><Leader>o :execute ':!xdg-open ' . shellescape('<cWORD>')<CR>
+
 " }
 
 " Autocommands {

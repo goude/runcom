@@ -8,12 +8,16 @@ RUN \
   apt-get install -y \
     alien \
     apt-transport-https \
+    autoconf \
+    automake \
     build-essential \
     ca-certificates \
     cifs-utils \
     cmake \
     curl \
     exuberant-ctags \
+    g++ \
+    gettext \
     ghc \
     git \
     gnupg \
@@ -31,10 +35,12 @@ RUN \
     libreadline-dev \
     libsqlite3-dev \
     libssl-dev \
+    libtool \
     libtool-bin \
     libxml2-dev \
     libxslt-dev \
     locales \
+    m4 \
     ninja-build \
     openjdk-8-jre-headless \
     openssh-server \
@@ -42,11 +48,13 @@ RUN \
     pkg-config \
     postgresql-client \
     samba-client \
+    screenfetch \
     silversearcher-ag \
     software-properties-common \
     sudo \
     tmux \
     tree \
+    unzip \
     vim-nox \
     zlib1g-dev \
     zsh && \

@@ -417,6 +417,9 @@ nnoremap <silent> <leader>pp :FZF -m<CR>
 " Fuzzy find in git repo
 nnoremap <silent> <leader>pg :GitFiles<CR>
 
+" Fuzzy find in git repo
+nnoremap <silent> <leader>ph :Helptags<CR>
+
 " Open previously opened buffer
 "nmap <Leader><Leader> <c-^>
 
@@ -640,9 +643,9 @@ function! Prose()
   call textobj#sentence#init()
 
   " manual reformatting shortcuts
-  nnoremap <buffer> <silent> Q gqap
-  xnoremap <buffer> <silent> Q gq
-  nnoremap <buffer> <silent> <leader>Q vapJgqap
+  "nnoremap <buffer> <silent> Q gqap
+  "xnoremap <buffer> <silent> Q gq
+  "nnoremap <buffer> <silent> <leader>Q vapJgqap
 
   " force top correction on most recent misspelling
   "nnoremap <buffer> <c-s> [s1z=<c-o>

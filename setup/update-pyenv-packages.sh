@@ -46,5 +46,8 @@ ln -sf "$(pyenv which vd)" ~/bin/vd
 ln -sf "$(pyenv which nbdiff)" ~/bin/nbdiff
 ln -sf "$(pyenv which nbdime)" ~/bin/nbdime
 ln -sf "$(pyenv which git-nbdiffdriver)" ~/bin/git-nbdiffdriver
+ln -sf "$(pyenv which git-nbmergedriver)" ~/bin/git-nbmergedriver
+ln -sf "$(pyenv which git-nbdifftool)" ~/bin/git-nbdifftool
+ln -sf "$(pyenv which git-nbmergetool)" ~/bin/git-nbmergetool
 
 pyenv deactivate

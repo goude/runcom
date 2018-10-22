@@ -9,7 +9,7 @@ fi
 # Python 3 libs and command line tools
 pyenv activate neovim3
 
-install_command="$(pyenv which pip) install --no-cache-dir --upgrade"
+install_command="$(pyenv which pip) install --quiet --no-cache-dir --upgrade"
 
 $install_command pip
 $install_command \
@@ -36,18 +36,26 @@ $install_command topydo[columns] topydo[ical]
 
 pyenv rehash
 
-ln -sf "$(pyenv which flake8)" ~/bin/flake8
-ln -sf "$(pyenv which mypy)" ~/bin/mypy
-ln -sf "$(pyenv which yapf)" ~/bin/yapf
-ln -sf "$(pyenv which tmuxp)" ~/bin/tmuxp
-ln -sf "$(pyenv which topydo)" ~/bin/topydo
-ln -sf "$(pyenv which pipenv)" ~/bin/pipenv
-ln -sf "$(pyenv which vd)" ~/bin/vd
-ln -sf "$(pyenv which nbdiff)" ~/bin/nbdiff
-ln -sf "$(pyenv which nbdime)" ~/bin/nbdime
-ln -sf "$(pyenv which git-nbdiffdriver)" ~/bin/git-nbdiffdriver
-ln -sf "$(pyenv which git-nbmergedriver)" ~/bin/git-nbmergedriver
-ln -sf "$(pyenv which git-nbdifftool)" ~/bin/git-nbdifftool
-ln -sf "$(pyenv which git-nbmergetool)" ~/bin/git-nbmergetool
+pyenv_symlinks=(
+    "flake8"
+    "mypy"
+    "yapf"
+    "tmuxp"
+    "topydo"
+    "pipenv"
+    "vd"
+    "nbdiff"
+    "nbdime"
+    "git-nbdiffdriver"
+    "git-nbmergedriver"
+    "git-nbdifftool"
+    "git-nbmergetool"
+)
+
+for i in "${pyenv_symlinks[@]}"
+do
+    echo "Symlinking $i to ~/bin/..."
+    ln -sf "$(pyenv which $i)" "$HOME/bin/$i"
+done
 
 pyenv deactivate

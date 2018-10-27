@@ -672,7 +672,7 @@ function! Prose()
 endfunction
 
 " automatically initialize buffer by file type
-au FileType markdown,mkd,text call Prose()
+" au FileType markdown,mkd,text call Prose()
 
 " invoke manually by command for other file types
 command! -nargs=0 Prose call Prose()

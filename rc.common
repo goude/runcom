@@ -31,6 +31,11 @@ export PATH=$HOME/.rbenv/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.f
 # Source more environment variables
 source $rcfiles/localenv
 
+# Create tmp dir
+if [[ ! -d $RUNCOM_TMPDIR ]]; then
+	mkdir -p $RUNCOM_TMPDIR
+fi
+
 # Source optional additional settings
 if [[ -f $HOMESHICK_REPOS/pruncom/rc.pruncom ]]; then
   source $HOMESHICK_REPOS/pruncom/rc.pruncom

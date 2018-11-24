@@ -1,5 +1,6 @@
 Merge docker list with master-list
 Compare master-list to centos-setup
+Install/configure ripgrep / fd for fzf
 x 2018-10-16 Add nvim compilation deps to master-list
 x 2018-09-26 Make pyenv use local python install if available
 x 2018-09-26 Define a PYENV_PYTHON3_VERSION env var

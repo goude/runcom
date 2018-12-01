@@ -143,9 +143,9 @@ set number
 set relativenumber
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  colorscheme molokai
-endif
+"if !exists('g:not_finish_vimplug')
+  "silent! colorscheme molokai
+"endif
 
 set mousemodel=popup
 set t_Co=256
@@ -847,14 +847,14 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0,
       \ }
 
-call expand_region#custom_text_objects({
-      \ "\/\\n\\n\<CR>": 0,
-      \ 'a]' :0,
-      \ 'ab' :0,
-      \ 'aB' :0,
-      \ 'ii' :0,
-      \ 'ai' :0,
-      \ })
+"call expand_region#custom_text_objects({
+      "\ "\/\\n\\n\<CR>": 0,
+      "\ 'a]' :0,
+      "\ 'ab' :0,
+      "\ 'aB' :0,
+      "\ 'ii' :0,
+      "\ 'ai' :0,
+      "\ })
 
 "map K <Plug>(expand_region_expand)
 "map J <Plug>(expand_region_shrink)

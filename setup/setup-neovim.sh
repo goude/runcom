@@ -1,10 +1,16 @@
 #!/bin/bash
 
+echo 'setup-neovim: curl'
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo 'setup-neovim: curl done'
 
-#nvim +PlugInstall +q +q
-#nvim +PlugInstall +q +q &> /dev/null < /dev/tty
-echo before
+echo 'setup-neovim: pass 1'
 nvim +PlugInstall +qall &> /dev/null < /dev/tty
-echo after
+
+echo 'setup-neovim: pass 2'
+nvim +PlugInstall +q +q
+
+#nvim +PlugInstall +q +q &> /dev/null < /dev/tty
+
+echo 'setup-neovim: end of script'

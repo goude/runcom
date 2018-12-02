@@ -197,13 +197,13 @@ cnoreabbrev Qall qall
 " }
 
 " Functions {
-if !exists('*s:setupWrapping')
-  function s:setupWrapping()
-    set wrap
-    set wm=2
-    set textwidth=79
-  endfunction
-endif
+"if !exists('*s:setupWrapping')
+  "function s:setupWrapping()
+    "set wrap
+    "set wm=2
+    "set textwidth=79
+  "endfunction
+"endif
 
 function! ExecuteMacroOverVisualRange()
     echo "@".getcmdline()
@@ -375,6 +375,8 @@ nnoremap <silent> <F7> mzg=G`z
 
 " Show function key mappings in startup
 let g:startify_custom_header = [
+  \ '   RUNCOM NVIM',
+  \ '',
   \ '   F1 - Leader Help            L-ev Edit nvim config',
   \ '   F2 - NerdTree Find          L-er Reload nvim config',
   \ '   F3 - NerdTree Toggle        L-et Edit todo.txt',
@@ -466,10 +468,10 @@ augroup AutoSaveFolds
 augroup END
 
 "" Text files
-augroup vimrc-wrapping
-  au!
-  au BufRead,BufNewFile *.txt call s:setupWrapping()
-augroup END
+"augroup vimrc-wrapping
+  "au!
+  "au BufRead,BufNewFile *.txt call s:setupWrapping()
+"augroup END
 
 "" make/cmake
 augroup vimrc-make-cmake
@@ -613,9 +615,6 @@ let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
 
-" syntastic
-"let g:syntastic_python_checkers=['python', 'flake8']
-
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
@@ -642,7 +641,6 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-
 
 " Prose / markdown / txt
 function! Prose()

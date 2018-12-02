@@ -109,5 +109,5 @@ motd() {
 }
 
 nerdfont_icon_search() {
-	cat $RUNCOM_PATH/utils/nerd-fonts-scripts/*.sh | sed "s/i=//" | sed "s/=\$i//" | grep -E "^'" | sed "s/'//g" | sort --random-sort | fzf | perl -ne 'print $1 if /^([^ ]+) /'
+	cat $RUNCOM_PATH/utils/nerd-fonts-scripts/*.sh | sed "s/i=//" | sed "s/=\$i//" | grep -E "^'" | sed "s/'//g" | sort --random-sort | fzf | perl -ne 'print $1 if /^([^ ]+) /' | xsel --input
 }

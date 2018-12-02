@@ -917,9 +917,10 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 
 " Override search highlights
+" https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 set hlsearch
-hi! Search guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-hi! IncSearch guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
+hi! Search guifg=lightgrey guibg=236 ctermfg=lightgrey ctermbg=236
+hi! IncSearch guifg=lightgrey guibg=236 ctermfg=lightgrey ctermbg=236
 
 hi! MatchParen guibg=#3a3a3a
 hi! Sneak guibg=#3a3a3a
@@ -944,10 +945,10 @@ augroup END
 " Credit: krader1961 in https://github.com/tpope/vim-sleuth/issues/13
 " Highlight trailing whitespace and leading mixed tabs/spaces.
 " TODO: highlight space indents if noexpandtab is set
-hi! ExtraWhitespaceWarn ctermbg=darkred guibg=red
+hi! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
 augroup whitespace_warnings
   au!
-  au ColorScheme * highlight! ExtraWhitespaceWarn ctermbg=red guibg=red
+  au ColorScheme * highlight! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
   au BufWinEnter * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
 
   " The above flashes annoyingly while typing, be calmer in insert mode

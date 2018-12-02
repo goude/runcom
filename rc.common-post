@@ -2,52 +2,58 @@
 
 # OS specific settings
 if [[ $system == 'Linux' ]]; then
-    alias ls='ls -hpF --color=auto'
-    alias rm='rm -I'
-    alias grep='grep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias open='xdg-open'
+	alias ls='ls -hpF --color=auto'
+	alias rm='rm -I'
+	alias grep='grep --color=auto'
+	alias egrep='egrep --color=auto'
+	alias open='xdg-open'
 
-    if [[ -n "$DISPLAY" ]]; then
-        setxkbmap -option ctrl:nocaps
-    fi
+	if [[ -n "$DISPLAY" ]]; then
+			setxkbmap -option ctrl:nocaps
+	fi
 fi
 
 if [[ $system == 'OSX' ]]; then
-    export CLICOLOR=1
+	export CLICOLOR=1
 
-    if [[ -x /usr/local/bin/gls ]]; then
-        alias ls='/usr/local/bin/gls -hpF --color=auto'
-    else
-        alias ls='ls -hG'
-    fi
+	if [[ -x /usr/local/bin/gls ]]; then
+			alias ls='/usr/local/bin/gls -hpF --color=auto'
+	else
+			alias ls='ls -hG'
+	fi
 fi
 
 # Directory colors
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
-    eval `dircolors $HOME/.dircolors`
+	eval `dircolors $HOME/.dircolors`
 fi
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
-    eval `gdircolors $HOME/.dircolors`
+	eval `gdircolors $HOME/.dircolors`
 fi
 
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]]; then
-  eval "$(rbenv init -)"
+	eval "$(rbenv init -)"
 fi
 
-# colorls
-if [[ -f ~/.rbenv/shims/colorls ]]; then
-    alias l='colorls -A'
-    alias ls='colorls'
-    alias ll='colorls -A -l'
-    alias lt='colorls --tree'
-    source "$(dirname $(gem which colorls))/tab_complete.sh"
+# Use exa/colorls if available
+if [[ -f ~/.cargo/bin/exa ]]; then
+	# cargo install exa
+	alias ls='exa --color-scale'
+	alias l='ls --all'
+	alias ll='ls --all --long --header --git'
+	alias lt='ls --all --long --tree'
+elif [[ -f ~/.rbenv/shims/colorls ]]; then
+	alias ls='colorls'
+	alias l='colorls -A'
+	alias ll='colorls -A -l'
+	alias lt='colorls --tree'
+	source "$(dirname $(gem which colorls))/tab_complete.sh"
 else
-    alias l='ls -A --color'
-    alias ll='ls -lAh --color'
-    alias lt='tree'
-    alias lsa='ls -lAh --color'
+	alias l='ls -A --color'
+	alias ll='ls -lAh --color'
+	alias lt='tree'
+	alias lsa='ls -lAh --color'
 fi
 
 # Generic colou?ri[sz]er
@@ -55,7 +61,7 @@ fi
 
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
-    . $HOME/.homesick/repos/yaprox/yaprox.sh
+	. $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
 
 # Turn off Ctrl-s XOFF
@@ -85,7 +91,7 @@ eval "$(fasd --init auto)"
 
 # Alias to fix typos
 if [[ -x /usr/bin/thefuck ]]; then
-    eval $(thefuck --alias)
+	eval $(thefuck --alias)
 fi
 
 # Cleanup
@@ -94,10 +100,10 @@ unset system
 
 # Source local settings
 if [ -f ~/.localenv ]; then
-    . ~/.localenv
+	. ~/.localenv
 fi
 
 # Source optional additional settings
 if [[ -f $HOMESHICK_REPOS/pruncom/rc.pruncom-post ]]; then
-  . "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
+	. "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
 fi

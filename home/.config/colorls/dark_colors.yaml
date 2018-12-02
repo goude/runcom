@@ -1,7 +1,7 @@
 # Main Colors
 unrecognized_file: lightgray
-recognized_file:   white
-dir:               blue
+recognized_file: wheat
+dir: slateblue
 
 # Link
 dead_link: red

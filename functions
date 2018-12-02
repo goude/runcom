@@ -106,3 +106,7 @@ fixssh() {
 motd() {
 	echo "Welcome to goude/runcom. help() might be available, and in the future it might even be able to provide actual help for things..."
 }
+
+nerdfont_icon_search() {
+	cat $RUNCOM_PATH/utils/nerd-fonts-scripts/*.sh | sed "s/i=//" | sed "s/=\$i//" | grep -E "^'" | sed "s/'//g" | sort --random-sort | fzf | perl -ne 'print $1 if /^([^ ]+) /'
+}

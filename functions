@@ -87,7 +87,8 @@ function center-text() {
 n () {
 	if [ $# -eq 0 ]
 		then
-			nvim "$(fzf)"
+			# nvim "$(fzf)"
+			nvim "$@"
 		else
 			nvim "$@"
 	fi

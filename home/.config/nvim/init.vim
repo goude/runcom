@@ -371,6 +371,19 @@ nnoremap <silent> <F5> :NumbersToggle<CR>
 nnoremap <silent> <leader><F5> :set nonumber<CR>:set norelativenumber<CR>
 nnoremap <silent> <F5> :NumbersToggle<CR>
 nnoremap <silent> <F6> :TogglePencil<CR>:call Toggle_msg("pencil")<CR>
+nnoremap <silent> <F7> mzg=G`z
+
+" Show function key mappings in startup
+let g:startify_custom_header = [
+  \ '   F1 - Leader Help            L-ev Edit nvim config',
+  \ '   F2 - NerdTree Find          L-er Reload nvim config',
+  \ '   F3 - NerdTree Toggle        L-et Edit todo.txt',
+  \ '   F4 - Tagbar Toggle',
+  \ '   F5 - Number Toggle',
+  \ ' L-F5 - Relativenumber Toggle',
+  \ '   F6 - Pencil Toggle',
+  \ '   F7 - Indent File',
+  \ ]
 
 " Clear search highlight
 nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
@@ -844,7 +857,6 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0,
       \ }
 
-" This needs to be guarded, since it will break auto-install in docker
 "call expand_region#custom_text_objects({
       "\ "\/\\n\\n\<CR>": 0,
       "\ 'a]' :0,

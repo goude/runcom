@@ -75,6 +75,9 @@ Plug 'Olical/vim-enmasse'
 
 " UI {
 
+" Fancy start screen for vim
+Plug 'mhinz/vim-startify'
+
 " Base16 color schemes - use locally generated
 "Plug 'chriskempson/base16-vim'
 Plug '~/.local/share/base16/templates/vim'

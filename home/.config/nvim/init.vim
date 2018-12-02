@@ -143,9 +143,6 @@ set number
 set relativenumber
 
 let no_buffers_menu=1
-"if !exists('g:not_finish_vimplug')
-  "silent! colorscheme molokai
-"endif
 
 set mousemodel=popup
 set t_Co=256
@@ -847,6 +844,7 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0,
       \ }
 
+" This needs to be guarded, since it will break auto-install in docker
 "call expand_region#custom_text_objects({
       "\ "\/\\n\\n\<CR>": 0,
       "\ 'a]' :0,

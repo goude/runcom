@@ -87,12 +87,12 @@ set-option -g status on                # turn the status bar on
 set -g status-justify centre           # center window list for clarity
 
 # Show host name and IP address on left side of status bar
-set -g status-left-length 60
-set -g status-left "#[fg=colour16]  #[fg=colour01]#h #[fg=colour11]#($HOME/bin/tmux-status-line)"
+set -g status-left-length 70
+set -g status-left "#[fg=colour16]   #[fg=colour01]歷#h #[fg=colour11]#($HOME/bin/tmux-status-line)"
 
 # Show session name, window & pane number, date and time on right side of status bar
-set -g status-right-length 60
-set -g status-right "#[fg=colour04]#S W#I:P#P #[fg=colour05]#(echo -n $RUNCOM_TODO_CONTEXT) #[fg=colour11]#(free-disk-space) #[fg=colour16]#(thxtime)  "
+set -g status-right-length 70
+set -g status-right "#[fg=colour04] #S 離#P #[fg=colour05]#(echo -n $RUNCOM_TODO_CONTEXT) #[fg=colour11] #(free-disk-space) #[fg=colour01]#(thxtime) #[fg=colour16]  "
 
 # Command bindings
 bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"
@@ -130,8 +130,8 @@ set -g window-status-separator " "
 #set-option -g message-fg colour166 #orange
 #set-window-option -g clock-mode-colour colour02
 
-set -g window-status-current-format "#[fg=colour00,bg=colour20] #I #W#F "
-set -g window-status-format "#[fg=colour00,bg=colour19] #I #W#F "
+set -g window-status-current-format "#[fg=colour00,bg=colour20] 閭#I #W "
+set -g window-status-format "#[fg=colour00,bg=colour19] 濾#I #W "
 set-option -g pane-active-border-fg colour19
 set-option -g pane-border-fg colour18
 set-option -g status-attr default

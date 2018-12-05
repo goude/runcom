@@ -22,7 +22,7 @@ git config --global --unset http.sslCAinfo
 git config --global alias.undo-commit 'reset --soft HEAD^'
 
 # diff configuration
-git config --global icdiff.options '--highlight --line-numbers'
+git config --global icdiff.options '--line-numbers'
 git-nbdiffdriver config --enable --global
 
 git config --list

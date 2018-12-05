@@ -17,6 +17,7 @@ $install_command \
 	click==6.7 \
 	flake8 \
 	humanfriendly \
+	httpie \
 	icdiff \
 	jedi \
 	mypy \
@@ -45,6 +46,7 @@ pyenv_symlinks=(
 	"git-nbdifftool"
 	"git-nbmergedriver"
 	"git-nbmergetool"
+	"http"
 	"mypy"
 	"nbdiff"
 	"nbdime"

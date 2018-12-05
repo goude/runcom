@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Setting up default git configuration."
+echo "Setting up default global git configuration."
 
 if [[ -f "$HOME/.gitconfig" ]]; then
   rm "$HOME/.gitconfig"

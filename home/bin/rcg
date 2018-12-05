@@ -19,10 +19,10 @@ git config --global --unset http.sslCAinfo
 
 
 # aliases
-git config --global alias.undo-commit 'reset --soft HEAD^
-'
+git config --global alias.undo-commit 'reset --soft HEAD^'
 
-# activate notebook diffs
+# diff configuration
+git config --global icdiff.options '--highlight --line-numbers'
 git-nbdiffdriver config --enable --global
 
 git config --list

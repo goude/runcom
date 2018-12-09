@@ -15,6 +15,7 @@ $install_command pip
 $install_command \
 	autopep8 \
 	click==6.7 \
+	colorama==0.3.9 \
 	flake8 \
 	humanfriendly \
 	httpie \

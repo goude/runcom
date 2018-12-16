@@ -84,11 +84,9 @@ source $HOME/.homesick/repos/antigen/antigen.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/
 
 antigen bundle git
-#antigen bundle goude/liquidprompt
 antigen bundle Tarrasch/zsh-autoenv
 antigen bundle gnu-utils
 
-# antigen bundle history # h, hsi
 antigen bundle history-substring-search
 
 antigen bundle lukechilds/zsh-better-npm-completion
@@ -101,6 +99,8 @@ antigen bundle pip
 antigen bundle python
 antigen bundle vagrant
 
+# antigen bundle history # h, hsi
+#antigen bundle goude/liquidprompt
 #antigen bundle extract # x swiss army knife
 #antigen bundle felixr/docker-zsh-completion
 #antigen bundle gitignore
@@ -133,7 +133,7 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" "
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user vcs virtualenv dir dir_writable)
 POWERLEVEL9K_CUSTOM_USER="\$(echo git_user_name_prompt_mkii)"
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs docker_machine ssh)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"

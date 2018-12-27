@@ -126,6 +126,10 @@ Plug 'airblade/vim-gitgutter'
 " Show both relative and normal line numbers
 Plug 'myusuf3/numbers.vim'
 
+" Color preview for vim
+Plug 'gorodinskiy/vim-coloresque'
+"Plug 'lilydjwg/colorizer'
+
 " }
 
 " Search {
@@ -208,6 +212,8 @@ Plug 'Quramy/ng-tsserver'
 
 " Python
 Plug 'zchee/deoplete-jedi'
+" Semantic highlighting for Python in Neovim
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " C
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
@@ -226,7 +232,6 @@ Plug 'pbrisbin/vim-syntax-shakespeare'
 
 " html
 Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 

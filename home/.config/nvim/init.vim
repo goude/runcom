@@ -743,6 +743,7 @@ endif
 au InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#auto_complete_delay = 100
 
 " Experimental (check behavior)
 "inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"

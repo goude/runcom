@@ -23,10 +23,10 @@ $install_command \
 	jedi \
 	mypy \
 	nbdime \
-	neovim \
 	numpy \
 	pillow \
 	pipenv \
+	pynvim \
 	requests \
 	tmuxp \
 	topydo \

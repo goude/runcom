@@ -22,7 +22,6 @@ $install_command \
 	icdiff \
 	jedi \
 	mypy \
-	nbdime \
 	numpy \
 	pillow \
 	pipenv \
@@ -34,6 +33,10 @@ $install_command \
 	visidata \
 	yamllint \
 	yapf
+
+#	nbdime
+#"nbdime"
+#"nbdiff"
 
 $install_command topydo[columns] topydo[ical]
 
@@ -49,8 +52,6 @@ pyenv_symlinks=(
 	"git-nbmergetool"
 	"http"
 	"mypy"
-	"nbdiff"
-	"nbdime"
 	"pipenv"
 	"tmuxp"
 	"topydo"

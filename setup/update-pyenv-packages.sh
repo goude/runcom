@@ -22,10 +22,10 @@ $install_command \
 	icdiff \
 	jedi \
 	mypy \
+	neovim \
 	numpy \
 	pillow \
 	pipenv \
-	pynvim \
 	requests \
 	tmuxp \
 	topydo \
@@ -34,9 +34,14 @@ $install_command \
 	yamllint \
 	yapf
 
+# pynvim \
 #	nbdime
 #"nbdime"
 #"nbdiff"
+#"git-nbdiffdriver"
+#"git-nbdifftool"
+#"git-nbmergedriver"
+#"git-nbmergetool"
 
 $install_command topydo[columns] topydo[ical]
 
@@ -46,10 +51,6 @@ pyenv_symlinks=(
 	"git-icdiff"
 	"icdiff"
 	"flake8"
-	"git-nbdiffdriver"
-	"git-nbdifftool"
-	"git-nbmergedriver"
-	"git-nbmergetool"
 	"http"
 	"mypy"
 	"pipenv"

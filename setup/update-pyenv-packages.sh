@@ -26,7 +26,9 @@ $install_command \
 	numpy \
 	pillow \
 	pipenv \
+	pytest \
 	requests \
+	sphinx \
 	tmuxp \
 	topydo \
 	vim-vint \

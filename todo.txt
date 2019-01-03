@@ -1,3 +1,4 @@
+Make neovim3 environment use system python if available (rpi etc)
 Configure fzf more
 Compare master-list to centos-setup
 x 2018-12-02 Merge docker list with master-list

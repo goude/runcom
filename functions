@@ -70,9 +70,9 @@ random-base16-colorscheme () {
 save () {
 	if [ -z ${1+x} ]; then
 		#echo "Missing commit message.";
-		git commit -a -m "update" && git push && git status;
+		git commit -a -m "update" && git push;
 	else
-		git commit -a -m "$1" && git push && git status;
+		git commit -a -m "$1" && git push;
 	fi
 }
 

@@ -383,7 +383,7 @@ let g:startify_custom_header = [
   \ '   F1 - Leader Help            L-ev Edit nvim config',
   \ '   F2 - NerdTree Find          L-er Reload nvim config',
   \ '   F3 - NerdTree Toggle        L-et Edit todo.txt',
-  \ '   F4 - Tagbar Toggle',
+  \ '   F4 - Tagbar Toggle          gx   Open file in browser',
   \ '   F5 - Number Toggle',
   \ ' L-F5 - Relativenumber Toggle',
   \ '   F6 - Pencil Toggle',

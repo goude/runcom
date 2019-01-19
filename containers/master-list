@@ -39,6 +39,7 @@ openssh-server
 pandoc
 pkg-config
 postgresql-client
+python3-pip
 samba-client
 screenfetch
 silversearcher-ag

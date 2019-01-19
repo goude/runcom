@@ -91,8 +91,13 @@ eval "$(fasd --init auto)"
 
 # Alias to fix typos
 if [[ -x /usr/bin/thefuck ]]; then
-	eval $(thefuck --alias)
+	eval "$(thefuck --alias)"
 fi
+
+# Pipenv autocompletion
+#if [[ -f ~/.local/bin/pipenv ]]; then
+	#eval $(~/.local/bin/pipenv --completion)
+#fi
 
 # Cleanup
 unset rcfiles

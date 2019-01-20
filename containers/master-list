@@ -1,4 +1,3 @@
-alien
 apt-transport-https
 autoconf
 automake
@@ -10,14 +9,12 @@ curl
 exuberant-ctags
 g++
 gettext
-ghc
 git
 gnupg
 golang
 hdevtools
 htop
 jq
-libaio1
 libbz2-dev
 libcurl4-openssl-dev
 libfreetype6-dev

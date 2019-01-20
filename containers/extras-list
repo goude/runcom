@@ -1,9 +1,11 @@
+alien
 ansible
-cmake
+libaio1
 ctop
 eurkey
 graphviz
 graphviz-dev
+ghc
 hugo
 libfontconfig1-dev
 libfreetype6-dev

@@ -1,7 +1,7 @@
 " vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldmethod=marker spell:
 
 " Preamble {
-" TODO: have a look at
+" TODO: have a look at (type ‘gx’ when cursor is on link)
 " - http://wrotenwrites.com/a_modern_terminal_workflow_2/
 " - https://github.com/w0rp/ale (htmlhint and friends also)
 " - https://github.com/junegunn/dotfiles/blob/master/vimrc
@@ -386,7 +386,7 @@ let g:startify_custom_header = [
   \ '   F2 - NerdTree Find          L-er Reload nvim config',
   \ '   F3 - NerdTree Toggle        L-et Edit todo.txt',
   \ '   F4 - Tagbar Toggle          gx   Open file in browser',
-  \ '   F5 - Number Toggle',
+  \ '   F5 - Number Toggle          L-o  Open WORD under cursor in default program',
   \ ' L-F5 - Relativenumber Toggle',
   \ '   F6 - Pencil Toggle',
   \ '   F7 - Indent File',

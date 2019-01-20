@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# make sure nvm is available (for plugin installation)
+source "$HOME/.nvm/nvm.sh"
+
 echo 'setup-neovim: curl'
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

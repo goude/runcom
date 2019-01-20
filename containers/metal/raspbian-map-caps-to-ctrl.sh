@@ -1,8 +1,4 @@
-#/etc/default/keyboard
+#!/usr/bin/env bash
+sudo sed -i.bak /etc/default/keyboard -e s/^XKBOPTIONS=$/XKBOPTIONS="terminate:ctrl_alt_bksp,ctrl:nocaps"/
 
-#XKBMODEL="pc105"
-#XKBLAYOUT="us"
-#XKBVARIANT="altgr-intl"
-#XKBOPTIONS="terminate:ctrl_alt_bksp,ctrl:nocaps"
-
-#sudo dpkg-reconfigure keyboard-configuration
+sudo dpkg-reconfigure keyboard-configuration

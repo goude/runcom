@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$HOMESHICK_REPOS/runcom/rc.pyenv"
+source "$HOME/.homesick/repos/runcom/rc.pyenv"
 
 PIPENV_CMD=~/.local/bin/pipenv
 

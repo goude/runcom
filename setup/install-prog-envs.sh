@@ -7,14 +7,12 @@ source ../localenv
 ./setup-nvm.sh
 ./update-node-packages.sh
 
-./setup-pyenv.sh
+#./setup-pyenv.sh
 #./setup-pyenvs.sh
 #./update-pyenv-packages.sh
-(cd rcpy && ./setup.sh)
-(cd rcpy/python3 && ./setup.sh)
-(cd rcpy/python2 && ./setup.sh)
+./install-rcpy.sh
 
 ./setup-neovim.sh
 
-./setup-rbenv.sh
-./setup-ruby.sh
+#./setup-rbenv.sh
+#./setup-ruby.sh

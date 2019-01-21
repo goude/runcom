@@ -223,7 +223,8 @@ Plug 'ludwig/split-manpage.vim'
 Plug 'jimenezrick/vimerl'
 
 " Go
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+" FIXME: Temporarily disabled due to installation issues.
+"Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 " Haskell
 Plug 'eagletmt/neco-ghc'

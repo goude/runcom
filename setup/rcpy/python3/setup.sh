@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 source "$HOME/.homesick/repos/runcom/rc.pyenv"
+source "$HOME/.homesick/repos/runcom/localenv"
 
-PIPENV_CMD=~/.local/bin/pipenv
+$RUNCOM_PIPENV_CMD --python 3
+ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
 
-$PIPENV_CMD --python 3
-ln -sf "$($PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
-
-$PIPENV_CMD install \
+$RUNCOM_PIPENV_CMD install \
 	autopep8 \
 	flake8 \
 	httpie \
 	icdiff \
 	jedi \
+	maya \
 	mypy \
 	neovim \
 	pytest \
@@ -24,7 +24,7 @@ $PIPENV_CMD install \
 	yamllint \
 	yapf
 
-$PIPENV_CMD run pyenv rehash
+$RUNCOM_PIPENV_CMD run pyenv rehash
 
 pyenv_symlinks=(
 	"git-icdiff"
@@ -41,6 +41,6 @@ pyenv_symlinks=(
 for i in "${pyenv_symlinks[@]}"
 do
 	echo "Symlinking $i to ~/bin/..."
-	ln -sf "$($PIPENV_CMD run pyenv which $i)" "$HOME/bin/$i"
+	ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which $i)" "$HOME/bin/$i"
 done
 

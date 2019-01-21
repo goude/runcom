@@ -7,3 +7,4 @@ export RUNCOM_RBENV_RUBY_VERSION=2.4.4
 export RUNCOM_NVM_NODE_VERSION=8
 export RUNCOM_TMPDIR=$HOME/tmp
 export RUNCOM_PYTHON3=$HOME/.pyenv/versions/neovim3/bin/python3
+export RUNCOM_PIPENV_CMD=$HOME/.local/bin/pipenv

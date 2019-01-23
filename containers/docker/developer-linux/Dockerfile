@@ -6,7 +6,6 @@ RUN \
   export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
   apt-get install -y \
-    alien \
     apt-transport-https \
     autoconf \
     automake \
@@ -18,14 +17,11 @@ RUN \
     exuberant-ctags \
     g++ \
     gettext \
-    ghc \
     git \
     gnupg \
-    golang \
     hdevtools \
     htop \
     jq \
-    libaio1 \
     libbz2-dev \
     libcurl4-openssl-dev \
     libfreetype6-dev \
@@ -42,11 +38,11 @@ RUN \
     locales \
     m4 \
     ninja-build \
-    openjdk-8-jre-headless \
     openssh-server \
     pandoc \
     pkg-config \
     postgresql-client \
+    python3-pip \
     samba-client \
     screenfetch \
     silversearcher-ag \

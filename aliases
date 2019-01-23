@@ -43,6 +43,8 @@ alias jc='jupyter-console'
 alias pan='hocd runcom/setup/rcpy/python3 && pipenv shell'
 alias paj='pyenv activate pyenv-jupyter'
 alias pad='pyenv deactivate'
+alias pir='pipenv run'
+alias pis='pipenv shell'
 
 # misc aliases
 alias clp='tmux split-window && exit'

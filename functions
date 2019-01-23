@@ -23,19 +23,11 @@ dedup_pathvar () {
 }
 
 # Shorten the email to the format x@y; useful in prompt
-git_user_name_prompt () {
-		gitname=$(git config user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
-		if [[ $gitname =~ 'as' ]]; then
-			echo -n $gitname | color red
-		else
-			echo -n $gitname | color green
-		fi
-}
-
 git_user_name_prompt_mkii () {
 		gitname=$(git config user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
 		gitname_global=$(git config --global user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
 		if [[ $gitname != $gitname_global ]]; then
+			#echo -n $gitname | color red
 			echo -n $gitname 
 		else
 			echo -n $gitname
@@ -106,9 +98,17 @@ fixssh() {
 }
 
 motd() {
-	echo "Welcome to goude/runcom. help() might be available, and in the future it might even be able to provide actual help for things..."
+	echo " Juice-tone, we ain't got no problem " | center-text | color yellow
 }
 
 nerdfont_icon_search() {
 	cat $RUNCOM_PATH/utils/nerd-fonts-scripts/*.sh | sed "s/i=//" | sed "s/=\$i//" | grep -E "^'" | sed "s/'//g" | sort --random-sort | fzf | perl -ne 'print $1 if /^([^ ]+) /' | xsel --input
+}
+
+function hsi() {
+	history | fzf --tac --no-sort --query="$1"
+}
+
+function esi() {
+	env | sort | fzf --query="$1"
 }

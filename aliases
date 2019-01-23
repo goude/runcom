@@ -17,10 +17,6 @@ alias gd='git icdiff'
 #alias gl="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -r"
 alias gl='git log --oneline --decorate --all --graph'
 
-# searching aliases
-alias hsi='history | egrep -i'
-alias esi='env | egrep -i'
-
 # homeshick aliases
 alias ho='homeshick'
 alias hocd='homeshick cd'
@@ -38,13 +34,13 @@ alias ft='fzf-tmux'
 alias g='git'
 alias h='history'
 alias s='ssh'
-#alias t='todo.sh -c'
 alias t='topydo ls'
 alias v='\vim'
 
 # python and jupyter aliases
 alias jc='jupyter-console'
-alias pan='pyenv activate neovim3'
+#alias pan='pyenv activate neovim3'
+alias pan='hocd runcom/setup/rcpy/python3 && pipenv shell'
 alias paj='pyenv activate pyenv-jupyter'
 alias pad='pyenv deactivate'
 

@@ -32,9 +32,12 @@ bind l select-pane -R
 # bind 9 select-window -p
 # bind 0 select-window -n
 
+bind 9 switch-client -p
+bind 0 switch-client -n
+
 # Swap panes AND switch focus -> cursor stays in 'same' location
-bind 9 select-pane -L\; swap-pane -U
-bind 0 select-pane -R\; swap-pane -D
+bind ( select-pane -L\; swap-pane -U
+bind ) select-pane -R\; swap-pane -D
 
 # Repeat last command in left/right pane
 unbind r

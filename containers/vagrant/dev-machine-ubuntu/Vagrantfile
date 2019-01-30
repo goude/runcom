@@ -2,7 +2,13 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-16.04"
+  #if Vagrant.has_plugin?("vagrant-proxyconf")
+  #config.proxy.http     = ""
+  #config.proxy.https    = ""
+  #config.proxy.no_proxy = "localhost,127.0.0.1"
+  #end
+
+  config.vm.box = "bento/ubuntu-18.04"
   config.ssh.forward_agent = true
 
   config.vm.network "forwarded_port", guest: 5000, host: 5000

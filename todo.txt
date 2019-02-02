@@ -1,5 +1,6 @@
-Make neovim3 environment use system python if available (rpi etc)
+(A) Test new vagrant script on @work machine
 Configure fzf more
+Make neovim3 environment use system python if available (rpi etc)
 Compare master-list to centos-setup
 x 2018-12-02 Merge docker list with master-list
 x 2018-10-16 Add nvim compilation deps to master-list

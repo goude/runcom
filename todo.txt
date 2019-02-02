@@ -2,6 +2,7 @@
 Configure fzf more
 Make neovim3 environment use system python if available (rpi etc)
 Compare master-list to centos-setup
+Think about how to use XDG - https://0x46.net/thoughts/2019/02/01/dotfile-madness/
 x 2018-12-02 Merge docker list with master-list
 x 2018-10-16 Add nvim compilation deps to master-list
 x 2018-09-26 Make pyenv use local python install if available

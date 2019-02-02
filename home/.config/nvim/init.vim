@@ -183,19 +183,11 @@ set titlestring=%F
 
 " }
 
-" Abbreviations {
-
-" Fix common typos
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
+" Load shared mappings {
+"" Include user's local vim config
+if filereadable(expand("~/.config/nvim/mappings.vim"))
+  source ~/.config/nvim/mappings.vim
+endif
 " }
 
 " Functions {
@@ -208,165 +200,20 @@ cnoreabbrev Qall qall
 "endif
 
 function! ExecuteMacroOverVisualRange()
-    echo "@".getcmdline()
-      execute ":'<,'>normal @".nr2char(getchar())
-    endfunction
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
 
-" }
+function! Toggle_msg(tname)
+  echom "Toggled" a:tname "."
+endfunction
 
-" Mappings {
-
-" Reduce finger movement for Esc
-inoremap jk <Esc>
-"inoremap <esc> <nop>
-"nnoremap <esc> <nop>
-
-" Arrow keys
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
-
-" Move up and down visually
-nnoremap j gj
-nnoremap k gk
-
-" Disable arrow keys completely in Insert Mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-" Save with Ctrl-C
-noremap <C-s> :w<cr>
-inoremap <C-s> <ESC>:w<cr>
-
-" Close buffer with Ctrl-Q
-map <C-q> :bd<cr>
-imap <C-q> <ESC>:bd<cr>
-
-" Make Y behave
-nnoremap Y y$
-
-" qq record, Q replay
-nnoremap Q @q
-
-" Use very magic regexps by default
-nnoremap / /\v
-cnoremap %s/ %s/\v
-
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Copy/paste mappings
-
-" Yank to system clipboard
-noremap <leader>c "+y<CR>
-
-" Paste from system clipboard
-noremap <leader>v "+gP<CR>
-
-" Cut to system clipboard
-noremap <leader>x "+x<CR>
-
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
-
-"" Vmap for maintaining Visual Mode after shifting > and <
-vmap < <gv
-vmap > >gv
-
-"" Move visual block
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-" Moving lines
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
-xnoremap < <gv
-xnoremap > >gv
-
-nnoremap <Tab> :bnext!<CR>
-nnoremap <S-tab> :bprev!<CR>
-
-" vim-sneak
-let g:sneak#s_next = 1
-nmap f <Plug>Sneak_f
-nmap F <Plug>Sneak_F
-xmap f <Plug>Sneak_f
-xmap F <Plug>Sneak_F
-omap f <Plug>Sneak_f
-omap F <Plug>Sneak_F
-
-" vim-easy-align.vim
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-
-" Apply macro over visual selection
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
-
-" Disabled Mappings {
-
-" Opens an edit command with the path of the currently edited file filled in
-"noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled
-"noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Open current line on GitHub
-"nnoremap <Leader>o :.Gbrowse<CR>
-
-"cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
-" Git
-"noremap <Leader>ga :Gwrite<CR>
-"noremap <Leader>gc :Gcommit<CR>
-"noremap <Leader>gsh :Gpush<CR>
-"noremap <Leader>gll :Gpull<CR>
-"noremap <Leader>gs :Gstatus<CR>
-"noremap <Leader>gb :Gblame<CR>
-"noremap <Leader>gd :Gvdiff<CR>
-"noremap <Leader>gr :Gremove<CR>
-
-" Session management
-"nnoremap <leader>so :OpenSession<Space>
-"nnoremap <leader>ss :SaveSession<Space>
-"nnoremap <leader>sd :DeleteSession<CR>
-"nnoremap <leader>sc :CloseSession<CR>
-
-"nmap <Leader><Space>o :lopen<CR>      " open location window
-"nmap <Leader><Space>c :lclose<CR>     " close location window
-"nmap <Leader><Space>, :ll<CR>         " go to current error/warning
-"nmap <Leader><Space>n :lnext<CR>      " next error/warning
-"nmap <Leader><Space>p :lprev<CR>      " previous error/warning
-
-" }
 
 " }
 
 " Mappings - leader/function keys {
 
 " Function key toggles
-function! Toggle_msg(tname)
-  echom "Toggled" a:tname "."
-endfunction
 
 nnoremap <silent> <F1> :call FMLShow()<CR>
 nnoremap <silent> <F2> :NERDTreeFind<CR>
@@ -449,6 +296,27 @@ nnoremap <Leader><S-tab> :bprev!<CR>
 " Open WORD under cursor in default program
 nnoremap <silent><Leader>o :execute ':!xdg-open ' . shellescape('<cWORD>')<CR>
 
+" }
+
+" Plugin Mappings {
+" vim-sneak
+let g:sneak#s_next = 1
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+
+" vim-easy-align.vim
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
 " }
 
 " Autocommands {

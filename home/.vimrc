@@ -1,4 +1,6 @@
-" sensible.vim - Defaults everyone can agree on
+" vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldmethod=marker spell:
+
+" sensible.vim - Defaults everyone can agree on {
 " Maintainer:   Tim Pope <http://tpo.pe/>
 " Version:      1.1
 
@@ -91,5 +93,11 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 inoremap <C-U> <C-G>u<C-U>
+" }
 
-" vim:set ft=vim et sw=2:
+" Load shared mappings {
+"" Include user's local vim config
+if filereadable(expand("~/.config/nvim/mappings.vim"))
+  source ~/.config/nvim/mappings.vim
+endif
+" }

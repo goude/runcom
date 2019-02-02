@@ -171,7 +171,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Add completion from tmux panes
-Plug 'wellle/tmux-complete.vim'
+"Plug 'wellle/tmux-complete.vim'
 
 " }
 

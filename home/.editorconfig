@@ -12,8 +12,12 @@ insert_final_newline = true
 indent_style = space
 indent_size = 4
 
-[*.{yml,yaml,rst}]
+[*.{yml,yaml}]
 indent_style = space
+
+[*.rst]
+indent_style = space
+indent_size = 3
 
 [Makefile]
 indent_style = tab

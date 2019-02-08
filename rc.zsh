@@ -66,7 +66,7 @@ set -o ignoreeof
 setopt clobber
 
 # Experimental candidates
-setopt AUTO_CD
+#setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt AUTO_NAME_DIRS
 setopt GLOB_COMPLETE

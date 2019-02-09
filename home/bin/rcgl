@@ -4,4 +4,4 @@ echo "Setting up default local git configuration."
 git config user.name 'Daniel Goude'
 git config user.email 'daniel@goude.se'
 
-git config --list
+# git config --list

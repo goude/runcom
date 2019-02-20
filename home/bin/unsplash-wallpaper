@@ -1,14 +1,15 @@
 #/usr/bin/env bash
 
-echo "Getting and setting random wallpaper from unsplash..."
+echo "Getting and setting random wallpaper from unsplash.it..."
 
 dims=$(xdpyinfo | grep dimensions | head -1)
 dimpath=$(echo $dims | perl -ne 'print "$1/$2" if /(\d+)x(\d+)/')
-echo "Screen size: $dimpath"
+#echo "Screen size: $dimpath"
 
-wallpaper_file=$RUNCOM_TMPDIR/unsplash_wallpaper.jpg
-#wget -O /tmp/wallpaper.jpg https://unsplash.it/2560/1440/?random
+wallpaper_file=$RUNCOM_TMPDIR/unsplash-wallpaper.jpg
+
 wget --no-verbose -O $wallpaper_file https://unsplash.it/$dimpath/?random
+
 #gsettings set org.gnome.desktop.background picture-uri file:///$wallpaper_file
 #pcmanfm --set-wallpaper $wallpaper_file
 feh --bg-scale $wallpaper_file

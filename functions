@@ -106,9 +106,11 @@ nerdfont_icon_search() {
 }
 
 function hsi() {
-	history | fzf --tac --no-sort --query="$1"
+	#history | fzf --tac --no-sort --query="$1"
+	history | egrep -i "$1"
 }
 
 function esi() {
-	env | sort | fzf --query="$1"
+	#env | sort | fzf --query="$1"
+	env | egrep -i "$1"
 }

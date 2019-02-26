@@ -40,14 +40,6 @@ history-high-score () {
 		history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
 }
 
-reload-bashrc () {
-		source ~/.bashrc
-}
-
-reload-zshrc () {
-		source ~/.zshrc
-}
-
 # set a random colorscheme
 random-base16-colorscheme () {
 	pushd . > /dev/null && \

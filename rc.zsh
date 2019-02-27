@@ -202,13 +202,19 @@ setopt prompt_subst
 export RPROMPT='$([ -f ~/.runcom-rprompt ] && cat ~/.runcom-rprompt) $RUNCOM_TODO_CONTEXT'
 export DISABLE_AUTO_TITLE="true"
 
+# FIXME: Ugly hack: rebind(?) to vi keys (did not need to, previously)
+bindkey -v
+
 # Command-line Fuzzy Finder
 # Note: if this line is moved above source rc.common-post, hocd completions
 # (and possibly others) stop working in OSX.
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f "$HOME/.fzf/shell/completion.zsh" ]; then
+	source "$HOME/.fzf/shell/completion.zsh"
+fi
 
-# FIXME: Ugly hack: rebind(?) to vi keys (did not need to, previously)
-bindkey -v
+if [ -f "$HOME/.fzf/shell/key-bindings.zsh" ]; then
+	source "$HOME/.fzf/shell/key-bindings.zsh"
+fi
 
 # cleanup profiling
 if [[ "$PROFILE_STARTUP" == true ]]; then

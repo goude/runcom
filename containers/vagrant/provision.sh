@@ -3,7 +3,8 @@ echo Running provisioning script...
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 
-PACKAGES=$(cat ../master-list)
+# FIXME: Use env var instead?
+PACKAGES=$(cat ../../master-list)
 echo $PACKAGES
 apt-get -y install $PACKAGES
 

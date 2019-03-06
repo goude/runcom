@@ -121,7 +121,10 @@ set nospell
 " Hidden characters
 " ¬¦«»¶→⌂⌐⏎⌫⌧∕_
 set showbreak=⏎\
-set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
+" set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
+set listchars=tab:→\ ,nbsp:_,trail:•,extends:»,precedes:«
+set list
+
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=

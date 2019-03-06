@@ -7,6 +7,7 @@ ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
 
 $RUNCOM_PIPENV_CMD install \
 	autopep8 \
+    docker-compose \
 	flake8 \
 	httpie \
 	icdiff \
@@ -27,15 +28,16 @@ $RUNCOM_PIPENV_CMD install \
 $RUNCOM_PIPENV_CMD run pyenv rehash
 
 pyenv_symlinks=(
-	"git-icdiff"
-	"icdiff"
 	"flake8"
+	"git-icdiff"
 	"http"
+	"icdiff"
 	"mypy"
 	"tmuxp"
 	"topydo"
 	"vd"
 	"yapf"
+    "docker-compose"
 )
 
 for i in "${pyenv_symlinks[@]}"

@@ -63,10 +63,9 @@ Plug 'reedes/vim-textobj-sentence'
 Plug 'reedes/vim-textobj-quote'
 Plug 'coderifous/textobj-word-column.vim'
 
-" Table editing
+" Table editing and Ascii
 Plug 'dhruvasagar/vim-table-mode'
-
-" Multiple file editing
+Plug 'gyim/vim-boxdraw'
 
 " Edit every line in a quickfix list at the same time
 Plug 'Olical/vim-enmasse'
@@ -227,9 +226,10 @@ Plug 'jimenezrick/vimerl'
 "Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 " Haskell
-Plug 'eagletmt/neco-ghc'
-Plug 'dag/vim2hs'
-Plug 'pbrisbin/vim-syntax-shakespeare'
+" FIXME: Temporarily disabled due to mapping clash
+"Plug 'eagletmt/neco-ghc'
+"Plug 'dag/vim2hs'
+"Plug 'pbrisbin/vim-syntax-shakespeare'
 
 " html
 Plug 'hail2u/vim-css3-syntax'

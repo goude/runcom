@@ -1,3 +1,4 @@
+Document functions and aliases so it is possible to get a summary
 Think about how to use XDG - https://0x46.net/thoughts/2019/02/01/dotfile-madness/
 readd missing packages (check history)
 Configure fzf more

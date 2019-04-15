@@ -237,7 +237,7 @@ let g:startify_custom_header = [
   \ '   F3 - NerdTree Toggle        L-et Edit todo.txt',
   \ '   F4 - Tagbar Toggle          gx   Open file in browser',
   \ '   F5 - Number Toggle          L-o  Open WORD under cursor in default program',
-  \ ' L-F5 - Relativenumber Toggle',
+  \ ' L-F5 - Relativenumber Toggle  yol  Toggle list',
   \ '   F6 - Pencil Toggle',
   \ '   F7 - Indent File',
   \ ]

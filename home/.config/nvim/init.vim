@@ -673,6 +673,15 @@ let g:ale_fixers = {
 \      'isort',
 \      'yapf'
 \   ],
+\   'js': [
+\      'prettier',
+\   ],
+\   'html': [
+\      'prettier'
+\   ],
+\   'css': [
+\      'prettier'
+\   ],
 \}
 
 "" Lightline

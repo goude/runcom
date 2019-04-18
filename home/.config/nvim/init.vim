@@ -230,19 +230,7 @@ nnoremap <silent> <F7> mzg=G`z
 nnoremap <silent> <F8> :ALEFix<CR>
 
 " Show function key mappings in startup
-let g:startify_custom_header = [
-  \ '   RUNCOM NVIM',
-  \ '',
-  \ '   F1 - Leader Help            L-ev Edit nvim config',
-  \ '   F2 - NerdTree Find          L-er Reload nvim config',
-  \ '   F3 - NerdTree Toggle        L-et Edit todo.txt',
-  \ '   F4 - Tagbar Toggle          gx   Open file in browser',
-  \ '   F5 - Number Toggle          L-o  Open WORD under cursor in default program',
-  \ ' L-F5 - Relativenumber Toggle  yol  Toggle list',
-  \ '   F6 - Pencil Toggle',
-  \ '   F7 - Indent File',
-  \ '   F8 - ALEFix',
-  \ ]
+let g:startify_custom_header = readfile(expand('~/.config/nvim/start_message.txt'))
 
 " Clear search highlight
 nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>

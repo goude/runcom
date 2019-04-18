@@ -227,6 +227,7 @@ nnoremap <silent> <leader><F5> :set nonumber<CR>:set norelativenumber<CR>
 nnoremap <silent> <F5> :NumbersToggle<CR>
 nnoremap <silent> <F6> :TogglePencil<CR>:call Toggle_msg("pencil")<CR>
 nnoremap <silent> <F7> mzg=G`z
+nnoremap <silent> <F8> :ALEFix<CR>
 
 " Show function key mappings in startup
 let g:startify_custom_header = [
@@ -240,6 +241,7 @@ let g:startify_custom_header = [
   \ ' L-F5 - Relativenumber Toggle  yol  Toggle list',
   \ '   F6 - Pencil Toggle',
   \ '   F7 - Indent File',
+  \ '   F8 - ALEFix',
   \ ]
 
 " Clear search highlight

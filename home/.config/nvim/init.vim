@@ -123,7 +123,7 @@ set nospell
 set showbreak=⏎\
 " set listchars=tab:→\ ,eol:¶,nbsp:_,trail:•,extends:»,precedes:«
 set listchars=tab:→\ ,nbsp:_,trail:•,extends:»,precedes:«
-set list
+" set list
 
 
 " Disable visualbell
@@ -821,15 +821,15 @@ augroup END
 " Credit: krader1961 in https://github.com/tpope/vim-sleuth/issues/13
 " Highlight trailing whitespace and leading mixed tabs/spaces.
 " TODO: highlight space indents if noexpandtab is set
-hi! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
 augroup whitespace_warnings
   au!
-  au ColorScheme * highlight! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
+  au ColorScheme * highlight! ExtraWhitespaceWarn ctermbg=red guibg=red
   au BufWinEnter * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
 
   " The above flashes annoyingly while typing, be calmer in insert mode
-  "au InsertLeave * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
-  "au InsertEnter * match ExtraWhitespaceWarn /\s\+\%#\@<!$/
+  au InsertLeave * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
+  au InsertEnter * match ExtraWhitespaceWarn /\s\+\%#\@<!$/
 augroup END
+hi! ExtraWhitespaceWarn ctermbg=red guibg=red
 
 " }

@@ -11,4 +11,4 @@ F5 - Number Toggle           L-o  Open WORD under cursor in
 F5L- Relativenumber Toggle   yol  Toggle list
 F6 - Pencil Toggle
 F7 - Indent File
-F8 - ALEFix
+F8 - ALEFix prettier

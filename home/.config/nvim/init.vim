@@ -227,7 +227,7 @@ nnoremap <silent> <leader><F5> :set nonumber<CR>:set norelativenumber<CR>
 nnoremap <silent> <F5> :NumbersToggle<CR>
 nnoremap <silent> <F6> :TogglePencil<CR>:call Toggle_msg("pencil")<CR>
 nnoremap <silent> <F7> mzg=G`z
-nnoremap <silent> <F8> :ALEFix prettier<CR>
+nnoremap <silent> <F8> :ALEFix prettier stylelint<CR>
 
 " Show function key mappings in startup
 let g:startify_custom_header = readfile(expand('~/.config/nvim/start_message.txt'))

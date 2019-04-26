@@ -106,3 +106,9 @@ function esi() {
 	#env | sort | fzf --query="$1"
 	env | egrep -i "$1"
 }
+
+function zen() {
+    prompt_powerlevel9k_teardown
+    clear
+    export PROMPT=" "
+}

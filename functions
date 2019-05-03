@@ -112,3 +112,7 @@ function zen() {
     clear
     export PROMPT=" "
 }
+
+function unzen() {
+    prompt_powerlevel9k_setup
+}

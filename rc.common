@@ -18,7 +18,7 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-export FORTUNE_PATH=$HOMESHICK_REPOS/adages/adages
+export FORTUNE_PATH=$HOMESHICK_REPOS/adages/adages:$HOME/.adages
 export PYTHONSTARTUP=$HOME/.pystartup
 export GOPATH=$HOME/go
 export NVM_DIR="$HOME/.nvm"

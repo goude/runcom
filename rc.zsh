@@ -205,6 +205,9 @@ export DISABLE_AUTO_TITLE="true"
 # FIXME: Ugly hack: rebind(?) to vi keys (did not need to, previously)
 bindkey -v
 
+# FIXME: Probably set by some bundle; disable this properly instead
+unsetopt auto_cd
+
 # Command-line Fuzzy Finder
 # Note: if this line is moved above source rc.common-post, hocd completions
 # (and possibly others) stop working in OSX.

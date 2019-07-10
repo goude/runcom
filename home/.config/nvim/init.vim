@@ -310,6 +310,12 @@ nmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
+
+" zoomwintab.vim
+" Zoom in/out current window as in tmux (remap to zoomwintab.vim default)
+nnoremap <silent><C-w>z <C-w>o
+nnoremap <silent><C-w><C-z> <C-w>o
+
 " }
 
 " Autocommands {
@@ -577,7 +583,7 @@ let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/
 " The Silver Searcher
 if executable('ag')
   let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --no-color
 endif
 
 " Temporarily disabled
@@ -692,8 +698,8 @@ set noshowmode " disabled, since it's displayed by lightline
 let g:lightline = {
     \ 'colorscheme': 'base16',
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'workdir' ] ],
+    \   'left': [ [ 'mode', 'paste'],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'workdir', 'gutentag' ] ],
     \   'right': [ [ 'wordcount', 'lineinfo', 'charvaluehex' ],
     \              [ 'percent' ],
     \              [ 'pencil', 'fileformat', 'fileencoding', 'filetype', ] ]
@@ -706,7 +712,8 @@ let g:lightline = {
     \   'gitbranch': 'fugitive#head',
     \   'wordcount': 'wordCount#WordCount',
     \   'workdir': 'Foobar',
-    \   'pencil': 'PencilMode'
+    \   'pencil': 'PencilMode',
+    \   'gutentag': 'gutentag#statusline',
     \ },
     \ }
 
@@ -764,6 +771,38 @@ let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
 " }
+
+" }
+
+" Experimental {
+
+augroup MyGutentagsStatusLineRefresher
+    autocmd!
+    autocmd User GutentagsUpdating call lightline#update()
+    autocmd User GutentagsUpdated call lightline#update()
+augroup END
+
+" source: https://alex.dzyoba.com/blog/vim-revamp/
+" cscope
+function! Cscope(option, query)
+  let color = '{ x = $1; $1 = ""; z = $3; $3 = ""; printf "\033[34m%s\033[0m:\033[31m%s\033[0m\011\033[37m%s\033[0m\n", x,z,$0; }'
+  let opts = {
+  \ 'source':  "cscope -dL" . a:option . " " . a:query . " | awk '" . color . "'",
+  \ 'options': ['--ansi', '--prompt', '> ',
+  \             '--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all',
+  \             '--color', 'fg:188,fg+:222,bg+:#3a3a3a,hl+:104'],
+  \ 'down': '40%'
+  \ }
+  function! opts.sink(lines)
+    let data = split(a:lines)
+    let file = split(data[0], ":")
+    execute 'e ' . '+' . file[1] . ' ' . file[0]
+  endfunction
+  call fzf#run(opts)
+endfunction
+let g:gutentags_cache_dir = '~/.cache/gutentag'
+
+nnoremap <silent> <Leader>g :call Cscope('3', expand('<cword>'))<CR>
 
 " }
 

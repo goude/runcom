@@ -24,7 +24,13 @@ export GOPATH=$HOME/go
 export NVM_DIR="$HOME/.nvm"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_DEFAULT_OPTS='--reverse --height=100% --inline-info'
+
+# See https://github.com/rbong/gruvbox for colors
+export FZF_DEFAULT_OPTS='
+	--reverse --height=100% --inline-info
+	--color fg:246,bg:235,hl:124,fg+:106,bg+:237,hl+:124
+  --color info:208,prompt:108,spinner:142,pointer:166,marker:214
+'
 export CHEAT_COLORS=1
 export CHEAT_COLORSCHEME=dark
 

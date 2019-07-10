@@ -9,6 +9,6 @@ F4 - Tagbar Toggle           gx   Open file in browser
 F5 - Number Toggle           L-o  Open WORD under cursor in
                                   default program
 F5L- Relativenumber Toggle   yol  Toggle list
-F6 - Pencil Toggle
+F6 - Pencil Toggle           L-g  Cscope (experimental)
 F7 - Indent File
 F8 - ALEFix prettier

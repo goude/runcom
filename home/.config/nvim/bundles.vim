@@ -31,8 +31,11 @@ Plug 'Shougo/vimshell.vim'
 
 " Git {
 
-" A Git wrapper so awesome, it should be illegal
-Plug 'tpope/vim-fugitive'
+" Ease your git workflow within Vim
+Plug 'jreybert/vimagit'
+
+" Reveal the hidden message from Git under the cursor quickly
+Plug 'rhysd/git-messenger.vim'
 
 " A git commit browser.
 Plug 'junegunn/gv.vim'
@@ -127,7 +130,9 @@ Plug 'myusuf3/numbers.vim'
 
 " Color preview for vim
 Plug 'gorodinskiy/vim-coloresque'
-"Plug 'lilydjwg/colorizer'
+
+" Zoom into a window inspired by ZoomWin plugin (C-w o)
+Plug 'troydm/zoomwintab.vim'
 
 " }
 
@@ -155,7 +160,11 @@ endif
 " }
 
 " Completion {
+"
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+Plug 'Shougo/neco-syntax'
+Plug 'ujihisa/neco-look'
 Plug 'ervandew/supertab'
 
 " UltiSnips provides snippet management for the Vim editor. A snippet is a
@@ -176,6 +185,9 @@ Plug 'honza/vim-snippets'
 
 " Programming {
 
+" Automatically manage tag files
+Plug 'ludovicchabant/vim-gutentags'
+
 " Massive collection of syntax highlighting / ftdetect / indent plugins
 Plug 'sheerun/vim-polyglot'
 
@@ -187,10 +199,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Asynchronous lint engine
 Plug 'w0rp/ale'
-
-"
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-
 
 " Javascript plugins
 " https://github.com/vimlab/neojs
@@ -263,7 +271,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 " }
 
-" Customized {
+" Customized Plugins {
 
 " todo.txt (my fork)
 Plug 'goude/todo.txt-vim'
@@ -275,6 +283,11 @@ Plug 'goude/todo.txt-vim'
 " https://github.com/ivanov/vim-ipython/
 " https://github.com/kana/vim-arpeggio
 " Plug 'tpope/vim-commentary'
+
+" A Git wrapper so awesome, it should be illegal
+"Plug 'tpope/vim-fugitive'
+
+"Plug 'lilydjwg/colorizer'
 
 " }
 

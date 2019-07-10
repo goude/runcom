@@ -23,10 +23,6 @@ Plug 'shougo/unite.vim'
 Plug 'xolox/vim-misc' " helpers for vim-session
 Plug 'xolox/vim-session'
 
-" *vimshell* is an extreme shell that doesn't depend on external shells but is
-" written completely in pure Vim script.
-Plug 'Shougo/vimshell.vim'
-
 " }
 
 " Git {
@@ -53,6 +49,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-expand-region'
 Plug 'wellle/targets.vim'
+Plug 'easymotion/vim-easymotion'
 
 " Writing
 Plug 'junegunn/goyo.vim'
@@ -93,9 +90,6 @@ Plug 'itchyny/lightline.vim'
 
 " A well-integrated, low-configuration buffer list that lives in the tabline
 Plug 'ap/vim-buftabline'
-
-" Vim plugin for showing all your <Leader> mappings in a readable table including the descriptions.
-Plug 'ktonga/vim-follow-my-lead'
 
 " Show register contents (C-R in insert mode)
 Plug 'junegunn/vim-peekaboo'
@@ -162,10 +156,11 @@ endif
 " Completion {
 "
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ervandew/supertab'
 
+" TODO: check interference/functionality
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
-Plug 'ervandew/supertab'
 
 " UltiSnips provides snippet management for the Vim editor. A snippet is a
 " short piece of text that is either re-used often or contains a lot of
@@ -194,7 +189,7 @@ Plug 'sheerun/vim-polyglot'
 " Comment functions so powerful—no comment necessary.
 Plug 'scrooloose/nerdcommenter'
 
-"
+" Editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
 " Asynchronous lint engine
@@ -227,7 +222,7 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
 " Erlang
-Plug 'jimenezrick/vimerl'
+"Plug 'jimenezrick/vimerl'
 
 " Go
 " FIXME: Temporarily disabled due to installation issues.
@@ -271,7 +266,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 " }
 
-" Customized Plugins {
+" Customized Syntax Plugins {
 
 " todo.txt (my fork)
 Plug 'goude/todo.txt-vim'
@@ -288,6 +283,13 @@ Plug 'goude/todo.txt-vim'
 "Plug 'tpope/vim-fugitive'
 
 "Plug 'lilydjwg/colorizer'
+
+" *vimshell* is an extreme shell that doesn't depend on external shells but is
+" written completely in pure Vim script.
+"Plug 'Shougo/vimshell.vim'
+
+" Vim plugin for showing all your <Leader> mappings in a readable table including the descriptions.
+"Plug 'ktonga/vim-follow-my-lead'
 
 " }
 

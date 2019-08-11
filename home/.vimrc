@@ -1,5 +1,9 @@
 " vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldmethod=marker spell:
 
+" Lightweight vim configuration, using sensible defaults. Mappings are shared
+" with neovim, see end of file.
+
+
 " sensible.vim - Defaults everyone can agree on {
 " Maintainer:   Tim Pope <http://tpo.pe/>
 " Version:      1.1
@@ -93,6 +97,8 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 inoremap <C-U> <C-G>u<C-U>
+
+" end of sensible.vim 
 " }
 
 " Load shared mappings {

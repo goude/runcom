@@ -118,6 +118,6 @@ fi
 if [[ "${RUNCOM_AUTOSTART_SINGLE_TMUX_SESSION}" = 1 ]]; then
 	if which tmux >/dev/null 2>&1; then
 			#if not inside a tmux session, and if no session is started, start a new session
-			test -z "$TMUX" && (tmux attach || tmux new-session -c glances)
+			test -z "$TMUX" && (tmux attach || tmux new-session 'glances')
 	fi
 fi

@@ -232,19 +232,13 @@ nnoremap <silent> <F8> :ALEFix prettier stylelint<CR>
 " Show function key mappings in startup
 let g:startify_custom_header = readfile(expand('~/.config/nvim/start_message.txt'))
 
-" Clear search highlight
-nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
-
-" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
-" Edit $MYVIMRC
+" Edit init.vim
 nnoremap <silent> <leader>ev :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
 
 " Edit global todo.txt
 nnoremap <silent> <leader>et :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
 
-" Reload $MYVIMRC
+" Reload init.vim
 nnoremap <silent> <leader>er :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
 
 " Surround with "/'
@@ -252,18 +246,6 @@ vmap <Leader>" S"
 vmap <Leader>' S'
 nmap <Leader>" ysiw"
 nmap <Leader>' ysiw'
-
-" Open a horizontal split
-nnoremap <Leader>- :split<CR>
-
-" Open a vertical split
-nnoremap <Leader>\| :vsplit<CR>
-
-" Prepend to all adjacent lines with same indentation - finish with <esc>
-nmap <silent> <leader>I ^vio<C-V>I
-
-" Append to all adjacent lines with same indentation - finish with <esc>
-nmap <silent> <leader>A ^vio<C-V>$A
 
 " Fuzzy find in buffers
 nnoremap <silent> <leader>pb :Buffers<CR>
@@ -277,17 +259,8 @@ nnoremap <silent> <leader>pg :GitFiles<CR>
 " Fuzzy find in git repo
 nnoremap <silent> <leader>ph :Helptags<CR>
 
-" Open previously opened buffer
-"nmap <Leader><Leader> <c-^>
-
-" Switch to next buffer
-nnoremap <Leader><Tab> :bnext!<CR>
-
-" Switch to previous buffer
-nnoremap <Leader><S-tab> :bprev!<CR>
-
-" Open WORD under cursor in default program
-nnoremap <silent><Leader>o :execute ':!xdg-open ' . shellescape('<cWORD>')<CR>
+" Apply macro over visual selection
+"xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " }
 
@@ -869,6 +842,6 @@ augroup whitespace_warnings
   au InsertLeave * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
   au InsertEnter * match ExtraWhitespaceWarn /\s\+\%#\@<!$/
 augroup END
-hi! ExtraWhitespaceWarn ctermbg=red guibg=red
+hi! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
 
 " }

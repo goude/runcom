@@ -49,7 +49,7 @@ inoremap <C-s> <ESC>:w<cr>
 map <C-q> :bd<cr>
 imap <C-q> <ESC>:bd<cr>
 
-" Make Y behave
+" Make Y behave like D and C
 nnoremap Y y$
 
 " qq record, Q replay
@@ -59,8 +59,7 @@ nnoremap Q @q
 nnoremap / /\v
 cnoremap %s/ %s/\v
 
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
+" Center keyword when moving to next/previous search hit
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
@@ -104,8 +103,35 @@ xnoremap > >gv
 nnoremap <Tab> :bnext!<CR>
 nnoremap <S-tab> :bprev!<CR>
 
-" Apply macro over visual selection
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+" Clear search highlight
+nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
+
+" Set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+
+" Open previously opened buffer
+"nmap <Leader><Leader> <c-^>
+
+" Switch to next buffer
+nnoremap <Leader><Tab> :bnext!<CR>
+
+" Switch to previous buffer
+nnoremap <Leader><S-tab> :bprev!<CR>
+
+" Open WORD under cursor in default program
+nnoremap <silent><Leader>o :execute ':!xdg-open ' . shellescape('<cWORD>')<CR>
+
+" Open a horizontal split
+nnoremap <Leader>- :split<CR>
+
+" Open a vertical split
+nnoremap <Leader>\| :vsplit<CR>
+
+" Prepend to all adjacent lines with same indentation - finish with <esc>
+nmap <silent> <leader>I ^vio<C-V>I
+
+" Append to all adjacent lines with same indentation - finish with <esc>
+nmap <silent> <leader>A ^vio<C-V>$A
 
 " Disabled Mappings {
 

@@ -541,6 +541,9 @@ endif
 
 " Plugin settings {
 
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " matchup
 let g:matchup_matchparen_enabled = 1
 let g:matchup_motion_enabled = 1

@@ -109,6 +109,9 @@ nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
+" Insert timestamp in ISO8601 format
+nnoremap <Leader>t "=strftime("%FT%T%z")<CR>P
+
 " Open previously opened buffer
 "nmap <Leader><Leader> <c-^>
 
@@ -132,6 +135,11 @@ nmap <silent> <leader>I ^vio<C-V>I
 
 " Append to all adjacent lines with same indentation - finish with <esc>
 nmap <silent> <leader>A ^vio<C-V>$A
+
+" Surround current word/Word with backticks
+" TODO: consider doing `set iskeyword+=.` for certain filetypes.
+nmap <silent> <leader>` ysiw`
+nmap <silent> <leader>~ ysiW`
 
 " Disabled Mappings {
 

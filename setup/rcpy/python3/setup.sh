@@ -6,11 +6,13 @@ $RUNCOM_PIPENV_CMD --python 3
 ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
 
 $RUNCOM_PIPENV_CMD install --skip-lock \
+	arrow \
 	autopep8 \
 	cheat \
 	docker-compose \
 	flake8 \
 	httpie \
+	humanfriendly \
 	icdiff \
 	jedi \
 	maya \

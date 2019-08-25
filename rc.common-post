@@ -108,7 +108,7 @@ unset system
 
 # Source additional local settings
 if [ -f ~/.localenv-post ]; then
-	. ~/.localenv
+	. ~/.localenv-post
 fi
 
 # Source optional additional settings

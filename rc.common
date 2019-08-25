@@ -39,6 +39,11 @@ export PATH=$HOME/.rbenv/bin:$PATH:/usr/local/bin:$GOPATH/bin:$HOME/bin:$HOME/.f
 # Source more environment variables
 source $rcfiles/localenv
 
+# Source local settings
+if [ -f ~/.localenv-post ]; then
+	. ~/.localenv
+fi
+
 # Create tmp dir
 if [[ ! -d $RUNCOM_TMPDIR ]]; then
 	mkdir -p $RUNCOM_TMPDIR

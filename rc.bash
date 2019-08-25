@@ -26,5 +26,8 @@ bpr+=" \[$IBlack\]λ\[$CReset\] "
 export PS1=$bpr
 unset bpr
 
+# deduplicate PATH
+dedup_pathvar PATH
+
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

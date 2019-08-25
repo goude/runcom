@@ -72,10 +72,13 @@ stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
+# End magic mumbo jumbo block
 
 # Base16 Shell (slow)
-BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+if [[ "${RUNCOM_LOAD_BASE16}" = 1 ]]; then
+	BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
+	[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+fi
 
 # Custom functions
 . "$rcfiles/functions"
@@ -83,7 +86,7 @@ BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
 # fasd navigator
 eval "$(fasd --init auto)"
 
-# nvm (slow)
+# nvm (slow, so not loaded immediately)
 alias nvm='[ -s "$NVM_DIR/nvm.sh" ] && unalias nvm && . "$NVM_DIR/nvm.sh" && nvm $@'
 
 # Custom aliases
@@ -103,8 +106,8 @@ fi
 unset rcfiles
 unset system
 
-# Source local settings
-if [ -f ~/.localenv ]; then
+# Source additional local settings
+if [ -f ~/.localenv-post ]; then
 	. ~/.localenv
 fi
 

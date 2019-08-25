@@ -2,9 +2,6 @@
 
 " Base {
 
-" Repeat.vim remaps . in a way that plugins can tap into it.
-Plug 'tpope/vim-repeat'
-
 " Interactive command execution in vim
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
@@ -41,16 +38,6 @@ Plug 'junegunn/gv.vim'
 
 " Misc/text editing {
 
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'Yggdroot/indentLine'
-Plug 'Raimondi/delimitMate'
-Plug 'junegunn/vim-easy-align'
-Plug 'terryma/vim-expand-region'
-Plug 'wellle/targets.vim'
-Plug 'easymotion/vim-easymotion'
-
 " Writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -80,7 +67,6 @@ Plug 'mhinz/vim-startify'
 " Base16 color schemes - use locally generated
 "Plug 'chriskempson/base16-vim'
 Plug '~/.local/share/base16/templates/vim'
-Plug 'tomasr/molokai'
 
 " Make gvim-only colorschemes work transparently in terminal vim
 Plug 'vim-scripts/CSApprox'

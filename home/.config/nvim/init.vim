@@ -35,6 +35,7 @@ if exists('make')
 endif
 
 call plug#begin(expand('~/.config/nvim/plugged'))
+source ~/.config/nvim/bundles-shared.vim
 source ~/.config/nvim/bundles.vim
 
 " Include user's extra bundle

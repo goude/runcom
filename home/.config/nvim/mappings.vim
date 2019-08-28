@@ -63,23 +63,6 @@ cnoremap %s/ %s/\v
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Copy/paste mappings
-
-" Yank to system clipboard
-noremap <leader>c "+y<CR>
-
-" Paste from system clipboard
-noremap <leader>v "+gP<CR>
-
-" Cut to system clipboard
-noremap <leader>x "+x<CR>
-
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
-
 "" Vmap for maintaining Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
@@ -103,14 +86,28 @@ xnoremap > >gv
 nnoremap <Tab> :bnext!<CR>
 nnoremap <S-tab> :bprev!<CR>
 
+" Copy/paste mappings
+
+" Yank to system clipboard
+noremap <Leader>c "+y<CR>
+
+" Paste from system clipboard
+noremap <Leader>v "+gP<CR>
+
+" Cut to system clipboard
+noremap <Leader>x "+x<CR>
+
+if has('macunix')
+  " pbcopy for OSX copy/paste
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+endif
+
 " Clear search highlight
-nnoremap <silent> <leader>l :<C-u>nohlsearch<cr><C-l>
+nnoremap <silent> <Leader>l :<C-u>nohlsearch<cr><C-l>
 
 " Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
-" Insert timestamp in ISO8601 format
-nnoremap <Leader>t "=strftime("%FT%T%z")<CR>P
+nnoremap <Leader>. :lcd %:p:h<CR>
 
 " Open previously opened buffer
 "nmap <Leader><Leader> <c-^>
@@ -131,15 +128,22 @@ nnoremap <Leader>- :split<CR>
 nnoremap <Leader>\| :vsplit<CR>
 
 " Prepend to all adjacent lines with same indentation - finish with <esc>
-nmap <silent> <leader>I ^vio<C-V>I
+nmap <silent> <Leader>I ^vio<C-V>I
 
 " Append to all adjacent lines with same indentation - finish with <esc>
-nmap <silent> <leader>A ^vio<C-V>$A
+nmap <silent> <Leader>A ^vio<C-V>$A
 
 " Surround current word/Word with backticks
 " TODO: consider doing `set iskeyword+=.` for certain filetypes.
-nmap <silent> <leader>` ysiw`
-nmap <silent> <leader>~ ysiW`
+nnoremap <silent> <Leader>` ysiw`
+nnoremap <silent> <Leader>~ ysiW`
+
+" Toggle between relative/normal number display
+nnoremap <Leader>tn :NumbersToggle<CR>
+
+" Insert timestamp in ISO8601 format
+nnoremap <Leader>ts "=strftime("%FT%T%z")<CR>P
+
 
 " Disabled Mappings {
 
@@ -165,10 +169,10 @@ nmap <silent> <leader>~ ysiW`
 "noremap <Leader>gr :Gremove<CR>
 
 " Session management
-"nnoremap <leader>so :OpenSession<Space>
-"nnoremap <leader>ss :SaveSession<Space>
-"nnoremap <leader>sd :DeleteSession<CR>
-"nnoremap <leader>sc :CloseSession<CR>
+"nnoremap <Leader>so :OpenSession<Space>
+"nnoremap <Leader>ss :SaveSession<Space>
+"nnoremap <Leader>sd :DeleteSession<CR>
+"nnoremap <Leader>sc :CloseSession<CR>
 
 "nmap <Leader><Space>o :lopen<CR>      " open location window
 "nmap <Leader><Space>c :lclose<CR>     " close location window

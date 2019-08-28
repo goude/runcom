@@ -15,7 +15,6 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	humanfriendly \
 	icdiff \
 	jedi \
-	maya \
 	mypy \
 	neovim \
 	pytest \

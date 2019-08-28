@@ -10,7 +10,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tomasr/molokai'
 
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-expand-region'
@@ -19,4 +18,5 @@ Plug 'Raimondi/delimitMate'
 Plug 'wellle/targets.vim'
 Plug 'easymotion/vim-easymotion'
 
+"Plug 'tpope/vim-unimpaired'
 " }

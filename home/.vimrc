@@ -50,3 +50,6 @@ if filereadable(expand("~/.config/nvim/mappings.vim"))
   source ~/.config/nvim/mappings.vim
 endif
 " }
+
+set background=dark
+colorscheme gruvbox

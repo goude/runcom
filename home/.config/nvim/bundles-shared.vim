@@ -8,6 +8,7 @@
 Plug 'tpope/vim-repeat'
 
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-surround'
 Plug 'bronson/vim-trailing-whitespace'

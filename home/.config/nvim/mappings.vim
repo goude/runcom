@@ -144,6 +144,8 @@ nnoremap <Leader>tn :NumbersToggle<CR>
 " Insert timestamp in ISO8601 format
 nnoremap <Leader>ts "=strftime("%FT%T%z")<CR>P
 
+" ALEFix
+nnoremap <Leader>a :ALEFix<CR>
 
 " Disabled Mappings {
 

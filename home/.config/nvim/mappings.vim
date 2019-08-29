@@ -86,22 +86,6 @@ xnoremap > >gv
 nnoremap <Tab> :bnext!<CR>
 nnoremap <S-tab> :bprev!<CR>
 
-" Copy/paste mappings
-
-" Yank to system clipboard
-noremap <Leader>c "+y<CR>
-
-" Paste from system clipboard
-noremap <Leader>v "+gP<CR>
-
-" Cut to system clipboard
-noremap <Leader>x "+x<CR>
-
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
 
 " Clear search highlight
 nnoremap <silent> <Leader>l :<C-u>nohlsearch<cr><C-l>
@@ -133,21 +117,62 @@ nmap <silent> <Leader>I ^vio<C-V>I
 " Append to all adjacent lines with same indentation - finish with <esc>
 nmap <silent> <Leader>A ^vio<C-V>$A
 
-" Surround current word/Word with backticks
-" TODO: consider doing `set iskeyword+=.` for certain filetypes.
-nnoremap <silent> <Leader>` ysiw`
-nnoremap <silent> <Leader>~ ysiW`
-
-" Toggle between relative/normal number display
-nnoremap <Leader>tn :NumbersToggle<CR>
-
 " Insert timestamp in ISO8601 format
 nnoremap <Leader>ts "=strftime("%FT%T%z")<CR>P
 
-" ALEFix
-nnoremap <Leader>a :ALEFix<CR>
+
+" Surround with quotes
+" TODO: consider doing `set iskeyword+=.` for certain filetypes.
+vmap <Leader>" S"
+nmap <Leader>" ysiw"
+vmap <Leader>' S'
+nmap <Leader>' ysiw'
+vmap <Leader>` S`
+nmap <Leader>` ysiw`
+nmap <Leader>~ ysiW`
+
+" Fuzzy find
+nnoremap <silent> <leader>pb :Buffers<CR>
+nnoremap <silent> <leader>pg :GitFiles<CR>
+nnoremap <silent> <leader>ph :Helptags<CR>
+nnoremap <silent> <leader>pp :FZF -m<CR>
+
+" Toggles
+nnoremap <Leader>tp :TogglePencil<CR>:call DisplayMessage("Toggled pencil mode.")<CR>
+nnoremap <Leader>tn :NumbersToggle<CR>
+nnoremap <Leader>tr :NERDTreeToggle<CR>
+nnoremap <Leader>tt :TagbarToggle<CR>
+
+" Editing
+nnoremap <Leader>ei mzg=G`z
+nnoremap <Leader>ea :ALEFix<CR>
+vnoremap <Leader>es :sort<CR>
+
+" }
+
+" Copy/paste mappings {
+
+" Yank to system clipboard
+noremap <Leader>c "+y<CR>
+
+" Paste from system clipboard
+noremap <Leader>v "+gP<CR>
+
+" Cut to system clipboard
+noremap <Leader>x "+x<CR>
+
+if has('macunix')
+  " pbcopy for OSX copy/paste
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+endif
+
+" }
 
 " Disabled Mappings {
+
+" Apply macro over visual selection
+"xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 "noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -181,8 +206,6 @@ nnoremap <Leader>a :ALEFix<CR>
 "nmap <Leader><Space>, :ll<CR>         " go to current error/warning
 "nmap <Leader><Space>n :lnext<CR>      " next error/warning
 "nmap <Leader><Space>p :lprev<CR>      " previous error/warning
-
-" }
 
 " }
 

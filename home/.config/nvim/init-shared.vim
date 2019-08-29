@@ -133,3 +133,27 @@ set titlestring=%F
 
 " }
 
+" Functions {
+
+"if !exists('*s:setupWrapping')
+  "function s:setupWrapping()
+    "set wrap
+    "set wm=2
+    "set textwidth=79
+  "endfunction
+"endif
+
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
+function! DisplayMessage(tname)
+  echom "MSG: " a:tname ""
+endfunction
+
+" }
+
+" Show function key mappings in startup
+let g:startify_custom_header = readfile(expand('~/.config/nvim/start_message.txt'))
+

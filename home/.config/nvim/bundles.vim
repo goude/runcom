@@ -61,9 +61,6 @@ Plug 'Olical/vim-enmasse'
 
 " UI {
 
-" Fancy start screen for vim
-Plug 'mhinz/vim-startify'
-
 " Base16 color schemes - use locally generated
 "Plug 'chriskempson/base16-vim'
 Plug '~/.local/share/base16/templates/vim'
@@ -167,7 +164,7 @@ Plug 'honza/vim-snippets'
 " Programming {
 
 " Automatically manage tag files
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 
 " Massive collection of syntax highlighting / ftdetect / indent plugins
 Plug 'sheerun/vim-polyglot'

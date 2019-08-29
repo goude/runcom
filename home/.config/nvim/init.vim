@@ -68,74 +68,13 @@ if filereadable(expand("~/.config/nvim/mappings.vim"))
 endif
 " }
 
-" Functions {
-"if !exists('*s:setupWrapping')
-  "function s:setupWrapping()
-    "set wrap
-    "set wm=2
-    "set textwidth=79
-  "endfunction
-"endif
-
-function! ExecuteMacroOverVisualRange()
-  echo "@".getcmdline()
-  execute ":'<,'>normal @".nr2char(getchar())
-endfunction
-
-function! Toggle_msg(tname)
-  echom "Toggled" a:tname "."
-endfunction
-
-
-" }
-
 " Mappings - leader/function keys {
-
-" Function key toggles
-
-nnoremap <silent> <F1> :call FMLShow()<CR>
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
-nnoremap <silent> <F4> :TagbarToggle<CR>
-nnoremap <silent> <F5> :NumbersToggle<CR>
-nnoremap <silent> <leader><F5> :set nonumber<CR>:set norelativenumber<CR>
-nnoremap <silent> <F5> :NumbersToggle<CR>
-nnoremap <silent> <F6> :TogglePencil<CR>:call Toggle_msg("pencil")<CR>
-nnoremap <silent> <F7> mzg=G`z
-nnoremap <silent> <F8> :ALEFix prettier stylelint<CR>
-
-" Show function key mappings in startup
-let g:startify_custom_header = readfile(expand('~/.config/nvim/start_message.txt'))
 
 " Edit init.vim
 nnoremap <silent> <leader>ev :e $HOMESHICK_REPOS/runcom/home/.config/nvim/init.vim<CR>
 
-" Edit global todo.txt
-nnoremap <silent> <leader>et :e $HOMESHICK_REPOS/wiki/todo/todo.txt<CR>
-
 " Reload init.vim
 nnoremap <silent> <leader>er :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo $MYVIMRC 'reloaded'"<CR>
-
-" Surround with "/'
-vmap <Leader>" S"
-vmap <Leader>' S'
-nmap <Leader>" ysiw"
-nmap <Leader>' ysiw'
-
-" Fuzzy find in buffers
-nnoremap <silent> <leader>pb :Buffers<CR>
-
-" Fuzzy find in files
-nnoremap <silent> <leader>pp :FZF -m<CR>
-
-" Fuzzy find in git repo
-nnoremap <silent> <leader>pg :GitFiles<CR>
-
-" Fuzzy find in git repo
-nnoremap <silent> <leader>ph :Helptags<CR>
-
-" Apply macro over visual selection
-"xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " }
 

@@ -19,5 +19,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'wellle/targets.vim'
 Plug 'easymotion/vim-easymotion'
 
+" Fancy start screen for vim
+Plug 'mhinz/vim-startify'
+
 "Plug 'tpope/vim-unimpaired'
 " }

@@ -2,13 +2,20 @@
 ┣┳┛┃ ┃┃┗┫┃  ┃ ┃┃┃┃
 ╹┗╸┗━┛╹ ╹┗━╸┗━┛╹ ╹
 
-F1   Leader Help             L-ev Edit nvim config
-F2   NerdTree Find           L-er Reload nvim config
-F3   NerdTree Toggle         L-et Edit todo.txt
-F4   Tagbar Toggle           gx   Open file in browser
-F5   Number Toggle           L-o  Open WORD under cursor in
-                                  default program
-L-F5 Relativenumber Toggle   yol  Toggle list
-F6   Pencil Toggle           L-g  Cscope (experimental)
-F7   Indent File             L-t  Insert ISO8601 timestamp
-F8   ALEFix prettier
+L-ea ALEFix
+L-ed Insert ISO8601 datetimestamp
+L-ei indent
+L-er Reload nvim config
+L-es sort (visual)
+L-et Edit todo.txt
+L-ev Edit nvim config
+L-o  Open WORD under cursor in default program
+L-pb Fuzzy find in buffers
+L-pg Fuzzy find in git files
+L-ph Fuzzy find in help
+L-pp Fuzzy find in files
+L-tn Toggle relative num
+L-tp toggle pencil mode
+L-tr Toggle file tree
+L-tt Toggle tagbar
+gx   Open file in browser

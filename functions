@@ -1,89 +1,88 @@
 #!/usr/bin/bash
 
-command_exists () {
-		type "$1" &> /dev/null ;
+command_exists() {
+	type "$1" &>/dev/null
 }
 
 # Pull all git repos one level below current directory
 # TODO: Broken, test and fix portability
-pullall () {
-		find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \; ;
+pullall() {
+	find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree="$PWD"/{} pull origin master \;
 }
 
 # Deduplicate path variables, shell-agnostic
 # TODO: use to cleanup env after logging in
 # TODO: probably problematic, test.
-get_var () { eval "echo \$$1" ; }
-set_var () { eval "$1=\"$2\"" ; }
-dedup_pathvar () {
-		pathvar_name="$1"
-		pathvar_value="$(get_var $pathvar_name)"
-		deduped_path="$(echo -n $pathvar_value | perl -e 'print join(":",grep { not $seen{$_}++ } split(/:/, scalar <>))')"
-		set_var $pathvar_name "$deduped_path"
+get_var() { eval "echo \$$1"; }
+set_var() { eval "$1=\"$2\""; }
+dedup_pathvar() {
+	pathvar_name="$1"
+	pathvar_value="$(get_var $pathvar_name)"
+	deduped_path="$(echo -n $pathvar_value | perl -e 'print join(":",grep { not $seen{$_}++ } split(/:/, scalar <>))')"
+	set_var $pathvar_name "$deduped_path"
 }
 
 # Shorten the email to the format x@y; useful in prompt
-git_user_name_prompt_mkii () {
-		gitname=$(git config user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
-		gitname_global=$(git config --global user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
-		if [[ $gitname != $gitname_global ]]; then
-			#echo -n $gitname | color red
-			echo -n $gitname 
-		else
-			echo -n $gitname
-		fi
+git_user_name_prompt_mkii() {
+	gitname=$(git config user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
+	gitname_global=$(git config --global user.email | sed 's/\(.\).\+@\(..\).\+/\1@\2/')
+	if [[ $gitname != $gitname_global ]]; then
+		#echo -n $gitname | color red
+		echo -n $gitname 
+	else
+		echo -n $gitname
+	fi
 }
 
 # Which commands are most commonly used?
 # (use this information to improve workflow)
-history-high-score () {
-		history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
+history-high-score() {
+	history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort
 }
 
 # set a random colorscheme
-random-base16-colorscheme () {
-	pushd . > /dev/null && \
-	cd "$HOME/.local/share/base16/templates/shell/scripts" && \
-	foo=$(ls *.sh | shuf | head -1) && \
-	echo $foo && \
-	source $foo && \
-	popd > /dev/null
+random-base16-colorscheme() {
+	pushd . >/dev/null &&
+		cd "$HOME/.local/share/base16/templates/shell/scripts" &&
+		foo=$(ls *.sh | shuf | head -1) &&
+		echo $foo &&
+		source $foo &&
+		popd >/dev/null
 }
 
 # git quicksave: commit and push
-save () {
-	if [ -z ${1+x} ]; then
+save() {
+	if [ -z "${1+x}" ]; then
 		#echo "Missing commit message.";
-		git commit -a -m "update" && git push;
+		git commit -a -m "update" && git push
 	else
-		git commit -a -m "$1" && git push;
+		git commit -a -m "$1" && git push
 	fi
 }
 
 # print the argument in the terminal, centered
 function center-text() {
 	#colcount=$((`tput cols` - 1))
-	colcount=$(($COLUMNS - 3))
-	sed  -e :a -e "s/^.\{1,$colcount\}$/ & /;ta"
+	colcount=$((COLUMNS - 3))
+	sed -e :a -e "s/^.\{1,$colcount\}$/ & /;ta"
 	unset colcount
 }
 
 # neovim launchers
-n () {
-	if [ $# -eq 0 ]
-		then
-			# nvim "$(fzf)"
-			nvim "$@"
-		else
-			nvim "$@"
+n() {
+	if [ $# -eq 0 ]; then
+		# nvim "$(fzf)"
+		nvim "$@"
+	else
+		nvim "$@"
 	fi
 }
 
 # https://coderwall.com/p/_s_xda/fix-ssh-agent-in-reattached-tmux-session-shells
 fixssh() {
 	for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
-		if (tmux show-environment | grep "^${key}" > /dev/null); then
-			value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
+		if (tmux show-environment | grep "^${key}" >/dev/null); then
+			value=$(tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//")
 			export ${key}="${value}"
 		fi
 	done
@@ -94,27 +93,27 @@ motd() {
 }
 
 nerdfont_icon_search() {
-	cat $RUNCOM_PATH/utils/nerd-fonts-scripts/*.sh | sed "s/i=//" | sed "s/=\$i//" | grep -E "^'" | sed "s/'//g" | sort --random-sort | fzf | perl -ne 'print $1 if /^([^ ]+) /' | xsel --input
+	cat "$RUNCOM_PATH/utils/nerd-fonts-scripts/*.show" | sed "s/i=//" | sed "s/=\$i//" | grep -E "^'" | sed "s/'//g" | sort --random-sort | fzf | perl -ne 'print $1 if /^([^ ]+) /' | xsel --input
 }
 
 function hsi() {
 	#history | fzf --tac --no-sort --query="$1"
-	history | egrep -i "$1"
+	history | grep -E -i "$1"
 }
 
 function esi() {
 	#env | sort | fzf --query="$1"
-	env | egrep -i "$1"
+	env | grep -E -i "$1"
 }
 
 function zen() {
-    prompt_powerlevel9k_teardown
-    clear
-    export PROMPT=" "
+	prompt_powerlevel9k_teardown
+	clear
+	export PROMPT=" "
 }
 
 function unzen() {
-    prompt_powerlevel9k_setup
+	prompt_powerlevel9k_setup
 }
 
 function emoji_search() {

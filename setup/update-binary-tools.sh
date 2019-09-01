@@ -11,4 +11,5 @@ install_locally () {
 
 install_locally 'https://github.com/neovim/neovim/releases/download/stable/nvim.appimage' 'nvim'
 
-install_locally 'https://raw.githubusercontent.com/mrowa44/emojify/master/emojify' 'emojify'
+# emojify download (tracked in home/bin)
+#install_locally 'https://raw.githubusercontent.com/mrowa44/emojify/master/emojify' 'emojify'

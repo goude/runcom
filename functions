@@ -116,3 +116,7 @@ function zen() {
 function unzen() {
     prompt_powerlevel9k_setup
 }
+
+function emoji_search() {
+	emojify -l | tail -n +5 | sort | fzf
+}

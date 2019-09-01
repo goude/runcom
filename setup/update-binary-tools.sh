@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Installing ~/bin/nvim..."
+echo "Installing tools in ~/bin..."
 mkdir -p ~/bin
 
-curl -L -o "$HOME/bin/nvim" --silent 'https://github.com/neovim/neovim/releases/download/stable/nvim.appimage'
+install_locally () {
+	curl -L -o "$HOME/bin/$2" "$1"
+	chmod a+rx "$HOME/bin/$2"
+}
 
-chmod a+rx "$HOME/bin/nvim"
+install_locally 'https://github.com/neovim/neovim/releases/download/stable/nvim.appimage' 'nvim'
+
+install_locally 'https://raw.githubusercontent.com/mrowa44/emojify/master/emojify' 'emojify'

@@ -8,10 +8,11 @@ NOTIFY_NAME=notify-swarm-$(hostname)
 data="{"
 data+="\"uname\":\"$(uname -a)\","
 data+="\"uptime\":\"$(uptime)\","
-data+="\"date\":\"$(date)\","
+data+="\"date\":\"$(date --rfc-3339=seconds)\","
 data+="\"xip\":\"$(curl -s https://canihazip.com/s)\","
 data+="\"ip\":\"$(hostname -I 2>/dev/null || /usr/sbin/ipconfig getifaddr en1)\","
-data+="\"hostname\":\"$(hostname)\""
+data+="\"hostname\":\"$(hostname)\","
+data+="\"version\":\"$(git describe --abbrev=0)\""
 data+="}"
 
 curl \

@@ -9,6 +9,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	arrow \
 	autopep8 \
 	cheat \
+	cookiecutter \
 	docker-compose \
 	flake8 \
 	httpie \
@@ -30,6 +31,9 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 $RUNCOM_PIPENV_CMD run pyenv rehash
 
 pyenv_symlinks=(
+	"cheat"
+	"cookiecutter"
+	"docker-compose"
 	"flake8"
 	"git-icdiff"
 	"http"
@@ -39,8 +43,6 @@ pyenv_symlinks=(
 	"topydo"
 	"vd"
 	"yapf"
-	"docker-compose"
-	"cheat"
 )
 
 for i in "${pyenv_symlinks[@]}"

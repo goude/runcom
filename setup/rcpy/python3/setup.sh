@@ -15,10 +15,12 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	httpie \
 	humanfriendly \
 	icdiff \
+	isort \
 	jedi \
 	mypy \
 	neovim \
 	pytest \
+	reorder-python-imports \
 	requests \
 	sphinx \
 	tmuxp \
@@ -38,7 +40,9 @@ pyenv_symlinks=(
 	"git-icdiff"
 	"http"
 	"icdiff"
+	"isort"
 	"mypy"
+	"reorder-python-imports"
 	"tmuxp"
 	"topydo"
 	"vd"

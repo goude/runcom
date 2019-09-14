@@ -7,7 +7,8 @@ export RUNCOM_PATH=$HOMESHICK_REPOS/runcom
 export RUNCOM_TMUX_SHELL=$SHELL
 export RUNCOM_TMPDIR=$HOME/tmp
 
-export RUNCOM_PIPENV_CMD=$HOME/.local/bin/pipenv
+#export RUNCOM_PIPENV_CMD=$HOME/.local/bin/pipenv
+export RUNCOM_PIPENV_CMD=$HOME/bin/pipenv
 export RUNCOM_PYTHON3=$HOME/.pyenv/versions/neovim3/bin/python3
 export RUNCOM_NVM_NODE_VERSION=10
 #export RUNCOM_RBENV_RUBY_VERSION=2.4.4

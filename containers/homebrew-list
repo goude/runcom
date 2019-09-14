@@ -1,0 +1,14 @@
+curl
+git
+gnupg
+htop
+jq
+neovim
+pandoc
+pipenv
+reattach-to-user-namespace
+screenfetch
+the_silver_searcher
+tmux
+tree
+zsh

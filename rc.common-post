@@ -36,26 +36,6 @@ if [[ -d $HOME/.rbenv/bin ]]; then
 	eval "$(rbenv init -)"
 fi
 
-# Use exa/colorls if available
-if [[ -f ~/.cargo/bin/exa ]]; then
-	# cargo install exa
-	alias ls='exa --color-scale'
-	alias l='ls --all'
-	alias ll='ls --all --long --header --git'
-	alias lt='ls --all --long --tree'
-elif [[ -f ~/.rbenv/shims/colorls ]]; then
-	alias ls='colorls'
-	alias l='colorls -A'
-	alias ll='colorls -A -l'
-	alias lt='colorls --tree'
-	source "$(dirname $(gem which colorls))/tab_complete.sh"
-else
-	alias l='ls -A --color'
-	alias ll='ls -lAh --color'
-	alias lt='tree'
-	alias lsa='ls -lAh --color'
-fi
-
 # Generic colou?ri[sz]er
 . $rcfiles/home/.grc/grc.bashrc
 
@@ -80,8 +60,35 @@ if [[ "${RUNCOM_LOAD_BASE16}" = 1 ]]; then
 	[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 fi
 
-# Custom functions
+# Source custom functions, including `command_exists` which is used below.
 . "$rcfiles/functions"
+
+# Replacement commands
+# Use bat if available
+#command_exists bat && alias cat='bat'
+if command_exists bat; then
+	alias cat='bat'
+fi
+
+# Use exa/colorls if available
+#if [[ -f ~/.cargo/bin/exa ]]; then
+if command_exists exa; then
+	alias ls='exa --color-scale'
+	alias l='ls --all'
+	alias ll='ls --all --long --header --git'
+	alias lt='ls --all --long --tree'
+elif [[ -f ~/.rbenv/shims/colorls ]]; then
+	alias ls='colorls'
+	alias l='colorls -A'
+	alias ll='colorls -A -l'
+	alias lt='colorls --tree'
+	source "$(dirname $(gem which colorls))/tab_complete.sh"
+else
+	alias l='ls -A --color'
+	alias ll='ls -lAh --color'
+	alias lt='tree'
+	alias lsa='ls -lAh --color'
+fi
 
 # fasd navigator
 eval "$(fasd --init auto)"

@@ -1,6 +1,8 @@
 coreutils
 curl
+emojify
 findutils
+fzf
 gawk
 git
 gnu-getopt

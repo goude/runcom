@@ -94,9 +94,9 @@ set -g status-left-length 70
 set -g status-left "歷#h #[fg=colour01]#($HOME/bin/runcominfo) #[fg=colour11]#($HOME/bin/tmux-status-line)"
 
 # Show session name, window & pane number, date and time on right side of status bar
-#set -g status-right-length 70
+set -g status-right-length 70
 #set -g status-right "#[fg=colour04] #S 離#P:#{window_panes} #[fg=colour05]#(echo -n $RUNCOM_TODO_CONTEXT) #[fg=colour11] #(tmux-resource-prompt) #[fg=colour01]#(thxtime) #[fg=colour16]"
-set -g status-right "#[fg=colour04] #S 離#P:#{window_panes}"
+set -g status-right "#[fg=colour04] #S 離#P:#{window_panes} #[fg=colour01] #(thxtime)  #(tmux-resource-prompt) #[fg=colour16]"
 
 # Command bindings
 bind-key S command-prompt -p ssh: "new-window -n %1 'ssh %1'"

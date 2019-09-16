@@ -1,3 +1,4 @@
+bat
 coreutils
 curl
 emojify
@@ -22,4 +23,5 @@ screenfetch
 the_silver_searcher
 tmux
 tree
+watch
 zsh

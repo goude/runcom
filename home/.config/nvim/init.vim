@@ -474,7 +474,7 @@ let g:ale_fixers = {
 function! Foobar() abort
   let td = fnamemodify(getcwd(), ":~:.")
   let wd = pathshorten(td)
-  return strlen(wd) ? wd : '[No CWD]'
+  return '📁 ' . ( strlen(wd) ? wd : '[No CWD]' )
 endfunction
 
 "set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\

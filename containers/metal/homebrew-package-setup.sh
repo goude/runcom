@@ -6,6 +6,6 @@ PACKAGES=$(cat ../homebrew-list)
 echo $PACKAGES
 brew install $PACKAGES
 
-echo Also need to enable docker...
-# brew tap cask...
-# brew cask install docker
+CASKS=$(cat ../homebrew-cask-list)
+echo $CASKS
+brew cask install $CASKS 

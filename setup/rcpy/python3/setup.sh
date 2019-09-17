@@ -12,6 +12,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	cookiecutter \
 	docker-compose \
 	flake8 \
+	howdoi \
 	httpie \
 	humanfriendly \
 	icdiff \
@@ -38,6 +39,7 @@ pyenv_symlinks=(
 	"docker-compose"
 	"flake8"
 	"git-icdiff"
+	"howdoi"
 	"http"
 	"icdiff"
 	"isort"

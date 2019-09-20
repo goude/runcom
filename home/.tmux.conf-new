@@ -118,8 +118,8 @@ set-environment -g 'IGNOREEOF' 2
 # Begin a selection with v, and end it with y (instead of SPACE and ENTER)
 set -g mode-keys vi
 set-window-option -g mode-keys vi
-bind-key -T copy-mode-vi 'v' send -X begin-selection
-bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+#bind-key -T copy-mode-vi 'v' send -X begin-selection
+#bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
 # Set shell
 set-option -g default-shell $RUNCOM_TMUX_SHELL

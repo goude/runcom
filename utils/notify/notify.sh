@@ -12,6 +12,7 @@ data+="\"date\":\"$(date --rfc-3339=seconds)\","
 data+="\"xip\":\"$(curl -s https://canihazip.com/s)\","
 data+="\"ip\":\"$(hostname -I 2>/dev/null || /usr/sbin/ipconfig getifaddr en1)\","
 data+="\"hostname\":\"$(hostname)\","
+data+="\"df\":\"$(df | grep -E '/$')\","
 data+="\"version\":\"$(git describe --abbrev=0)\""
 data+="}"
 

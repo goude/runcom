@@ -5,7 +5,7 @@ echo "Installing/updating runcom..."
 
 echo "Performing post-installation..."
 
-ln -s $HOME/.tmux.conf-template $HOME/.tmux.conf
+ln -s $HOME/.tmux.conf-new $HOME/.tmux.conf
 
 # Set initial color scheme
 ln -s $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-pale.sh $HOME/.base16_theme

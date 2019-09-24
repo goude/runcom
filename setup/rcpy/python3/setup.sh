@@ -9,6 +9,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	arrow \
 	autopep8 \
 	cheat \
+	colored \
 	cookiecutter \
 	docker-compose \
 	flake8 \

@@ -68,6 +68,7 @@ fi
 #command_exists bat && alias cat='bat'
 if command_exists bat; then
 	alias cat='bat'
+	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 # Use exa/colorls if available

@@ -5,4 +5,4 @@ docker run \
   -e SHELL=/bin/bash \
   --name=ephemeric-jupyter-notebook \
   --rm \
-  goude/jupyter-virtualenv /bin/bash --login /home/runcom/jupyter-virtualenv/start-jupyter.sh
+  goude/jupyter-virtualenv /bin/bash --login /home/runcom/jupyter-virtualenv/start-jupyterlab-pipenv.sh

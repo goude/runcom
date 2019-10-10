@@ -44,6 +44,7 @@ pyenv_symlinks=(
 	"http"
 	"icdiff"
 	"isort"
+	"jedi"
 	"mypy"
 	"reorder-python-imports"
 	"tmuxp"

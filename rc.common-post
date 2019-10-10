@@ -95,7 +95,11 @@ fi
 eval "$(fasd --init auto)"
 
 # nvm (slow, so not loaded immediately)
-alias nvm='[ -s "$NVM_DIR/nvm.sh" ] && unalias nvm && . "$NVM_DIR/nvm.sh" && nvm $@'
+if [[ "${IS_PRUNCOM}" = 1 ]]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+else
+	alias nvm='[ -s "$NVM_DIR/nvm.sh" ] && unalias nvm && . "$NVM_DIR/nvm.sh" && nvm $@'
+fi
 
 # Custom aliases
 . "$rcfiles/aliases"

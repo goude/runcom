@@ -385,58 +385,13 @@ endif
 "endif
 
 " snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+"let g:UltiSnipsEditSplit="vertical"
 
 " Tagbar
 let g:tagbar_autofocus = 1
-
-" Deoplete / omnicompletion {
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-" let g:deoplete#disable_auto_complete = 1
-au InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#auto_complete_delay = 100
-
-" Experimental (check behavior)
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" Experimental
-augroup omnifuncs
-  au!
-	au FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	au FileType python setlocal omnifunc=pythoncomplete#Complete
-	au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-" tern
-
-if exists('g:plugs["tern_for_vim"]')
-  "enable keyboard shortcuts - <Leader>tn, tr, tR
-  "let g:tern_map_keys=1
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  let g:tern#command = ['tern']
-  let g:tern#arguments = ['--persistent']
-  let g:tern#filetypes = [
-    \ 'jsx',
-    \ 'javascript.jsx',
-    \ 'vue',
-    \ ]
-  au FileType javascript setlocal omnifunc=tern#Complete
-endif
-
-" tern
-au FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>"
-
-" }
 
 " Base16
 let g:base16_shell_path = '~/.local/share/base16/templates/shell/scripts'
@@ -564,36 +519,10 @@ let g:vimshell_prompt =  '$ '
 
 " }
 
-" Experimental {
-
-augroup MyGutentagsStatusLineRefresher
-    autocmd!
-    autocmd User GutentagsUpdating call lightline#update()
-    autocmd User GutentagsUpdated call lightline#update()
-augroup END
-
-" source: https://alex.dzyoba.com/blog/vim-revamp/
-" cscope
-function! Cscope(option, query)
-  let color = '{ x = $1; $1 = ""; z = $3; $3 = ""; printf "\033[34m%s\033[0m:\033[31m%s\033[0m\011\033[37m%s\033[0m\n", x,z,$0; }'
-  let opts = {
-  \ 'source':  "cscope -dL" . a:option . " " . a:query . " | awk '" . color . "'",
-  \ 'options': ['--ansi', '--prompt', '> ',
-  \             '--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all',
-  \             '--color', 'fg:188,fg+:222,bg+:#3a3a3a,hl+:104'],
-  \ 'down': '40%'
-  \ }
-  function! opts.sink(lines)
-    let data = split(a:lines)
-    let file = split(data[0], ":")
-    execute 'e ' . '+' . file[1] . ' ' . file[0]
-  endfunction
-  call fzf#run(opts)
-endfunction
-let g:gutentags_cache_dir = '~/.cache/gutentag'
-
-nnoremap <silent> <Leader>g :call Cscope('3', expand('<cword>'))<CR>
-
+" Completion {
+if filereadable(expand("~/.config/nvim/coc.vim"))
+  source ~/.config/nvim/coc.vim
+endif
 " }
 
 " Workarounds {

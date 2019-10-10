@@ -7,17 +7,18 @@
 " Repeat.vim remaps . in a way that plugins can tap into it.
 Plug 'tpope/vim-repeat'
 
+" Color schemes
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 
-Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-expand-region'
-Plug 'Yggdroot/indentLine'
-Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
-Plug 'easymotion/vim-easymotion'
 
 " Fancy start screen for vim
 Plug 'mhinz/vim-startify'

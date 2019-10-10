@@ -3,7 +3,7 @@
 " Base {
 
 " Interactive command execution in vim
-Plug 'Shougo/vimproc.vim', {'do': g:make}
+"Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 " TODO: Active development on unite.vim has stopped. The only future changes will be
 " bug fixes. Please see Denite.nvim.
@@ -12,7 +12,7 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 " arbitrary sources like files, buffers, recently used files or registers. You
 " can run several pre-defined actions on a target displayed in the unite
 " window.
-Plug 'shougo/unite.vim'
+"Plug 'shougo/unite.vim'
 
 "The vim-session plug-in improves upon Vim's built-in |:mksession| command by
 "enabling you to easily and (if you want) automatically persist and restore
@@ -138,23 +138,25 @@ endif
 
 " Completion {
 "
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ervandew/supertab'
-
-" TODO: check interference/functionality
-Plug 'Shougo/neco-syntax'
-Plug 'ujihisa/neco-look'
+"Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'ervandew/supertab'
 
 " UltiSnips provides snippet management for the Vim editor. A snippet is a
 " short piece of text that is either re-used often or contains a lot of
 " redundant text. UltiSnips allows you to insert a snippet with only a few key
 " strokes.
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 
 " This repository contains snippets files for various programming languages.
 " It is community-maintained and many people have contributed snippet files and
 " other improvements already.
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" TODO: check interference/functionality
+"Plug 'Shougo/neco-syntax'
+"Plug 'ujihisa/neco-look'
 
 " Add completion from tmux panes
 "Plug 'wellle/tmux-complete.vim'

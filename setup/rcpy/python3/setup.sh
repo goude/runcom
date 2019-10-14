@@ -8,6 +8,7 @@ ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
 $RUNCOM_PIPENV_CMD install --skip-lock \
 	arrow \
 	autopep8 \
+	black \
 	cheat \
 	colored \
 	cookiecutter \
@@ -20,7 +21,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	isort \
 	jedi \
 	mypy \
-	neovim \
+	pynvim \
 	pytest \
 	reorder-python-imports \
 	requests \
@@ -35,6 +36,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 $RUNCOM_PIPENV_CMD run pyenv rehash
 
 pyenv_symlinks=(
+	"black"
 	"cheat"
 	"cookiecutter"
 	"docker-compose"
@@ -44,7 +46,6 @@ pyenv_symlinks=(
 	"http"
 	"icdiff"
 	"isort"
-	"jedi"
 	"mypy"
 	"reorder-python-imports"
 	"tmuxp"

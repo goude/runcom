@@ -408,11 +408,11 @@ endif
 let g:ale_sign_error = '»'
 let g:ale_sign_warning = '•'
 let g:ale_lint_delay = 1000
+" python autopep8, isort, yapf
 let g:ale_fixers = {
 \   'python': [
-\      'autopep8',
 \      'isort',
-\      'yapf'
+\      'black'
 \   ],
 \   'js': [
 \      'prettier',
@@ -531,7 +531,7 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 let g:ncm2_look_mark = '👀'
-let g:ncm2_look_enabled = 1
+"let g:ncm2_look_enabled = 1
 
 set shortmess+=c
 

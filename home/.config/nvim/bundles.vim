@@ -140,6 +140,7 @@ endif
 "
 "Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'ervandew/supertab'
+Plug 'metalelf0/supertab'  " fork with fix
 
 " UltiSnips provides snippet management for the Vim editor. A snippet is a
 " short piece of text that is either re-used often or contains a lot of

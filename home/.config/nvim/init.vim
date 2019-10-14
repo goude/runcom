@@ -520,9 +520,26 @@ let g:vimshell_prompt =  '$ '
 " }
 
 " Completion {
-if filereadable(expand("~/.config/nvim/coc.vim"))
-  source ~/.config/nvim/coc.vim
-endif
+
+"if filereadable(expand("~/.config/nvim/coc.vim"))
+  "source ~/.config/nvim/coc.vim
+"endif
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+let g:ncm2_look_mark = '👀'
+let g:ncm2_look_enabled = 1
+
+set shortmess+=c
+
+inoremap <c-c> <ESC>
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " }
 
 " Workarounds {

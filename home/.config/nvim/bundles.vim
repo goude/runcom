@@ -145,14 +145,35 @@ endif
 " short piece of text that is either re-used often or contains a lot of
 " redundant text. UltiSnips allows you to insert a snippet with only a few key
 " strokes.
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " This repository contains snippets files for various programming languages.
 " It is community-maintained and many people have contributed snippet files and
 " other improvements already.
-"Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+"Plug 'ncm2/ncm2-github'
+"Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-tagprefix'
+"Plug 'fgrsnau/ncm2-otherbuf'
+"Plug 'svermeulen/vim-yoink'
+"Plug 'svermeulen/ncm2-yoink'
+Plug 'ncm2/ncm2-cssomni'
+"Plug 'ncm2/ncm2-tern'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-vim'
+Plug 'ncm2/ncm2-ultisnips'
+
+Plug 'ncm2/ncm2-syntax'
+Plug 'Shougo/neco-syntax'
+
+Plug 'filipekiss/ncm2-look.vim'
 
 " TODO: check interference/functionality
 "Plug 'Shougo/neco-syntax'

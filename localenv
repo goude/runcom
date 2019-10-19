@@ -4,6 +4,8 @@
 #export XDG_CACHE_HOME=$HOME/.cache
 
 export RUNCOM_DESCRIPTION='Default description.'
+export RUNCOM_ICON='🤖'
+
 export RUNCOM_PATH=$HOMESHICK_REPOS/runcom
 export RUNCOM_TMUX_SHELL=$SHELL
 export RUNCOM_TMPDIR=$HOME/tmp

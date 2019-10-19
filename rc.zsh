@@ -130,7 +130,8 @@ POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" "
+#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$RUNCOM_ICON "
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user vcs virtualenv dir dir_writable)
 POWERLEVEL9K_CUSTOM_USER="\$(echo git_user_name_prompt_mkii)"
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs docker_machine ssh)
@@ -169,7 +170,8 @@ POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='000'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='003'
 
 
-antigen theme bhilburn/powerlevel9k powerlevel9k
+#antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme romkatv/powerlevel10k
 
 antigen bundle zsh-users/zsh-completions
 

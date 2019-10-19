@@ -18,7 +18,8 @@ source $rcfiles/rc.common-post
 source $HOME/.homesick/repos/runcom/utils/fix_alias_completion.bash
 
 # define prompt
-bpr="\[$IRed\]\u\[$CReset\]"
+bpr="$RUNCOM_ICON "
+bpr+="\[$IRed\]\u\[$CReset\]"
 bpr+="\[$White\]@\[$CReset\]"
 bpr+="\[$Yellow\]\h\[$CReset\]"
 bpr+=" \[$IBlack\]\W\[$CReset\]"

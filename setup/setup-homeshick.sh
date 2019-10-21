@@ -9,7 +9,6 @@ echo "Cloning homeshick repos..."
 homeshick_repos=(
     "goude/runcom"
     "goude/adages"
-    "goude/yaprox"
     "zsh-users/antigen"
 )
 

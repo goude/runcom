@@ -1,5 +1,0 @@
-{
-  "python.jediEnabled": false,
-  "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "~/bin/mypy"
-}

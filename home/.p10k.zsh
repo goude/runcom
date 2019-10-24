@@ -56,30 +56,31 @@
       nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
       nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-      # node_version          # node.js version
-      # go_version            # go version (https://golang.org)
-      # rust_version          # rustc version (https://www.rust-lang.org)
-      # dotnet_version        # .NET version (https://dotnet.microsoft.com)
+      node_version          # node.js version
+      go_version            # go version (https://golang.org)
+      rust_version          # rustc version (https://www.rust-lang.org)
+      dotnet_version        # .NET version (https://dotnet.microsoft.com)
       rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
       rvm                     # ruby version from rvm (https://rvm.io)
       kubecontext             # current kubernetes context (https://kubernetes.io/)
       terraform               # terraform workspace (https://www.terraform.io)
       aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-      # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
-      # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
+      aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
+      azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
       context                 # user@hostname
       nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       ranger                  # ranger shell (https://github.com/ranger/ranger)
-      # vpn_ip                # virtual private network indicator
-      # ram                   # free RAM
-      # load                  # CPU load
-      # time                  # current time
+      vpn_ip                # virtual private network indicator
+      ram                   # free RAM
+      load                  # CPU load
+      time                  # current time
       # =========================[ Line #2 ]=========================
       newline
-      # public_ip             # public IP address
-      # proxy                 # system-wide http/https/ftp proxy
-      # battery               # internal battery
-      # example               # example user-defined segment (see prompt_example function below)
+      public_ip             # public IP address
+      proxy                 # system-wide http/https/ftp proxy
+      battery               # internal battery
+      runcom_gituser
+      # example             # example user-defined segment (see prompt_example function below)
   )
 
   # Basic style options that define the overall look of your prompt. You probably don't want to
@@ -192,13 +193,13 @@
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=196
   # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION=''
   # Prompt symbol in command vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='ﴔ'
   # Prompt symbol in visual vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='Ⅴ'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION=''
   # Prompt symbol in overwrite vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION='▶'
+	typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION=''
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=true
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
 
@@ -793,6 +794,11 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
+  }
+
+  function prompt_runcom_gituser() {
+    local gituser=$(git_user_name_prompt_mkii)
+		p10k segment -f 208 -t ${gituser}
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.

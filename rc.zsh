@@ -161,10 +161,10 @@ bindkey -M vicmd "q" push-line
 source $HOME/.homesick/repos/runcom/rc.common-post
 
 # Setup right prompt
-setopt prompt_subst
+#setopt prompt_subst
 #export RPROMPT='$RUNCOM_TODO_CONTEXT'
-export RPROMPT='$([ -f ~/.runcom-rprompt ] && cat ~/.runcom-rprompt) $RUNCOM_TODO_CONTEXT'
-export DISABLE_AUTO_TITLE="true"
+#export RPROMPT='$([ -f ~/.runcom-rprompt ] && cat ~/.runcom-rprompt) $RUNCOM_TODO_CONTEXT'
+#export DISABLE_AUTO_TITLE="true"
 
 # FIXME: Ugly hack: rebind(?) to vi keys (did not need to, previously)
 bindkey -v
@@ -188,8 +188,8 @@ fi
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # cleanup profiling
-if [[ "$PROFILE_STARTUP" == true ]]; then
-    unsetopt xtrace
-    exec 2>&3 3>&-
-fi
+#if [[ "$PROFILE_STARTUP" == true ]]; then
+    #unsetopt xtrace
+    #exec 2>&3 3>&-
+#fi
 # end cleanup profiling

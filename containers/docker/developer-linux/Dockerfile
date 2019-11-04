@@ -38,13 +38,13 @@ RUN \
     locales \
     m4 \
     ninja-build \
+    neofetch \
     openssh-server \
     pandoc \
     pkg-config \
     postgresql-client \
     python3-pip \
     samba-client \
-    screenfetch \
     silversearcher-ag \
     software-properties-common \
     sudo \

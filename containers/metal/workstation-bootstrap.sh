@@ -25,7 +25,9 @@ cd $WORKDIR/runcom/setup
 
 cd $WORKDIR
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.2.0/FiraCode.zip
-cd .fonts/
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
 unzip $WORKDIR/FiraCode.zip
 
+cd $WORKDIR
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin

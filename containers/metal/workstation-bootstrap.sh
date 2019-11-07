@@ -19,7 +19,7 @@ git clone https://github.com/goude/runcom
 cd $WORKDIR/runcom/containers/metal/
 sudo ./base-package-setup.sh
 
-cd $WORKDIR/setup
+cd $WORKDIR/runcom/setup
 ./update-binary-tools.sh
 ./install.sh
 

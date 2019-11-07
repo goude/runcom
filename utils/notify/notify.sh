@@ -20,6 +20,7 @@ data+="\"ip\":\"$(hostname -I 2>/dev/null || /usr/sbin/ipconfig getifaddr en1)\"
 data+="\"hostname\":\"$(hostname)\","
 data+="\"df\":\"$(df | grep -E '/$')\","
 data+="\"description\":\"$RUNCOM_DESCRIPTION\","
+data+="\"icon\":\"$RUNCOM_ICON\","
 data+="\"version\":\"$(git describe --abbrev=0)\""
 data+="}"
 

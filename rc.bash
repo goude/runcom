@@ -14,10 +14,9 @@ source $rcfiles/utils/bash_colors
 
 source $rcfiles/rc.common-post
 
-# needs to come after aliases have been created, obviously
 source $HOME/.homesick/repos/runcom/utils/fix_alias_completion.bash
 
-# define prompt
+# Define prompt
 bpr="$RUNCOM_ICON "
 bpr+="\[$IRed\]\u\[$CReset\]"
 bpr+="\[$White\]@\[$CReset\]"
@@ -27,7 +26,7 @@ bpr+=" \[$IBlack\]λ\[$CReset\] "
 export PS1=$bpr
 unset bpr
 
-# deduplicate PATH
+# Deduplicate PATH
 dedup_pathvar PATH
 
 # fzf

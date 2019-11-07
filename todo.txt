@@ -1,9 +1,9 @@
-Document functions and aliases so it is possible to get a summary tid:ndu
-Think about how to use XDG - https://0x46.net/thoughts/2019/02/01/dotfile-madness/ tid:kmx
-readd missing packages (check history) tid:gml
-Configure fzf more tid:fzr
-Make neovim3 environment use system python if available (rpi etc) tid:qyn
-Compare master-list to centos-setup tid:ljv
+x 2019-11-07 Document functions and aliases so it is possible to get a summary tid:ndu
+x 2019-11-07 Think about how to use XDG - https://0x46.net/thoughts/2019/02/01/dotfile-madness/ tid:kmx
+x 2019-11-07 readd missing packages (check history) tid:gml
+x 2019-11-07 Configure fzf more tid:fzr
+x 2019-11-07 Make neovim3 environment use system python if available (rpi etc) tid:qyn
+x 2019-11-07 Compare master-list to centos-setup tid:ljv
 x 2019-02-04 Test new vagrant script on @work machine tid:dwd
 x 2018-12-02 Merge docker list with master-list tid:vch
 x 2018-10-16 Add nvim compilation deps to master-list tid:qou

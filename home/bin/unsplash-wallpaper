@@ -10,6 +10,6 @@ wallpaper_file=$RUNCOM_TMPDIR/unsplash-wallpaper.jpg
 
 wget --no-verbose -O $wallpaper_file https://unsplash.it/$dimpath/?random
 
-#gsettings set org.gnome.desktop.background picture-uri file:///$wallpaper_file
 #pcmanfm --set-wallpaper $wallpaper_file
+gsettings set org.gnome.desktop.background picture-uri file:///$wallpaper_file
 feh --bg-scale $wallpaper_file

@@ -2,46 +2,47 @@
 
 # OS specific settings
 if [[ $system == 'Linux' ]]; then
-	alias ls='ls -hpF --color=auto'
-	alias rm='rm -I'
-	alias grep='grep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias open='xdg-open'
+  alias ls='ls -hpF --color=auto'
+  alias rm='rm -I'
+  alias grep='grep --color=auto'
+  alias egrep='egrep --color=auto'
+  alias open='xdg-open'
 
-	if [[ -n "$DISPLAY" ]]; then
-			setxkbmap -option ctrl:nocaps
-	fi
+  if [[ -n "$DISPLAY" ]]; then
+      # Map caps lock key to ctrl
+      setxkbmap -option ctrl:nocaps
+  fi
 fi
 
 if [[ $system == 'OSX' ]]; then
-	export CLICOLOR=1
+  export CLICOLOR=1
 
-	if [[ -x /usr/local/bin/gls ]]; then
-			alias ls='/usr/local/bin/gls -hpF --color=auto'
-	else
-			alias ls='ls -hG'
-	fi
+  if [[ -x /usr/local/bin/gls ]]; then
+      alias ls='/usr/local/bin/gls -hpF --color=auto'
+  else
+      alias ls='ls -hG'
+  fi
 fi
 
 # Directory colors
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/dircolors || -x /usr/bin/dircolors ) ]]; then
-	eval `dircolors $HOME/.dircolors`
+  eval `dircolors $HOME/.dircolors`
 fi
 if [[ -f ~/.dircolors && ( -x /usr/local/bin/gdircolors ) ]]; then
-	eval `gdircolors $HOME/.dircolors`
+  eval `gdircolors $HOME/.dircolors`
 fi
 
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]]; then
-	eval "$(rbenv init -)"
+  eval "$(rbenv init -)"
 fi
 
 # Generic colou?ri[sz]er
-. $rcfiles/home/.grc/grc.bashrc
+#. $rcfiles/home/.grc/grc.bashrc
 
 # Proxy helper
 if [[ -f $HOME/.homesick/repos/yaprox/yaprox.sh ]]; then
-	. $HOME/.homesick/repos/yaprox/yaprox.sh
+  . $HOME/.homesick/repos/yaprox/yaprox.sh
 fi
 
 # Turn off Ctrl-s XOFF
@@ -54,10 +55,10 @@ stty stop undef
 stty start undef
 # End magic mumbo jumbo block
 
-# Base16 Shell (slow)
+# Base16 Shell (slow loading)
 if [[ "${RUNCOM_LOAD_BASE16}" = 1 ]]; then
-	BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
-	[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+  BASE16_SHELL="$HOME/.local/share/base16/templates/shell/"
+  [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 fi
 
 # Source custom functions, including `command_exists` which is used below.
@@ -67,39 +68,39 @@ fi
 # Use bat if available
 #command_exists bat && alias cat='bat'
 if command_exists bat; then
-	alias cat='bat'
-	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  alias cat='bat'
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 # Use exa/colorls if available
 #if [[ -f ~/.cargo/bin/exa ]]; then
 if command_exists exa; then
-	alias ls='exa --color-scale'
-	alias l='ls --all'
-	alias ll='ls --all --long --header --git'
-	alias lt='ls --all --long --tree'
+  alias ls='exa --color-scale'
+  alias l='ls --all'
+  alias ll='ls --all --long --header --git'
+  alias lt='ls --all --long --tree'
 elif [[ -f ~/.rbenv/shims/colorls ]]; then
-	alias ls='colorls'
-	alias l='colorls -A'
-	alias ll='colorls -A -l'
-	alias lt='colorls --tree'
-	source "$(dirname $(gem which colorls))/tab_complete.sh"
+  alias ls='colorls'
+  alias l='colorls -A'
+  alias ll='colorls -A -l'
+  alias lt='colorls --tree'
+  source "$(dirname $(gem which colorls))/tab_complete.sh"
 else
-	alias l='ls -A --color'
-	alias ll='ls -lAh --color'
-	alias lt='tree'
-	alias lsa='ls -lAh --color'
+  alias l='ls -A --color'
+  alias ll='ls -lAh --color'
+  alias lt='tree'
+  alias lsa='ls -lAh --color'
 fi
 
 # fasd navigator
 eval "$(fasd --init auto)"
 
-# nvm (slow, so not loaded immediately)
+# nvm (slow loading)
 if [[ "${IS_PRUNCOM}" = 1 ]]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 else
   # TODO: temporary disabling
-	#alias nvm='[ -s "$NVM_DIR/nvm.sh" ] && unalias nvm && . "$NVM_DIR/nvm.sh" && nvm $@'
+  #alias nvm='[ -s "$NVM_DIR/nvm.sh" ] && unalias nvm && . "$NVM_DIR/nvm.sh" && nvm $@'
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
@@ -108,12 +109,12 @@ fi
 
 # Alias to fix typos
 if [[ -x /usr/bin/thefuck ]]; then
-	eval "$(thefuck --alias)"
+  eval "$(thefuck --alias)"
 fi
 
 # Pipenv autocompletion
 #if [[ -f ~/.local/bin/pipenv ]]; then
-	#eval $(~/.local/bin/pipenv --completion)
+  #eval $(~/.local/bin/pipenv --completion)
 #fi
 
 # Cleanup
@@ -122,19 +123,19 @@ unset system
 
 # Source additional local settings
 if [ -f ~/.localenv-post ]; then
-	. ~/.localenv-post
+  . ~/.localenv-post
 fi
 
 # Source optional additional settings
 if [[ -f $HOMESHICK_REPOS/pruncom/rc.pruncom-post ]]; then
-	. "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
+  . "$HOMESHICK_REPOS/pruncom/rc.pruncom-post"
 fi
 
 # Autostart tmux if told to
 # Source: https://wiki.archlinux.org/index.php/tmux#Start_tmux_on_every_shell_login
 if [[ "${RUNCOM_AUTOSTART_SINGLE_TMUX_SESSION}" = 1 ]]; then
-	if which tmux >/dev/null 2>&1; then
-			#if not inside a tmux session, and if no session is started, start a new session
-			test -z "$TMUX" && (tmux attach || tmux new-session 'nice glances')
-	fi
+  if which tmux >/dev/null 2>&1; then
+      #if not inside a tmux session, and if no session is started, start a new session
+      test -z "$TMUX" && (tmux attach || tmux new-session 'nice glances')
+  fi
 fi

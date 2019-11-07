@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-source "$HOME/.homesick/repos/runcom/rc.pyenv"
-source "$HOME/.homesick/repos/runcom/localenv"
+set -e
+
+source "$RUNCOM_PATH/rc.pyenv"
+source "$RUNCOM_PATH/localenv"
 
 $RUNCOM_PIPENV_CMD --python 3
 ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3

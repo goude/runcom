@@ -3,7 +3,7 @@
 #export XDG_CONFIG_HOME=$HOME/.config
 #export XDG_CACHE_HOME=$HOME/.cache
 
-export RUNCOM_DESCRIPTION='Default description.'
+export RUNCOM_DESCRIPTION='Unconfigured drone.'
 export RUNCOM_ICON='🤖'
 
 export RUNCOM_PATH=$HOMESHICK_REPOS/runcom

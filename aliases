@@ -39,20 +39,18 @@ alias v='\vim'
 
 # python and jupyter aliases
 alias jc='jupyter-console'
-#alias pan='pyenv activate neovim3'
 alias pan='hocd runcom/setup/rcpy/python3 && pipenv shell'
-alias paj='pyenv activate pyenv-jupyter'
 alias pad='pyenv deactivate'
 alias pir='pipenv run'
 alias pis='pipenv shell'
 
 # misc aliases
 alias clp='tmux split-window && exit'
+alias ta='tmux attach || tmux new'
 alias druncom='cd && source bin/start-runcom-docker'
 alias mrs='mr --minimal status'
 alias serve-directory='python3 -m http.server'
 alias ssh-vagrant='ssh -A -p 2222 vagrant@localhost'
-alias ta='tmux attach || tmux new'
 alias pbcopy='xsel --input'
 alias pbpaste='xsel --output'
 alias tldr='tldr -t base16'

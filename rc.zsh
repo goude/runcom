@@ -49,7 +49,7 @@ noop () { }
 zle -N noop
 bindkey -M vicmd '\e' noop
 
-# Allow octothorpe-prefixed comments
+# Allow octothorpe (#) prefixed comments
 setopt -o interactivecomments
 
 # History options
@@ -99,8 +99,6 @@ antigen bundle pip
 antigen bundle python
 antigen bundle vagrant
 
-# antigen bundle history # h, hsi
-#antigen bundle goude/liquidprompt
 #antigen bundle extract # x swiss army knife
 #antigen bundle felixr/docker-zsh-completion
 #antigen bundle gitignore

@@ -9,3 +9,4 @@ source $REPOS/antigen/antigen.zsh
 antigen update
 
 nvim +PlugClean +PlugInstall +PlugUpdate +q +q
+vim +PlugClean +PlugInstall +PlugUpdate +q +q

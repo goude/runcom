@@ -517,13 +517,33 @@ let g:vimshell_prompt =  '$ '
 
 " Semshi
 function CustomSemshiHighlights()
-    hi semshiSelected ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
+    " FIXME: clean up ctermfg/guifg globally - autogeneration of missings?
+    " On Ubuntu/tmux/kitty, it's the gui* colors that are displayed
+    " hi semshiSelected ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
+    hi semshiSelected ctermfg=247 ctermbg=237 guifg=#aaaaaa guibg=#333333
 endfunction
 
 augroup semshi-python
   au!
   autocmd FileType python call CustomSemshiHighlights()
 augroup END
+
+nmap <silent> <leader>sr :Semshi rename<CR>
+
+nmap <silent> <leader><Tab> :Semshi goto name next<CR>
+nmap <silent> <leader><S-Tab> :Semshi goto name prev<CR>
+
+nmap <silent> <leader>sc :Semshi goto class next<CR>
+nmap <silent> <leader>sC :Semshi goto class prev<CR>
+
+nmap <silent> <leader>sf :Semshi goto function next<CR>
+nmap <silent> <leader>sF :Semshi goto function prev<CR>
+
+nmap <silent> <leader>su :Semshi goto unresolved first<CR>
+nmap <silent> <leader>sp :Semshi goto parameterUnused first<CR>
+
+nmap <silent> <leader>se :Semshi error<CR>
+nmap <silent> <leader>ss :Semshi goto error<CR>
 
 " }
 

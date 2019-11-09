@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/tmp/runcom/setup/bootstrap.sh
+/tmp/runcom/setup/runcom-bootstrap.sh
 
 # chsh
 # post-setups

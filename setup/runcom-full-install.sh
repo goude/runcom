@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
-echo "Installing/updating runcom..."
+echo "Full runcom install (zsh + pyenv + neovim)"
 
-./setup-homeshick.sh
-
-echo "Performing post-installation..."
-
-ln -s $HOME/.tmux.conf-new $HOME/.tmux.conf
+./runcom-base-install.sh
 
 # Set initial color scheme
 ln -s $HOME/.local/share/base16/templates/shell/scripts/base16-gruvbox-dark-pale.sh $HOME/.base16_theme

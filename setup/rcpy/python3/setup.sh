@@ -6,6 +6,7 @@ source "$RUNCOM_PATH/localenv"
 
 $RUNCOM_PIPENV_CMD --python 3
 ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
+ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which pip3)" ~/bin/neovim-pip3
 
 $RUNCOM_PIPENV_CMD install --skip-lock \
 	arrow \

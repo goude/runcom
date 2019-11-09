@@ -1,6 +1,9 @@
 " vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldmethod=marker spell:
 
 " These bundles are shared between vim and nvim.
+"
+" Here's a list, should we ever need to install even more plugins:
+" https://github.com/mhinz/vim-galore/blob/master/PLUGINS.md
 
 " Base {
 

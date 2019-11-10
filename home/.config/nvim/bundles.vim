@@ -271,6 +271,10 @@ Plug 'ecomba/vim-ruby-refactoring'
 " Vim racer
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
+
+" OpenSCAD
+Plug 'sirtaj/vim-openscad'
+
 " }
 
 " Customized Syntax Plugins {

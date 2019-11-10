@@ -161,6 +161,9 @@ noremap <Leader>v "+gP<CR>
 " Cut to system clipboard
 noremap <Leader>x "+x<CR>
 
+" Replace word under cursor in buffer (with /g)
+nnoremap <leader>ss :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 if has('macunix')
   " pbcopy for OSX copy/paste
   vmap <C-x> :!pbcopy<CR>

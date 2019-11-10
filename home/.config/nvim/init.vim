@@ -528,22 +528,23 @@ augroup semshi-python
   autocmd FileType python call CustomSemshiHighlights()
 augroup END
 
-nmap <silent> <leader>sr :Semshi rename<CR>
+" Note: <leader>ss is used for global substitution
+nnoremap <silent> <leader>sr :Semshi rename<CR>
 
-nmap <silent> <leader><Tab> :Semshi goto name next<CR>
-nmap <silent> <leader><S-Tab> :Semshi goto name prev<CR>
+nnoremap <silent> <leader><Tab> :Semshi goto name next<CR>
+nnoremap <silent> <leader><S-Tab> :Semshi goto name prev<CR>
 
-nmap <silent> <leader>sc :Semshi goto class next<CR>
-nmap <silent> <leader>sC :Semshi goto class prev<CR>
+nnoremap <silent> <leader>sc :Semshi goto class next<CR>
+nnoremap <silent> <leader>sC :Semshi goto class prev<CR>
 
-nmap <silent> <leader>sf :Semshi goto function next<CR>
-nmap <silent> <leader>sF :Semshi goto function prev<CR>
+nnoremap <silent> <leader>sf :Semshi goto function next<CR>
+nnoremap <silent> <leader>sF :Semshi goto function prev<CR>
 
-nmap <silent> <leader>su :Semshi goto unresolved first<CR>
-nmap <silent> <leader>sp :Semshi goto parameterUnused first<CR>
+nnoremap <silent> <leader>su :Semshi goto unresolved first<CR>
+nnoremap <silent> <leader>sp :Semshi goto parameterUnused first<CR>
 
-nmap <silent> <leader>se :Semshi error<CR>
-nmap <silent> <leader>ss :Semshi goto error<CR>
+nnoremap <silent> <leader>se :Semshi error<CR>
+nnoremap <silent> <leader>sg :Semshi goto error<CR>
 
 " }
 

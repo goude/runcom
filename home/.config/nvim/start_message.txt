@@ -19,12 +19,12 @@ L-tp toggle pencil mode
 L-tr Toggle file tree
 L-tt Toggle tagbar
 gx   Open file in browser
-L-sr Rename
-L-T  Goto name
-L-ST Goto name prev
+L-T  Goto name (shift-T: prev)
 L-sc Goto class
+L-se Semshi error
 L-sf Goto function
 L-sf Goto unresolved first
 L-sp Goto paramaterUnused first
-L-se Semshi error
+L-sr Seshi Rename
 L-ss Goto error
+L-ss Replace word under cursor in buffer

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+echo "Need to check how to raspi-conf this..."
+#sudo locale-gen en_US.UTF-8
+
 ./install-keys.sh
 
 export DEBIAN_FRONTEND=noninteractive

@@ -6,6 +6,7 @@ ca-certificates
 cifs-utils
 cmake
 curl
+entr
 exuberant-ctags
 g++
 gettext

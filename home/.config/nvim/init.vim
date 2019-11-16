@@ -128,8 +128,8 @@ augroup END
 
 "" Text files
 "augroup vimrc-wrapping
-  "au!
-  "au BufRead,BufNewFile *.txt call s:setupWrapping()
+"au!
+"au BufRead,BufNewFile *.txt call s:setupWrapping()
 "augroup END
 
 "" make/cmake
@@ -153,16 +153,16 @@ augroup END
 
 " go
 let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
-        \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
-        \ 'r:constructor', 'f:functions' ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
-    \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-    \ }
+      \ 'ctagstype' : 'go',
+      \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
+      \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
+      \ 'r:constructor', 'f:functions' ],
+      \ 'sro' : '.',
+      \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
+      \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
+      \ 'ctagsbin'  : 'gotags',
+      \ 'ctagsargs' : '-sort -silent'
+      \ }
 
 " vim-go
 " run :GoBuild or :GoTestCompile based on the go file
@@ -241,8 +241,8 @@ augroup END
 " html
 " for html files, 2 spaces
 augroup haskell_files
-    au!
-    au Filetype html setlocal ts=2 sw=2 expandtab
+  au!
+  au Filetype html setlocal ts=2 sw=2 expandtab
 augroup END
 
 " javascript
@@ -250,8 +250,8 @@ augroup END
 
 " vim-javascript
 "augroup vimrc-javascript
-  "au!
-  "au FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
+"au!
+"au FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
 "augroup END
 
 " python
@@ -259,8 +259,8 @@ augroup END
 augroup vimrc-python
   au!
   au FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=80,100
-      \ formatoptions+=croq softtabstop=4
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+        \ formatoptions+=croq softtabstop=4
+        \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
 " jedi-vim
@@ -291,15 +291,15 @@ augroup vimrc-ruby
 augroup END
 
 let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
+      \ 'kinds' : [
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
+      \ ]
+      \ }
 
 " Prose / markdown / txt
 function! Prose()
@@ -379,9 +379,9 @@ endif
 " Temporarily disabled
 " ripgrep
 "if executable('rg')
-  "let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  "set grepprg=rg\ --vimgrep
-  "command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+"let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+"set grepprg=rg\ --vimgrep
+"command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 "endif
 
 " snippets
@@ -410,20 +410,20 @@ let g:ale_sign_warning = '•'
 let g:ale_lint_delay = 1000
 " python autopep8, isort, yapf
 let g:ale_fixers = {
-\   'python': [
-\      'isort',
-\      'black'
-\   ],
-\   'js': [
-\      'prettier',
-\   ],
-\   'html': [
-\      'prettier'
-\   ],
-\   'css': [
-\      'prettier'
-\   ],
-\}
+      \   'python': [
+      \      'isort',
+      \      'black'
+      \   ],
+      \   'js': [
+      \      'prettier',
+      \   ],
+      \   'html': [
+      \      'prettier'
+      \   ],
+      \   'css': [
+      \      'prettier'
+      \   ],
+      \}
 
 "" Lightline
 function! Foobar() abort
@@ -435,7 +435,7 @@ endfunction
 "set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
 "if exists("*fugitive#statusline")
-  "set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
 "endif
 
 set noshowmode " disabled, since it's displayed by lightline
@@ -541,10 +541,10 @@ let g:vimshell_prompt =  '$ '
 
 " Semshi
 function CustomSemshiHighlights()
-    " FIXME: clean up ctermfg/guifg globally - autogeneration of missings?
-    " On Ubuntu/tmux/kitty, it's the gui* colors that are displayed
-    " hi semshiSelected ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
-    hi semshiSelected ctermfg=247 ctermbg=237 guifg=#aaaaaa guibg=#333333
+  " FIXME: clean up ctermfg/guifg globally - autogeneration of missings?
+  " On Ubuntu/tmux/kitty, it's the gui* colors that are displayed
+  " hi semshiSelected ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
+  hi semshiSelected ctermfg=247 ctermbg=237 guifg=#aaaaaa guibg=#333333
 endfunction
 
 augroup semshi-python
@@ -577,7 +577,7 @@ nnoremap <silent> <leader>sg :Semshi goto error<CR>
 " Completion {
 
 "if filereadable(expand("~/.config/nvim/coc.vim"))
-  "source ~/.config/nvim/coc.vim
+"source ~/.config/nvim/coc.vim
 "endif
 
 autocmd BufEnter * call ncm2#enable_for_buffer()

@@ -26,7 +26,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# short form aliases
+# short form aliases - watch out for collisions with existing commands
 alias a='ansible'
 alias d='docker'
 alias f='fzf'
@@ -36,6 +36,8 @@ alias h='history'
 alias s='ssh'
 alias t='topydo ls'
 alias v='\vim'
+alias ze='zen'
+alias uz='unzen'
 
 # python and jupyter aliases
 alias jc='jupyter-console'

@@ -441,26 +441,50 @@ endfunction
 set noshowmode " disabled, since it's displayed by lightline
 
 let g:lightline = {
-    \ 'colorscheme': 'base16',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste'],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'workdir', 'gutentag' ] ],
-    \   'right': [ [ 'wordcount', 'lineinfo', 'charvaluehex' ],
-    \              [ 'percent' ],
-    \              [ 'pencil', 'fileformat', 'fileencoding', 'filetype', ] ]
-    \ },
-    \ 'component': {
-    \   'helloworld': 'Hello, World!',
-    \   'charvaluehex': '0x%B'
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head',
-    \   'wordcount': 'wordCount#WordCount',
-    \   'workdir': 'Foobar',
-    \   'pencil': 'PencilMode',
-    \   'gutentag': 'gutentag#statusline',
-    \ },
-    \ }
+      \ 'colorscheme': 'base16',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste'],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'workdir', 'gutentag' ] ],
+      \   'right': [
+      \              [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok'],
+      \              [ 'wordcount', 'lineinfo', 'charvaluehex' ],
+      \              [ 'percent' ],
+      \              [ 'pencil', 'fileformat', 'fileencoding', 'filetype', ]
+      \            ]
+      \ }
+      \ }
+
+let g:lightline.component = {
+      \   'helloworld': 'Hello, World!',
+      \   'charvaluehex': '0x%B',
+      \ }
+
+let g:lightline.component_function = {
+      \   'gitbranch': 'fugitive#head',
+      \   'wordcount': 'wordCount#WordCount',
+      \   'workdir': 'Foobar',
+      \   'pencil': 'PencilMode',
+      \   'gutentag': 'gutentag#statusline',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 "" tmux-complete (deoplete needs no trigger)
 let g:tmuxcomplete#trigger = ''

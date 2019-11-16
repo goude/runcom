@@ -70,6 +70,7 @@ Plug 'vim-scripts/CSApprox'
 
 " A light and configurable statusline/tabline plugin for Vim
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 
 " A well-integrated, low-configuration buffer list that lives in the tabline
 Plug 'ap/vim-buftabline'

@@ -1,43 +1,39 @@
-┏━┓╻ ╻┏┓╻┏━╸┏━┓┏┳┓
-┣┳┛┃ ┃┃┗┫┃  ┃ ┃┃┃┃
-╹┗╸┗━┛╹ ╹┗━╸┗━┛╹ ╹
-
-Movement
-s    EasyMotion to <char><char>
-LL   EasyMotion to <motion>
-
-Editing
-L-ea ALEFix
+Movement                                        Searching and replacing
+s    EasyMotion to <char><char>                 L-pb Fuzzy find in buffers
+LL   EasyMotion to <motion>                     L-pg Fuzzy find in git files
+                                                L-ph Fuzzy find in help
+Editing                                         L-pp Fuzzy find in files
+L-ea ALEFix                                     L-ss Replace word under cursor in buffer
 L-ed Insert ISO8601 datetimestamp
 L-ei indent
-L-er Reload nvim config
-L-es sort (visual)
-L-et Edit todo.txt
+L-er Reload nvim config                         ┏━┓╻ ╻┏┓╻┏━╸┏━┓┏┳┓
+L-es sort (visual)                              ┣┳┛┃ ┃┃┗┫┃  ┃ ┃┃┃┃
+L-et Edit todo.txt                              ╹┗╸┗━┛╹ ╹┗━╸┗━┛╹ ╹
 L-ev Edit nvim config
 
-Opening
-L-o  Open WORD under cursor in default program
-gx   Open file in browser
+Opening                                         Semshi (python)
+L-o  Open WORD under cursor in default program  L-T  Goto name (shift-T: prev)
+gx   Open file in browser                       L-sc Goto class
+                                                L-se Semshi error
+Toggles                                         L-sf Goto function
+L-tn Toggle relative num                        L-sf Goto unresolved first
+L-tp toggle pencil mode                         L-sp Goto paramaterUnused first
+L-tr Toggle file tree                           L-sr Seshi Rename
+L-tt Toggle tagbar                              L-ss Goto error (FIXME: Conflict above)
 
-Searching and replacing
-L-pb Fuzzy find in buffers
-L-pg Fuzzy find in git files
-L-ph Fuzzy find in help
-L-pp Fuzzy find in files
-L-ss Replace word under cursor in buffer
 
-Toggles
-L-tn Toggle relative num
-L-tp toggle pencil mode
-L-tr Toggle file tree
-L-tt Toggle tagbar
 
-Semshi (python)
-L-T  Goto name (shift-T: prev)
-L-sc Goto class
-L-se Semshi error
-L-sf Goto function
-L-sf Goto unresolved first
-L-sp Goto paramaterUnused first
-L-sr Seshi Rename
-L-ss Goto error (FIXME: Conflict above)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

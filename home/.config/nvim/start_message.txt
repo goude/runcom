@@ -1,8 +1,9 @@
-Movement                                        Searching and replacing
+
+           Movement                                    Searching and replacing
 s    EasyMotion to <char><char>                 L-pb Fuzzy find in buffers
 LL   EasyMotion to <motion>                     L-pg Fuzzy find in git files
                                                 L-ph Fuzzy find in help
-Editing                                         L-pp Fuzzy find in files
+           Editing                              L-pp Fuzzy find in files
 L-ea ALEFix                                     L-ss Replace word under cursor in buffer
 L-ed Insert ISO8601 datetimestamp
 L-ei indent
@@ -11,29 +12,18 @@ L-es sort (visual)                              ┣┳┛┃ ┃┃┗┫┃  �
 L-et Edit todo.txt                              ╹┗╸┗━┛╹ ╹┗━╸┗━┛╹ ╹
 L-ev Edit nvim config
 
-Opening                                         Semshi (python)
+           Opening                                       Semshi (python)
 L-o  Open WORD under cursor in default program  L-T  Goto name (shift-T: prev)
 gx   Open file in browser                       L-sc Goto class
                                                 L-se Semshi error
-Toggles                                         L-sf Goto function
+           Toggles                              L-sf Goto function
 L-tn Toggle relative num                        L-sf Goto unresolved first
 L-tp toggle pencil mode                         L-sp Goto paramaterUnused first
 L-tr Toggle file tree                           L-sr Seshi Rename
 L-tt Toggle tagbar                              L-ss Goto error (FIXME: Conflict above)
 
+AleFix on save is enabled by default. Turn it off if it becomes annoying.
+L-tt seems broken. Fix it.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+==========================================================================================
 

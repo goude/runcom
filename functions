@@ -80,12 +80,18 @@ function center-text() {
 
 # Neovim launchers
 n() {
-  if [ $# -eq 0 ]; then
-    # nvim "$(fzf)"
+  if command_exists nvim; then
     nvim "$@"
   else
-    nvim "$@"
+    vim "$@"
   fi
+
+  #if [ $# -eq 0 ]; then
+    ## nvim "$(fzf)"
+    #nvim "$@"
+  #else
+    #nvim "$@"
+  #fi
 }
 
 motd() {

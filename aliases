@@ -35,7 +35,6 @@ alias g='git'
 alias h='history'
 alias s='ssh'
 alias t='topydo ls'
-alias v='\vim'
 alias ze='zen'
 alias uz='unzen'
 

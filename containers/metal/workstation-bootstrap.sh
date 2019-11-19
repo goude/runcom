@@ -26,3 +26,5 @@ unzip $WORKDIR/FiraCode.zip
 
 cd $WORKDIR
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+echo "source ~/.runcom_bashrc" >> ~/.bashrc

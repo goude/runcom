@@ -19,3 +19,5 @@ sudo ./base-package-setup.sh
 
 cd $WORKDIR/runcom/setup
 ./runcom-base-install.sh
+
+echo "source ~/.runcom_bashrc" >> ~/.bashrc

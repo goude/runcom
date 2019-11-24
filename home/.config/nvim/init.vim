@@ -522,6 +522,10 @@ let g:expand_region_text_objects = {
 "map K <Plug>(expand_region_expand)
 "map J <Plug>(expand_region_shrink)
 
+" Pencil configuration
+"let g:pencil#mode_indicators = {'hard': '␍', 'auto': 'ª', 'soft': '⤸', 'off': '',}
+let g:pencil#mode_indicators = {'hard': '', 'auto': '', 'soft': '⤸', 'off': '',}
+
 " NERDTree configuration {
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']

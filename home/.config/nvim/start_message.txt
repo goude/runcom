@@ -11,6 +11,7 @@ L-er Reload nvim config                         ┏━┓╻ ╻┏┓╻┏━�
 L-es sort (visual)                              ┣┳┛┃ ┃┃┗┫┃  ┃ ┃┃┃┃
 L-et Edit todo.txt                              ╹┗╸┗━┛╹ ╹┗━╸┗━┛╹ ╹
 L-ev Edit nvim config
+C-o  Single normal command (insert)
 
            Opening                                       Semshi (python)
 L-o  Open WORD under cursor in default program  L-T  Goto name (shift-T: prev)

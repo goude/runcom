@@ -26,6 +26,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	mypy \
 	pynvim \
 	pytest \
+  pydocstyle \
 	reorder-python-imports \
 	requests \
 	sphinx \
@@ -50,6 +51,7 @@ pyenv_symlinks=(
 	"icdiff"
 	"isort"
 	"mypy"
+  "pydocstyle"
 	"reorder-python-imports"
 	"tmuxp"
 	"topydo"

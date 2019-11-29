@@ -24,6 +24,7 @@ $RUNCOM_PIPENV_CMD install --skip-lock \
 	isort \
 	jedi \
 	mypy \
+  pipx \
 	pynvim \
 	pytest \
   pydocstyle \
@@ -51,6 +52,7 @@ pyenv_symlinks=(
 	"icdiff"
 	"isort"
 	"mypy"
+  "pipx"
   "pydocstyle"
 	"reorder-python-imports"
 	"tmuxp"

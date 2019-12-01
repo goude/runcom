@@ -9,18 +9,16 @@ parserOptions:
     experimentalObjectRestSpread: true
     jsx: true
   sourceType: module
-plugins:
-  - react
 rules:
   indent:
     - error
-    - tab
+    - 2
   linebreak-style:
     - error
     - unix
   quotes:
     - error
-    - single
+    - double
   semi:
     - error
     - always

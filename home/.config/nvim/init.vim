@@ -413,20 +413,22 @@ let g:ale_fix_on_save = 1
 
 " python autopep8, isort, yapf
 let g:ale_fixers = {
-      \   'python': [
-      \      'isort',
-      \      'black'
-      \   ],
-      \   'js': [
-      \      'prettier',
-      \   ],
-      \   'html': [
-      \      'prettier'
-      \   ],
-      \   'css': [
-      \      'prettier'
-      \   ]
-      \}
+\   'python': [
+\      'isort',
+\      'black'
+\   ],
+\   'javascript': [
+\      'eslint',
+\      'prettier'
+\   ],
+\   'html': [
+\      'prettier'
+\   ],
+\   'css': [
+\      'prettier',
+\      'stylelint'
+\   ]
+\}
 
 "" Lightline
 function! Foobar() abort

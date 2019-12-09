@@ -240,7 +240,7 @@ augroup END
 
 " html
 " for html files, 2 spaces
-augroup haskell_files
+augroup html_files
   au!
   au Filetype html setlocal ts=2 sw=2 expandtab
 augroup END
@@ -319,27 +319,30 @@ function! Prose()
   "inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]A<c-g>u
 
   " replace common punctuation
-  iabbrev <buffer> -- –
-  iabbrev <buffer> --- —
-  iabbrev <buffer> << «
-  iabbrev <buffer> >> »
+  "iabbrev <buffer> -- –
+  "iabbrev <buffer> --- —
+  "iabbrev <buffer> << «
+  "iabbrev <buffer> >> »
 
   " open most folds
   "setlocal foldlevel=6
 
   " replace typographical quotes (reedes/vim-textobj-quote)
-  map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly
-  map <silent> <buffer> <leader>qs <Plug>ReplaceWithStraight
+  "map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly
+  "map <silent> <buffer> <leader>qs <Plug>ReplaceWithStraight
 
   " highlight words (reedes/vim-wordy)
-  noremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
-  xnoremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
-  inoremap <silent> <buffer> <F8> <C-o>:NextWordy<cr>
+  "noremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
+  "xnoremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
+  "inoremap <silent> <buffer> <F8> <C-o>:NextWordy<cr>
 
 endfunction
 
 " automatically initialize buffer by file type
-" au FileType markdown,mkd,text call Prose()
+augroup vimrc-prose
+  au!
+  au FileType markdown,mkd,text call Prose()
+augroup END
 
 " invoke manually by command for other file types
 command! -nargs=0 Prose call Prose()

@@ -2,7 +2,7 @@
 source "$HOME/.nvm/nvm.sh"
 nvm use node
 
-npm install -g npm@latest jsonlint base16-builder-node eslint eslint-plugin-react tern tldr neovim prettier stylelint stylelint-config-recommended
+npm install -g npm@latest jsonlint eslint eslint-plugin-react tern neovim prettier stylelint stylelint-config-recommended
 #npm install -g npm@latest htmlhint jsonlint base16-builder-node eslint eslint-plugin-react tern tldr neovim prettier stylelint
 
 # TODO: check https://github.com/sindresorhus/awesome-nodejs

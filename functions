@@ -51,14 +51,14 @@ history-high-score() {
 }
 
 # Set a random colorscheme
-random-base16-colorscheme() {
-  pushd . >/dev/null &&
-    cd "$HOME/.local/share/base16/templates/shell/scripts" &&
-    colorscheme=$(ls *.sh | shuf | head -1) &&
-    echo $colorscheme &&
-    source $colorscheme &&
-    popd >/dev/null
-}
+#random-base16-colorscheme() {
+  #pushd . >/dev/null &&
+    #cd "$HOME/.local/share/base16/templates/shell/scripts" &&
+    #colorscheme=$(ls *.sh | shuf | head -1) &&
+    #echo $colorscheme &&
+    #source $colorscheme &&
+    #popd >/dev/null
+#}
 
 # git quicksave: commit and push
 save() {
@@ -94,9 +94,9 @@ n() {
   #fi
 }
 
-motd() {
-  echo " Juice-tone, we ain't got no problem " | center-text | color yellow
-}
+#motd() {
+  #echo " Juice-tone, we ain't got no problem " | center-text | color yellow
+#}
 
 function hsi() {
   #history | fzf --tac --no-sort --query="$1"
@@ -126,8 +126,8 @@ function emoji_search() {
   emojify -l | tail -n +5 | sort | fzf
 }
 
-transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
-  tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
+#transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+  #tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
 
 function tiv() {
   docker run --rm -v "$(pwd):/home" bperel/terminalimageviewer "$1" -w "$(tput cols)"

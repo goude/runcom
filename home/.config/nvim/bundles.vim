@@ -174,8 +174,9 @@ Plug 'ncm2/ncm2-ultisnips'
 
 Plug 'ncm2/ncm2-syntax'
 Plug 'Shougo/neco-syntax'
-
 Plug 'filipekiss/ncm2-look.vim'
+
+Plug 'ncm2/ncm2-racer'
 
 " TODO: check interference/functionality
 "Plug 'Shougo/neco-syntax'
@@ -270,7 +271,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 
 " rust
 " Vim racer
-Plug 'racer-rust/vim-racer'
+"Plug 'racer-rust/vim-racer' " ncm2 above
 Plug 'rust-lang/rust.vim'
 
 " OpenSCAD

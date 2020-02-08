@@ -65,6 +65,8 @@ endif
 
 set nospell
 
+set autoread
+
 " Hidden characters
 " ¬¦«»¶→⌂⌐⏎⌫⌧∕_
 set showbreak=⏎\

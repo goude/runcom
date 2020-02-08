@@ -39,11 +39,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 source ~/.config/nvim/bundles-shared.vim
 source ~/.config/nvim/bundles.vim
 
-" Include user's extra bundle
-if filereadable(expand("~/.config/nvim/local_bundles.vim"))
-  source ~/.config/nvim/local_bundles.vim
-endif
-
 call plug#end()
 
 filetype plugin indent on
@@ -62,7 +57,6 @@ endif
 " }
 
 " Load shared mappings {
-"" Include user's local vim config
 if filereadable(expand("~/.config/nvim/mappings.vim"))
   source ~/.config/nvim/mappings.vim
 endif
@@ -138,8 +132,6 @@ augroup vimrc-make-cmake
   au FileType make setlocal noexpandtab
   au BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
-
-set autoread
 
 " }
 

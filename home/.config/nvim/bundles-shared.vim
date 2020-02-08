@@ -23,6 +23,16 @@ Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 
+" Comment functions so powerful—no comment necessary.
+Plug 'scrooloose/nerdcommenter'
+
+" Massive collection of syntax highlighting / ftdetect / indent plugins
+Plug 'sheerun/vim-polyglot'
+
+" Base16 color schemes - use locally generated
+"Plug 'chriskempson/base16-vim'
+Plug '~/.local/share/base16/templates/vim'
+
 " Fancy start screen for vim
 Plug 'mhinz/vim-startify'
 

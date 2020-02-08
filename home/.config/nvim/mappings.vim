@@ -41,7 +41,7 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Save with Ctrl-C
+" Save with Ctrl-S
 noremap <C-s> :w<cr>
 inoremap <C-s> <ESC>:w<cr>
 
@@ -164,6 +164,11 @@ noremap <Leader>x "+x<CR>
 " Replace word under cursor in buffer (with /g)
 nnoremap <leader>ss :%s/\<<C-r><C-w>\>//g<Left><Left>
 
+if has('macunix')
+  " pbcopy for OSX copy/paste
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+endif
 " }
 
 " EasyMotion minimal mappings {
@@ -183,11 +188,6 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
 
 " }
 

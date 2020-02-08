@@ -51,8 +51,8 @@ Plug 'reedes/vim-textobj-quote'
 Plug 'coderifous/textobj-word-column.vim'
 
 " Table editing and Ascii
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'gyim/vim-boxdraw'
+"Plug 'dhruvasagar/vim-table-mode'
+"Plug 'gyim/vim-boxdraw'
 
 " Edit every line in a quickfix list at the same time
 Plug 'Olical/vim-enmasse'
@@ -60,10 +60,6 @@ Plug 'Olical/vim-enmasse'
 " }
 
 " UI {
-
-" Base16 color schemes - use locally generated
-"Plug 'chriskempson/base16-vim'
-Plug '~/.local/share/base16/templates/vim'
 
 " Make gvim-only colorschemes work transparently in terminal vim
 Plug 'vim-scripts/CSApprox'
@@ -85,7 +81,7 @@ Plug 'schickling/vim-bufonly'
 Plug 'andymass/vim-matchup'
 
 " Experimental - can be disabled if needed
-Plug 'severin-lemaignan/vim-minimap'
+"Plug 'severin-lemaignan/vim-minimap'
 
 " Word count
 Plug 'ChesleyTan/wordCount.vim'
@@ -192,12 +188,6 @@ Plug 'ncm2/ncm2-racer'
 " Automatically manage tag files
 "Plug 'ludovicchabant/vim-gutentags'
 
-" Massive collection of syntax highlighting / ftdetect / indent plugins
-Plug 'sheerun/vim-polyglot'
-
-" Comment functions so powerful—no comment necessary.
-Plug 'scrooloose/nerdcommenter'
-
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
@@ -249,25 +239,25 @@ Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
 " lisp
-Plug 'vim-scripts/slimv.vim'
+"Plug 'vim-scripts/slimv.vim'
 
 " lua
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'xolox/vim-lua-inspect'
+"Plug 'xolox/vim-lua-ftplugin'
+"Plug 'xolox/vim-lua-inspect'
 
 " perl
-Plug 'vim-perl/vim-perl'
-Plug 'c9s/perlomni.vim'
+"Plug 'vim-perl/vim-perl'
+"Plug 'c9s/perlomni.vim'
 
 " php
 Plug 'arnaud-lb/vim-php-namespace'
 
 " ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
+"Plug 'tpope/vim-projectionist'
+"Plug 'thoughtbot/vim-rspec'
+"Plug 'ecomba/vim-ruby-refactoring'
 
 " rust
 " Vim racer

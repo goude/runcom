@@ -111,7 +111,8 @@ function esi() {
 function zen() {
   prompt_powerlevel9k_teardown
   clear
-  export PROMPT=" "
+  #export PROMPT=" "
+  export PROMPT=" "
 }
 
 function unzen() {

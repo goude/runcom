@@ -80,6 +80,9 @@ Plug 'schickling/vim-bufonly'
 " Navigate and highlight matching words / modern matchit and matchparen replacement
 Plug 'andymass/vim-matchup'
 
+" A painless, powerful Vim auto-pair plugin
+Plug 'tmsvg/pear-tree'
+
 " Experimental - can be disabled if needed
 "Plug 'severin-lemaignan/vim-minimap'
 
@@ -137,7 +140,7 @@ endif
 "
 "Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'ervandew/supertab'
-Plug 'metalelf0/supertab'  " fork with fix
+"Plug 'metalelf0/supertab'  " fork with fix
 
 " UltiSnips provides snippet management for the Vim editor. A snippet is a
 " short piece of text that is either re-used often or contains a lot of
@@ -194,70 +197,10 @@ Plug 'editorconfig/editorconfig-vim'
 " Asynchronous lint engine
 Plug 'w0rp/ale'
 
-" Javascript plugins
-" https://github.com/vimlab/neojs
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
-Plug 'moll/vim-node'
-
-" Typescript plugins
-"Plug 'Shougo/vimproc'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/vim-js-pretty-template'
-Plug 'jason0x43/vim-js-indent'
-Plug 'mhartington/vim-typings'
-Plug 'Quramy/ng-tsserver'
-
 " Python
 Plug 'zchee/deoplete-jedi'
 " Semantic highlighting for Python in Neovim
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-
-" C
-Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
-Plug 'ludwig/split-manpage.vim'
-
-" Erlang
-"Plug 'jimenezrick/vimerl'
-
-" Go
-" FIXME: Temporarily disabled due to installation issues.
-"Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
-" Haskell
-" FIXME: Temporarily disabled due to mapping clash
-"Plug 'eagletmt/neco-ghc'
-"Plug 'dag/vim2hs'
-"Plug 'pbrisbin/vim-syntax-shakespeare'
-
-" html
-Plug 'hail2u/vim-css3-syntax'
-Plug 'tpope/vim-haml'
-Plug 'mattn/emmet-vim'
-
-" lisp
-"Plug 'vim-scripts/slimv.vim'
-
-" lua
-"Plug 'xolox/vim-lua-ftplugin'
-"Plug 'xolox/vim-lua-inspect'
-
-" perl
-"Plug 'vim-perl/vim-perl'
-"Plug 'c9s/perlomni.vim'
-
-" php
-Plug 'arnaud-lb/vim-php-namespace'
-
-" ruby
-"Plug 'tpope/vim-rails'
-"Plug 'tpope/vim-rake'
-"Plug 'tpope/vim-projectionist'
-"Plug 'thoughtbot/vim-rspec'
-"Plug 'ecomba/vim-ruby-refactoring'
 
 " rust
 " Vim racer
@@ -266,6 +209,11 @@ Plug 'rust-lang/rust.vim'
 
 " OpenSCAD
 Plug 'sirtaj/vim-openscad'
+
+" html
+Plug 'hail2u/vim-css3-syntax'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
 
 " }
 
@@ -293,6 +241,61 @@ Plug 'goude/todo.txt-vim'
 
 " Vim plugin for showing all your <Leader> mappings in a readable table including the descriptions.
 "Plug 'ktonga/vim-follow-my-lead'
+
+" Javascript plugins
+" https://github.com/vimlab/neojs
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+"Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+"Plug 'pangloss/vim-javascript'
+"Plug 'othree/yajs.vim'
+"Plug 'moll/vim-node'
+
+" Typescript plugins
+"Plug 'Shougo/vimproc'
+"Plug 'Quramy/tsuquyomi'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'Quramy/vim-js-pretty-template'
+"Plug 'jason0x43/vim-js-indent'
+"Plug 'mhartington/vim-typings'
+"Plug 'Quramy/ng-tsserver'
+
+" C
+"Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
+"Plug 'ludwig/split-manpage.vim'
+
+" Erlang
+"Plug 'jimenezrick/vimerl'
+
+" Go
+" FIXME: Temporarily disabled due to installation issues.
+"Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+" Haskell
+" FIXME: Temporarily disabled due to mapping clash
+"Plug 'eagletmt/neco-ghc'
+"Plug 'dag/vim2hs'
+"Plug 'pbrisbin/vim-syntax-shakespeare'
+
+" lisp
+"Plug 'vim-scripts/slimv.vim'
+
+" lua
+"Plug 'xolox/vim-lua-ftplugin'
+"Plug 'xolox/vim-lua-inspect'
+
+" perl
+"Plug 'vim-perl/vim-perl'
+"Plug 'c9s/perlomni.vim'
+
+" php
+"Plug 'arnaud-lb/vim-php-namespace'
+
+" ruby
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
+"Plug 'tpope/vim-projectionist'
+"Plug 'thoughtbot/vim-rspec'
+"Plug 'ecomba/vim-ruby-refactoring'
 
 " }
 

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Update neovim/vim plugins
+nvim +PlugClean +PlugInstall +PlugUpdate +q +q
+vim +PlugClean +PlugInstall +PlugUpdate +q +q

@@ -83,6 +83,12 @@ Plug 'andymass/vim-matchup'
 " A painless, powerful Vim auto-pair plugin
 Plug 'tmsvg/pear-tree'
 
+" A super simple, super minimal, super light-weight tab completion plugin for Vim.
+Plug 'ajh17/VimCompletesMe'
+
+" Viewer & Finder for LSP symbols and tags
+Plug 'liuchengxu/vista.vim'
+
 " Experimental - can be disabled if needed
 "Plug 'severin-lemaignan/vim-minimap'
 

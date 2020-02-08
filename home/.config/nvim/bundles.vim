@@ -84,7 +84,7 @@ Plug 'andymass/vim-matchup'
 Plug 'tmsvg/pear-tree'
 
 " A super simple, super minimal, super light-weight tab completion plugin for Vim.
-Plug 'ajh17/VimCompletesMe'
+"Plug 'ajh17/VimCompletesMe'
 
 " Viewer & Finder for LSP symbols and tags
 Plug 'liuchengxu/vista.vim'
@@ -146,7 +146,7 @@ endif
 "
 "Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'ervandew/supertab'
-"Plug 'metalelf0/supertab'  " fork with fix
+Plug 'metalelf0/supertab'  " fork with fix
 
 " UltiSnips provides snippet management for the Vim editor. A snippet is a
 " short piece of text that is either re-used often or contains a lot of

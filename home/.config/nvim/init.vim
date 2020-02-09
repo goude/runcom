@@ -130,7 +130,7 @@ augroup END
 
 " html
 " for html files, 2 spaces
-augroup html_files
+augroup vimrc-html
   au!
   au Filetype html setlocal ts=2 sw=2 expandtab
 augroup END
@@ -200,7 +200,7 @@ endfunction
 " automatically initialize buffer by file type
 augroup vimrc-prose
   au!
-  au FileType markdown,mkd,text call Prose()
+  au FileType markdown,mkd call Prose()
 augroup END
 
 " invoke manually by command for other file types
@@ -463,17 +463,13 @@ nnoremap <silent> <leader>sg :Semshi goto error<CR>
 
 " Completion {
 
-"if filereadable(expand("~/.config/nvim/coc.vim"))
-"source ~/.config/nvim/coc.vim
-"endif
-
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
 
 let g:ncm2_look_mark = '👀'
-"let g:ncm2_look_enabled = 1
+let g:ncm2_look_enabled = 1
 
 set shortmess+=c
 
@@ -519,15 +515,11 @@ hi! MatchParen guibg=#3a3a3a
 hi! Sneak guibg=#3a3a3a
 hi! SneakScope guibg=#3a3a3a
 
-"au ColorScheme * hi MatchWord guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-"au ColorScheme * hi MatchParenCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-"au ColorScheme * hi MatchWordCur guifg=lightgrey guibg=grey ctermfg=lightgrey ctermbg=grey
-
 " Allow crontab editing
 set backupskip=/tmp/*,/private/tmp/*
 
 " Make yaml front matter in notes look like a comment
-augroup notes_yaml
+augroup vimrc-yaml-notes
   au!
   au BufNewFile,BufRead */notes/*.md syntax match Comment /\%^---\_.\{-}---$/
 augroup END

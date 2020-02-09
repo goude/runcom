@@ -143,7 +143,9 @@ endif
 
 " Completion {
 "
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 "Plug 'ervandew/supertab'
 Plug 'metalelf0/supertab'  " fork with fix
 
@@ -158,10 +160,9 @@ Plug 'metalelf0/supertab'  " fork with fix
 " other improvements already.
 Plug 'honza/vim-snippets'
 
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 "Plug 'ncm2/ncm2-github'
@@ -174,7 +175,7 @@ Plug 'ncm2/ncm2-cssomni'
 "Plug 'ncm2/ncm2-tern'
 Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-vim'
-Plug 'ncm2/ncm2-ultisnips'
+"Plug 'ncm2/ncm2-ultisnips'
 
 Plug 'ncm2/ncm2-syntax'
 Plug 'Shougo/neco-syntax'
@@ -206,7 +207,7 @@ Plug 'w0rp/ale'
 "Plug 'zchee/deoplete-jedi'
 
 " Semantic highlighting for Python in Neovim
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+"Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " rust
 " Vim racer

@@ -10,7 +10,7 @@ install_locally () {
 }
 
 #install_locally 'https://github.com/neovim/neovim/releases/download/stable/nvim.appimage' 'nvim'
-install_locally 'https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage' 'nvim'
+install_locally 'https://github.com/neovim/neovim/releases/download/v0.4.2/nvim.appimage' 'nvim'
 
 install_locally 'https://github.com/mvdan/sh/releases/tag/v2.6.4' 'shfmt'
 

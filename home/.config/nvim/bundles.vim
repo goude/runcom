@@ -204,7 +204,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 
 " Python
-Plug 'zchee/deoplete-jedi'
+"Plug 'zchee/deoplete-jedi'
+
 " Semantic highlighting for Python in Neovim
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 

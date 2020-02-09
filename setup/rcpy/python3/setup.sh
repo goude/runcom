@@ -9,61 +9,60 @@ ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which python3)" ~/bin/neovim-python3
 ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which pip3)" ~/bin/neovim-pip3
 
 $RUNCOM_PIPENV_CMD install --skip-lock \
-	arrow \
-	autopep8 \
-	black \
-	cheat \
-	colored \
-	cookiecutter \
-	docker-compose \
-	flake8 \
-	howdoi \
-	httpie \
-	humanfriendly \
-	icdiff \
-	isort \
-	jedi \
-	mypy \
+  arrow \
+  autopep8 \
+  black \
+  cheat \
+  colored \
+  cookiecutter \
+  docker-compose \
+  flake8 \
+  howdoi \
+  httpie \
+  humanfriendly \
+  icdiff \
+  isort \
+  jedi \
+  mypy \
   pipx \
-	pynvim \
-	pytest \
+  pynvim \
+  pytest \
   pydocstyle \
-	reorder-python-imports \
-	requests \
-	sphinx \
-	tmuxp \
-	topydo \
-	vim-vint \
-	visidata \
-	yamllint \
-	yapf
+  reorder-python-imports \
+  requests \
+  sphinx \
+  tmuxp \
+  topydo \
+  vim-vint \
+  visidata \
+  yamllint \
+  yapf
 
 $RUNCOM_PIPENV_CMD run pyenv rehash
 
 pyenv_symlinks=(
-	"black"
-	"cheat"
-	"cookiecutter"
-	"docker-compose"
-	"flake8"
-	"git-icdiff"
-	"howdoi"
-	"http"
-	"icdiff"
-	"isort"
-	"mypy"
+  "black"
+  "cheat"
+  "cookiecutter"
+  "docker-compose"
+  "flake8"
+  "git-icdiff"
+  "howdoi"
+  "http"
+  "icdiff"
+  "isort"
+  "mypy"
   "pipx"
   "pydocstyle"
-	"reorder-python-imports"
-	"tmuxp"
-	"topydo"
-	"vd"
-	"yapf"
+  "reorder-python-imports"
+  "tmuxp"
+  "topydo"
+  "vd"
+  "yapf"
 )
 
 for i in "${pyenv_symlinks[@]}"
 do
-	echo "Symlinking $i to ~/bin/..."
-	ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which $i)" "$HOME/bin/$i"
+  echo "Symlinking $i to ~/bin/..."
+  ln -sf "$($RUNCOM_PIPENV_CMD run pyenv which $i)" "$HOME/bin/$i"
 done
-

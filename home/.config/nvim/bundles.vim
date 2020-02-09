@@ -17,8 +17,8 @@
 "The vim-session plug-in improves upon Vim's built-in |:mksession| command by
 "enabling you to easily and (if you want) automatically persist and restore
 "your Vim editing sessions.
-Plug 'xolox/vim-misc' " helpers for vim-session
-Plug 'xolox/vim-session'
+"Plug 'xolox/vim-misc' " helpers for vim-session
+"Plug 'xolox/vim-session'
 
 " }
 
@@ -32,7 +32,6 @@ Plug 'rhysd/git-messenger.vim'
 
 " A git commit browser.
 Plug 'junegunn/gv.vim'
-
 
 " }
 
@@ -55,7 +54,7 @@ Plug 'coderifous/textobj-word-column.vim'
 "Plug 'gyim/vim-boxdraw'
 
 " Edit every line in a quickfix list at the same time
-Plug 'Olical/vim-enmasse'
+"Plug 'Olical/vim-enmasse'
 
 " }
 
@@ -100,10 +99,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
 " A powerful file explorer implemented in Vim script.
-Plug 'shougo/vimfiler.vim'
+"Plug 'shougo/vimfiler.vim'
 
 " Tag navigation
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 
 " Show git markers in gutter
 Plug 'airblade/vim-gitgutter'
@@ -127,7 +126,7 @@ Plug 'justinmk/vim-sneak'
 " The grep plugin integrates the grep, fgrep, egrep, and agrep tools with Vim
 " and allows you to search for a pattern in one or more files and jump to
 " them.
-Plug 'vim-scripts/grep.vim'
+"Plug 'vim-scripts/grep.vim'
 
 " Toggle, display and navigate marks
 Plug 'kshenoy/vim-signature'
@@ -152,7 +151,7 @@ Plug 'metalelf0/supertab'  " fork with fix
 " short piece of text that is either re-used often or contains a lot of
 " redundant text. UltiSnips allows you to insert a snippet with only a few key
 " strokes.
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 
 " This repository contains snippets files for various programming languages.
 " It is community-maintained and many people have contributed snippet files and
@@ -161,8 +160,8 @@ Plug 'honza/vim-snippets'
 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 "Plug 'ncm2/ncm2-github'

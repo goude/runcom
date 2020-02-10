@@ -10,7 +10,7 @@ L-ei indent
 L-er Reload nvim config                         ┏━┓╻ ╻┏┓╻┏━╸┏━┓┏┳┓
 L-es sort (visual)                              ┣┳┛┃ ┃┃┗┫┃  ┃ ┃┃┃┃
 L-et Edit todo.txt                              ╹┗╸┗━┛╹ ╹┗━╸┗━┛╹ ╹
-L-ev Edit nvim config
+L-ev Edit nvim config                           z[mMrR] Fold more, less
 C-o  Single normal command (insert)
 
            Opening                                       Semshi (python)

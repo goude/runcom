@@ -9,3 +9,4 @@ install_dictionary () {
 }
 
 install_dictionary 'https://raw.githubusercontent.com/zeke/moby/master/words.txt' 'en-thesaurus.txt'
+install_dictionary 'http://www.gutenberg.org/files/3202/files/mthesaur.txt' 'mthesaur.txt'

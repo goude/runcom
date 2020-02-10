@@ -210,6 +210,19 @@ command! -nargs=0 Prose call Prose()
 
 " Plugin settings {
 
+" Lexical {
+let g:lexical#thesaurus = [
+  \ '~/.local/share/dictionaries/mthesaur.txt',
+  \ '~/.local/share/dictionaries/en-thesaurus.txt'
+\ ]
+
+let g:lexical#dictionary = ['/usr/share/dict/words',]
+
+"let g:lexical#spellfile = ['~/.vim/spell/en.utf-8.add',]
+"
+" }
+
+
 " Vista {
 " To enable fzf's preview window set g:vista_fzf_preview.
 " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
@@ -469,7 +482,7 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 let g:ncm2_look_mark = '👀'
-let g:ncm2_look_enabled = 1
+let g:ncm2_look_enabled = 0
 
 set shortmess+=c
 

@@ -530,16 +530,16 @@ augroup END
 " Credit: krader1961 in https://github.com/tpope/vim-sleuth/issues/13
 " Highlight trailing whitespace and leading mixed tabs/spaces.
 " TODO: highlight space indents if noexpandtab is set
-augroup whitespace_warnings
-  au!
-  au ColorScheme * highlight! ExtraWhitespaceWarn ctermbg=red guibg=red
-  au BufWinEnter * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
+"augroup whitespace_warnings
+  "au!
+  "au ColorScheme * highlight! ExtraWhitespaceWarn ctermbg=red guibg=red
+  "au BufWinEnter * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
 
-  " The above flashes annoyingly while typing, be calmer in insert mode
-  au InsertLeave * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
-  au InsertEnter * match ExtraWhitespaceWarn /\s\+\%#\@<!$/
-augroup END
-hi! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
+  "" The above flashes annoyingly while typing, be calmer in insert mode
+  "au InsertLeave * match ExtraWhitespaceWarn /\v^\s*( \t|\t )\s*|\s+$/
+  "au InsertEnter * match ExtraWhitespaceWarn /\s\+\%#\@<!$/
+"augroup END
+"hi! ExtraWhitespaceWarn ctermbg=darkred guibg=darkred
 
 " }
 

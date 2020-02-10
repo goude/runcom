@@ -9,6 +9,7 @@ export RUNCOM_ICON='🤖'
 export RUNCOM_PATH=$HOMESHICK_REPOS/runcom
 export RUNCOM_TMUX_SHELL=$SHELL
 export RUNCOM_TMPDIR=$HOME/tmp
+export RUNCOM_DICTIONARIES=$HOME/.local/share/dictionaries
 
 #export RUNCOM_PIPENV_CMD=$HOME/.local/bin/pipenv
 export RUNCOM_PIPENV_CMD=$HOME/bin/pipenv
